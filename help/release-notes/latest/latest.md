@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform mars 2026
 description: Versionsinformationen för Adobe Experience Platform i mars 2026.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 6b6a03fb8675ed01dd255f7206b23b05c809f2a6
+source-git-commit: fad4cd198eda42f530e731a22ea79096a3cf3807
 workflow-type: tm+mt
-source-wordcount: '1713'
-ht-degree: 20%
+source-wordcount: '1797'
+ht-degree: 19%
 
 ---
 
@@ -27,6 +27,7 @@ Nya funktioner och uppdateringar av befintliga funktioner i Adobe Experience Pla
 
 - [Hantering av avancerad datalivscykel](#advanced-data-lifecycle-management)
 - [Agent Orchestrator](#agent-orchestrator)
+- [Kapacitet](#capacity)
 - [Dataströmmar](#datastreams)
 - [Mål](#destinations)
 - [Experience Data Model (XDM)](#xdm)
@@ -54,11 +55,22 @@ Använd Agent Orchestrator för att bygga och driftsätta AI-baserade agenter so
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [Adobe Marketing Agent för [!DNL Microsoft 365 Copilot]](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/ama-ms) | Adobe Marketing Agent för [!DNL Microsoft 365 Copilot] är din inbäddade agent som samlar Adobe marknadsföringsinformation direkt i vanliga verktyg som [!DNL Teams], [!DNL Word], [!DNL PowerPoint] och andra [!DNL Microsoft 365]-appar. Du kan använda den här agenten för att hämta in betrodda kampanjinsikter från Adobe-program medan du planerar kampanjer, granskar målgrupper, samarbetar med kollegor för att besvara kundfrågor och fatta dataorienterade beslut utan att lämna ditt [!DNL Microsoft 365]-arbetsflöde. |
+| [Adobe Marketing Agent för [!DNL Microsoft 365 Copilot]](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/ama-ms) | Adobe Marketing Agent för [!DNL Microsoft 365 Copilot] är din inbäddade agent som samlar Adobe marknadsföringsinformation direkt i vanliga verktyg som [!DNL Teams], [!DNL Word], [!DNL PowerPoint] och andra [!DNL Microsoft 365]-appar. Du kan använda den här agenten för att hämta in betrodda kampanjinsikter från Adobe-program medan du planerar kampanjer, granskar målgrupper, samarbetar med kollegor för att besvara kundfrågor och fatta dataorienterade beslut utan att lämna ditt [!DNL Microsoft 365]-arbetsflöde. |
 
 {style="table-layout:auto"}
 
 Mer information finns i [dokumentationen om Agent Orchestrator](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator).
+
+## Kapacitet {#capacity}
+
+Kapaciteten ger en heltäckande bild av din organisations [skyddsutkast](../../rtcdp/guardrails/overview.md) och ger rekommendationer om hur du kan lösa potentiella kapacitetsöverträdelser genom att tilldela din kapacitet på sandlådenivå.
+
+**Ny funktion**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Edge segmenteringsflöde | Nu kan du se och hantera skyddsutkast för kanternas segmenteringsgenomströmning. Mer information finns i [Översikt över kapacitet](/help/landing/license-usage-and-guardrails/capacity.md#edge-segmentation-throughput). |
+| Stöd för övervakning av edge-datastreams | Realtidsövervakning av era edge-datastreams är nu tillgänglig, vilket ger transparens i genomströmning och andra mätvärden. Mer information finns i [guiden för övervakning av kant](/help/dataflows/ui/monitor-edge.md). |
 
 ## Dataströmmar {#datastreams}
 
