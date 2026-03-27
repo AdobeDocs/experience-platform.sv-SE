@@ -6,9 +6,9 @@ badge: label="Beta" type="Informative"
 hide: true
 hidefromtoc: true
 exl-id: 4d405ffb-f600-463b-a215-44e806b6d139
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 40a9ea68fd855b2f0d92a4fa336f1b68142f0649
 workflow-type: tm+mt
-source-wordcount: '1335'
+source-wordcount: '1511'
 ht-degree: 0%
 
 ---
@@ -25,15 +25,15 @@ Använd målet [!DNL Microsoft Ads Customer Match] för att matcha kunder med e-
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Microsoft Ads Customer Match] finns det exempel på användningsområden som [!DNL Adobe Experience Platform]-kunder kan lösa med den här funktionen.
+För att du bättre ska kunna förstå hur och när du ska använda målet [!DNL Microsoft Ads Customer Match] finns det exempel på användning som Adobe Experience Platform-kunder kan lösa med den här funktionen.
 
-### Använd skiftläge 1 {#use-case-1}
+### Återannonsera befintliga kunder med personaliserade erbjudanden {#use-case-1}
 
 Ett e-handelsmärke vill nå befintliga kunder via [!DNL Microsoft Search] och [!DNL Microsoft Audience Network] för att anpassa erbjudanden baserat på deras tidigare köp och webbhistorik. Varumärket kan importera e-postadresser från sin egen CRM till Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka dessa målgrupper till [!DNL Microsoft Ads Customer Match] för användning i sök- och målgruppsannonser, vilket optimerar deras annonsutgifter.
 
-### Använd skiftläge 2 {#use-case-2}
+### Erbjud nya produkter till befintliga kunder {#use-case-2}
 
-Ett teknikföretag lanserade en ny produkt. För att marknadsföra den nya produkten vill de öka medvetenheten bland kunder som tidigare köpt relaterade produkter. De överför e-postadresser från sin CRM-databas till Experience Platform med e-postadresserna som identifierare. Målgrupper skapas utifrån kunder som äger relaterade produkter. Dessa målgrupper skickas till [!DNL Microsoft Ads Customer Match], så att företaget kan inrikta sig på befintliga kunder och liknande kunder i hela [!DNL Microsoft Advertising Network].
+Ett teknikföretag lanserade en ny produkt och vill öka medvetenheten bland kunder som tidigare köpt relaterade produkter. De överför e-postadresser från sin CRM-databas till Experience Platform med e-postadresserna som identifierare. Målgrupper skapas utifrån kunder som äger relaterade produkter. Dessa målgrupper skickas till [!DNL Microsoft Ads Customer Match], så att företaget kan inrikta sig på befintliga kunder och liknande kunder i hela [!DNL Microsoft Advertising Network].
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -41,7 +41,7 @@ Ett teknikföretag lanserade en ny produkt. För att marknadsföra den nya produ
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| `email` | E-postadresser med oformaterad text | Endast e-postadresser med normal text stöds av anslutningen [!DNL Microsoft Ads Customer Match]. Experience Platform skickar automatiskt e-postadresser vid exporten så att de matchar Microsoft krav. |
+| `email` | E-postadresser med oformaterad text | Endast e-postadresser med ohashad text stöds som **källa**-fält i mappningssteget. Förhash-kodade källfält stöds inte. Experience Platform skickar alltid e-postadresser som hashas innan de exporteras till [!DNL Microsoft Ads]. |
 
 {style="table-layout:auto"}
 
@@ -85,6 +85,20 @@ Om du vill skicka målgruppsdata till [!DNL Microsoft Ads] måste du ha ett akti
 ### Godkänn villkor för kundmatchning {#accept-customer-match-terms}
 
 Innan du aktiverar målgrupper via det här målet måste du skapa en kundmatchningslista manuellt i ditt [!DNL Microsoft Advertising]-konto. Denna första manuella skapelse krävs för att acceptera kundens matchningsvillkor, som gör att målgrupper som skickas från Experience Platform kan skapas automatiskt. Om du inte slutför det här steget kan det uppstå fel när målgrupper aktiveras.
+
+### Godkännande av IT-administratör för arbetskonto (MS Entra) {#work-account-admin-approval}
+
+Om du autentiserar med ett Microsoft-arbetskonto (även kallat Microsoft Entra-konto) kan din organisations IT-administratör behöva bevilja godkännande innan du kan ansluta till [!DNL Microsoft Advertising].
+
+När du försöker autentisera med ett arbetskonto kan du omdirigeras till en **sida för godkännande krävs**. Den här sidan begär en justering för att länka programmet och visar de behörigheter som krävs, inklusive `ads.manage`. Skicka begäran så får din IT-administratör ett meddelande om att granska den. Du får också ett bekräftelsemeddelande via e-post om att din begäran har skickats.
+
+När IT-administratören har godkänt begäran i Azure Portal kan du gå tillbaka till Experience Platform och autentisera med ditt arbetskonto. Mer information finns i Microsoft-dokumentationen:
+
+* [Granska och utför åtgärder på begäranden om administratörsgodkännande](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/review-admin-consent-requests)
+* [Konfigurera arbetsflödet för administratörsgodkännande](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-admin-consent-workflow)
+* [Konfigurera hur användare godkänner program](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent)
+
+Om IT-administratören ännu inte har godkänt begäran kommer autentiseringen att misslyckas med följande fel: `AADSTS650052: The app needs access to a service ('https://ads.microsoft.com') that your organization has not subscribed to or enabled. Contact your IT Admin to review the configuration of your service subscriptions.`
 
 ### Kontokonfiguration {#account-configuration}
 
@@ -135,7 +149,7 @@ När [konfigurerar](../../ui/connect-destination.md) för det här målet måste
 * **[!UICONTROL Membership Duration]**: Antalet dagar som en användare finns kvar i kundmatchningslistan. Godkända värden är mellan 1 och 390 dagar.
 * **[!UICONTROL Customer Match List Availability]**: Välj tillgängligheten för kundmatchningslistan. I [!DNL Microsoft Advertising] kan ett kund-ID ha flera kundkonto-ID:n (annonserkonton) under det. Välj **[!UICONTROL Customer ID (all advertising accounts)]** om du vill göra listan tillgänglig för alla annonserarkonton under ditt kund-ID, eller **[!UICONTROL Customer Account ID (single advertising account)]** om du vill begränsa listan till det specifika kundkonto-ID som du angav ovan. Mer information finns i [Microsoft Advertising-dokumentationen](https://help.ads.microsoft.com/apex/index/3/en/56727).
 
-![Plattformsgränssnittsbild som visar målinformationsfälten för Microsoft Ads kundmatchningsmål.](../../assets/catalog/advertising/microsoft-ads-customer-match/destination-details.png)
+  ![Plattformsgränssnittsbild som visar målinformationsfälten för Microsoft Ads kundmatchningsmål.](../../assets/catalog/advertising/microsoft-ads-customer-match/destination-details.png)
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -161,7 +175,7 @@ I steget **[!UICONTROL Mapping]** måste du mappa e-postidentiteten från källp
 
 >[!IMPORTANT]
 >
->Du måste använda källfält utan hash-kodade (oformaterad text). Använd inte förhash-kodade källidentifierare som `Emails (SHA256, lowercased)`. Experience Platform skickar automatiskt e-postadresserna vid exporten så att de matchar Microsoft krav.
+>Du måste mappa e-postadresser med ohashad text som **källa**-fält. Förhash-kodade källidentifierare som `Emails (SHA256, lowercased)` stöds inte. Experience Platform skickar alltid e-postadresser som hashas innan de exporteras till [!DNL Microsoft Ads].
 
 ![Gränssnittsbild som visar mappningssteget med e-post för identitetskarta mappad till e-post för identitet.](../../assets/catalog/advertising/microsoft-ads-customer-match/mapping.png)
 
