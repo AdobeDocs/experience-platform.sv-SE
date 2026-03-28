@@ -199,7 +199,7 @@ Detaljerade förklaringar av kraven för ID-matchning finns i [Krav för ID-matc
 +++Svar
 Nej, det krävs inte att Web SDK aktiverar målgrupper för [[!DNL Adobe Target]](catalog/personalization/adobe-target-connection.md).
 
-Om [[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html) används i stället för Web SDK stöds endast nästa sessionspersonalisering.
+Om [[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html?lang=sv-SE) används i stället för Web SDK stöds endast nästa sessionspersonalisering.
 
 För [anpassning av hela och nästa sida](ui/activate-edge-personalization-destinations.md) måste du använda antingen Web SDK eller [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/). Mer implementeringsinformation finns i dokumentationen om att [aktivera målgrupper mot kantmål](ui/activate-edge-personalization-destinations.md).
 +++
