@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 5b36722e5c2ca0cc8a4fb8667ceb3dc4a3568b02
+source-git-commit: b61d6d49e3fcd9a75d2920048ce76d3707592edb
 workflow-type: tm+mt
-source-wordcount: '3542'
+source-wordcount: '3580'
 ht-degree: 0%
 
 ---
@@ -94,15 +94,15 @@ Varje enskild dataflödeskörning visar följande information:
 - **[!UICONTROL Audience]**: Antalet målgrupper som är associerade med varje dataflödeskörning.
 - **[!UICONTROL Processing duration]**: Den tid det tog för dataflödet att bearbeta.
    - För **[!UICONTROL completed]**-körningar visas alltid en timme i bearbetningstidens mått.
-   - För dataflöden som fortfarande är i **[!UICONTROL processing]**-läge är fönstret för att hämta alla mått öppet i mer än en timme för att bearbeta alla mått som motsvarar dataflödeskörningen. En dataflödeskörning som påbörjades kl. 9:30 kan till exempel vara i ett bearbetningstillstånd i en timme och trettio minuter för att hämta och bearbeta alla mätvärden. Bearbetningstidens längd påverkas direkt av återförsök som gjorts som ett resultat av målets misslyckade svar. När bearbetningsfönstret sedan stängs och dataflödets status uppdateras till **slutförd** ändras den visade bearbetningstiden till en timme.
+   - För dataflödeskörningar som fortfarande är i läget **[!UICONTROL processing]** är fönstret för att hämta alla mått öppet i mer än en timme, för att bearbeta alla mått som motsvarar dataflödeskörningen. En dataflödeskörning som påbörjades kl. 9:30 kan till exempel vara i ett bearbetningstillstånd i en timme och trettio minuter för att hämta och bearbeta alla mätvärden. Bearbetningstidens längd påverkas direkt av återförsök som gjorts som ett resultat av målets misslyckade svar. När bearbetningsfönstret sedan stängs och dataflödets status uppdateras till **slutförd** ändras den visade bearbetningstiden till en timme.
 - **[!UICONTROL Profiles received]**: Det totala antalet profiler som tagits emot i dataflödet.
 - **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som aktiverades till det valda målet som en del av dataflödeskörningen. Det här måttet inkluderar identiteter som skapas, uppdateras och tas bort från exporterade målgrupper.
 - **[!UICONTROL Identities excluded]**: Det totala antalet profilidentiteter som har uteslutits från aktivering baserat på saknade attribut och brott mot medgivande.
-- **[!UICONTROL Identities failed]** Det totala antalet profilidentiteter som inte har aktiverats till målet på grund av fel.
+- **[!UICONTROL Identities failed]**: Det totala antalet profilidentiteter som inte har aktiverats till målet på grund av fel.
 
   >[!IMPORTANT]
   >
-  > Från och med mars 2025 lanserar Adobe en uppdatering som ökar rapporteringsnoggrannheten för strömningsdestinationerna. Den här förbättringen ger bättre anpassning mellan rapporteringen i Experience Platform och målplattformarna.
+  > Från och med mars 2025 lanserar Adobe en uppdatering som ökar rapporteringsnoggrannheten för direktuppspelningsdestinationer. Den här förbättringen ger bättre anpassning mellan rapporteringen i Experience Platform och målplattformarna.
   >
   > Före den här uppdateringen innehöll **[!UICONTROL Identities failed]** alla aktiveringsförsök. Efter den här uppdateringen inkluderas endast det senaste aktiveringsförsöket i det totala antalet.
   > 
@@ -142,12 +142,12 @@ Du kan visa information om aktiverade, uteslutna eller misslyckade identiteter s
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="Information om dataflödeskörning"
 >abstract="Körningsinformationen för måldataflödet innehåller information om aktiveringsstatus för en målgrupp och mått från kundprofilen i realtid för att generera unika identiteter. Mer information finns i guiden för metriska definitioner."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=sv-SE#dataflow-runs-for-streaming-destinations" text="Dataflödeskörningar för direktuppspelningsmål"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="Dataflödeskörningar för direktuppspelningsmål"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"
 >title="Mottagna profiler"
->abstract="Det totala antalet profiler som tagits emot i dataflödet. Det här värdet uppdateras var 60:e minut."
+>abstract="Det totala antalet profiler som tagits emot i dataflödeskörningen. För schemalagd export omfattar detta profiler från den senaste målgruppsögonblicksbilden plus profiler vars målgruppsmedlemskap eller identitet har ändrats mellan tidpunkten då ögonblicksbilderna skapades och exporttiden. Detta kan därför vara högre än antalet profiler i målgruppen."
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesactivated_batch"
@@ -208,7 +208,7 @@ Du kan också välja att visa omfattande information om ett visst dataflöde och
 >
 >Nu kan du visa information om dataflödet och dess associerade dataflöde i kontrollpanelen. Läs avsnittet nedan för mer information.
 
-## Kontrollpanel för målplatser {#monitoring-destinations-dashboard}
+## Kontrollpanel för övervakningsdestinationer {#monitoring-destinations-dashboard}
 
 >[!NOTE]
 >
@@ -298,7 +298,7 @@ Använd växlingsknappen **[!UICONTROL Show failures only]** om du bara vill vis
 
 ![Dataflödet kör vy med endast växlingsknappen markerad för visa-fel](../assets/ui/monitor-destinations/dataflow-runs-show-failures-only.gif)
 
-### Målgruppsvy {#segment-level-view}
+### Målgruppsvy {#audience-level-view}
 
 När **[!UICONTROL Audiences]** är markerat visas en lista över de målgrupper som aktiverats för det valda dataflödet, inom det valda tidsintervallet. Den här skärmen innehåller information på målgruppsnivå om aktiverade poster, uteslutna poster samt status och tid för det senaste dataflödet. Genom att granska mätvärdena för poster som har uteslutits och aktiverats kan ni verifiera om en målgrupp har aktiverats eller inte.
 
@@ -351,10 +351,10 @@ Använd filterknappen ![filter](/help/images/icons/filter-add.png) för att gå 
 
 På sidan för dataflöden visas information om dataflödets körningar, inklusive starttid för dataflöde, bearbetningstid, mottagna poster, aktiverade poster, uteslutna poster, misslyckade poster, aktiveringsfrekvens och status.
 
-När du går ned på dataflödets körningssida från vyn [på målgruppsnivå](#segment-level-view) kan du filtrera dataflödet med följande alternativ:
+När du går ned på dataflödets körningssida från vyn [på målgruppsnivå](#audience-level-view) kan du filtrera dataflödet med följande alternativ:
 
 - **[!UICONTROL Dataflow runs with failed records]**: För den valda målgruppen listas alla dataflödeskörningar som misslyckades för aktivering med det här alternativet. Information om varför poster i ett visst dataflöde misslyckades finns på [informationssidan för dataflödeskörning](#dataflow-run-details-page) för det dataflödet.
-- **[!UICONTROL Dataflow runs with excluded records]**: För den valda målgruppen listas alla dataflöden där vissa av posterna inte var helt aktiverade och vissa profiler hoppades över. Information om varför poster i en viss dataflödeskörning hoppades över finns på [informationssidan &#x200B;](#dataflow-run-details-page) för dataflödeskörningen.
+- **[!UICONTROL Dataflow runs with excluded records]**: För den valda målgruppen listas alla dataflöden där vissa av posterna inte var helt aktiverade och vissa profiler hoppades över. Information om varför poster i en viss dataflödeskörning hoppades över finns på [informationssidan ](#dataflow-run-details-page) för dataflödeskörningen.
 - **[!UICONTROL Dataflow runs with activated records]**: För den valda målgruppen listas alla dataflödeskörningar som har poster som har aktiverats.
 
 ![Alternativknappar som visar hur du filtrerar dataflöden för målgrupper.](/help/dataflows/assets/ui/monitor-destinations/dataflow-runs-segment-filter.png)
@@ -371,13 +371,13 @@ På sidan med information om dataflödeskörning visas mer specifik information 
 - **[!UICONTROL IMS org ID]**: Organisationen som dataflödet tillhör.
 - **[!UICONTROL Last updated]**: Den tidpunkt då dataflödeskörningen senast uppdaterades.
 
-På informationssidan finns också en växlingsknapp för att växla mellan körningsfel och målgrupper i dataflöden. Det här alternativet är tillgängligt för de mål som listas i avsnittet [målgruppsvy](#segment-level-view).
+På informationssidan finns också en växlingsknapp för att växla mellan körningsfel och målgrupper i dataflöden. Det här alternativet är tillgängligt för de mål som listas i avsnittet [målgruppsvy](#audience-level-view).
 
 I dataflödets felvy visas en lista med poster som misslyckades och poster som hoppades över. Information om både misslyckade och överhoppade poster visas, inklusive felkod, antal identiteter och beskrivning. Som standard visas de poster som misslyckades i listan. Om du vill visa överhoppade poster väljer du alternativet **[!UICONTROL Records skipped]**.
 
 ![Ingen växling av undantagna identiteter har markerats i övervakningsvyn](../assets/ui/monitor-destinations/identities-excluded.png)
 
-När **[!UICONTROL Audiences]** är markerat visas en lista över de målgrupper som aktiverats i den valda dataflödeskörningen. Den här skärmen innehåller information på målgruppsnivå om aktiverade poster, uteslutna poster samt status och tid för det senaste dataflödet.
+När **[!UICONTROL Audiences]** är markerat visas en lista med de målgrupper som aktiverats i den valda dataflödeskörningen. Den här skärmen innehåller information på målgruppsnivå om aktiverade poster, uteslutna poster samt status och tid för det senaste dataflödet.
 
 ![Vyn Publiker i informationsfönstret för dataflödeskörning.](../assets/ui/monitor-destinations/dataflow-run-segments-view.png)
 
