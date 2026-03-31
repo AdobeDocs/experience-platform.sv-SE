@@ -1,9 +1,10 @@
 ---
 title: Ansluta Oracle Eloqua (V2) till Experience Platform i användargränssnittet
 description: Lär dig hur du ansluter ditt Oracle Eloqua-konto till Experience Platform i användargränssnittet.
-source-git-commit: 180754969d4ae8dbd1308dfc85dae73baf64f759
+exl-id: 87b6d2e2-fd0b-4ca7-860c-01957712ec2a
+source-git-commit: 2ffffbae2d267c4db05e386a41eb8707c9e5b736
 workflow-type: tm+mt
-source-wordcount: '1187'
+source-wordcount: '1185'
 ht-degree: 0%
 
 ---
@@ -124,7 +125,6 @@ När du har uppdaterat dina beräknade fält väljer du **[!UICONTROL Next]** f�
 >* **Kontakter:** `C_DateModified`
 >* **Konton:** `M_DateModified`
 >* **Aktivitet:** `CreatedAt`
->* **Egna objekt:** `UpdatedAt`
 >* **Kampanj:** `updatedAt`
 
 När mappningen är klar kan du nu konfigurera ett intag-schema för ditt dataflöde. Ange [!UICONTROL Frequency] till `Once` för att konfigurera en engångsinmatning. För inkrementellt intag kan du ange [!UICONTROL Frequency] till `Hour`, `Day` eller `Week`. När du använder inkrementellt intag måste du även konfigurera [!UICONTROL Interval] för att definiera hur lång tid som ska gå mellan att ha intagit. En matningsfrekvens som till exempel är inställd på `Day` och ett intervall på `15` innebär att dataflödet är schemalagt att importera data var 15:e dag.

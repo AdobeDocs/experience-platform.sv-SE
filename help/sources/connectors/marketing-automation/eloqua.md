@@ -2,9 +2,10 @@
 title: Oracle Eloqua (V2) Source - översikt
 description: Lär dig ansluta Oracle Eloqua till Adobe Experience Platform.
 last-substantial-update: 2025-02-02T00:00:00Z
-source-git-commit: 4d47eae91711596677335b03568add9f6fbade74
+exl-id: f63beebd-920c-41dd-a924-61511135a234
+source-git-commit: 2ffffbae2d267c4db05e386a41eb8707c9e5b736
 workflow-type: tm+mt
-source-wordcount: '1824'
+source-wordcount: '1822'
 ht-degree: 0%
 
 ---
@@ -32,7 +33,7 @@ Nedan finns en tabell över de marknadsföringsobjekt som stöds av integreringe
 
 {style="table-layout:auto"}
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 I avsnitten nedan finns information om vilka krav som måste uppfyllas innan du kan ansluta källan till Experience Platform.
 
@@ -69,7 +70,7 @@ Använd fönstret **[!DNL Security Group Overview]** för att ange ett namn och 
 
 ![Översiktsfönstret för säkerhetsgruppen i Eloqua.](../../images/tutorials/create/eloqua/security-group-overview.png)
 
-![Urvalsfönstret för API:t &#x200B;](../../images/tutorials/create/eloqua/consume-api.png)
+![Urvalsfönstret för API:t ](../../images/tutorials/create/eloqua/consume-api.png)
 
 >[!NOTE]
 >
@@ -102,7 +103,6 @@ Du måste ange värden för följande autentiseringsuppgifter för att kunna ans
 >- **Kontakter:** `C_DateModified`
 >- **Konton:** `M_DateModified`
 >- **Aktivitet:** `CreatedAt`
->- **Egna objekt:** `UpdatedAt`
 >- **Kampanj:** `updatedAt`
 
 I följande tabeller finns detaljerade mappningar mellan [!DNL Eloqua]-källfält och deras motsvarande XDM-målfält (Experience Data Model) i Experience Platform. Varje rad visar transformeringslogiken, om fältet är oföränderligt, och ger dig ytterligare information som hjälper dig förstå hur dina [!DNL Eloqua]-data kommer att importeras och struktureras i Experience Platform.
@@ -244,4 +244,3 @@ Mappningsmallarna använder följande variabelplatshållare som ersätts när et
 ## Anslut [!DNL Eloqua] till Experience Platform
 
 Fortsätt med att konfigurera [!DNL Eloqua]-källanslutningen i Experience Platform. En steg-för-steg-guide om hur du konfigurerar anslutningen via användargränssnittet finns i [självstudiekursen här](../../tutorials/ui/create/marketing-automation/eloqua.md). Läs den här självstudiekursen om du vill lära dig att ansluta ditt [!DNL Eloqua]-konto, välja data, mappningsfält, schemalägga ingivelser och övervaka dina dataflöden.
-
