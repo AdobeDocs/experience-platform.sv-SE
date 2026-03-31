@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform mars 2026
 description: Versionsinformationen för Adobe Experience Platform i mars 2026.
 exl-id: 66b948fd-caa0-4e5e-83dd-3b15b77c09fa
-source-git-commit: fad4cd198eda42f530e731a22ea79096a3cf3807
+source-git-commit: cd09f9e510052f6bae89ff730ba83aa16e95f193
 workflow-type: tm+mt
-source-wordcount: '1805'
+source-wordcount: '1782'
 ht-degree: 20%
 
 ---
@@ -41,7 +41,7 @@ Experience Platform har en rad olika funktioner för datahygien som hjälper dig
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Borttagning av post för flera datauppsättningar och endast profiler (endast API) | Du kan skicka ett enstaka datauppsättnings-ID, en kommaavgränsad lista med datauppsättnings-ID:n eller literalen `ALL` i `datasetId` för att ta bort identiteter i en, flera eller alla datauppsättningar. Du kan även begränsa borttagning till profilrelaterade tjänster genom att ange `targetServices` till `["identity","profile","ajo"]`, vilket lämnar datalagret oförändrat. Den här funktionen är bara tillgänglig via API:t för datahygien. Mer information finns i guiden [Ta bort arbetsorder](../../hygiene/api/workorder.md). |
+| Ta bort poster för flera datauppsättningar (endast API) | Ta bort identiteter från en, flera eller alla datauppsättningar i en enda API-begäran, vilket förenklar arbetsflödena för datahygien. Du kan också begränsa borttagningen till enbart profiltjänster, så att datainsjouppgifterna inte ändras. Mer information finns i guiden [Ta bort arbetsorder](../../hygiene/api/workorder.md). |
 
 {style="table-layout:auto"}
 
@@ -55,7 +55,7 @@ Använd Agent Orchestrator för att bygga och driftsätta AI-baserade agenter so
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [Adobe Marketing Agent för [!DNL Microsoft 365 Copilot]](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/ama-ms) | Adobe Marketing Agent för [!DNL Microsoft 365 Copilot] är din inbäddade agent som samlar Adobe marknadsföringsinformation direkt i vanliga verktyg som [!DNL Teams], [!DNL Word], [!DNL PowerPoint] och andra [!DNL Microsoft 365]-appar. Du kan använda den här agenten för att hämta in betrodda kampanjinsikter från Adobe-program medan du planerar kampanjer, granskar målgrupper, samarbetar med kollegor för att besvara kundfrågor och fatta dataorienterade beslut utan att lämna ditt [!DNL Microsoft 365]-arbetsflöde. |
+| [Adobe Marketing Agent för [!DNL Microsoft 365 Copilot]](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/agents/ama-ms) | Adobe Marketing Agent för [!DNL Microsoft 365 Copilot] är din inbäddade agent som samlar Adobe marknadsföringsinformation direkt i vanliga verktyg som [!DNL Teams], [!DNL Word], [!DNL PowerPoint] och andra [!DNL Microsoft 365]-appar. Du kan använda den här agenten för att hämta in betrodda kampanjinsikter från Adobe-program medan du planerar kampanjer, granskar målgrupper, samarbetar med kollegor för att besvara kundfrågor och fatta dataorienterade beslut utan att lämna ditt [!DNL Microsoft 365]-arbetsflöde. |
 
 {style="table-layout:auto"}
 
