@@ -2,9 +2,9 @@
 title: AI Assistant (äldre) i Adobe Experience Platform Overview
 description: Lär dig mer om AI Assistant (äldre), dess nyanser och användningsexempel, och hur du kan använda det för att snabba upp arbetsflödet med Adobe Experience Platform och Real-Time Customer Data Platform.
 exl-id: cfd4ac22-fff3-4b50-bbc2-85b6328f603c
-source-git-commit: 68c55e370cab58ce5c93359520bf4ce671282a1b
+source-git-commit: cc3ac0bb3e448f4a4fa69df5dcb7c45b098ca255
 workflow-type: tm+mt
-source-wordcount: '1201'
+source-wordcount: '1264'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Det här dokumentet gäller för AI Assistant (äldre). Mer information om AI Assistant (Next-Gen) finns i [gränssnittsguiden för AI-assistenten](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/ai-assistant/ai-assistant-ui) i [AI-dokumentationen i Experience Cloud](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/home).
+>Det här dokumentet gäller för AI Assistant (äldre). Mer information om AI Assistant (Next-Gen) finns i [gränssnittsguiden för AI-assistenten](https://experienceleague.adobe.com/en/docs/experience-cloud-ai/experience-cloud-ai/ai-assistant/ai-assistant-ui) i [AI-dokumentationen i Experience Cloud](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/home).
 
 I följande tabell finns en jämförelse mellan AI Assistant (äldre) och AI Assistant (nästa generation):
 
@@ -23,7 +23,7 @@ I följande tabell finns en jämförelse mellan AI Assistant (äldre) och AI Ass
 | Funktionens omfattning | Du kan använda AI Assistant (äldre) för både produktkunskap och driftsinsikter. | Du kan använda AI Assistant (Next-Gen) för produktkunskap, driftsinsikter samt avancerade agetiska färdigheter och körning av uppgifter i flera steg. |
 | Plattformsarkitektur | AI Assistant (äldre) är inte byggt på Agent Orchestrator-stacken. | AI Assistant (Next-Gen) drivs av [Adobe Experience Platform Agent Orchestrator](https://experienceleague.adobe.com/sv/docs/experience-cloud-ai/experience-cloud-ai/agents/agent-orchestrator) vilket möjliggör utbyggbarhet och avancerad samordning mellan funktioner. |
 | Programtäckning | AI Assistant (äldre) är en programspecifik implementering. | Du kan använda AI Assistant (Next-Gen) för en enhetlig AI Assistant-upplevelse i alla Adobe Experience Cloud-program. |
-| Åtkomst och behörighetsmodell | Åtkomstmodell som omfattas av programmet och som anpassas efter enskilda produktgränser. | Alla användare har tillgång till AI Assistant (Next-Gen) och tillhörande Experience Platform-agenter. **Obs!**: <ul><li>**Adobe Experience Manager**: Din administratör måste ge dig behörighet att komma åt AI Assistant (Next-Gen) via [Adobe Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html).</li><li>**Customer Journey Analytics**: Din administratör måste ge dig behörighet att komma åt AI Assistant via [Customer Journey Analytics Access Control](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/technotes/access-control?lang=en). På så sätt kan du ställa frågor om produktkunskap och datainsikter. |
+| Åtkomst och behörighetsmodell | Åtkomstmodell som omfattas av programmet och som anpassas efter enskilda produktgränser. | Alla användare har tillgång till AI Assistant (Next-Gen) och tillhörande Experience Platform-agenter. **Obs!**: <ul><li>**Adobe Experience Manager**: Din administratör måste ge dig behörighet att komma åt AI Assistant (Next-Gen) via [Adobe Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html).</li><li>**Customer Journey Analytics**: Din administratör måste ge dig behörighet att komma åt AI Assistant via [Customer Journey Analytics Access Control](https://experienceleague.adobe.com/en/docs/analytics-platform/using/technotes/access-control?lang=en). På så sätt kan du ställa frågor om produktkunskap och datainsikter. |
 
 Följande video är avsedd att ge stöd för din förståelse av AI Assistant.
 
@@ -75,7 +75,7 @@ Produktkännedom avser begrepp och ämnen som beskrivs i Experience League dokum
 
 Titta på följande video för mer information om AI Assistant-produktkunskap (äldre):
 
->[!VIDEO](https://video.tv.adobe.com/v/3475934/?captions=swe&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3438032/?learn=on)
 
 ### Driftsinsikter {#operational-insights}
 
@@ -93,9 +93,12 @@ Du kan ställa frågor om AI Assistant (äldre) om dina operativa insikter i fö
 | Målgrupper | <ul><li>Antal målgrupper</li><li>Målgruppstyp (direktuppspelning eller batch)</li><li>Skapande-/ändringsdatum</li><li>Aktiveringsstatus</li><li>Profilantal</li><li>Duplicera målgrupper</li><li>Sök efter målgruppsdefinition</li><li>Målgrupp - målgruppsrelation</li><li>Målgrupp - attributrelation</li><li>Målgrupp - datauppsättningsrelation</li><li>Målgrupp - målrelation</li><li>Namnsökning</li><li>Sök namn och ID | <ul><li>Målgruppsöverlappningar</li><li>Målgruppsaktivering</li><li>Målgrupp - kampanjrelationer</li><li>Granskning</li><li>Skapa/ändra</li><li>Etiketter</li><li>Profilkvalificeringstrender</li></ul> |
 | Dataflöden | <ul><li>Antal dataflöden</li><li>Dataflödesstatus</li><li>Dataflöde - Datauppsättningsrelation</li><li>Dataflöd - källrelation</li></ul> | <ul><li>Skapande/ändring</li><li>Dataflödesbatchrelationer</li><li>Antal infogningsprofiler</li></ul> |
 | Datauppsättningar | <ul><li>Antal data</li><li>Aktivera profilstatus</li><li>Skapad/ändrad den</li><li>Datauppsättning - schemarelation</li><li>Datauppsättning - målgruppsrelation</li><li>Datauppsättning - attributrelation</li><li>Datauppsättning - dataflödesrelation</li><li>Datauppsättningsstorlek</li><li>Antal rader</li><li>Namnsökning </li><li>Sök namn och ID</li></ul> | <ul><li>Granskning</li><li>Skapad av</li><li>Datauppsättning - batchrelation</li><li>Skapa/ändra datauppsättning</li><li>Antal profiler</li><li>Värdesökning</li></ul> |
+| Datamodeller (sammansatt målgrupp) | <ul><li>Antal datamodeller</li><li>Namnsökning</li><li>Datamodell och schemarelation</li><li>Länkegenskaper</li><li>Status</li><li>Skapande- och ändringsdatum</li><li>Relation mellan länkdatamodell</li></ul> | |
 | Mål | <ul><li>Konfigurerade destinationsantal</li><li>Mål - målgruppsrelation</li><li>Destinationsattributrelation</li></ul> | <ul><li>Kontoinställning</li><li>Autentiseringsinformation för konto</li><li>Unika profiler har aktiverats</li></ul> |
+| Federerade databaser (sammansatt publiksammansättning) | <ul><li>Antal databaser</li><li>Databasnamn</li><li>Databastyp</li><li>Skapade/ändrade datum</li><li>Status</li></ul> | |
 | Resor | <ul><li>Antal</li><li>Namnsökning</li><li>Sök namn och ID</li><li>Resestatus</li><li>Utlöst status (målgrupp kontra händelse)</li><li>Skapande-/ändringsdatum</li><li>Återkommande frekvens</li></ul> | <ul><li>Attribut - reserelationer</li><li>Granskning</li><li>Skapande/ändring</li><li>Skapad av</li><li>Händelser</li><li>Resa - datauppsättning</li><li>Resa - schema</li><li>Erbjudanden</li><li>Profilkvalificeringstrender</li><li>Steg för händelser</li></ul> |
 | Scheman | <ul><li>Antal scheman</li><li>Skapad/ändrad den</li><li>Schema - attributrelation</li><li>Schema - datauppsättningsrelation</li><li>Schema - målgruppsrelation</li><li>Aktivera profilstatus</li><li>Namnsökning</li><li>Sök namn och ID</li></ul> | <ul><li>Granskning</li><li>Skapande/ändring</li><li>Skapad av</li><li>Fältgrupper</li><li>Identiteter</li><li>Identitetsnamnutrymmen</li><li>Etiketter</li><li>Antal profiler</li></ul> |
+| Scheman (sammanställning av federerad publik) | <ul><li>Antal scheman</li><li>Schemanamn/etikettsökning</li><li>Skapande- och ändringsdatum</li><li>Schema-databasrelation</li><li>Målgruppstyper</li></ul> | <ul><li>Schemakompositionsrelation</li><li>Schemaegenskaper</li></ul> |
 | Källor | <ul><li>Konton</li><li>Kontostatus</li><li>Aktiva/inaktiva dataflöden för varje konto</li><li>Source-anslutning - dataflödesrelation</li><li>Source-konto - dataflödesrelation</li></ul> | <ul><li>Information om kontoautentiseringsuppgifter</li><li>Kontoinställning</li><li>Mätvärden för dataöverföring</li><li>Antal profiler</li><li>Source - batchrelationer</li></ul> |
 
 {style="table-layout:auto"}
@@ -104,7 +107,7 @@ När det gäller frågor om driftsinsikter kanske svaren inte speglar det aktuel
 
 Titta på följande video för mer information om AI Assistant (äldre) driftsinsikter:
 
->[!VIDEO](https://video.tv.adobe.com/v/3444036?captions=swe&learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3444031?learn=on&enablevpops)
 
 ### Funktionsomfång {#feature-scope}
 
