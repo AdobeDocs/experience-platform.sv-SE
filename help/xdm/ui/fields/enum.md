@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Definiera uppräkningsfält och föreslagna värden i användargränssnittet
 description: Lär dig hur du definierar enum och föreslagna värden för strängfält i Experience Platform användargränssnitt.
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '1222'
 ht-degree: 0%
@@ -40,7 +40,7 @@ Välj **[!UICONTROL Enums and Suggested Values]** och sedan **[!UICONTROL Enums]
 
 Under kolumnen **[!UICONTROL Value]** måste du ange det exakta värde som du vill begränsa fältet till. Du kan även ange en användarvänlig **[!UICONTROL Display Name]** för begränsningen, vilket påverkar hur värdet kommer att representeras i segmenteringen.
 
-Fortsätt att använda **[!UICONTROL Add row]** för att lägga till önskade begränsningar och valfria etiketter i uppräkningen, eller markera ikonen Ta bort (![Bild av ikonen Ta bort &#x200B;](/help/images/icons/remove-circle.png)) bredvid en rad som du tidigare lagt till för att ta bort den. När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringarna på schemat.
+Fortsätt att använda **[!UICONTROL Add row]** för att lägga till önskade begränsningar och valfria etiketter i uppräkningen, eller markera ikonen Ta bort (![Bild av ikonen Ta bort ](/help/images/icons/remove-circle.png)) bredvid en rad som du tidigare lagt till för att ta bort den. När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringarna på schemat.
 
 ![Bild som visar uppräkningsvärden och visningsnamn som fyllts i för strängfältet i användargränssnittet](../../images/ui/fields/enum/enum-confirm.png)
 
@@ -64,7 +64,7 @@ När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringar
 
 ### Hantera föreslagna värden för standardfält
 
-Vissa fält från standard-XDM-komponenter innehåller egna föreslagna värden, till exempel `eventType` från [[!UICONTROL XDM ExperienceEvent] class &#x200B;](../../classes/experienceevent.md). Du kan skapa ytterligare föreslagna värden för ett standardfält, men du kan inte ändra eller ta bort föreslagna värden som inte har definierats av organisationen. När du visar ett standardfält i användargränssnittet visas de föreslagna värdena, men de är skrivskyddade.
+Vissa fält från standard-XDM-komponenter innehåller egna föreslagna värden, till exempel `eventType` från [[!UICONTROL XDM ExperienceEvent] class ](../../classes/experienceevent.md). Du kan skapa ytterligare föreslagna värden för ett standardfält, men du kan inte ändra eller ta bort föreslagna värden som inte har definierats av organisationen. När du visar ett standardfält i användargränssnittet visas de föreslagna värdena, men de är skrivskyddade.
 
 ![Bild som visar uppräkningsvärden och visningsnamn som fyllts i för strängfältet i användargränssnittet](../../images/ui/fields/enum/suggested-standard.png)
 
@@ -72,7 +72,8 @@ Om du vill lägga till nya föreslagna värden för ett standardfält väljer du
 
 ![Bild som visar uppräkningsvärden och visningsnamn som fyllts i för strängfältet i användargränssnittet](../../images/ui/fields/enum/suggested-standard-add.png)
 
-<!-- ### Removing suggested values for standard fields
+<!-- 
+### Removing suggested values for standard fields
 
 Only suggested values that you define can be removed from a standard field. Existing suggested values can be disabled so that they no longer appear in the segmentation dropdown, but they cannot be removed outright.
 
@@ -82,7 +83,8 @@ For example, consider a profile schema where the a suggested value for the stand
 
 In this example, the display name "[!UICONTROL Non-specific]" is now disabled from being shown in the segmentation dropdown list. However, the value `non_specific` is still part of the list of enumerated fields and is therefore still allowed on ingestion. In other words, you cannot disable the actual enum value for the standard field as it would go against the principle of only allowing changes that make a field less restrictive.
 
-See the [section below](#evolution) for more information on the rules for updating enums and suggested values for existing schema fields. -->
+See the [section below](#evolution) for more information on the rules for updating enums and suggested values for existing schema fields. 
+-->
 
 ## Utvecklingsregler för enum och föreslagna värden {#evolution}
 

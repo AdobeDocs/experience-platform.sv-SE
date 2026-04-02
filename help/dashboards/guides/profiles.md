@@ -4,7 +4,7 @@ title: Kontrollpanel för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '4677'
 ht-degree: 0%
@@ -55,7 +55,8 @@ I widgetbiblioteket kan du bläddra bland alla standardwidgetar och anpassade m�
 
 Du kan visa den SQL som genererar de insikter som visualiserats på din instrumentpanel med en växlingsknapp på arbetsytan för [!UICONTROL Overview]. Ni kan hämta inspiration från SQL:s befintliga insikter för att skapa nya frågor som bygger på unika insikter från Experience Platform-data utifrån era affärsbehov. Mer information om den här funktionen finns i [Visa gränssnittshandboken för SQL](../view-sql.md).
 
-<!-- ## (Beta) Profile efficacy insights {#profile-efficacy-insights}
+<!-- 
+## (Beta) Profile efficacy insights {#profile-efficacy-insights}
 
 >[!IMPORTANT]
 >
@@ -67,7 +68,8 @@ The [!UICONTROL Efficacy] tab provides metrics on the quality and completeness o
 
 See the [profile efficacy widgets section](#profile-efficacy-widgets) for more information on the widgets currently available.
 
-The layout of this dashboard is also customizable by selecting [**[!UICONTROL Modify dashboard]**](../customize/modify.md) from the [!UICONTROL Overview] tab. -->
+The layout of this dashboard is also customizable by selecting [**[!UICONTROL Modify dashboard]**](../customize/modify.md) from the [!UICONTROL Overview] tab. 
+-->
 
 ## Bläddra bland profiler {#browse-profiles}
 
@@ -439,7 +441,8 @@ Widgeten [!UICONTROL Unsegmented profiles change trend] använder ett linjediagr
 
 The [!UICONTROL Unsegmented Profiles by Identity] widget categorizes the total number of unsegmented profiles by their unique identifier. The data is visualized in a bar chart for ease of comparison. 
 
-![The Unsegmented Profiles by Identity widget.](../images/profiles/unsegmented-profiles-by-identity.png) -->
+![The Unsegmented Profiles by Identity widget.](../images/profiles/unsegmented-profiles-by-identity.png) 
+-->
 
 ### [!UICONTROL Audiences] {#audiences}
 
@@ -452,11 +455,13 @@ Välj **[!UICONTROL Audiences]** om du vill navigera till fliken [!UICONTROL Aud
 <!-- https://jira.corp.adobe.com/browse/PLAT-115291 -->
 
 <!-- * [[!UICONTROL Audiences change trend]](#audiences-change-trend) -->
-<!-- ### [!UICONTROL Audiences change trend] {#audiences-change-trend}
+<!-- 
+### [!UICONTROL Audiences change trend] {#audiences-change-trend}
 
 This line graph widget visualizes the change in the total number of audiences each day, trending over time. The change in the number of audiences is dependent on the selected merge policy being applied to your profile data. The period of analysis is selected from the widget dropdown menu. The bar chart can be visualized over 30 days, 90 days, and 12-month periods.
 
-The visualization allows you to monitor the overall health of audiences within Adobe Experience Platform by understanding trends in the growth or decline of the total number of audiences. -->
+The visualization allows you to monitor the overall health of audiences within Adobe Experience Platform by understanding trends in the growth or decline of the total number of audiences. 
+-->
 
 <!-- ![The Audiences change trend widget.]() -->
 
@@ -517,7 +522,8 @@ När widgeten visar den visuella överlappningen av segmentdefinitioner kan du o
 ![Kontrollpanelen för Experience Platform UI-profiler med listrutan för sammanslagningsprinciper och listrutorna för widgetens målgrupp är markerade.](../images/profiles/audience-overlap-by-merge-policy.png)
 
 
-<!-- ## (Beta) Profile efficacy widgets {#profile-efficacy-widgets}
+<!-- 
+## (Beta) Profile efficacy widgets {#profile-efficacy-widgets}
 
 >[!IMPORTANT]
 >
@@ -583,7 +589,8 @@ The three levels of completeness are:
 * Medium completeness: Profiles have less than 70% and more than 30% of attributes filled. 
 * Low completeness: Profiles have less than 30% of attributes filled.
 
-![The profiles completeness trend widget](../images/profiles/profiles-completeness-trend.png) -->
+![The profiles completeness trend widget](../images/profiles/profiles-completeness-trend.png) 
+-->
 
 ## Nästa steg
 
