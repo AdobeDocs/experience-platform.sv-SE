@@ -150,7 +150,7 @@ Om du vill importera paketet till en mållandlåda går du till fliken Sandlådo
 
 Välj den **[!UICONTROL Package name]** som du vill importera till målsandlådan med hjälp av listrutan. Lägg till en **[!UICONTROL Job name]** som kommer att användas för framtida övervakning. Som standard inaktiveras den enhetliga profilen när paketets scheman importeras. Aktivera det här genom att växla **Aktivera scheman för profilen** och sedan välja **[!UICONTROL Next]**.
 
-![Sidan med importinformation som visar [!UICONTROL Package name] listrutemarkeringen ](../images/ui/sandbox-tooling/import-package-to-sandbox.png)
+![Sidan med importinformation som visar [!UICONTROL Package name] listrutemarkeringen &#x200B;](../images/ui/sandbox-tooling/import-package-to-sandbox.png)
 
 Sidan [!UICONTROL Package object and dependencies] innehåller en lista med alla resurser som ingår i det här paketet. Systemet identifierar automatiskt beroende objekt som krävs för att importera markerade överordnade objekt. Eventuella attribut som saknas visas högst upp på sidan. Välj **[!UICONTROL View details]** om du vill ha en mer detaljerad beskrivning.
 
@@ -217,7 +217,7 @@ Om du vill importera paketet till en målsandlåda går du till fliken [!UICONTR
 
 Använd listrutan och markera den fullständiga sandlådan med listrutan **[!UICONTROL Package name]**. Lägg till en **[!UICONTROL Job name]** som kommer att användas för framtida övervakning och en valfri **[!UICONTROL Job description]** och välj sedan **[!UICONTROL Next]**.
 
-![Sidan med importinformation som visar [!UICONTROL Package name] listrutemarkeringen ](../images/ui/sandbox-tooling/import-full-sandbox-package.png)
+![Sidan med importinformation som visar [!UICONTROL Package name] listrutemarkeringen &#x200B;](../images/ui/sandbox-tooling/import-full-sandbox-package.png)
 
 >[!NOTE]
 >
