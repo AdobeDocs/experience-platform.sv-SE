@@ -3,7 +3,7 @@ title: Real-Time Customer Data Platform Insights datamodell B2C Edition
 description: Lär dig hur du använder SQL-frågor med Real-Time Customer Data Platform Insights Data Models (B2C Edition) för att anpassa dina egna Real-Time CDP-rapporter för din marknadsföring och dina KPI-användningsfall.
 badgeB2C: null
 exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
-source-git-commit: a32064848809d1cad07f769f04d82c35df451e38
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '1051'
 ht-degree: 0%
@@ -18,7 +18,7 @@ Real-Time Customer Data Platform Insights-datamodellen för [B2C Edition](../../
 >
 >Termen segment har uppdaterats till målgrupp i alla Adobe Experience Platform-system. Vissa referenser till segment används fortfarande för filsökvägar och namnkonventioner för datauppsättningar.
 
-## Förhandskrav
+## Förutsättningar
 
 Den här handboken kräver en fungerande förståelse av den [användardefinierade instrumentpanelsfunktionen](../standard-dashboards.md). Läs dokumentationen innan du fortsätter med den här guiden.
 
@@ -44,7 +44,7 @@ Bilden nedan innehåller de relevanta datafälten i varje datauppsättning.
 
 #### Användningsfall för antal profiler {#profile-count}
 
-Logiken som används för widgeten [!UICONTROL Profile count] returnerar det totala antalet sammanfogade profiler i profilarkivet när ögonblicksbilden togs. Mer information finns i [[!UICONTROL Profile count]-widgetens dokumentation &#x200B;](../guides/profiles.md#profile-count).
+Logiken som används för widgeten [!UICONTROL Profile count] returnerar det totala antalet sammanfogade profiler i profilarkivet när ögonblicksbilden togs. Mer information finns i [[!UICONTROL Profile count]-widgetens dokumentation ](../guides/profiles.md#profile-count).
 
 Den SQL som genererar widgeten [!UICONTROL Profile count] visas i det infällbara avsnittet nedan.
 
@@ -64,7 +64,7 @@ SELECT qsaccel.profile_agg.adwh_dim_merge_policies.merge_policy_name,
 
 #### Enstaka identitetsprofiler använder sig av gemener/VERSALER {#single-identity-profiles}
 
-Den logik som används för widgeten [!UICONTROL Single identity profiles] ger en räkning av din organisations profiler som bara har en typ av ID som skapar deras identitet. Mer information finns i [[!UICONTROL Single identity profiles]-widgetens dokumentation &#x200B;](../guides/profiles.md#single-identity-profiles).
+Den logik som används för widgeten [!UICONTROL Single identity profiles] ger en räkning av din organisations profiler som bara har en typ av ID som skapar deras identitet. Mer information finns i [[!UICONTROL Single identity profiles]-widgetens dokumentation ](../guides/profiles.md#single-identity-profiles).
 
 Den SQL som genererar widgeten [!UICONTROL Single identity profiles] visas i det infällbara avsnittet nedan.
 
@@ -97,7 +97,7 @@ Bilden nedan innehåller de relevanta datafälten i varje datauppsättning.
 
 #### Profiler efter användningsfall för identitet {#profiles-by-identity}
 
-Widgeten [!UICONTROL Profiles by identity] visar uppdelningen av identiteter för alla sammanfogade profiler i din profilbutik. Mer information finns i [[!UICONTROL Profiles by identity]-widgetens dokumentation &#x200B;](../guides/profiles.md#profiles-by-identity).
+Widgeten [!UICONTROL Profiles by identity] visar uppdelningen av identiteter för alla sammanfogade profiler i din profilbutik. Mer information finns i [[!UICONTROL Profiles by identity]-widgetens dokumentation ](../guides/profiles.md#profiles-by-identity).
 
 Den SQL som genererar widgeten [!UICONTROL Profiles by identity] visas i det infällbara avsnittet nedan.
 
@@ -160,7 +160,7 @@ Bilden nedan innehåller de relevanta datafälten i varje datauppsättning.
 
 #### Målgruppsstorlek - skiftläge {#audience-size}
 
-Logiken som används för widgeten [!UICONTROL Audience size] returnerar det totala antalet sammanslagna profiler inom den valda målgruppen vid tidpunkten för den senaste ögonblicksbilden. Mer information finns i [[!UICONTROL Audience size]-widgetens dokumentation &#x200B;](../guides/audiences.md#audience-size).
+Logiken som används för widgeten [!UICONTROL Audience size] returnerar det totala antalet sammanslagna profiler inom den valda målgruppen vid tidpunkten för den senaste ögonblicksbilden. Mer information finns i [[!UICONTROL Audience size]-widgetens dokumentation ](../guides/audiences.md#audience-size).
 
 Den SQL som genererar widgeten [!UICONTROL Audience size] visas i det infällbara avsnittet nedan.
 
@@ -184,7 +184,7 @@ WHERE
 
 #### Trend för ändring av målgruppsstorlek - skiftläge {#audience-size-change-trend}
 
-Den logik som används för widgeten [!UICONTROL Audience size change trend] ger en illustration av skillnaden i det totala antalet profiler som är kvalificerade för en viss målgrupp mellan de senaste ögonblicksbilderna. Mer information finns i [[!UICONTROL Audience size change trend]-widgetens dokumentation &#x200B;](../guides/audiences.md#audience-size-change-trend).
+Den logik som används för widgeten [!UICONTROL Audience size change trend] ger en illustration av skillnaden i det totala antalet profiler som är kvalificerade för en viss målgrupp mellan de senaste ögonblicksbilderna. Mer information finns i [[!UICONTROL Audience size change trend]-widgetens dokumentation ](../guides/audiences.md#audience-size-change-trend).
 
 Den SQL som genererar widgeten [!UICONTROL Audience size change trend] visas i det infällbara avsnittet nedan.
 
@@ -246,7 +246,7 @@ SELECT qsaccel.profile_agg.adwh_dim_destination.destination_name,
 
 #### Nyligen aktiverade målgrupper - användningsfall {#recently-activated-audiences}
 
-Logiken i widgeten [!UICONTROL Recently activated audiences] innehåller en lista över de målgrupper som senast har mappats till ett mål. Den här listan innehåller en ögonblicksbild av de målgrupper och mål som används aktivt i systemet och kan hjälpa till att felsöka felaktiga mappningar. Mer information finns i [[!UICONTROL Recently activated audiences]-widgetens dokumentation &#x200B;](../guides/destinations.md#recently-activated-audiences).
+Logiken i widgeten [!UICONTROL Recently activated audiences] innehåller en lista över de målgrupper som senast har mappats till ett mål. Den här listan innehåller en ögonblicksbild av de målgrupper och mål som används aktivt i systemet och kan hjälpa till att felsöka felaktiga mappningar. Mer information finns i [[!UICONTROL Recently activated audiences]-widgetens dokumentation ](../guides/destinations.md#recently-activated-audiences).
 
 Den SQL som genererar widgeten [!UICONTROL Recently activated audiences] visas i det infällbara avsnittet nedan.
 
@@ -290,7 +290,7 @@ Bilden nedan innehåller de relevanta datafälten i varje datauppsättning.
 
 #### Profiler per identitet för ett målgruppsärende {#audience-profiles-by-identity}
 
-Logiken som används i widgeten [!UICONTROL Profiles by identity] ger en beskrivning av identiteterna för alla sammanfogade profiler i din profilbutik för en viss målgrupp. Mer information finns i [[!UICONTROL Profiles by identity]-widgetens dokumentation &#x200B;](../guides/audiences.md#profiles-by-identity).
+Logiken som används i widgeten [!UICONTROL Profiles by identity] ger en beskrivning av identiteterna för alla sammanfogade profiler i din profilbutik för en viss målgrupp. Mer information finns i [[!UICONTROL Profiles by identity]-widgetens dokumentation ](../guides/audiences.md#profiles-by-identity).
 
 Den SQL som genererar widgeten [!UICONTROL Profiles by identity] visas i det infällbara avsnittet nedan.
 
@@ -326,7 +326,7 @@ Bilden nedan innehåller de relevanta datafälten i varje datauppsättning.
 
 #### Användningsfall för identitetsöverlappning (profiler) {#profiles-identity-overlap}
 
-Logiken som används i widgeten [!UICONTROL Identity overlap] visar överlappningen av profiler i din **profilbutik** som innehåller de två valda identiteterna. Mer information finns i avsnittet [[!UICONTROL Identity overlap] widget i [!UICONTROL Profiles] instrumentpanelens dokumentation &#x200B;](../guides/profiles.md#identity-overlap).
+Logiken som används i widgeten [!UICONTROL Identity overlap] visar överlappningen av profiler i din **profilbutik** som innehåller de två valda identiteterna. Mer information finns i avsnittet [[!UICONTROL Identity overlap] widget i [!UICONTROL Profiles] instrumentpanelens dokumentation ](../guides/profiles.md#identity-overlap).
 
 Den SQL som genererar widgeten [!UICONTROL Identity overlap] visas i det infällbara avsnittet nedan.
 
@@ -395,7 +395,7 @@ Bilden nedan innehåller de relevanta datafälten i varje datauppsättning.
 
 #### Användningsfall för identitetsöverlappning (målgrupper) {#audiences-identity-overlap}
 
-Den logik som används i widgeten [!UICONTROL Audiences] dashboard [!UICONTROL Identity overlap] illustrerar överlappningen av profiler som innehåller de två valda identiteterna för en viss målgrupp. Mer information finns i avsnittet [[!UICONTROL Identity overlap] widget i [!UICONTROL Audiences] instrumentpanelens dokumentation &#x200B;](../guides/audiences.md#identity-overlap).
+Den logik som används i widgeten [!UICONTROL Audiences] dashboard [!UICONTROL Identity overlap] illustrerar överlappningen av profiler som innehåller de två valda identiteterna för en viss målgrupp. Mer information finns i avsnittet [[!UICONTROL Identity overlap] widget i [!UICONTROL Audiences] instrumentpanelens dokumentation ](../guides/audiences.md#identity-overlap).
 
 Den SQL som genererar widgeten [!UICONTROL Identity overlap] visas i det infällbara avsnittet nedan.
 
@@ -448,7 +448,8 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 +++
 
-<!-- Commented out as Anil wanted to add something but did not provide information yet:
+<!-- 
+Commented out as Anil wanted to add something but did not provide information yet:
 ### Overlap Namespace-Audience model {#overlap-namespace-audience-model}
 
 The overlap namespace-audience model is comprised of the following datasets: 
@@ -463,11 +464,13 @@ The overlap namespace-audience model is comprised of the following datasets:
 - `adwh_dim_destination`
 - `adwh_dim_destination_platform`
 
-![An ERD of the overlap namespace-audience model.](../images/cdp-insights/overlap-namespace-audience-model.png) -->
+![An ERD of the overlap namespace-audience model.](../images/cdp-insights/overlap-namespace-audience-model.png) 
+-->
 
 <!-- What insights are gathered from this particular data model? -->
 
-<!-- Commented out as Anil wanted to add something but did not provide information yet:
+<!-- 
+Commented out as Anil wanted to add something but did not provide information yet:
 ### AI model {#ai-model}
 
 The AI model is comprised of the following datasets: 
@@ -477,7 +480,8 @@ The AI model is comprised of the following datasets:
 - `adwh_dim_merge_policies`
 - `adwh_dim_ai_models`
 
-![An ERD of the AI model.](./images/cdp-insights/ai-model.png) -->
+![An ERD of the AI model.](./images/cdp-insights/ai-model.png) 
+-->
 
 <!-- What insights are gathered from this particular data model? -->
 
