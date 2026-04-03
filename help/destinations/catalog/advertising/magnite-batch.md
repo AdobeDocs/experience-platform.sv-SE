@@ -3,7 +3,7 @@ title: Magnite Batch Destination
 description: Använd den här destinationen för att leverera Adobe CDP-målgrupper till Magnite Streaming-plattformen i batch.
 last-substantial-update: 2024-11-18T00:00:00Z
 exl-id: 8cc3890f-84f8-49d1-a329-322c13f9e5af
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1756'
 ht-degree: 0%
@@ -167,7 +167,7 @@ I **[!UICONTROL Source field]** kan du välja attribut eller identitet för dina
 ![mappa önskade datafält till fältet device_id](../../assets/catalog/advertising/magnite/destination-batch-active-audience-field-mapping.png)
 
 I **[!UICONTROL Target field]**:
-![&#x200B; Välj lämplig målidentitet för enhetstyp &#x200B;](../../assets/catalog/advertising/magnite/destination-batch-active-audience-select-device-type.png) Mer information finns i [&#x200B; Identiteter som stöds &#x200B;](#supported-identities) .
+![ Välj lämplig målidentitet för enhetstyp ](../../assets/catalog/advertising/magnite/destination-batch-active-audience-select-device-type.png) Mer information finns i [ Identiteter som stöds ](#supported-identities) .
 I det här exemplet har vi valt **[!UICONTROL Target field]**: magnite_deviceId_CUSTOM eftersom **[!UICONTROL Source field]** definierades som en anpassad IdentityMap: DeviceID.
 
 >[!NOTE]
