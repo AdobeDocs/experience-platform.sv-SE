@@ -2,7 +2,7 @@
 title: Attributanalys
 description: I det här dokumentet förklaras hur du kan använda Query Service för att skapa en mätningsteknik för marknadsföringseffektivitet som baseras på marknadsattribueringsmodellen för första och sista beröringen.
 exl-id: d62cd349-06fc-4ce6-a5e8-978f11186927
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1418'
 ht-degree: 0%
@@ -19,10 +19,10 @@ SQL-exemplen i det här dokumentet är frågor som ofta används med Adobe Analy
 
 * [Adobe Analytics-källkopplingen för rapportsvitens dataöversikt](../../sources/connectors/adobe-applications/mapping/analytics.md).
 * [Analysfältmappningsdokumentationen](../../sources/connectors/adobe-applications/mapping/analytics.md) innehåller mer information om hur analysdata hämtas och mappas för användning med frågetjänsten.
-* [Attribution IQ - översikt](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html?lang=sv-SE)
-* [Guiden för Adobe Analytics-panelen Attribution](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/panels/attribution.html?lang=sv-SE).
+* [Attribution IQ - översikt](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html)
+* [Guiden för Adobe Analytics-panelen Attribution](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/panels/attribution.html).
 
-En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](../sql/adobe-defined-functions.md#window-functions). [Adobe Marketing och Commerce Term Glossary](https://business.adobe.com/se/glossary/index.html) kan också användas.
+En förklaring av parametrarna i funktionen `OVER()` finns i avsnittet [fönsterfunktioner](../sql/adobe-defined-functions.md#window-functions). [Adobe Marketing och Commerce Term Glossary](https://business.adobe.com/glossary/index.html) kan också användas.
 
 För vart och ett av följande användningsfall anges ett parametriserat SQL-frågeexempel som en mall som du kan anpassa. Ange parametrar där du ser `{ }` i de SQL-exempel som du är intresserad av att utvärdera.
 
