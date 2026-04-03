@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform april 2024
 description: Versionsinformationen för Adobe Experience Platform från april 2024.
 exl-id: 86d72fd8-a464-4715-abc9-4177236e423c
-source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1893'
 ht-degree: 98%
@@ -21,7 +21,7 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 
 - [Kontrollpaneler](#dashboards)
 - [Datainsamling](#data-collection)
-- [Mål &#x200B;](#destinations)
+- [Mål ](#destinations)
 - [Identitetstjänst](#identity-service)
 - [Övervakning](#monitoring)
 - [Frågetjänst](#query-service)
@@ -61,7 +61,7 @@ Adobe Experience Platform erbjuder en rad olika tekniker som gör att ni kan sam
 
 {style="table-layout:auto"}
 
-<!--| Web SDK | [Streaming Media Collection support in Web SDK](/help/collection/js/commands/configure/streamingmedia.md) | You can now use Experience Platform Web SDK to collect data related to media sessions on your website. The collected data can include information about media playbacks, pauses, completions, and other related events. Once collected, you can send this data to Adobe Experience Platform and/or Adobe Analytics, to generate reports. This feature provides a comprehensive solution for tracking and understanding media consumption behavior on your website. <br>See the [Web SDK](/help/collection/js/commands/configure/streamingmedia.md) documentation to learn how to configure the `streamingMedia` component. <br>See the guide on [migrating your Analytics for Streaming Media implementation from Media JS to Web SDK](https://experienceleague.adobe.com/sv/docs/media-analytics/using/implementation/edge-recommended/media-edge-sdk/edge-web-sdk) for more details.|-->
+<!--| Web SDK | [Streaming Media Collection support in Web SDK](/help/collection/js/commands/configure/streamingmedia.md) | You can now use Experience Platform Web SDK to collect data related to media sessions on your website. The collected data can include information about media playbacks, pauses, completions, and other related events. Once collected, you can send this data to Adobe Experience Platform and/or Adobe Analytics, to generate reports. This feature provides a comprehensive solution for tracking and understanding media consumption behavior on your website. <br>See the [Web SDK](/help/collection/js/commands/configure/streamingmedia.md) documentation to learn how to configure the `streamingMedia` component. <br>See the guide on [migrating your Analytics for Streaming Media implementation from Media JS to Web SDK](https://experienceleague.adobe.com/en/docs/media-analytics/using/implementation/edge-recommended/media-edge-sdk/edge-web-sdk) for more details.|-->
 
 Läs mer på [översikten över datainsamling](../../collection/home.md).
 
