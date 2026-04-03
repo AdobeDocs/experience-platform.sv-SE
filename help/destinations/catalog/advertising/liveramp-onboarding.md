@@ -3,7 +3,7 @@ title: LiveRamp - Onboarding-anslutning
 description: Lär dig använda LiveRamp-kontakten för att ta in målgrupper från Adobe Real-Time Customer Data Platform till LiveRamp Connect.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1988'
 ht-degree: 0%
