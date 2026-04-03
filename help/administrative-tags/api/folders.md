@@ -3,7 +3,7 @@ title: Slutpunkt för mappar
 description: Lär dig hur du skapar, uppdaterar, hanterar och tar bort mappar med Adobe Experience Platform API:er.
 role: Developer
 exl-id: ee43d699-725d-4ffd-a71b-049eeb3b4d7c
-source-git-commit: 78aa48701abaadea963b25e390aa96d7b31386f4
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '818'
 ht-degree: 1%
@@ -26,7 +26,7 @@ Innan du fortsätter bör du läsa [kom igång-guiden](./getting-started.md) fö
 
 ## Hämta en lista med mappar {#list}
 
-Du kan hämta en lista över mappar som tillhör din organisation genom att göra en GET-förfrågan till slutpunkten `/folder` och ange mapptypen och det överordnade mapp-ID:t.
+Du kan hämta en lista över mappar som tillhör din organisation genom att göra en GET-begäran till slutpunkten `/folder` och ange mapptypen och det överordnade mapp-ID:t.
 
 **API-format**
 
@@ -58,7 +58,7 @@ curl -X GET https://experience.adobe.io/unifiedfolders/folders/dataset/root/subf
 
 Ett lyckat svar returnerar HTTP-status 200 med en lista över alla mappar på den översta nivån för datauppsättningen i organisationen.
 
-+++Ett exempelsvar som innehåller en lista över alla mappar på den översta nivån för datauppsättningen i organisationen.
++++Ett exempelsvar som innehåller en lista med alla mappar på den översta nivån för datauppsättningar i din organisation.
 
 ```json
 {
@@ -113,7 +113,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över alla mappar på de
 
 ## Skapa en ny mapp {#create}
 
-Du kan skapa en ny POST genom att göra en mappförfrågan till slutpunkten `/folder` och ange mapptypen.
+Du kan skapa en ny mapp genom att göra en POST-begäran till slutpunkten `/folder` och ange mapptypen.
 
 **API-format**
 
@@ -127,7 +127,7 @@ POST /folders/{FOLDER_TYPE}
 
 **Begäran**
 
-+++En exempelbegäran om att skapa en ny mapp.
++++Ett exempel på en begäran om att skapa en ny mapp.
 
 ```shell
 curl -X POST https://experience.adobe.io/unifiedfolders/folders/dataset
@@ -185,7 +185,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om din nya mapp.
 
 ## Hämta en specifik mapp {#get}
 
-Du kan hämta en specifik mapp som tillhör din organisation genom att göra en GET-förfrågan till slutpunkten `/folder` och ange mapptypen och mappens ID.
+Du kan hämta en specifik mapp som tillhör din organisation genom att göra en GET-begäran till slutpunkten `/folder` och ange mapptypen och mappens ID.
 
 **API-format**
 
@@ -200,7 +200,7 @@ GET /folders/{FOLDER_TYPE}/{FOLDER_ID}
 
 **Begäran**
 
-+++En exempelbegäran för att hämta en specifik mapp
++++Ett exempel på en begäran om att hämta en specifik mapp
 
 ```shell
 curl -X GET https://experience.adobe.io/unifiedfolders/folders/dataset/83f8287c-767b-4106-b271-257282fd170e
@@ -256,7 +256,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den begärda mappe
 
 ## Validera en angiven mapp {#validate}
 
-Du kan validera om en mapp är berättigad att ha objekt i den genom att göra en GET-förfrågan till slutpunkten `/folder/{FOLDER_TYPE}/{FOLDER_ID}/validate` och ange både mapptyp och ID.
+Du kan validera om en mapp är berättigad att ha objekt i den genom att göra en GET-begäran till slutpunkten `/folder/{FOLDER_TYPE}/{FOLDER_ID}/validate` och ange både mapptyp och ID.
 
 **API-format**
 
@@ -271,7 +271,7 @@ GET /folders/{FOLDER_TYPE}/{FOLDER_ID}/validate
 
 **Begäran**
 
-+++En exempelbegäran om att validera en specifik mapp
++++Ett exempel på en förfrågan om att validera en viss mapp
 
 ```shell
 curl -X GET https://experience.adobe.io/unifiedfolders/folders/dataset/83f8287c-767b-4106-b271-257282fd170e/validate
@@ -331,7 +331,7 @@ PATCH /folders/{FOLDER_TYPE}/{FOLDER_ID}
 
 **Begäran**
 
-+++En exempelbegäran om att uppdatera en specifik mapp
++++Ett exempel på en begäran om att uppdatera en viss mapp
 
 ```shell
 curl -X GET https://experience.adobe.io/unifiedfolders/folders/dataset/83f8287c-767b-4106-b271-257282fd170e
