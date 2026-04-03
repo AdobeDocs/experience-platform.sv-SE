@@ -5,7 +5,7 @@ title: API-slutpunkt för datahanteringsprinciper
 description: Datastyrningsprinciper är regler som din organisation antar som beskriver den typ av marknadsföringsåtgärder som du har rätt att, eller som begränsas från, utföra på data inom Experience Platform. Slutpunkten /policies används för alla API-anrop som rör visning, skapande, uppdatering eller borttagning av datastyrningsprinciper.
 role: Developer
 exl-id: 62a6f15b-4c12-4269-bf90-aaa04c147053
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1864'
 ht-degree: 0%
