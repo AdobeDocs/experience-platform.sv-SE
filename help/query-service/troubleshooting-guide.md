@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Fråga service och data Distiller frågor och svar
 description: Det här dokumentet innehåller vanliga frågor och svar om Query Service och Data Distiller. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: f072f95823768d5b65169b56bb874ae9c3986c44
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '5423'
 ht-degree: 0%
@@ -91,7 +91,7 @@ Nej. Det finns ingen gräns för datastorlek, men det finns en timeout för frå
 +++Svar
 En eller flera av följande lösningar rekommenderas vid timeout i frågor.
 
-- [Konvertera frågan till en CTAS-fråga](./sql/syntax.md#create-table-as-select) och schemalägg körningen. Du kan schemalägga en körning antingen [&#x200B; via gränssnittet &#x200B;](./ui/user-guide.md#scheduled-queries) eller [API](./api/scheduled-queries.md#create).
+- [Konvertera frågan till en CTAS-fråga](./sql/syntax.md#create-table-as-select) och schemalägg körningen. Du kan schemalägga en körning antingen [ via gränssnittet ](./ui/user-guide.md#scheduled-queries) eller [API](./api/scheduled-queries.md#create).
 - Kör frågan i ett mindre datasegment genom att tillämpa ytterligare [filtervillkor](https://spark.apache.org/docs/latest/api/sql/index.html#filter).
 - [Kör EXPLAIN-kommandot](./sql/syntax.md#explain) om du vill samla in mer information.
 - Granska statistiken för data i datauppsättningen.
@@ -372,7 +372,7 @@ LIMIT 100;
 
 ### Hur ändrar jag tidszonen till och från en UTC-tidsstämpel?
 
-+++Svar
++++ Svar
 Adobe Experience Platform innehåller data i UTC-format (Coordinated Universal Time) för tidsstämpling. Ett exempel på UTC-formatet är `2021-12-22T19:52:05Z`
 
 Frågetjänsten stöder inbyggda SQL-funktioner för konvertering av en viss tidsstämpel till och från UTC-format. Metoderna `to_utc_timestamp()` och `from_utc_timestamp()` har två parametrar: timestamp och timezone.
@@ -381,6 +381,8 @@ Frågetjänsten stöder inbyggda SQL-funktioner för konvertering av en viss tid
 |-----------|---------------|
 | Tidsstämpel | Tidsstämpeln kan skrivas i antingen UTC-format eller enkelt `{year-month-day}`-format. Om ingen tid anges är standardvärdet midnatt på morgonen den angivna dagen. |
 | Tidszon | Tidszonen skrivs i formatet `{continent/city})`. Det måste vara en av de erkända tidszonskoderna som finns i TZ-databasen [för offentlig domän](https://data.iana.org/time-zones/tz-link.html#tzdb). |
+
++++
 
 #### Konvertera till UTC-tidsstämpeln
 
@@ -420,7 +422,7 @@ Frågan returnerar en tidsstämpel i UTC-format för den tidszon som skickas som
 
 ### Hur ska jag filtrera mina tidsseriedata?
 
-+++Svar
++++ Svar
 När du frågar med tidsseriedata bör du använda tidsstämpelfiltret när det är möjligt för att få en mer korrekt analys.
 
 >[!NOTE]
@@ -785,7 +787,7 @@ Ja, klientdatorer från tredje part kan anslutas till Query Service via en engå
 
 +++Svar
 Värdet för autentiseringsuppgifter som inte förfaller är sammanfogade argument från `technicalAccountID` och `credential` från JSON-konfigurationsfilen. Lösenordsvärdet har formatet: `{{technicalAccountId}:{credential}}`.
-Mer information om hur du [ansluter till externa klienter med autentiseringsuppgifter finns i dokumentationen &#x200B;](./ui/credentials.md#using-credentials-to-connect-to-external-clients).
+Mer information om hur du [ansluter till externa klienter med autentiseringsuppgifter finns i dokumentationen ](./ui/credentials.md#using-credentials-to-connect-to-external-clients).
 +++
 
 ### Finns det några begränsningar för specialtecken för lösenord som inte förfaller?
