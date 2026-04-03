@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Mappningsfunktioner för dataförinställningar
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '6009'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -126,7 +126,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | datum | Konverterar en datumsträng till ett ZonedDateTime-objekt (ISO 8601-format). | <ul><li>DATE: **Required** Strängen som representerar datumet.</li><li>FORMAT: **Obligatoriskt** Strängen som representerar formatet för källdatumet.**Obs!** Detta representerar **inte** formatet som du vill konvertera datumsträngen till. </li><li>DEFAULT_DATE: **Required** Standarddatumet returnerades om det angivna datumet är null.</li></ul> | date(DATE, FORMAT, DEFAULT_DATE) | date(&quot;2019-10-23 11:24&quot;, &quot;yyy-MM-dd HH:mm&quot;, now()) | `2019-10-23T11:24:00Z` |
 | datum | Konverterar en datumsträng till ett ZonedDateTime-objekt (ISO 8601-format). | <ul><li>DATE: **Required** Strängen som representerar datumet.</li><li>FORMAT: **Obligatoriskt** Strängen som representerar formatet för källdatumet.**Obs!** Detta representerar **inte** formatet som du vill konvertera datumsträngen till. </li></ul> | date(DATE, FORMAT) | date(&quot;2019-10-23 11:24&quot;, &quot;yyy-MM-dd HH:mm&quot;) | `2019-10-23T11:24:00Z` |
 | datum | Konverterar en datumsträng till ett ZonedDateTime-objekt (ISO 8601-format). | <ul><li>DATE: **Required** Strängen som representerar datumet.</li></ul> | date(DATE) | date(&quot;2019-10-23 11:24&quot;) | &quot;2019-10-23T11:24:00Z&quot; |
-| date_part | Hämtar datumets delar. Följande komponentvärden stöds: <br><br>&quot;year&quot;<br>&quot;yyy&quot;<br>&quot;yy&quot;<br><br>&quot;quarters&quot; <br>&quot;qq&quot;<br>&quot;q&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;day of year&quot;<br>&quot;dy&quot;<br>&quot;y&quot;<br><br>&quot;day&quot;&lbrace;1 <br>&quot;dd&quot;<br>&quot;d&quot;<br><br>&quot;vecka&quot;<br>&quot;ww&quot;<br>&quot;w&quot;<br><br>&quot;veckodag&quot;<br>&quot;dw&quot;<br>&quot;w&quot;<br><br>&quot;hour&quot;<br>&quot;hh&quot; <br>&quot;hh24&quot;<br> &quot;hh12&quot;<br><br>&quot;minute&quot;<br>&quot;mi&quot;<br>&quot;n&quot;<br><br>&quot;second&quot;<br>&quot;ss&quot;<br>&quot;s&quot;<br><br>&quot;millisecond&quot;<br>&quot;SSS&quot; | <ul><li>KOMPONENT: **Obligatorisk** En sträng som representerar datumdelen. </li><li>DATUM: **Obligatoriskt** Datumet i standardformat.</li></ul> | date_part &#x200B;(COMPONENT, DATE) | date_part(&quot;MM&quot;, date(&quot;2019-10-17 11:55:12&quot;)) | 10 |
+| date_part | Hämtar datumets delar. Följande komponentvärden stöds: <br><br>&quot;year&quot;<br>&quot;yyy&quot;<br>&quot;yy&quot;<br><br>&quot;quarters&quot; <br>&quot;qq&quot;<br>&quot;q&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;day of year&quot;<br>&quot;dy&quot;<br>&quot;y&quot;<br><br>&quot;day&quot;{1 <br>&quot;dd&quot;<br>&quot;d&quot;<br><br>&quot;vecka&quot;<br>&quot;ww&quot;<br>&quot;w&quot;<br><br>&quot;veckodag&quot;<br>&quot;dw&quot;<br>&quot;w&quot;<br><br>&quot;hour&quot;<br>&quot;hh&quot; <br>&quot;hh24&quot;<br> &quot;hh12&quot;<br><br>&quot;minute&quot;<br>&quot;mi&quot;<br>&quot;n&quot;<br><br>&quot;second&quot;<br>&quot;ss&quot;<br>&quot;s&quot;<br><br>&quot;millisecond&quot;<br>&quot;SSS&quot; | <ul><li>KOMPONENT: **Obligatorisk** En sträng som representerar datumdelen. </li><li>DATUM: **Obligatoriskt** Datumet i standardformat.</li></ul> | date_part &#x200B;(COMPONENT, DATE) | date_part(&quot;MM&quot;, date(&quot;2019-10-17 11:55:12&quot;)) | 10 |
 | set_date_part | Ersätter en komponent vid ett visst datum. Följande komponenter accepteras: <br><br>&quot;year&quot;<br>&quot;yyy&quot;<br>&quot;yy&quot;<br><br>&quot;month&quot;<br>&quot;mm&quot;<br>&quot;m&quot;<br><br>&quot;day&quot;<br>&quot;dd&quot;<br>&quot;d&quot;<br><br>&quot;hour&quot;<br>&quot;hh&quot;<br><br>&quot;minute&quot;<br>&quot;mi&quot;<br> &quot;n&quot;<br><br>&quot;second&quot;<br>&quot;ss&quot;<br>&quot;s&quot; | <ul><li>KOMPONENT: **Obligatorisk** En sträng som representerar datumdelen. </li><li>VÄRDE: **Obligatoriskt** Värdet som ska anges för komponenten för ett visst datum.</li><li>DATUM: **Obligatoriskt** Datumet i standardformat.</li></ul> | set_date_part &#x200B;(COMPONENT, VALUE, DATE) | set_date_part(&quot;m&quot;, 4, date(&quot;2016-11-09T11:44:44.797&quot;) | &quot;2016-04-09T11:44:44Z&quot; |
 | make_date_time | Skapar ett datum från delar. Den här funktionen kan också induceras med make_timestamp. | <ul><li>ÅR: **Obligatoriskt** Året, skrivet med fyra siffror.</li><li>MÅNAD: **Krävs** Månad. Tillåtna värden är 1 till 12.</li><li>DAG: **Krävs** Dagen. Tillåtna värden är 1 till 31.</li><li>TIMME: **Krävs** Timmen. De tillåtna värdena är 0 till 23.</li><li>MINUT: **Krävs** minuten. De tillåtna värdena är 0 till 59.</li><li>NANOSECOND: **Required** The nanosecond values. De tillåtna värdena är 0 till 999999999.</li><li>TIMEZONE: **Required** Tidszonen för datumet och tiden.</li></ul> | make_date_time &#x200B;(YEAR, MONTH, DAY, HOUR, MINUTE, SECOND, NANOSECOND, TIMEZONE) | make_date_time &#x200B;(2019, 10, 17, 11, 55, 12, 999, &quot;America/Los_Angeles&quot;) | `2019-10-17T11:55:12Z` |
 | zone_date_to_utc | Konverterar ett datum i en tidszon till ett datum i UTC. | <ul><li>DATUM: **Obligatoriskt** Det datum som du försöker konvertera.</li></ul> | zone_date_to_utc &#x200B;(DATE) | `zone_date_to_utc&#x200B;(2019-10-17T11:55:&#x200B;12 PST` | `2019-10-17T19:55:12Z` |
@@ -310,8 +310,10 @@ Mer information om enhetsfältvärden finns i [listan över enhetsfältvärden](
 
 {style="table-layout:auto"}
 
-<!-- | aa_get_product_events | Extracts a named event from the products string as an array of objects. | <ul><li>PRODUCTS_STRING: **Required** The Analytics products string.</li><li>EVENT_NAME: **Required** The event name to extract values from.</li></ul> | aa_get_product_events(PRODUCTS_STRING, EVENT_NAME) | aa_get_product_events(";Example product 1;1;4.20;event1=2.3\|event2=5:1,;Example product 2;1;4.20;event1=3\|event2=2:2", "event2") | [`{"id": "1","value", "5"}`, `{"id": "2","value", "1"}`] |
-| aa_get_product_event_ids | Extracts the IDs for the named event from the products string as an array of strings. | <ul><li>PRODUCTS_STRING: **Required** The Analytics products string.</li><li>EVENT_NAME: **Required** The event name to extract values from.</li></ul> | aa_get_product_event_ids(PRODUCTS_STRING, EVENT_NAME) | aa_get_product_event_ids(";Example product 1;1;4.20;event1=2.3\|event2=5:1,;Example product 2;1;4.20;event1=3\|event2=2:2", "event2") | ["1", "2"] | -->
+<!-- 
+| aa_get_product_events | Extracts a named event from the products string as an array of objects. | <ul><li>PRODUCTS_STRING: **Required** The Analytics products string.</li><li>EVENT_NAME: **Required** The event name to extract values from.</li></ul> | aa_get_product_events(PRODUCTS_STRING, EVENT_NAME) | aa_get_product_events(";Example product 1;1;4.20;event1=2.3\|event2=5:1,;Example product 2;1;4.20;event1=3\|event2=2:2", "event2") | [`{"id": "1","value", "5"}`, `{"id": "2","value", "1"}`] |
+| aa_get_product_event_ids | Extracts the IDs for the named event from the products string as an array of strings. | <ul><li>PRODUCTS_STRING: **Required** The Analytics products string.</li><li>EVENT_NAME: **Required** The event name to extract values from.</li></ul> | aa_get_product_event_ids(PRODUCTS_STRING, EVENT_NAME) | aa_get_product_event_ids(";Example product 1;1;4.20;event1=2.3\|event2=5:1,;Example product 2;1;4.20;event1=3\|event2=2:2", "event2") | ["1", "2"] | 
+-->
 
 ### Objektkopia {#object-copy}
 
@@ -387,11 +389,11 @@ Tabellen nedan visar en lista med reserverade tecken och motsvarande kodade teck
 | > | %3E |
 | ? | %3F |
 | @ | %40 |
-| &lbrack; | %5B |
+| [ | %5B |
 | | | %5C |
-| &rbrack; | %5D |
+| ] | %5D |
 | ^ | %5E |
-| &grave; | %60 |
+| ` | %60 |
 | ~ | %7E |
 
 {style="table-layout:auto"}
