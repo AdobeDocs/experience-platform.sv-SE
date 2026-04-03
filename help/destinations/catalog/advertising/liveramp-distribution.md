@@ -2,7 +2,7 @@
 title: LiveRamp - Distribution Connection
 description: Lär dig hur du använder LiveRamp - Distribution Connector för att orkestrera och aktivera målgrupper som tidigare har anslutit till LiveRamp till reklamdestinationer längre fram i kedjan.
 exl-id: 1b11a743-1ef9-4b01-90ef-cc072bc03c91
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '2807'
 ht-degree: 7%
@@ -52,7 +52,7 @@ Genom anslutningen [!DNL LiveRamp - Distribution] kan de nu aktivera de inbyggda
 
 ## Anpassa målgrupper till LiveRamp {#onboarding}
 
-Innan du aktiverar målgrupper via anslutningen [!DNL LiveRamp - Distribution] använder du anslutningen [&#x200B; LiveRamp - Onboarding](liveramp-onboarding.md) för att exportera dina Experience Platform-målgrupper till LiveRamp.
+Innan du aktiverar målgrupper via anslutningen [!DNL LiveRamp - Distribution] använder du anslutningen [ LiveRamp - Onboarding](liveramp-onboarding.md) för att exportera dina Experience Platform-målgrupper till LiveRamp.
 
 När du har registrerat dina målgrupper på LiveRamp fortsätter du aktiveringsarbetsflödet från steget [Ansluta till målet](#connect) för att välja och konfigurera målplattformarna för dataaktivering.
 
@@ -458,7 +458,7 @@ Välj **[!UICONTROL Next]** när du är klar med att ange information för måla
 >
 >För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-Anslutningen [!DNL LiveRamp - Distribution] aktiverar målgrupper som redan har anslutit till ditt LiveRamp-konto via anslutningen [&#x200B; LiveRamp - Onboarding](liveramp-onboarding.md).
+Anslutningen [!DNL LiveRamp - Distribution] aktiverar målgrupper som redan har anslutit till ditt LiveRamp-konto via anslutningen [ LiveRamp - Onboarding](liveramp-onboarding.md).
 
 Om du vill aktivera dina målgrupper måste du markera de **samma målgrupper** som du [tidigare har anslutit](liveramp-onboarding.md) till LiveRamp.
 
@@ -478,4 +478,4 @@ Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningspr
 
 ## Ytterligare resurser {#additional-resources}
 
-Mer information om hur du konfigurerar ditt [!DNL LiveRamp - Onboarding]-mål finns i [&#x200B; LiveRamp - Onboarding-dokumentationen](liveramp-onboarding.md).
+Mer information om hur du konfigurerar ditt [!DNL LiveRamp - Onboarding]-mål finns i [ LiveRamp - Onboarding-dokumentationen](liveramp-onboarding.md).
