@@ -1,9 +1,9 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;enhetliga taggar;taggar;
+keywords: Experience Platform;home;populära topics;unified tags;tags;
 title: Översikt över enhetliga taggar
 description: Det här dokumentet innehåller information om enhetliga taggar i Adobe Experience Platform
 exl-id: a19e37c3-697a-4000-9cb8-d67478b47dc6
-source-git-commit: 6977438d57dc8e1390812e58bf039ebc60cb830d
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '578'
 ht-degree: 1%
@@ -30,7 +30,7 @@ Följande komponenter ingår när du taggar:
 
 ## Märkordslager
 
-Taggkategori och tagghantering med hjälp av tagglagret är tillgängligt i navigeringen Experience Platform och Journey Optimizer. Ändringar av taggar i lagret återspeglas i alla objekt som stöder taggar. Alla användare kan komma åt och bläddra i tagglagret, men tagghanteringen är begränsad till system- och produktadministratörer.
+Taggkategori och tagghantering med hjälp av tagglagret är tillgängligt i navigeringen i Experience Platform och Journey Optimizer. Ändringar av taggar i lagret återspeglas i alla objekt som stöder taggar. Alla användare kan komma åt och bläddra i tagglagret, men tagghanteringen är begränsad till system- och produktadministratörer.
 
 Tagglagret har tre nivåer av hierarki, vilket gör att användare kan hantera taggkategorier, taggar inom en kategori och enskilda taggar. När du hanterar en enskild tagg kan användarna visa och navigera till objekt där taggen används.
 
