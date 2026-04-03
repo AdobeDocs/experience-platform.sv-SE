@@ -2,7 +2,7 @@
 title: Skapa en Zendesk Source Connection i användargränssnittet
 description: Lär dig hur du skapar en Zendesk-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 75d303b0-2dcd-4202-987c-fe3400398d90
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '724'
 ht-degree: 0%
@@ -109,7 +109,7 @@ Tabellen nedan visar vilka mappningar som stöds och som måste konfigureras fö
 >
 >Mer information om API:t finns i [Zendesk Search API > Exportera sökresultat](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#export-search-results).
 
-| Source | Typ |
+| Källa | Typ |
 |---|---|
 | `results.active` | Boolean |
 | `results.alias` | Sträng |
