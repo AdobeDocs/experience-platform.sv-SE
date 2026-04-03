@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Hantera dataanvändningsetiketter för datauppsättningar med API:er
 description: Med API:t för datauppsättningstjänsten kan du tillämpa och redigera användningsetiketter för datauppsättningar. Den ingår i Adobe Experience Platform datakatalogfunktioner, men är skild från katalogtjänstens API, som hanterar datauppsättningsmetadata.
 exl-id: 24a8d870-eb81-4255-8e47-09ae7ad7a721
-source-git-commit: b48c24ac032cbf785a26a86b50a669d7fcae5d97
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1340'
 ht-degree: 0%
@@ -185,7 +185,7 @@ PUT /datasets/{DATASET_ID}/labels
 
 The below dataset on which PUT operation is applied was C1 optionalLabel on properties/person/properties/address field and C1, C2 optionalLabels on /properties/person/properties/name/properties/fullName field. Efter placeringsåtgärden har det första fältet ingen etikett (C1-etiketten har tagits bort) och det andra fältet har bara C1-etikett (C2-etiketten har tagits bort)
 
-I exemplet nedan används en PUT-begäran för att ta bort etiketter som lagts till i enskilda fält. Innan begäran gjordes användes etiketterna `C1` och `C2` för fältet `fullName`, och etiketten `address` användes redan för fältet `C1`. PUT-begäran åsidosätter de befintliga etiketterna `C1, C2` från fältet `fullName` med en `C1`-etikett som använder parametern `optionalLabels.labels`. Begäran åsidosätter även etiketten `C1` från fältet `address` med en tom uppsättning fältetiketter.
+I exemplet nedan används en PUT-begäran för att ta bort etiketter som lagts till i enskilda fält. Innan begäran gjordes användes etiketterna `fullName` och `C1` för fältet `C2`, och etiketten `address` användes redan för fältet `C1`. PUT-begäran åsidosätter de befintliga etiketterna `C1, C2` från fältet `fullName` med en `C1`-etikett som använder parametern `optionalLabels.labels`. Begäran åsidosätter även etiketten `C1` från fältet `address` med en tom uppsättning fältetiketter.
 
 ```shell
 curl -X PUT \
