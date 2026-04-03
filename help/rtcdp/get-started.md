@@ -4,7 +4,7 @@ title: Komma igång med Real-Time Customer Data Platform
 description: Använd det här testscenariot som exempel när du konfigurerar implementeringen av Adobe Real-Time Customer Data Platform.
 feature: Get Started, Use Cases
 exl-id: 9f775d33-27a1-4a49-a4c5-6300726a531b
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '2321'
 ht-degree: 1%
