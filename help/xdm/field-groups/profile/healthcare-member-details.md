@@ -2,7 +2,7 @@
 title: Informationsschemagrupp för sjukvårdsmedlemmar
 description: Läs mer om schemafältgruppen för information om sjukvårdsmedlemmar.
 exl-id: 43ba025e-2acf-4cb7-8487-e6c7c7240867
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '610'
 ht-degree: 0%
@@ -50,7 +50,7 @@ ht-degree: 0%
 | `deceasedDate` | DateTime | Datumet då personen dog om de avled. |
 | `isDeceased` | Boolean | Anger om personen är avliden. |
 | `isDependent` | Boolean | Anger om personen är beroende. |
-| `nationality` | Sträng | Det rättsliga förhållandet mellan personen och deras stat, representerat med ISO 3166-1 Alpha-2-koden. |
+| `nationality` | Sträng | Det rättsliga förhållandet mellan personen och dess stat, som representeras med Alpha-2-koden ISO 3166-1. |
 | `preferredAvailability` | Sträng | Personens önskade tillgänglighet för dag och tid för ett möte. |
 | `primaryMemberID` | Sträng | En unik identifierare för den primära prenumeranten om personen är beroende. |
 
