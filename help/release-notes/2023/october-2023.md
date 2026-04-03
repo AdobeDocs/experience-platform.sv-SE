@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform oktober 2023
 description: Versionsinformationen för Adobe Experience Platform i oktober 2023.
 exl-id: e9cf5299-8350-4b40-8f56-05e598846875
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1051'
-ht-degree: 36%
+ht-degree: 38%
 
 ---
 
@@ -17,7 +17,7 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 
 - [Kontrollpaneler](#dashboards)
 - [Datainsamling](#data-collection)
-- [Mål &#x200B;](#destinations)
+- [Mål ](#destinations)
 - [Sandlådor](#sandboxes)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
@@ -44,11 +44,11 @@ Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att
 
 | Typ | Funktion | Beskrivning |
 | --- | --- | --- |
-| Tillägg | Förbättring av konverterings-API för [!DNL Meta] | Det finns tre förbättringar i tillägget [Metakonverterings-API](/help/tags/extensions/server/meta/overview.md): <ul><li>Integrering med [[!DNL Meta Business Extension (MBE)]](/help/tags/extensions/server/meta/overview.md#integration-with-meta-business-extension-mbe): Skapar en sömlös inloggning genom att du kan dela ditt pixelID och din åtkomsttoken för Conversions API-integrering med Adobe.</li><li>Integrering med [[!DNL Event Match Quality Score (EMQ)]](/help/tags/extensions/server/meta/overview.md#integration-with-event-quality-match-score-emq): Gör att du kan leverera annonser till personer som troligtvis kommer att slutföra en önskad åtgärd och länka åtgärden tillbaka till de annonser som levereras.</li><li>Integrering med [[!DNL LiveRamp (Alpha)]](/help/tags/extensions/server/meta/overview.md#integration-with-liveramp-alpha): Gör att du kan skicka LiveRamp-ID:t i CIP-fältet, vilket eliminerar behovet av att dela PII direkt med partner eller Meta. </li></ul> |
+| Tillägg | Förbättring av konverterings-API för [!DNL Meta] | Det finns tre förbättringar i tillägget [Meta Conversions API](/help/tags/extensions/server/meta/overview.md): <ul><li>Integrering med [[!DNL Meta Business Extension (MBE)]](/help/tags/extensions/server/meta/overview.md#integration-with-meta-business-extension-mbe): Skapar en sömlös inloggning genom att du kan dela ditt pixelID och din åtkomsttoken för Conversions API-integrering med Adobe.</li><li>Integrering med [[!DNL Event Match Quality Score (EMQ)]](/help/tags/extensions/server/meta/overview.md#integration-with-event-quality-match-score-emq): Gör att du kan leverera annonser till personer som troligtvis kommer att slutföra en önskad åtgärd och länka åtgärden tillbaka till de annonser som levereras.</li><li>Integrering med [[!DNL LiveRamp (Alpha)]](/help/tags/extensions/server/meta/overview.md#integration-with-liveramp-alpha): Gör att du kan skicka LiveRamp-ID:t i CIP-fältet, vilket eliminerar behovet av att dela PII direkt med partners eller Meta. </li></ul> |
 | Tillägg | API för konvertering av [!DNL LinkedIn] | Med [[!DNL LinkedIn] API:t för konvertering](../../tags/extensions/server/linkedin/overview.md) kan du utvärdera effekten av dina LinkedIn-marknadsföringskampanjer genom att skicka händelsedata från Experience Platform till LinkedIn. |
 | Hemlighet | [!DNL LinkedIn] OAuth 2-hemlighet | Med [[!DNL LinkedIn] OAuth2-hemligheten](../../tags/ui/event-forwarding/secrets.md#linkedin-oauth-2) kan du skicka server-server-interaktioner till [!DNL LinkedIn] vid händelsevidarebefordran. |
-| Vidarebefordran av händelser | Uppdatera till taggar och händelsevidarebefordran | Om du vill bevara prestanda för [taggar](https://experienceleague.adobe.com/docs/experience-platform/tags/home.html?lang=sv) och [händelsevidarebefordran](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html?lang=sv-SE) i Experience Platform behålls endast de senaste byggnaderna för utveckling och scenen, både lyckade och misslyckade,. Alla byggen som inte längre används tas bort. Dessutom har begränsning och hastighetsbegränsning implementerats för att säkerställa att ett fåtal tunga API-användningar inte försämrar API-prestanda för andra. |
-| Tillägg | Element, regler och tillägg | [Element, regler och tillägg](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/overview.html?lang=sv-SE) sorteras nu i bibliotekets utdata för att säkerställa mer konsekvens mellan flera versioner och distributioner av samma bibliotek. |
+| Vidarebefordran av händelser | Uppdatera till taggar och händelsevidarebefordran | Om du vill bevara prestanda för [taggar](https://experienceleague.adobe.com/docs/experience-platform/tags/home.html?lang=sv) och [händelsevidarebefordran](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html) i Experience Platform behålls endast de senaste byggnaderna för utveckling och scenen, både lyckade och misslyckade,. Alla byggen som inte längre används tas bort. Dessutom har begränsning och hastighetsbegränsning implementerats för att säkerställa att ett fåtal tunga API-användningar inte försämrar API-prestanda för andra. |
+| Tillägg | Element, regler och tillägg | [Element, regler och tillägg](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/overview.html) sorteras nu i bibliotekets utdata för att säkerställa mer konsekvens mellan flera versioner och distributioner av samma bibliotek. |
 
 Mer information om datainsamling finns i [översikten över datainsamlingar](../../tags/home.md).
 
@@ -56,7 +56,7 @@ Mer information om datainsamling finns i [översikten över datainsamlingar](../
 
 [!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
-**Nya eller uppdaterade mål** {#new-updated-destinations}
+**Nya eller uppdaterade destinationer** {#new-updated-destinations}
 
 | Mål | Nytt eller uppdaterat | Beskrivning |
 | ----------- |----------------|----------- |
@@ -65,7 +65,7 @@ Mer information om datainsamling finns i [översikten över datainsamlingar](../
 
 {style="table-layout:auto"}
 
-**Ny eller uppdaterad funktion** {#destinations-new-updated-functionality}
+**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
 
 | Funktionalitet | Beskrivning |
 | ----------- | ----------- |
@@ -80,7 +80,7 @@ Mer allmän information om destinationer finns i [översikten över destinatione
 
 ## Sandlådor {#sandboxes}
 
-Adobe Experience Platform är utvecklad för att berika program för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa program samtidigt som de måste se till att de uppfyller gällande krav. För att tillgodose detta behov tillhandahåller Experience Platform sandlådor som partitionerar en enda Experience Platform-instans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+Adobe Experience Platform är utvecklad för att berika program för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa program samtidigt som de måste se till att de uppfyller gällande krav. För att tillgodose det här behovet tillhandahåller Experience Platform sandlådor som partitionerar en enda Experience Platform-instans i separata virtuella miljöer för att utveckla och förbättra program för digitala upplevelser.
 
 **Ny funktion**
 
