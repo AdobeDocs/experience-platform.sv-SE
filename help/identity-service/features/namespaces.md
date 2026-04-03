@@ -159,7 +159,7 @@ Välj sedan den identitetstyp som du vill tilldela det anpassade namnutrymmet. N
 
 ## Namnutrymmen i identitetsdata
 
-Om du anger namnutrymmet för en identitet beror på vilken metod du använder för att ange identitetsdata. Mer information om hur du tillhandahåller data-ID-data finns i [[!DNL Identity Service] implementeringsguiden](../implementation.md). Om du skickar identiteter via Web SDK `identityMap` kan du läsa [ Använda identityMap i datainsamling ](/help/collection/identity/identity-map.md) om du vill ha mer information om hur du förbereder och formaterar identitetsvärden innan du skickar dem.
+Om du anger namnutrymmet för en identitet beror på vilken metod du använder för att ange identitetsdata. Mer information om hur du tillhandahåller data-ID-data finns i [[!DNL Identity Service] implementeringsguiden](../implementation.md). Om du skickar identiteter via Web SDK `identityMap` kan du läsa [&#x200B; Använda identityMap i datainsamling &#x200B;](/help/collection/identity/identity-map.md) om du vill ha mer information om hur du förbereder och formaterar identitetsvärden innan du skickar dem.
 
 ## Nästa steg
 
