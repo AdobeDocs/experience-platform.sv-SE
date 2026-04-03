@@ -3,7 +3,7 @@ title: Anslut Capillary till Experience Platform med API:t för Flow Service
 description: Lär dig hur du ansluter Capillary till Experience Platform med API:er.
 badge: Beta
 exl-id: 763792d0-d5dc-40ac-b86a-6a0d26463b71
-source-git-commit: bd5611b23740f16e41048f3bc65f62312593a075
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '1150'
 ht-degree: 0%
@@ -234,7 +234,8 @@ Transaktioner fångar upp handelsaktiviteter. Visa följande nyttolast för ett 
 
 >[!ENDTABS]
 
-<!--### Supported Events
+<!--
+### Supported Events
 
 The [!DNL Capillary] source supports the following events:
 
@@ -251,7 +252,8 @@ The [!DNL Capillary] source supports the following events:
 * `pointsRedeemed`
 * `transactionAdded`
 * `tierRenewed`
-* `customerUpdated`-->
+* `customerUpdated`
+-->
 
 ### Historisk datamigrering
 
@@ -261,9 +263,9 @@ Ni kan föra in era historiska lojalitets- och transaktionsdata i Experience Pla
 
 Ett XDM-schema (Experience Data Model) är ett standardiserat sätt att organisera och beskriva kundupplevelsedata i Experience Platform. Om du vill importera källdata till Experience Platform måste du först skapa ett mål-XDM-schema som definierar strukturen och datatyperna som du vill importera. Det här schemat fungerar som en plan för den Experience Platform-datauppsättning där dina inmatade data finns.
 
-Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API &#x200B;](https://developer.adobe.com/experience-platform-apis/references/schema-registry/) utförs. Mer information om hur du skapar ett XDM-målschema finns i följande guider:
+Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API ](https://developer.adobe.com/experience-platform-apis/references/schema-registry/) utförs. Mer information om hur du skapar ett XDM-målschema finns i följande guider:
 
-* [Skapa ett schema med API:t &#x200B;](../../../../../xdm/api/schemas.md).
+* [Skapa ett schema med API:t ](../../../../../xdm/api/schemas.md).
 * [Skapa ett schema med användargränssnittet](../../../../../xdm/tutorials/create-schema-ui.md).
 
 När du har skapat målschemat `$id` kommer det att krävas senare för måldatauppsättningen och målmappningen.
