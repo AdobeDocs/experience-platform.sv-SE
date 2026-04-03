@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: da3328e58b9009d80fea1c84e79fb14c9cc1ecf2
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '3279'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Åtkomststyrningshierarki och arbetsflöde
 
-För att kunna konfigurera åtkomstkontroll för Experience Platform måste du ha system- eller produktadministratörsbehörighet för en organisation som har en Experience Platform-produkt. Minimirollen som kan bevilja eller återkalla behörigheter är en produktadministratör. Andra administratörsroller som kan hantera behörigheter är systemadministratörer (inga begränsningar). Mer information finns i Adobe Help Center-artikeln om [administrativa roller](https://helpx.adobe.com/se/enterprise/using/admin-roles.html).
+För att kunna konfigurera åtkomstkontroll för Experience Platform måste du ha system- eller produktadministratörsbehörighet för en organisation som har en Experience Platform-produkt. Minimirollen som kan bevilja eller återkalla behörigheter är en produktadministratör. Andra administratörsroller som kan hantera behörigheter är systemadministratörer (inga begränsningar). Mer information finns i Adobe Help Center-artikeln om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html).
 
 >[!NOTE]
 >
@@ -132,7 +132,7 @@ I följande tabell visas de behörigheter som är tillgängliga för Experience 
 | [!DNL Adobe Mix Modeler] | [!UICONTROL View Adobe Mix Modeler Models Configurations] | Skrivskyddad åtkomst till modellkonfigurationer. |
 | [!DNL Adobe Mix Modeler] | [!UICONTROL Manage Adobe Mix Modeler Models Plans Configurations] | Möjlighet att visa och ändra plankonfigurationer. |
 | [!DNL Adobe Mix Modeler] | [!UICONTROL View Adobe Mix Modeler Models Plans Configurations] | Skrivskyddad åtkomst till plankonfigurationer. |
-| [!DNL AI Assistant] | [!UICONTROL Enable AI Assistant] | Möjlighet att ställa [[!DNL [AI assistant]]](../ai-assistant/access.md) frågor. |
+| [!DNL AI Assistant] | [!UICONTROL Enable AI Assistant] | Möjlighet att ställa [!DNL [AI assistant]](../ai-assistant/access.md) frågor. |
 | [!DNL AI Assistant] | [!UICONTROL View Operational Insights] | Åtkomst att få svar på [operativa insikter](../ai-assistant/home.md##operational-insights)-frågor. |
 | [!DNL AI Assistant] | [!UICONTROL Generate Content] | Gör det möjligt för användare att generera innehåll med [!DNL AI Assistant]. |
 | [!DNL AI Assistant] | [!UICONTROL Manage Brand Kit] | Gör det möjligt för användare att skapa varumärkesriktlinjer med [!DNL AI Assistant]. |
