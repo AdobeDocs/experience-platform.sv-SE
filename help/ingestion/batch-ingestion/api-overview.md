@@ -4,7 +4,7 @@ solution: Experience Platform
 title: API-guide för gruppinmatning
 description: Det här dokumentet innehåller en omfattande guide för utvecklare som arbetar med API:er för gruppimport för Adobe Experience Platform.
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
-source-git-commit: 0e484dffa38d454561f9d67c6bea92f426d3515d
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '2435'
 ht-degree: 1%
@@ -515,7 +515,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## Importera CSV-filer
 
-För att kunna importera CSV-filer måste du skapa en klass, ett schema och en datauppsättning som stöder CSV. Detaljerad information om hur du skapar den klass och det schema som behövs finns i instruktionerna i [självstudiekursen &#x200B;](../../xdm/api/ad-hoc.md) där du kan skapa ad hoc-scheman.
+För att kunna importera CSV-filer måste du skapa en klass, ett schema och en datauppsättning som stöder CSV. Detaljerad information om hur du skapar den klass och det schema som behövs finns i instruktionerna i [självstudiekursen ](../../xdm/api/ad-hoc.md) där du kan skapa ad hoc-scheman.
 
 >[!NOTE]
 >
@@ -801,7 +801,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 ```
 
 | Parameter | Beskrivning |
-| --------- | ----------- | 
+| --------- | ----------- |
 | `{DATASET_ID}` | ID för referensdatauppsättningen. |
 
 **Svar**
