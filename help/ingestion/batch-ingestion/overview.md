@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över API för gruppinmatning
 description: Med API:t för Adobe Experience Platform Batch Ingclosure kan du importera data till Experience Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: dace7bc2f7940748422628b62f0f57854036ad3f
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1389'
 ht-degree: 1%
