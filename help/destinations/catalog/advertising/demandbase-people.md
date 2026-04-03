@@ -2,7 +2,7 @@
 title: Anslutning för Demandbase-användare
 description: Använd den här destinationen för att aktivera era målgrupper och berika dem med tredjepartsdata från Demandbase för andra användningsfall i senare led i marknadsföring och försäljning.
 exl-id: 748f5518-7cc1-4d65-ab70-4a129d9e2066
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1010'
 ht-degree: 1%
