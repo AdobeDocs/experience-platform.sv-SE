@@ -2,9 +2,9 @@
 title: defaultConsent
 description: Ange standardmetoden för insamling av samtycke för din webbegenskap.
 exl-id: 2a22fa8b-a234-4d3e-9b55-c7482a928fe6
-source-git-commit: 1e272eb18fac2f59f9737756d48947a25573d772
+source-git-commit: bf0bb72777cacd822fd6e887ac3ef71764784214
 workflow-type: tm+mt
-source-wordcount: '514'
+source-wordcount: '431'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Ange strängegenskapen `defaultConsent` till önskad medgivandenivå när du kö
 
 >[!IMPORTANT]
 >
->Värdet `defaultConsent` finns inte kvar mellan sidinläsningar. Se till att du anger önskat standardsamtycke varje gång du anropar kommandot `configure`.
+>Värdet `defaultConsent` finns inte kvar mellan sidinläsningar. Se till att du anger önskat standardsamtycke varje gång du anropar kommandot `configure`. En besökares lösta samtycke (inställt genom [`setConsent`](../setconsent.md)) bevaras däremot i en cookie och tillämpas automatiskt vid efterföljande sidinläsningar.
 
 ```js
 alloy("configure", {
@@ -40,32 +40,7 @@ alloy("configure", {
 
 ## Använder `defaultConsent` tillsammans med `setConsent` {#using-consent}
 
-SDK på webben har två alternativ:
-
-* `defaultConsent` (den här sidan): Anger standardinställningar för samtycke.
-* [`setConsent`](../setconsent.md): Fånga besökarnas samtycke.
-
-När de används tillsammans kan de här inställningarna leda till olika resultat för datainsamling och cookie-inställning, beroende på deras konfigurerade värden.
-
-Se tabellen nedan för att förstå när datainsamling sker och när cookies ställs in, baserat på inställningar för samtycke.
-
-| `defaultConsent` | `setConsent` | Datainsamling sker | Web SDK anger cookies i webbläsare |
-|---------|----------|---------|---------|
-| `in` | `in` | Ja | Ja |
-| `in` | `out` | Nej | Ja |
-| `in` | Ej angiven | Ja | Ja |
-| `pending` | `in` | Ja | Ja |
-| `pending` | `out` | Nej | Ja |
-| `pending` | Ej angiven | Nej | Nej |
-| `out` | `in` | Ja | Ja |
-| `out` | `out` | Nej | Ja |
-| `out` | Ej angiven | Nej | Nej |
-
-Se [Adobe Experience Platform Web SDK-cookies](https://experienceleague.adobe.com/sv/docs/core-services/interface/data-collection/cookies/web-sdk) för en lista över cookies som biblioteket anger.
-
->[!NOTE]
->
->Identitets- och medgivandecookies anges även om en besökare avanmäler sig från spårning. Dessa cookies är nödvändiga för att uppfylla deras inställningar för datainsamling.
+När `defaultConsent` och `setConsent` används tillsammans skapar de olika datainsamlingarna, cookieinställningarna och identitetsresultaten beroende på deras konfigurerade värden. En fullständig interaktionstabell finns i [Samtycke och identitet i datainsamling](/help/collection/identity/consent.md#how-consent-affects-identity).
 
 ## Ange standardsamtycke baserat på `gdprApplies`
 

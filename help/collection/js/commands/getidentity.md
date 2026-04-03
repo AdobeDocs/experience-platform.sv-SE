@@ -2,9 +2,9 @@
 title: getIdentity
 description: Hämta en besökares identitet utan att skicka händelsedata.
 exl-id: 28b99f62-14c4-4e52-a5c7-9f6fe9852a87
-source-git-commit: aea46e3804d315c1237fc853540771f1b5c2b767
+source-git-commit: b292b9243816b1eed7fd3939096ddc30d6be0606
 workflow-type: tm+mt
-source-wordcount: '298'
+source-wordcount: '331'
 ht-degree: 0%
 
 ---
@@ -12,6 +12,10 @@ ht-degree: 0%
 # `getIdentity`
 
 När du kör kommandot [`sendEvent`](sendevent/overview.md) får Web SDK automatiskt besökarens identitet om det inte redan finns någon. Med kommandot `getIdentity` kan du hämta ett besökar-ID utan att skicka händelsedata. Om du behöver separata anrop för att generera ett besökar-ID och skicka data kan du använda det här kommandot.
+
+>[!IMPORTANT]
+>
+>Använd `getIdentity` när du behöver identitetsinformation på klientsidan. Om du bara behöver mappa ECID till XDM använder du [Datapresten för datainsamling](/help/datastreams/data-prep.md) eller [taggar för ECID-åtkomst](/help/tags/extensions/client/web-sdk/accessing-the-ecid.md) i stället.
 
 Kommandot `getIdentity` går igenom följande flöde för att hämta `ECID`.
 

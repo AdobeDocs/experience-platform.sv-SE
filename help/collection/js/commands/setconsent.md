@@ -2,9 +2,9 @@
 title: setConsent
 description: Används på varje sida för att spåra dina användares medgivandeinställningar.
 exl-id: d01a6ef1-4fa7-4a60-a3a1-19568b4e0d23
-source-git-commit: 66105ca19ff1c75f1185b08b70634b7d4a6fd639
+source-git-commit: bf0bb72777cacd822fd6e887ac3ef71764784214
 workflow-type: tm+mt
-source-wordcount: '1117'
+source-wordcount: '1042'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Web SDK stöder följande standarder:
    1. Experience Event-schemat innehåller fältgruppen [IAB TCF 2.0-samtycke](/help/xdm/field-groups/event/iab.md).
    1. Du inkluderar IAB-medgivandeinformationen i händelsen [XDM-objekt](sendevent/xdm.md). Web SDK inkluderar inte information om samtycke automatiskt när händelsedata skickas.
 
-När du använder det här kommandot skriver Web SDK användarens inställningar till [`kndctr_<orgId>_consent`](https://experienceleague.adobe.com/sv/docs/core-services/interface/data-collection/cookies/web-sdk)-cookien. Den här cookien anges oavsett besökarens medgivandeinställningar, eftersom den lagrar besökarens medgivandeinställningar. Nästa gång användaren läser in webbplatsen i webbläsaren hämtar SDK dessa beständiga inställningar för att avgöra om händelser kan skickas till Adobe.
+När du använder det här kommandot skriver Web SDK användarens inställningar till [`kndctr_<orgId>_consent`](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/cookies/web-sdk)-cookien. Den här cookien anges oavsett besökarens medgivandeinställningar, eftersom den lagrar besökarens medgivandeinställningar. Nästa gång användaren läser in webbplatsen i webbläsaren hämtar SDK dessa beständiga inställningar för att avgöra om händelser kan skickas till Adobe.
 
 Adobe rekommenderar att du lagrar medgivandedialogrutor separat från Web SDK-medgivanden. SDK på webben erbjuder inget sätt att få samtycke. Om du vill vara säker på att användarinställningarna är synkroniserade med SDK kan du anropa kommandot `setConsent` vid varje sidinläsning. Web SDK gör bara ett serveranrop när medgivandet ändras.
 
@@ -32,26 +32,7 @@ Kommandot `setConsent` använder bara `ECID` från identitetskartan eftersom kom
 
 ## Använder `defaultConsent` tillsammans med `setConsent` {#using-consent}
 
-Web SDK har två extra konfigurationskommandon för samtycke:
-
-* [`defaultConsent`](configure/defaultconsent.md): Det här kommandot anger automatiskt besökarens standardinställning för samtycke innan `setConsent` anropas.
-* `setConsent` (aktuell sida): Det här kommandot anger uttryckligen besökarens inställning för samtycke.
-
-När de används tillsammans kan de här inställningarna leda till olika resultat för datainsamling och cookie-inställning, beroende på deras konfigurerade värden:
-
-| `defaultConsent` | `setConsent` | Datainsamling sker | Web SDK anger cookies i webbläsare |
-| --- | --- | --- | --- |
-| `in` | `in` | Ja | Ja |
-| `in` | `out` | Nej | Ja |
-| `in` | Ej angiven | Ja | Ja |
-| `pending` | `in` | Ja | Ja |
-| `pending` | `out` | Nej | Ja |
-| `pending` | Ej angiven | Nej | Nej |
-| `out` | `in` | Ja | Ja |
-| `out` | `out` | Nej | Ja |
-| `out` | Ej angiven | Nej | Nej |
-
-Se [Adobe Experience Platform Web SDK-cookies](https://experienceleague.adobe.com/sv/docs/core-services/interface/data-collection/cookies/web-sdk) i guiden för bastjänster för en fullständig lista över cookies som kan anges.
+När `defaultConsent` och `setConsent` används tillsammans skapar de olika datainsamlingarna, cookieinställningarna och identitetsresultaten beroende på deras konfigurerade värden. En fullständig interaktionstabell finns i [Samtycke och identitet i datainsamling](/help/collection/identity/consent.md#how-consent-affects-identity).
 
 ## Använda kommandot `setConsent`
 
@@ -59,7 +40,7 @@ Kör kommandot `setConsent` när du anropar den konfigurerade instansen av Web S
 
 * **`consent[]`**: En array med `consent` objekt. Medgivandeobjektet formateras på olika sätt beroende på vilken standard och version du väljer. Se flikarna nedan för exempel på varje samtyckesobjekt, beroende på medgivandestandarden.
 * **`identityMap`**: Ett objekt som styr hur ett ECID genereras och vilka ID:n som godkännandeinformation är knuten till. Adobe rekommenderar att du inkluderar det här objektet när `setConsent` körs före andra kommandon, till exempel [`sendEvent`](sendevent/overview.md).
-* **`edgeConfigOverrides`**: Ett objekt som innehåller [datastream-konfiguration åsidosätter &#x200B;](configure/edgeconfigoverrides.md).
+* **`edgeConfigOverrides`**: Ett objekt som innehåller [datastream-konfiguration åsidosätter ](configure/edgeconfigoverrides.md).
 
 >[!BEGINTABS]
 

@@ -6,9 +6,9 @@ breadcrumb-title: Datainsamling
 user-guide-description: Lär dig skicka data till Adobe Experience Platform.
 feature: Data Collection
 role: Developer
-source-git-commit: c848f821ea911c82531c6784a17df0116572cd86
+source-git-commit: 696e5098ebf556bfc0fa4fc22ff637cb0835eee0
 workflow-type: tm+mt
-source-wordcount: '152'
+source-wordcount: '167'
 ht-degree: 13%
 
 ---
@@ -18,6 +18,15 @@ ht-degree: 13%
 
 + [Översikt](home.md)
 + [Behörigheter](permissions.md)
++ Identitet {#identity}
+   + [Översikt](identity/overview.md)
+   + [Använda identityMap](identity/identity-map.md)
+   + [Enhets-ID:n från första part](identity/fpid.md)
+   + [Delning mellan domäner](identity/cross-domain-sharing.md)
+   + [Mobilappar till mobil webb/WebViews](identity/mobile-to-web.md)
+   + [Stöd för enhetlig identitet](identity/unified-identity-support.md)
+   + [Samtycke och identitet](identity/consent.md)
+   + [Felsökning](identity/troubleshooting.md)
 + BrightScript {#brightscript}
    + [BrightScript - översikt](brightscript/brs-overview.md)
 + JavaScript {#js}
@@ -99,10 +108,6 @@ ht-degree: 13%
    + [Konfigurera en CSP](use-cases/configuring-a-csp.md)
    + [Felsökning](use-cases/debugging.md)
    + [Borttagning av händelser](use-cases/event-duplication.md)
-   + Identitet {#identity}
-      + [Översikt](use-cases/identity/id-overview.md)
-      + [Enhets-ID:n från första part](use-cases/identity/first-party-device-ids.md)
-      + [ID-delning](use-cases/identity/id-sharing.md)
    + MCP {#mcp}
       + [ChatGPT-appar](use-cases/mcp/chatgpt.md)
    + [Flera SDK-instanser](use-cases/multiple-instances.md)

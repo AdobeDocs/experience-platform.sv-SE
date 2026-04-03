@@ -2,9 +2,9 @@
 title: Översikt över namnområde för identitet
 description: Lär dig mer om identitetsnamnutrymmen i identitetstjänsten.
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 384a67ac62eb56c4a0f8ac38593399afcc8b742e
+source-git-commit: 482991f0a7efdf4eae5a600ba0bd2a49baca7c37
 workflow-type: tm+mt
-source-wordcount: '1897'
+source-wordcount: '1925'
 ht-degree: 0%
 
 ---
@@ -99,19 +99,19 @@ Följande standardnamnutrymmen kan användas av alla organisationer i Experience
 | Visningsnamn | Identitetssymbol (kod) | Identitetstyp | Beskrivning |
 | ------------ | ---------------------- | ------------- | ----------- |
 | AdCloud | AdCloud | Cookie-ID | Ett namnutrymme som representerar Adobe AdCloud. |
-| Adobe Analytics (äldre ID) | STÖD | Cookie-ID | Ett namnutrymme som representerar Adobe Analytics. Mer information finns i följande dokument om [Adobe Analytics-namnutrymmen](https://experienceleague.adobe.com/docs/analytics/admin/data-governance/gdpr-namespaces.html?lang=sv-SE#namespaces). |
+| Adobe Analytics (äldre ID) | STÖD | Cookie-ID | Ett namnutrymme som representerar Adobe Analytics. Mer information finns i följande dokument om [Adobe Analytics-namnutrymmen](https://experienceleague.adobe.com/docs/analytics/admin/data-governance/gdpr-namespaces.html#namespaces). |
 | Apple IDFA (ID för annonsörer) | IDFA | Enhets-ID | Ett namnutrymme som representerar Apple ID för annonsörer. Mer information finns i följande dokument om [intressebaserade annonser](https://support.apple.com/en-us/HT202074). |
 | Tjänsten Apple Push Notification | APNS | Enhets-ID | Ett namnutrymme som representerar identiteter som samlats in med tjänsten Apple Push Notification. Mer information finns i följande dokument på [tjänsten Apple Push Notification](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1). |
 | ECID | ECID | Cookie-ID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Mer information finns i följande dokument på [ECID](./ecid.md). |
 | E-post | E-post | E-post | Ett namnutrymme som representerar en e-postadress. Den här typen av namnutrymme är ofta kopplad till en person och kan därför användas för att identifiera den personen i olika kanaler. |
-| E-post (SHA256, nedsänkt) | Email_LC_SHA256 | E-post | Ett namnutrymme för förhasrad e-postadress. Värden som anges i det här namnutrymmet konverteras till gemener innan de hash-kodas med SHA256. Radavståndsavstånd måste trimmas innan en e-postadress normaliseras. Den här inställningen kan inte ändras retroaktivt. Mer information finns i följande dokument om [SHA256-hash-stöd](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html?lang=sv-SE#hashing-support). |
+| E-post (SHA256, nedsänkt) | Email_LC_SHA256 | E-post | Ett namnutrymme för förhasrad e-postadress. Värden som anges i det här namnutrymmet konverteras till gemener innan de hash-kodas med SHA256. Radavståndsavstånd måste trimmas innan en e-postadress normaliseras. Den här inställningen kan inte ändras retroaktivt. Mer information finns i följande dokument om [SHA256-hash-stöd](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html#hashing-support). |
 | Firebase Cloud Messaging | FCM | Enhets-ID | Ett namnutrymme som representerar identiteter som samlats in med Google Firebase Cloud Messaging för push-meddelanden. Mer information finns i följande dokument om [Google Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging). |
 | Google Ad ID (GAID) | GAID | Enhets-ID | Ett namnutrymme som representerar ett Google Advertising ID. Mer information finns i följande dokument på [Google Advertising ID](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en). |
 | Telefon | Telefon | Telefonnummer | Ett namnutrymme som representerar ett telefonnummer. Den här typen av namnutrymme är ofta kopplad till en person och kan därför användas för att identifiera den personen i olika kanaler. |
 | Telefon (E.164) | Telefon_E.164 | Telefonnummer | Ett namnutrymme som representerar råa telefonnummer som behöver hashas i E.164-format. E.164-formatet innehåller ett plustecken (`+`), en internationell landskod, en lokal områdeskod och ett telefonnummer. Till exempel: `(+)(country code)(area code)(phone number)`. |
 | Telefon (SHA256) | Phone_SHA256 | Telefonnummer | Ett namnutrymme som representerar telefonnummer som behöver hashas med SHA256. Du måste ta bort symboler, bokstäver och eventuella inledande nollor. Du måste också lägga till landskoden som prefix. |
 | Telefon (SHA256_E.164) | Phone_SHA256_E.164 | Telefonnummer | Ett namnutrymme som representerar råa telefonnummer som behöver hashas med formaten SHA256 och E.164. |
-| TNTID | TNTID | Cookie-ID | Ett namnutrymme som representerar Adobe Target. Mer information finns i följande dokument på [Target](https://experienceleague.adobe.com/docs/target/using/target-home.html?lang=sv-SE). |
+| TNTID | TNTID | Cookie-ID | Ett namnutrymme som representerar Adobe Target. Mer information finns i följande dokument på [Target](https://experienceleague.adobe.com/docs/target/using/target-home.html). |
 | Windows AID | WAID | Enhets-ID | Ett namnutrymme som representerar ett Advertising-ID för Windows. Mer information finns i följande dokument på [Windows Advertising ID](https://docs.microsoft.com/en-us/uwp/api/windows.system.userprofile.advertisingmanager.advertisingid?view=winrt-19041). |
 
 {style="table-layout:auto"}
@@ -159,7 +159,7 @@ Välj sedan den identitetstyp som du vill tilldela det anpassade namnutrymmet. N
 
 ## Namnutrymmen i identitetsdata
 
-Om du anger namnutrymmet för en identitet beror på vilken metod du använder för att ange identitetsdata. Mer information om hur du tillhandahåller data-ID-data finns i [[!DNL Identity Service] implementeringsguiden](../implementation.md).
+Om du anger namnutrymmet för en identitet beror på vilken metod du använder för att ange identitetsdata. Mer information om hur du tillhandahåller data-ID-data finns i [[!DNL Identity Service] implementeringsguiden](../implementation.md). Om du skickar identiteter via Web SDK `identityMap` kan du läsa [ Använda identityMap i datainsamling ](/help/collection/identity/identity-map.md) om du vill ha mer information om hur du förbereder och formaterar identitetsvärden innan du skickar dem.
 
 ## Nästa steg
 

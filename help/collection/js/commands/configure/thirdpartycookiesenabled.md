@@ -2,7 +2,7 @@
 title: thirdPartyCookiesEnabled
 description: Tillåt användning av cookies från tredje part för att identifiera besökare.
 exl-id: f241a9ae-a892-46a5-b0dd-5ac72a44d4ac
-source-git-commit: c6a2b9700f0a688f65fec9febf5622c6c7b6aafa
+source-git-commit: b292b9243816b1eed7fd3939096ddc30d6be0606
 workflow-type: tm+mt
 source-wordcount: '193'
 ht-degree: 0%
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 Egenskapen `thirdPartyCookiesEnabled` är en boolesk egenskap som avgör om Web SDK anger cookies i en tredjepartskontext. Det här alternativet är användbart om du vill identifiera besökare mellan underdomäner eller domäner som din organisation äger. Många moderna webbläsare begränsar dock inställningen och förfallotiden för cookies från tredje part. Om en besökares webbläsare inte stöder cookies från tredje part gör den här egenskapen ingenting.
 
-Egenskapen `thirdPartyCookiesEnabled` styr också om [`CORE ID`](/help/collection/use-cases/identity/id-overview.md#tracking-coreid-web-sdk) kan begäras för [`getIdentity`](../getidentity.md) anrop.
+Egenskapen `thirdPartyCookiesEnabled` styr också om [`CORE ID`](/help/collection/identity/overview.md#core-id-and-third-party-identity) kan begäras för [`getIdentity`](../getidentity.md) anrop.
 
-När det här alternativet är aktiverat använder SDK Adobe Audience Manager för att identifiera besökare. När det här alternativet är inaktiverat inaktiveras anropet till Audience Manager. Mer information finns i [Förstå anrop till Demdex-domänen](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/demdex-calls.html?lang=sv-SE) i användarhandboken för Audience Manager.
+När det här alternativet är aktiverat använder SDK Adobe Audience Manager för att identifiera besökare. När det här alternativet är inaktiverat inaktiveras anropet till Audience Manager. Mer information finns i [Förstå anrop till Demdex-domänen](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/demdex-calls.html) i användarhandboken för Audience Manager.
 
 Ange det booleska värdet `thirdPartyCookiesEnabled` när du kör kommandot `configure`. Om du utelämnar den här egenskapen när du konfigurerar Web SDK blir standardvärdet `true`. Ange det här värdet till `false` om du inte vill att Web SDK ska använda Audience Manager för att identifiera besökare.
 

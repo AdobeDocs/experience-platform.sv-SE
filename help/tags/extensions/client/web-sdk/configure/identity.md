@@ -2,9 +2,9 @@
 title: Inställningar för identitetskonfiguration
 description: Definiera hur taggtillägget identifierar besökare.
 exl-id: 12e707f4-c37b-4c02-bfec-5ef7b98c2d3b
-source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
+source-git-commit: b292b9243816b1eed7fd3939096ddc30d6be0606
 workflow-type: tm+mt
-source-wordcount: '298'
+source-wordcount: '265'
 ht-degree: 1%
 
 ---
@@ -35,7 +35,3 @@ En kryssruta som gör att Web SDK kan läsa cookies i `AMCV` och `s_ecid` och an
 ## [!UICONTROL Use third-party cookies]
 
 När det här alternativet är aktiverat försöker Web SDK lagra en användaridentifierare i en cookie från tredje part. Om det lyckas identifieras användaren som en enskild användare när de navigerar mellan flera domäner, i stället för att identifieras som en separat användare på varje domän. Om det här alternativet är aktiverat kan SDK fortfarande inte lagra användaridentifieraren i en tredjeparts-cookie om webbläsaren inte stöder cookies från tredje part eller om den har konfigurerats av användaren att inte tillåta cookies från tredje part. I det här fallet lagrar SDK bara identifieraren i förstahandsdomänen. JavaScript-biblioteket som motsvarar kryssrutan är [`thirdPartyCookiesEnabled`](/help/collection/js/commands/configure/thirdpartycookiesenabled.md).
-
->[!IMPORTANT]
->
->Cookies från tredje part är inte kompatibla med funktionen [för första parts enhets-ID](/help/collection/use-cases/identity/first-party-device-ids.md) i Web SDK. Du kan antingen använda enhets-ID:n från en annan leverantör eller använda cookies från tredje part. Du kan inte använda båda funktionerna samtidigt.
