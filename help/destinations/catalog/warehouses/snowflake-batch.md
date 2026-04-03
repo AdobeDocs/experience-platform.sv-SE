@@ -4,7 +4,7 @@ description: Skapa en live-Snowflake-datadelning för att få dagliga målgrupps
 last-substantial-update: 2026-02-17T00:00:00Z
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 6959ccd0-ba30-4750-a7de-d0a709292ef7
-source-git-commit: f6565f7820d6d6394d26b88fdde3d42a90dedd63
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1804'
 ht-degree: 0%
@@ -182,7 +182,7 @@ Du kan exportera identiteter och profilattribut till det här målet.
 
 ![Experience Platform användargränssnittsbild som visar mappningsskärmen för Snowflake-målet.](../../assets/catalog/cloud-storage/snowflake-batch/mapping.png)
 
-Du kan använda kontrollen [&#x200B; för &#x200B;](../../ui/data-transformations-calculated-fields.md)beräknade fält för att exportera och utföra åtgärder på arrayer.
+Du kan använda kontrollen [ för ](../../ui/data-transformations-calculated-fields.md)beräknade fält för att exportera och utföra åtgärder på arrayer.
 
 Målattributen skapas automatiskt i Snowflake med det attributnamn som du anger i fältet **[!UICONTROL Attribute name]**.
 
