@@ -3,7 +3,7 @@ title: Snowflake Source Connector - översikt
 description: Lär dig hur du ansluter Snowflake till Adobe Experience Platform med API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: df066463-1ae6-4ecd-ae0e-fb291cec4bd5
-source-git-commit: 687363ab664e43cc854b535760dfbfc55acefd2c
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1570'
 ht-degree: 2%
@@ -22,7 +22,7 @@ ht-degree: 2%
 
 Du kan använda källan [!DNL Snowflake] för att ansluta och hämta data från [!DNL Snowflake] till Adobe Experience Platform. Läs dokumentationen nedan för att lära dig hur du konfigurerar din [!DNL Snowflake]-källa och ansluter till Experience Platform.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 I det här avsnittet beskrivs de konfigurationsåtgärder som du måste slutföra innan du kan ansluta [!DNL Snowflake]-källan till Experience Platform.
 
@@ -52,7 +52,7 @@ Ange värden för följande autentiseringsuppgifter för att ansluta [!DNL Snowf
 
 >[!TAB Autentisering med nyckelpar (Azure)]
 
-Generera först ett 2 048-bitars RSA-nyckelpar om du vill använda nyckelpars-autentisering. Ange sedan värden för följande autentiseringsuppgifter för att ansluta till Experience Platform på Azure med nyckelparautentisering.
+Generera först ett 2 048-bitars RSA-nyckelpar om du vill använda nyckelpars-autentisering. Ange sedan värden för följande autentiseringsuppgifter för att ansluta till Experience Platform på Azure med nyckelpars-autentisering.
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
