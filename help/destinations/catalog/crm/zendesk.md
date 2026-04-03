@@ -3,7 +3,7 @@ title: Zendesk-anslutning
 description: Använd Zendesk-destinationen för att exportera dina kontouppgifter och aktivera dem i Zendesk efter behov.
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: e7fcbbf4-5d6c-4abb-96cb-ea5b67a88711
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1562'
 ht-degree: 1%
@@ -26,7 +26,7 @@ Kundtjänstavdelningen på en flerkanalig B2C-plattform vill säkerställa en s�
 
 ### Krav för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data till målet [!DNL Zendesk] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) som skapats i [!DNL Experience Platform].
+Innan du aktiverar data till målet [!DNL Zendesk] måste du ha ett [schema](/help/xdm/schema/composition.md), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform].
 
 Se Experience Platform-dokumentationen för schemafältgruppen [Information om målgruppsmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om målgruppsstatus.
 
@@ -185,7 +185,7 @@ Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 1. Övervaka målgruppssammanfattningen och kontrollera att antalet profiler motsvarar antalet inom segmentet.
    ![Exempel på skärmbild i Experience Platform UI som visar segment.](../../assets/catalog/crm/zendesk/segment.png)
 
-1. Gå till webbplatsen [!DNL Zendesk] och navigera sedan till sidan **[!UICONTROL Contacts]** för att kontrollera om profilerna från målgruppen har lagts till. Den här listan kan konfigureras för att visa kolumner för de ytterligare fält som har skapats med målgruppsstatus&#x200B;**[!UICONTROL Mapping ID]** och målgruppsstatus.
+1. Gå till webbplatsen [!DNL Zendesk] och navigera sedan till sidan **[!UICONTROL Contacts]** för att kontrollera om profilerna från målgruppen har lagts till. Den här listan kan konfigureras för att visa kolumner för de ytterligare fält som har skapats med målgruppsstatus**[!UICONTROL Mapping ID]** och målgruppsstatus.
    ![Skärmbild från användargränssnittet i Zendesk som visar sidan Kontakter med de ytterligare fält som har skapats med målgruppens namn.](../../assets/catalog/crm/zendesk/contacts.png)
 
 1. Du kan även gå ned på en enskild **[!UICONTROL Person]**-sida och kontrollera avsnittet **[!UICONTROL Additional fields]** som visar målgruppsnamnet och målgruppsstatus.
