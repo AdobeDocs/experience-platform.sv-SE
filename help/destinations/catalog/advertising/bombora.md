@@ -2,7 +2,7 @@
 title: Bombora ABM Audience connection
 description: Aktivera profiler för era Bombora-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på målgrupper.
 exl-id: a2f8e399-e192-4104-876a-fe60f8403143
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1157'
 ht-degree: 0%
