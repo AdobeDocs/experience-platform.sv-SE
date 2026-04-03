@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över dataanvändningsprinciper
 description: Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Adobe Experience Platform.
 exl-id: 1b372aa5-3e49-4741-82dc-5701a4bc8469
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '1207'
 ht-degree: 0%
@@ -52,12 +52,13 @@ När dataanvändningen sker i er organisations tjänst bör relevanta marknadsf�
 
 I bilagan till det här dokumentet finns en lista med [tillgängliga Adobe-definierade marknadsföringsåtgärder](#core-actions). Du kan också definiera egna anpassade marknadsföringsåtgärder med hjälp av [!DNL Policy Service]-API:t eller [!DNL Experience Platform]-användargränssnittet. Mer information om hur du arbetar med marknadsföringsåtgärder och -policyer finns i nästa avsnitt.
 
-<!-- (Add after AAM DEC mapping doc is published)
+<!-- 
+(Add after AAM DEC mapping doc is published)
 ### Inheritance from Adobe Audience Manager Data Export Controls
 
 Experience Platform has the ability to share audiences with Adobe Audience Manager. Any Data Export Controls that have been applied to Audience Manager audiences are translated to equivalent marketing use cases recognized by Experience Platform Data Governance.
 
-For a reference on how specific Data Export Controls map to marketing actions in Experience Platform, please refer to the [Audience Manager documentation](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-export-controls.html?lang=sv-SE).
+For a reference on how specific Data Export Controls map to marketing actions in Experience Platform, please refer to the [Audience Manager documentation](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-export-controls.html).
 -->
 
 ## Hantera dataanvändningspolicyer {#manage}
