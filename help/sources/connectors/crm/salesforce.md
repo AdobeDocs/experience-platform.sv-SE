@@ -2,7 +2,7 @@
 title: Salesforce Source Connector - översikt
 description: Lär dig hur du ansluter Salesforce till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: d8d9303e358c66c4cd891d6bf59a801c09a95f8e
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1635'
 ht-degree: 0%
@@ -233,7 +233,7 @@ Om du vill använda källan [!DNL Salesforce] som en del av [!DNL B2B-CDP] måst
 
 Med en Experience Platform-utvecklarkonsol och [!DNL Postman] konfigurerad kan du nu börja använda lämpliga miljövärden i din [!DNL Postman] -miljö.
 
-+++Visa den variabla tabellstödlinjen
++++Visa guiden för variabeltabellen
 
 Följande tabell innehåller exempelvärden samt ytterligare information om hur du fyller i din [!DNL Postman]-miljö:
 
@@ -283,7 +283,7 @@ En lyckad begäran skapar B2B-namnutrymmen och scheman enligt betaspecifikatione
 
 Följ stegen nedan för att lära dig hur du kan konfigurera ditt [!DNL Salesforce]-konto för Experience Platform på Amazon Web Services (AWS).
 
-### Förhandskrav
+### Förutsättningar
 
 Om du vill ansluta ditt [!DNL Salesforce]-konto till Experience Platform i en AWS-region måste du ha följande:
 
@@ -303,7 +303,7 @@ Använd först följande för att skapa PEM-filer med certifikat/nyckelpar.
 openssl req -newkey rsa:4096 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem  
 ```
 
-1. Välj inställningar (![Inställningsikonen på kontrollpanelen [!DNL Salesforce].](/help/images/icons/settings.png)) och välj sedan **[!DNL Setup]**.
+1. Välj inställningar ([!DNL Salesforce]Inställningsikonen på kontrollpanelen ![.](/help/images/icons/settings.png)) och välj sedan **[!DNL Setup]**.
 2. Navigera till [!DNL App Manager] och välj sedan **[!DNL New Connection App]**.
 3. Ange ett namn för appen och låt resten av fälten fyllas i automatiskt.
 4. Aktivera rutan för [!DNL Enable OAuth Settings].
