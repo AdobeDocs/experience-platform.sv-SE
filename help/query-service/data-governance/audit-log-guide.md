@@ -2,7 +2,7 @@
 title: Granska loggintegrering för frågetjänsten
 description: Granskningsloggar för frågetjänsten bevarar poster för olika användaråtgärder för att skapa en åtkomsthistorik för felsökningsproblem eller följa företagets policyer för datahantering och lagstadgade krav. Den här självstudiekursen ger en översikt över granskningsloggsfunktioner som är specifika för frågetjänsten.
 exl-id: 5fdc649f-3aa1-4337-965f-3f733beafe9d
-source-git-commit: d3b73124795cfdeb5f8f1890105bf9c174711b36
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '888'
 ht-degree: 0%
@@ -68,7 +68,7 @@ Du kan använda informationspanelen för att hitta [!UICONTROL Asset ID] och [!U
 Värdet för [!UICONTROL Asset ID] ändras beroende på vilken kategori som används i granskningen.
 
 * När du använder kategorin [!UICONTROL Query] är [!UICONTROL Asset ID] sessions-ID **.**
-* När du använder kategorin [!UICONTROL Query template] är [!UICONTROL Asset ID] mall-ID:t **&#x200B;**&#x200B;och prefixet `[!UICONTROL templateID:]`.
+* När du använder kategorin [!UICONTROL Query template] är [!UICONTROL Asset ID] mall-ID:t **** och prefixet `[!UICONTROL templateID:]`.
 * När du använder kategorin [!UICONTROL Scheduled query] är [!UICONTROL Asset ID] **Schedule-ID** och prefixet med `[!UICONTROL scheduleID:]`.
 
 Värdet för [!UICONTROL Event status] ändras beroende på vilken kategori som används i granskningen.
