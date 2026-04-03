@@ -3,7 +3,7 @@ title: Söka efter kantprofilattribut i realtid
 description: Lär dig hur du söker efter kantprofilattribut i realtid med det anpassade Personalization-målet och Edge Network API
 type: Tutorial
 exl-id: e185d741-af30-4706-bc8f-d880204d9ec7
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '1833'
 ht-degree: 0%
@@ -52,9 +52,11 @@ Följ stegen i dokumentationen för [datastream-konfigurationen](../../datastrea
 * **[!UICONTROL Edge Segmentation]**: Aktivera det här alternativet om du behöver kantsegmentering. Om du bara är intresserad av att leta upp profilattribut på kanten, men inte vill segmentera baserat på kantprofilerna, låter du det här alternativet vara inaktiverat.
 
 
-<!-- >[!IMPORTANT]
+<!-- 
+>[!IMPORTANT]
 >
->Enabling edge segmentation limits the maximum number of lookup requests to 1500 request per second. If you need a higher request throughput, disable edge segmentation for your datastream. See the [guardrails documentation](../guardrails.md#edge-destinations-activation) for detailed information. -->
+>Enabling edge segmentation limits the maximum number of lookup requests to 1500 request per second. If you need a higher request throughput, disable edge segmentation for your datastream. See the [guardrails documentation](../guardrails.md#edge-destinations-activation) for detailed information. 
+-->
 
 ![Experience Platform-gränssnittsbild som visar konfigurationsskärmen för dataströmmen.](../assets/ui/activate-edge-profile-lookup/datastream-config.png)
 
@@ -63,7 +65,7 @@ Följ stegen i dokumentationen för [datastream-konfigurationen](../../datastrea
 
 Om du vill söka efter profilattribut i kanten måste målgrupperna konfigureras för kantutvärdering.
 
-Kontrollera att [Active-on-Edge Merge Policy](../../segmentation/ui/segment-builder.md#merge-policies) har angetts som standard för de målgrupper som du tänker aktivera. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [&#x200B; vid sidan om &#x200B;](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för personalisering i realtid.
+Kontrollera att [Active-on-Edge Merge Policy](../../segmentation/ui/segment-builder.md#merge-policies) har angetts som standard för de målgrupper som du tänker aktivera. Sammanslagningsprincipen [!DNL Active-On-Edge] säkerställer att målgrupperna hela tiden utvärderas [ vid sidan om ](../../segmentation/methods/edge-segmentation.md) och är tillgängliga för personalisering i realtid.
 
 Följ instruktionerna på [skapa en sammanfogningsprincip](../../profile/merge-policies/ui-guide.md#create-a-merge-policy) och se till att aktivera alternativet **[!UICONTROL Active-On-Edge Merge Policy]**.
 
