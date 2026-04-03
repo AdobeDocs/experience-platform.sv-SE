@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform september 2021
 description: Versionsinformationen för Adobe Experience Platform från september 2021.
 exl-id: 96375409-803f-45af-805e-900207d972e4
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '386'
 ht-degree: 22%
@@ -15,11 +15,11 @@ ht-degree: 22%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-- [Datainmatning](#ingestion)
+- [Datainhämtning](#ingestion)
 - [[!DNL Data Prep]](#data-prep)
 - [Källor](#sources)
 
-## Datainmatning {#ingestion}
+## Datainhämtning {#ingestion}
 
 Adobe Experience Platform datainmatning representerar de olika metoder som Experience Platform använder för att importera data från olika källor, samt hur data lagras i Data Lake för användning i Experience Platform-tjänster längre fram i kedjan.
 
@@ -52,7 +52,7 @@ Experience Platform tillhandahåller ett RESTful API och ett interaktivt använd
 | Funktion | Beskrivning |
 | --- | --- |
 | [!DNL Data Landing Zone] | Du kan nu skapa en [!DNL Data Landing Zone]-källanslutning med [[!DNL Flow Service] API](../../sources/tutorials/api/create/cloud-storage/data-landing-zone.md) eller [användargränssnittet](../../sources/tutorials/ui/create/cloud-storage/data-landing-zone.md). [!DNL Data Landing Zone] är ett [!DNL Azure Blob]-lagringsgränssnitt som tillhandahålls av Experience Platform, vilket ger dig tillgång till en säker, molnbaserad fillagringsfunktion för att hämta filer till Experience Platform. Mer information finns i [[!DNL Data Landing Zone] översikten](../../sources/connectors/cloud-storage/data-landing-zone.md). |
-| [!DNL Snowflake] | Du kan nu skapa en [!DNL Snowflake]-källanslutning med [[!DNL Flow Service]  API &#x200B;](../../sources/tutorials/api/create/databases/snowflake.md) eller [användargränssnittet](../../sources/tutorials/ui/create/databases/snowflake.md) för att hämta data från din [!DNL Snowflake]-databas till Experience Platform. Mer information finns i [[!DNL Snowflake] översikten](../../sources/connectors/databases/snowflake.md). |
+| [!DNL Snowflake] | Du kan nu skapa en [!DNL Snowflake]-källanslutning med [[!DNL Flow Service]  API ](../../sources/tutorials/api/create/databases/snowflake.md) eller [användargränssnittet](../../sources/tutorials/ui/create/databases/snowflake.md) för att hämta data från din [!DNL Snowflake]-databas till Experience Platform. Mer information finns i [[!DNL Snowflake] översikten](../../sources/connectors/databases/snowflake.md). |
 | [!DNL SFTP] källförbättringar | Du kan ange ett eget portnummer manuellt när du skapar en [!DNL SFTP]-källanslutning. Mer information finns i [[!DNL SFTP] översikten](../../sources/connectors/cloud-storage/sftp.md). |
 
 Mer information om källor finns i [Källöversikt](../../sources/home.md).
