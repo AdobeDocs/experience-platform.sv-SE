@@ -2,7 +2,8 @@
 title: API-tillägg för Redigera konverteringar
 description: Lär dig hur du använder tillägget API för redigering av annonskonverteringar för att skicka användarinteraktionshändelser till Reddit Ads för riktad reklam.
 last-substantial-update: 2025-05-1
-source-git-commit: 603cc86892f518852552eaa2fe1bdeaa296137cf
+exl-id: 550f7b62-84d7-49d4-8551-b8785cdedd0f
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1017'
 ht-degree: 0%
@@ -15,7 +16,7 @@ Reddit är en plattform för sociala medier med en mångfaldig användarbas, vil
 
 Använd [[!DNL Reddit] API-tillägget för konvertering](https://ads-api.reddit.com/docs/v2/#tag/Conversions-API) för att skicka användarinteraktionshändelser som hämtats i Adobe Experience Platform Edge Network till [!DNL Reddit Ads]. Använd det här tillägget för att hjälpa ert varumärke att nå ut till fler än 379 miljoner aktiva användare varje vecka, och få en bättre förståelse för användarbeteende och köra riktade annonser.
 
-Läs den här vägledningen när du vill lära dig hur du installerar, konfigurerar och använder API-tillägget [!DNL Reddit] Conversions i [regler](https://experienceleague.adobe.com/sv/docs/experience-platform/tags/ui/rules) för vidarebefordran av händelser.
+Läs den här vägledningen när du vill lära dig hur du installerar, konfigurerar och använder API-tillägget [!DNL Reddit] Conversions i [regler](https://experienceleague.adobe.com/en/docs/experience-platform/tags/ui/rules) för vidarebefordran av händelser.
 
 ## Viktiga fördelar {#benefits}
 
@@ -25,7 +26,7 @@ Använd tillägget API för Redigera konverteringar för att:
 - **Analysera användarbeteende**: Använd användarinteraktionsdata för att förstå beteende och optimera kampanjer.
 - **Leverera riktade annonser**: Kör personaliserade annonser baserat på användarinteraktioner som hämtats i Adobe Experience Platform.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Du måste ha ett giltigt Reddit Ads-konto för att kunna använda det här tillägget. Gå till [[!DNL Reddit Ads] registreringssidan](https://business.reddithelp.com/s/article/Create-and-manage-your-Reddit-Ads-account) för att registrera och skapa ett konto om du inte redan har ett. När du har konfigurerat ditt konto [begär åtkomst till API:t för annonser](https://www.redditforbusiness.com/api-partnership).
 
@@ -42,20 +43,19 @@ Följande indata krävs för att ansluta Experience Platform till [!DNL Reddit]:
 
 Så här installerar och konfigurerar du API-tillägget [!DNL Reddit] för konvertering:
 
-1. I användargränssnittet för Experience Platform Data Collection väljer du [!UICONTROL Extensions] i den vänstra navigeringen för att komma åt katalogen [!UICONTROL Extensions]. [Skapa sedan en ny egenskap för vidarebefordring av händelse](https://experienceleague.adobe.com/sv/docs/experience-platform/tags/event-forwarding/overview#properties) eller välj en befintlig egenskap.
+1. I användargränssnittet för Experience Platform Data Collection väljer du [!UICONTROL Extensions] i den vänstra navigeringen för att komma åt katalogen [!UICONTROL Extensions]. [Skapa sedan en ny egenskap för vidarebefordring av händelse](https://experienceleague.adobe.com/en/docs/experience-platform/tags/event-forwarding/overview#properties) eller välj en befintlig egenskap.
 2. Navigera till **[!UICONTROL Extensions]** i den vänstra navigeringspanelen. Välj **[!UICONTROL Catalog]** och välj sedan tillägget **[!DNL Reddit]**.
    ![Katalogen Adobe Experience Platform Extensions med tillägget Reddit markerat.](../../../images/extensions/server/reddit/reddit-extension.png)
 3. Ange följande konfigurationsinformation:
    - **Pixel-ID**: Ange ditt [!DNL Reddit Ads] pixel-ID.
    - **Åtkomsttoken för konvertering**: Ange den token som har genererats i ditt [!DNL Reddit Ads]-konto och välj **[!UICONTROL Save]** när du är klar.
-
      ![Konfigurationsinformation för tillägget API för redigeringskonverteringar, inklusive fält för Pixel ID och konverteringsåtkomsttoken.](../../../images/extensions/server/reddit/reddit-capi-details.png)
 
 ## Konfigurera en regel för vidarebefordran av händelser {#config-rule}
 
 När du har konfigurerat dataelementen kan du skapa regler för vidarebefordran av händelser som avgör när och hur händelser skickas till [!DNL Reddit Ads].
 
-1. Navigera till **Regler** i egenskapen för vidarebefordran av händelser och skapa en ny [regel](https://experienceleague.adobe.com/sv/docs/experience-platform/tags/ui/rules).
+1. Navigera till **Regler** i egenskapen för vidarebefordran av händelser och skapa en ny [regel](https://experienceleague.adobe.com/en/docs/experience-platform/tags/ui/rules).
 2. Lägg till en ny åtgärd under **Åtgärder** och ange tillägget till **[!DNL Reddit CAPI]**.
 3. Ange **åtgärdstypen** till **Skicka händelse**.
    ![Konfigurationsgränssnittet för regel för vidarebefordran av händelser för tillägget för API för redigeringskonverteringar, med fälten för tillägg och åtgärdstyp markerade.](../../../images/extensions/server/reddit/reddit-rule.png)
