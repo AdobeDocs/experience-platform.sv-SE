@@ -2,8 +2,8 @@
 title: Versionsinformation om Adobe Experience Platform januari 2024
 description: Versionsinformationen för Adobe Experience Platform i januari 2024.
 exl-id: d4b3c5b2-3adb-41fd-91ad-f4c0f21d2325
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
-workflow-type: ht
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+workflow-type: tm+mt
 source-wordcount: '1649'
 ht-degree: 100%
 
