@@ -5,9 +5,9 @@ type: Documentation
 description: Med Adobe Experience Platform kan du ta bort en datauppsättning eller batch från profilbutiken för att ta bort kundprofildata i realtid som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder profil-API:t för att skapa ett profilsystemjobb eller för att ta bort en begäran.
 role: Developer
 exl-id: 75ddbf2f-9a54-424d-8569-d6737e9a590e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
-source-wordcount: '2022'
+source-wordcount: '2021'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Följande slutpunkter kan skilja sig åt mellan implementeringar av Adobe Experience Platform som körs på Microsoft Azure och Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/sv/docs/experience-platform/landing/multi-cloud).
+>Följande slutpunkter kan skilja sig åt mellan implementeringar av Adobe Experience Platform som körs på Microsoft Azure och Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
 
 Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa robusta profiler för enskilda kunder. Data som inhämtas till [!DNL Experience Platform] lagras i [!DNL Data Lake], och om datauppsättningarna har aktiverats för profilen lagras även dessa data i datalagret [!DNL Real-Time Customer Profile]. Ibland kan det vara nödvändigt att ta bort profildata som är kopplade till en datauppsättning från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att [!DNL Real-Time Customer Profile]-API:t används för att skapa ett [!DNL Profile]-systemjobb eller en&quot;borttagningsbegäran&quot;.
 
@@ -100,7 +100,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/system/jobs \
 
 >[!IMPORTANT]
 >
->Följande svar skiljer sig mellan Azure- och AWS-instanserna.
+>Följande svar skiljer sig mellan Azure- och AWS-instanser.
 
 >[!BEGINTABS]
 
@@ -284,7 +284,7 @@ curl -X POST \
 
 >[!IMPORTANT]
 >
->Följande svar skiljer sig mellan Azure- och AWS-instanserna.
+>Följande svar skiljer sig mellan Azure- och AWS-instanser.
 
 >[!BEGINTABS]
 
@@ -433,7 +433,7 @@ curl -X POST \
 
 >[!IMPORTANT]
 >
->Följande svar skiljer sig mellan Azure- och AWS-instanserna.
+>Följande svar skiljer sig mellan Azure- och AWS-instanser.
 
 >[!BEGINTABS]
 
@@ -581,7 +581,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/system/jobs/9c2018e2-cd04-46
 
 >[!IMPORTANT]
 >
->Följande svar skiljer sig mellan Azure- och AWS-instanserna.
+>Följande svar skiljer sig mellan Azure- och AWS-instanser.
 
 >[!BEGINTABS]
 
