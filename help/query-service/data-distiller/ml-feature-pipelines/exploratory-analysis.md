@@ -2,7 +2,7 @@
 title: Analys av experimentella data
 description: Lär dig hur du använder Data Distiller för att utforska och analysera data från en bärbar Python-dator.
 exl-id: 1dd4cf6e-f7cc-4f4b-afbd-bfc1d342a2c3
-source-git-commit: 27834417a1683136a173996cff1fd422305e65b9
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '760'
 ht-degree: 13%
@@ -103,9 +103,9 @@ print(f"Approximate count: {approx_count} using {sampling_rate *10}% sample")
 Approximate count: 1284600.0 using 5.0% sample
 ```
 
-## E-posttrattanalys {#email-funnel-analysis}
+## Funnel-analys via mejl {#email-funnel-analysis}
 
-En trattanalys är ett sätt att förstå de steg som krävs för att nå ett målresultat och hur många användare som får igenom varje steg. Exemplet nedan visar en enkel trattanalys av de steg som leder till att en användare prenumererar på ett nyhetsbrev. Prenumerationsresultatet representeras av händelsetypen `web.formFilledOut`.
+En funnel-analys är ett sätt att förstå vilka steg som krävs för att nå ett målresultat och hur många användare som får igenom varje steg. Exemplet nedan visar en enkel funnel-analys av de steg som leder till att en användare prenumererar på ett nyhetsbrev. Prenumerationsresultatet representeras av händelsetypen `web.formFilledOut`.
 
 Kör först en fråga för att hämta antalet användare i varje steg.
 
@@ -152,7 +152,7 @@ fig.show()
 
 **Exempelutdata**
 
-![En infografik för e-posttratten eventType.](../../images/data-distiller/email-funnel.png)
+![En infografik av eventType-e-postmeddelandet funnel.](../../images/data-distiller/email-funnel.png)
 
 ## Händelsekorrelationer {#event-correlations}
 
@@ -262,4 +262,4 @@ ax.set_title("Pearson Correlation of Events with the outcome event")
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du lärt dig att använda Data Distiller för att utforska och analysera data från en [!DNL Python]-anteckningsbok. Nästa steg med att skapa funktionsledningar från Experience Platform till anpassade modeller i maskininlärningsmiljön är att [skapa maskininlärningsfunktioner](./feature-engineering.md).
+Genom att läsa det här dokumentet har du lärt dig att använda Data Distiller för att utforska och analysera data från en [!DNL Python]-anteckningsbok. Nästa steg med att skapa funktionsledningar från Experience Platform för att mata in anpassade modeller i maskininlärningsmiljön är att [skapa maskininlärningsfunktioner](./feature-engineering.md).
