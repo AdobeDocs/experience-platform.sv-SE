@@ -3,7 +3,7 @@ title: API-slutpunkt för segmentsökning
 description: I API:t för Adobe Experience Platform segmenteringstjänst används segmentsökning för att söka efter fält som finns i olika datakällor och returnera dem i nära realtid. Den här handboken innehåller information som hjälper dig att förstå segmentsökning bättre och innehåller exempel på API-anrop för att utföra grundläggande åtgärder med API:t.
 role: Developer
 exl-id: bcafbed7-e4ae-49c0-a8ba-7845d8ad663b
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1178'
 ht-degree: 0%
@@ -36,9 +36,9 @@ GET /search/namespaces?schema.name={SCHEMA}&s={SEARCH_TERM}
 ```
 
 | Parametrar | Beskrivning |
-| ---------- | ----------- | 
+| ---------- | ----------- |
 | `schema.name={SCHEMA}` | **(Obligatoriskt)** Där {SCHEMA} representerar schemaklassvärdet som är associerat med sökobjekten. För närvarande stöds bara `_xdm.context.segmentdefinition`. |
-| `s={SEARCH_TERM}` | *(Valfritt)* Where {SEARCH_TERM} representerar en fråga som överensstämmer med Microsoft implementering av [Lucenes söksyntax &#x200B;](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om ingen sökterm har angetts returneras alla poster som är associerade med `schema.name`. En mer detaljerad förklaring finns i [bilagan](#appendix) till det här dokumentet. |
+| `s={SEARCH_TERM}` | *(Valfritt)* Where {SEARCH_TERM} representerar en fråga som överensstämmer med Microsoft implementering av [Lucenes söksyntax ](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om ingen sökterm har angetts returneras alla poster som är associerade med `schema.name`. En mer detaljerad förklaring finns i [bilagan](#appendix) till det här dokumentet. |
 
 **Begäran**
 
@@ -96,10 +96,10 @@ GET /search/entities?schema.name={SCHEMA}&namespace={NAMESPACE}&entityId={ENTITY
 ```
 
 | Parametrar | Beskrivning |
-| ---------- | ----------- | 
+| ---------- | ----------- |
 | `schema.name={SCHEMA}` | **(Obligatoriskt)** Där {SCHEMA} innehåller schemaklassvärdet som är associerat med sökobjekten. För närvarande stöds bara `_xdm.context.segmentdefinition`. |
 | `namespace={NAMESPACE}` | **(Obligatoriskt)** Där {NAMESPACE} innehåller det namnutrymme som du vill söka i. |
-| `s={SEARCH_TERM}` | *(Valfritt)* Där {SEARCH_TERM} innehåller en fråga som överensstämmer med Microsoft implementering av [Lucenes söksyntax &#x200B;](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om ingen sökterm har angetts returneras alla poster som är associerade med `schema.name`. En mer detaljerad förklaring finns i [bilagan](#appendix) till det här dokumentet. |
+| `s={SEARCH_TERM}` | *(Valfritt)* Där {SEARCH_TERM} innehåller en fråga som överensstämmer med Microsoft implementering av [Lucenes söksyntax ](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om ingen sökterm har angetts returneras alla poster som är associerade med `schema.name`. En mer detaljerad förklaring finns i [bilagan](#appendix) till det här dokumentet. |
 | `entityId={ENTITY_ID}` | *(Valfritt)* Begränsar sökningen till i den angivna mappen, som anges med {ENTITY_ID}. |
 | `limit={LIMIT}` | *(Valfritt)* Där {LIMIT} representerar antalet sökresultat som ska returneras. Standardvärdet är 50. |
 | `page={PAGE}` | *(Valfritt)* Där {PAGE} representerar sidnumret som används för att sidnumrera resultaten av den fråga som sökts. Observera att sidnumret börjar **0**. |
@@ -167,7 +167,7 @@ GET /search/taxonomy?schema.name={SCHEMA}&namespace={NAMESPACE}&entityId={ENTITY
 ```
 
 | Parametrar | Beskrivning |
-| ---------- | ----------- | 
+| ---------- | ----------- |
 | `schema.name={SCHEMA}` | **(Obligatoriskt)** Där {SCHEMA} innehåller schemaklassvärdet som är associerat med sökobjekten. För närvarande stöds bara `_xdm.context.segmentdefinition`. |
 | `namespace={NAMESPACE}` | **(Obligatoriskt)** Där {NAMESPACE} innehåller det namnutrymme som du vill söka i. |
 | `entityId={ENTITY_ID}` | **(Obligatoriskt)** ID:t för det sökobjekt som du vill hämta strukturinformationen om, som anges med {ENTITY_ID}. |
