@@ -2,7 +2,7 @@
 title: Kundprofilöversikt i realtid
 description: Kundprofilen i realtid sammanfogar data från olika källor och ger åtkomst till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '1826'
 ht-degree: 1%
@@ -45,7 +45,7 @@ Dimensionella enheter och B2B-enheter länkas till den primära entiteten via **
 
 Även om [!DNL Real-Time Customer Profile] bearbetar inkapslade data och använder Adobe Experience Platform [!DNL Identity Service] för att sammanfoga relaterade data via identitetsmappning, behåller den egna data i datalagret [!DNL Profile]. [!DNL Profile]-arkivet är skilt från katalogdata i datasjön och [!DNL Identity Service] data i identitetsdiagrammet.
 
-Profilarkivet använder en Microsoft Azure Cosmos DB-infrastruktur och Experience Platform Data Lake använder Microsoft Azure Data Lake-lagring.
+Profilbutiken använder en Microsoft Azure Cosmos DB-infrastruktur och Experience Platform Data Lake använder Microsoft Azure Data Lake-lagring.
 
 ### Profilskyddsutkast
 
@@ -89,13 +89,15 @@ En av de viktigaste funktionerna i [!DNL Real-Time Customer Profile] är möjlig
 
 Om du vill veta mer om unionsscheman, inklusive hur du kommer åt unionsscheman i användargränssnittet, kan du gå till [gränssnittsguiden för unionsscheman](ui/union-schema.md).
 
-<!-- ### (Alpha) Computed attributes
+<!--
+### (Alpha) Computed attributes
 
 >[!IMPORTANT]
 >
 >Computed attribute functionality is in alpha. The documentation and functionality are subject to change.
 
-Computed attributes are functions used to aggregate event-level data into profile-level attributes. These functions are automatically computed so that they can be used across segmentation, activation, and personalization. These computations help you to easily answer questions related to things like lifetime purchase value, time between purchases, or number of application opens, without requiring you to manually perform complex calculations each time the information is needed. For more information on computed attributes, including understanding the role computed attributes play within Adobe Experience Platform, please begin by reading the [computed attributes overview](computed-attributes/overview.md). -->
+Computed attributes are functions used to aggregate event-level data into profile-level attributes. These functions are automatically computed so that they can be used across segmentation, activation, and personalization. These computations help you to easily answer questions related to things like lifetime purchase value, time between purchases, or number of application opens, without requiring you to manually perform complex calculations each time the information is needed. For more information on computed attributes, including understanding the role computed attributes play within Adobe Experience Platform, please begin by reading the [computed attributes overview](computed-attributes/overview.md). 
+-->
 
 ## Profiler och målgrupper
 
@@ -135,7 +137,7 @@ Datastyrning hanteras vid flera tillfällen. Det kan vara att bestämma vilka da
 
 ### Hantera avanmälan och förfrågningar om datasekretess
 
-[!DNL Experience Platform] gör det möjligt för dina kunder att skicka avanmälningsbegäranden som rör användning och lagring av deras data i [!DNL Real-Time Customer Profile]. Mer information om hur avanmälningsbegäranden hanteras finns i dokumentationen om [hur avanmälningsbegäranden &#x200B;](../segmentation/tutorials/consents.md) respekteras.
+[!DNL Experience Platform] gör det möjligt för dina kunder att skicka avanmälningsbegäranden som rör användning och lagring av deras data i [!DNL Real-Time Customer Profile]. Mer information om hur avanmälningsbegäranden hanteras finns i dokumentationen om [hur avanmälningsbegäranden ](../segmentation/tutorials/consents.md) respekteras.
 
 ## Nästa steg och ytterligare resurser
 
