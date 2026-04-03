@@ -4,7 +4,7 @@ description: Med kundprofilen i realtid kan ni se en helhetsbild av varje enskil
 title: Övervaka dataflöden för profiler i användargränssnittet
 type: Tutorial
 exl-id: 00b624b2-f6d1-4ef2-abf2-52cede89b684
-source-git-commit: 1d60afdf486642398a2d31302db339eb9cb45130
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1240'
 ht-degree: 0%
