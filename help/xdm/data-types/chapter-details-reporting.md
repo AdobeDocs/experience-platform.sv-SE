@@ -2,7 +2,7 @@
 title: Kapitelinformation, rapportdatatyp
 description: Läs mer om datatypen Kapitel Details Reporting Experience Data Model (XDM).
 exl-id: 73ebfbe3-66c3-4ef9-9944-d9cb5772127b
-source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '230'
 ht-degree: 0%
@@ -17,15 +17,15 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Varje visningsnamn innehåller en länk med mer information om dess ljud- och videoparametrar. De länkade sidorna innehåller information om videoannonser som samlats in av Adobe, implementeringsvärden, nätverksparametrar, rapporter och viktiga överväganden.
+>Varje visningsnamn innehåller en länk med mer information om dess ljud- och videoparametrar. De länkade sidorna innehåller information om videoannonsdata som samlats in av Adobe, implementeringsvärden, nätverksparametrar, rapportering och viktiga överväganden.
 
 | Visningsnamn | Egenskap | Datatyp | Beskrivning |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|-----------|--------------------------------------------------------------|
-| [[!UICONTROL Chapter Completed]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html?lang=sv-SE#chapter-complete) | `isCompleted` | boolesk | Anger om kapitlet har slutförts eller inte. |
-| [[!UICONTROL Chapter ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html?lang=sv-SE#chapter) | `ID` | string | Kapitelets automatiskt genererade ID. |
-| [[!UICONTROL Chapter Length Or Duration]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html?lang=sv-SE#chapter-length) | `length` | heltal | Kapitelns längd i sekunder. |
-| [[!UICONTROL Chapter Name]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html?lang=sv-SE#chapter-name) | `friendlyName` | string | Namnet på kapitlet och/eller segmentet. |
-| [[!UICONTROL Chapter Offset]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html?lang=sv-SE#chapter-offset) | `offset` | heltal | Kapitelns förskjutning i innehållet (i sekunder) från början. |
-| [[!UICONTROL Chapter Position]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html?lang=sv-SE#chapter-position) | `index` | heltal | Placeringen (index, heltal) av kapitlet inuti innehållet. |
-| [[!UICONTROL Chapter Started]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html?lang=sv-SE#chapter-start) | `isStarted` | boolesk | Anger om kapitlet har startats eller inte. |
-| [[!UICONTROL Chapter Time Played]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html?lang=sv-SE#chapter-time-spent) | `timePlayed` | heltal | Den tid som har ägnats åt kapitlet, i sekunder. |
+| [[!UICONTROL Chapter Completed]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html#chapter-complete) | `isCompleted` | boolesk | Anger om kapitlet har slutförts eller inte. |
+| [[!UICONTROL Chapter ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html#chapter) | `ID` | string | Kapitelets automatiskt genererade ID. |
+| [[!UICONTROL Chapter Length Or Duration]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html#chapter-length) | `length` | heltal | Kapitelns längd i sekunder. |
+| [[!UICONTROL Chapter Name]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html#chapter-name) | `friendlyName` | string | Namnet på kapitlet och/eller segmentet. |
+| [[!UICONTROL Chapter Offset]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html#chapter-offset) | `offset` | heltal | Kapitelns förskjutning i innehållet (i sekunder) från början. |
+| [[!UICONTROL Chapter Position]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html#chapter-position) | `index` | heltal | Placeringen (index, heltal) av kapitlet inuti innehållet. |
+| [[!UICONTROL Chapter Started]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html#chapter-start) | `isStarted` | boolesk | Anger om kapitlet har startats eller inte. |
+| [[!UICONTROL Chapter Time Played]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html#chapter-time-spent) | `timePlayed` | heltal | Den tid som har ägnats åt kapitlet, i sekunder. |
