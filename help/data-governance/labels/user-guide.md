@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Hantera dataanvändningsetiketter i användargränssnittet
 description: Den här guiden innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '1495'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Den här användarhandboken innehåller steg för att arbeta med dataanvändning
 
 Om du vill använda etiketter på dina data behöver du behörigheten **[!UICONTROL Manage Usage Labels]** för användning i standardproduktionssandlådan prod. Om du vill skapa en anpassad etikett måste du även ha administratörsbehörighet för produktprofilen. Varje organisation har bara en lista över tillämpliga etiketter. Du **kan inte** ta bort etiketter. I stället kan du ta bort dem från de datauppsättningar eller fält som de tillämpas på.
 
-Mer information om hur du tilldelar en behörighet finns i guiden [Konfigurera behörigheter](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html?lang=sv-SE) eller i [åtkomstkontrollsöversikten](../../access-control/home.md) . Kontakta din organisations administratör om du inte har tillgång till Admin Console för din organisation.
+Mer information om hur du tilldelar en behörighet finns i guiden [Konfigurera behörigheter](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html) eller i [åtkomstkontrollsöversikten](../../access-control/home.md) . Kontakta din organisations administratör om du inte har tillgång till Admin Console för din organisation.
 
 ## Hantera etiketter på schemanivå
 
@@ -46,7 +46,7 @@ I nästa avsnitt beskrivs hur du skapar ett nytt schema som du kan använda etik
 
 ### Skapa ett nytt schema
 
-Om du vill skapa ett nytt schema väljer du **[!UICONTROL Create schema]** i det övre högra hörnet av arbetsytan i **[!UICONTROL Schemas]**. Fullständiga anvisningar finns i guiden [Skapa ett schema med Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md#create). Du kan också [skapa ett schema med API:t &#x200B;](../../xdm/tutorials/create-schema-api.md) för schemaregister om det behövs.
+Om du vill skapa ett nytt schema väljer du **[!UICONTROL Create schema]** i det övre högra hörnet av arbetsytan i **[!UICONTROL Schemas]**. Fullständiga anvisningar finns i guiden [Skapa ett schema med Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md#create). Du kan också [skapa ett schema med API:t ](../../xdm/tutorials/create-schema-api.md) för schemaregister om det behövs.
 
 ### Lägga till dataanvändningsetiketter i ett schema {#add-labels-to-schema}
 
@@ -61,7 +61,7 @@ En dialogruta visas där du kan använda och hantera dataanvändningsetiketter p
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataGovernance_instructions"
 >title="Instruktioner"
->abstract="<ol><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/user-guide.html?lang=sv-SE">Datauppsättningar</a> i den vänstra navigeringen och markera sedan den datauppsättning vars data du vill begränsa.</li><li>Välj fliken <b>Datastyrning</b> i informationsvyn för datauppsättningen.</li><li>Markera de datauppsättningsfält som du vill begränsa och välj sedan <b>Redigera styrningsetiketter</b> för att etikettera data baserat på användningsbegränsningar.</li><li>När du har etiketterat dina data väljer du <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html?lang=sv-SE">Profiler</a> i den vänstra navigeringen och sedan <b>Skapa profil</b>.</li><li>Välj om du vill skapa en <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html?lang=sv-SE#create-governance-policy">datastyrningsprincip</a> och sedan de dataanvändningsetiketter som principen ska gälla för.</li><li>Välj de marknadsföringsåtgärder som profilen nekar för alla data som innehåller dessa etiketter. När profilen har skapats markerar du den i listan och aktiverar den med hjälp av växlingsknappen till höger.</li><li>För varje aktiverad princip förhindrar Experience Platform att data som innehåller de angivna etiketterna används för definierade marknadsföringsåtgärder. Detta görs automatiskt när du försöker aktivera märkta data till ett mål med associerade marknadsföringsåtgärder (användningsfall).</li></ol>"
+>abstract="<ol><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/user-guide.html">Datauppsättningar</a> i den vänstra navigeringen och markera sedan den datauppsättning vars data du vill begränsa.</li><li>Välj fliken <b>Datastyrning</b> i informationsvyn för datauppsättningen.</li><li>Markera de datauppsättningsfält som du vill begränsa och välj sedan <b>Redigera styrningsetiketter</b> för att etikettera data baserat på användningsbegränsningar.</li><li>När du har etiketterat dina data väljer du <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html">Profiler</a> i den vänstra navigeringen och sedan <b>Skapa profil</b>.</li><li>Välj om du vill skapa en <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#create-governance-policy">datastyrningsprincip</a> och sedan de dataanvändningsetiketter som principen ska gälla för.</li><li>Välj de marknadsföringsåtgärder som profilen nekar för alla data som innehåller dessa etiketter. När profilen har skapats markerar du den i listan och aktiverar den med hjälp av växlingsknappen till höger.</li><li>För varje aktiverad princip förhindrar Experience Platform att data som innehåller de angivna etiketterna används för definierade marknadsföringsåtgärder. Detta görs automatiskt när du försöker aktivera märkta data till ett mål med associerade marknadsföringsåtgärder (användningsfall).</li></ol>"
 
 >[!IMPORTANT]
 >
@@ -89,7 +89,8 @@ Etiketter som läggs till på datauppsättningsnivå har &quot;x&quot; bredvid k
 
 <!-- ## View labels at the dataset field level {#view-labels-at-dataset-field-level} -->
 
-<!-- To view labels inherited by the dataset from the schema level, select **[!UICONTROL Datasets]** to navigate to the datasets workspace and select the relevant dataset from the list. 
+<!-- 
+To view labels inherited by the dataset from the schema level, select **[!UICONTROL Datasets]** to navigate to the datasets workspace and select the relevant dataset from the list. 
 
 ![The Browse tab of the Datasets workspace with Datasets highlighted in the left sidebar.](../images/labels/dataset-navigation.png)
 
@@ -97,7 +98,8 @@ Next, select the **[!UICONTROL Data Governance]** tab to show the labels that ha
 
 ![Dataset Labels inherited by fields](../images/labels/dataset-labels-applied.png)
 
-The inherited labels beside each field do not have an "x" next to them and appear "greyed out" with no ability to remove or edit. This is because **inherited fields are read-only**, meaning they cannot be removed at the field level. -->
+The inherited labels beside each field do not have an "x" next to them and appear "greyed out" with no ability to remove or edit. This is because **inherited fields are read-only**, meaning they cannot be removed at the field level. 
+-->
 
 <!--Beleive can cut above here  -->
 
@@ -105,9 +107,11 @@ Växeln **[!UICONTROL Show Inherited Labels]** är aktiverad som standard, vilke
 
 ![Fliken Datastyrning på arbetsytan Datauppsättningar med växlingen Visa ärvda etiketter markerad.](../images/labels/inherited-labels.png)
 
-<!-- Labels applied to the dataset appear in read-only form within the **[!UICONTROL Data Governance]** view for that dataset. 
+<!-- 
+Labels applied to the dataset appear in read-only form within the **[!UICONTROL Data Governance]** view for that dataset. 
 
-![The Data Governance tab of the Datasets workspace with labels highlighted.](../images/labels/read-only-governance-labels.png) -->
+![The Data Governance tab of the Datasets workspace with labels highlighted.](../images/labels/read-only-governance-labels.png) 
+-->
 
 >[!NOTE]
 >
@@ -150,10 +154,12 @@ Nu när du har lagt till etiketter för dataanvändning på data- och fältnivå
 
 Nu kan du även definiera dataanvändningsprinciper baserat på de etiketter du har använt. Mer information finns i översikten över [dataanvändningsprinciper](../policies/overview.md).
 
-<!-- The workflow of this video is now outdated. This can be enabled once the video has been updated
+<!-- 
+The workflow of this video is now outdated. This can be enabled once the video has been updated
 
 ## Additional resources
 
 The following video is intended to support your understanding of Data Governance, and outlines how to apply labels to a dataset and individual fields.
 
->[!VIDEO](https://video.tv.adobe.com/v/29709?quality=12&enable10seconds=on&speedcontrol=on) -->
+>[!VIDEO](https://video.tv.adobe.com/v/29709?quality=12&enable10seconds=on&speedcontrol=on) 
+-->
