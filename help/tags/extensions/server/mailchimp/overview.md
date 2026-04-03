@@ -7,7 +7,7 @@ level: Beginner
 role: User, Developer, Admin
 topic: Integrations
 exl-id: a52870c4-10e6-45a0-a502-f48da3398f3f
-source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1205'
 ht-degree: 0%
@@ -20,7 +20,7 @@ Mailchimp-tillägget [för händelsevidarebefordran](../../../ui/event-forwardin
 
 Det här dokumentet beskriver hur du konfigurerar tillägget och konfigurerar regler med åtgärden Lägg till händelse.
 
-## Förhandskrav
+## Förutsättningar
 
 I det här dokumentet förutsätts att du känner till de relevanta Mailchimp-produkter som används av tillägget. Mer information finns i hjälpdokumentationen för Mailchimp om [kampanjer](https://mailchimp.com/help/getting-started-with-campaigns/), [resor](https://mailchimp.com/help/about-customer-journeys/) och [transaktioner](https://mailchimp.com/help/transactional/).
 
