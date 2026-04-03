@@ -3,7 +3,7 @@ title: Översikt över API-tillägg för Snapchat Conversions
 description: Använd Snapchat-konverteringen för att skicka händelsedata på serversidan till Snap.
 last-substantial-update: 2025-01-20T00:00:00Z
 exl-id: 1c2d7243-5bcd-40a0-8515-9ab72613c5f3
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '920'
 ht-degree: 0%
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Översikt över tillägget [!DNL Snapchat] för konverterings-API
 
-Konverterings-API-tillägget [!DNL Snap] är ett säkert [&#x200B; Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) -gränssnitt som gör att du kan dela information med [!DNL Snapchat] direkt om användaråtgärder på dina webbplatser. Du kan utnyttja reglerna för vidarebefordran av händelser för att skicka data från **[!DNL Adobe Experience Platform Edge Network]** till **[!DNL Snapchat]** med hjälp av tillägget **[!DNL Snap]** för konverterings-API.
+Konverterings-API-tillägget [!DNL Snap] är ett säkert [ Edge Network API](https://developer.adobe.com/data-collection-apis/docs/) -gränssnitt som gör att du kan dela information med [!DNL Snapchat] direkt om användaråtgärder på dina webbplatser. Du kan utnyttja reglerna för vidarebefordran av händelser för att skicka data från **[!DNL Adobe Experience Platform Edge Network]** till **[!DNL Snapchat]** med hjälp av tillägget **[!DNL Snap]** för konverterings-API.
 
 ## Krav för [!DNL Snapchat] {#prerequisites}
 
@@ -25,7 +25,7 @@ Skapa en [dataström](/help/tags/ui/event-forwarding/getting-started.md) och lä
 
 Ett **[!DNL Snapchat]** [Business Manager](https://business.snapchat.com/)-konto krävs för att använda konverterings-API:t. Business Manager hjälper annonsörer att integrera marknadsföringsaktiviteter från **[!DNL Snapchat]** i sina företag och med externa partner. Se artikeln **[!DNL Snapchat]** [Help center](https://businesshelp.snapchat.com/s/article/get-started?language=en_US) om hur du skapar ett Business Manager-konto om du inte har ett.
 
-En [[!DNL [Snap Pixel]]](https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US) måste konfigureras i Snapchat Ads Manager och du måste ha åtkomst för att kunna visa `Pixel ID`. `Pixel ID` finns i avsnittet [[!UICONTROL [Events Manager]]](https://businesshelp.snapchat.com/s/article/events-manager?language=en_US).
+En [!DNL [Snap Pixel]](https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US) måste konfigureras i Snapchat Ads Manager och du måste ha åtkomst för att kunna visa `Pixel ID`. `Pixel ID` finns i avsnittet [!UICONTROL [Events Manager]](https://businesshelp.snapchat.com/s/article/events-manager?language=en_US).
 
 Du behöver en statisk, långlivad API-token. Se [[!DNL Snapchat] Konverterings-API-dokumentationen](https://developers.snap.com/api/marketing-api/Conversions-API/GetStarted#access-token) för att hämta denna token.
 
@@ -48,12 +48,14 @@ Följ de här stegen när du har valt önskad egenskap:
 När du är klar väljer du **[!UICONTROL Save]**.
 
 ![Bild som visar knapp för Pixel-ID och API-token](../../../images/extensions/server/snap/configure.png)
+
 <!-- 
-![[!DNL Snap] configuration screen for the [!DNL Snap] conversion API extension.](../../../images/extensions/server/snap/configure.png) -->
+![[!DNL Snap] configuration screen for the [!DNL Snap] conversion API extension.](../../../images/extensions/server/snap/configure.png) 
+-->
 
 ## Skapa dataelement {#create-data-elements}
 
-Om du vill skicka data till API-tillägget för [!DNL Snapchat]-konverteringar skapar du [dataelement](https://experienceleague.adobe.com/sv/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-data-element) för varje dataparameter. Följ de här stegen:
+Om du vill skicka data till API-tillägget för [!DNL Snapchat]-konverteringar skapar du [dataelement](https://experienceleague.adobe.com/en/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-data-element) för varje dataparameter. Följ de här stegen:
 
 1. Navigera till **[!UICONTROL Authoring]**>**[!UICONTROL Data Elements]** på egenskapens **[!UICONTROL Property Info]**-skärm och välj sedan **[!UICONTROL Add Data Element]**.
 
@@ -79,7 +81,7 @@ Mer information om hur du skapar dataelement finns i dokumentationen [Egenskaper
 
 ## Skapa regler för att skicka konverteringshändelser till Fäst {#create-snap-rules}
 
-[Regler](https://experienceleague.adobe.com/sv/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-rule) används för att utlösa tillägg i Experience Platform. I det här avsnittet beskrivs hur du skapar regler i egenskapen för vidarebefordring av händelser för att skicka konverteringshändelser till Snap med tillägget för Conversions API.
+[Regler](https://experienceleague.adobe.com/en/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-rule) används för att utlösa tillägg i Experience Platform. I det här avsnittet beskrivs hur du skapar regler i egenskapen för vidarebefordring av händelser för att skicka konverteringshändelser till Snap med tillägget för Conversions API.
 
 ### Skapa en ny regel
 
