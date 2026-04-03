@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe-definierade SQL-funktioner i frågetjänsten
 description: Det här dokumentet innehåller information om Adobe-definierade funktioner som är tillgängliga i Adobe Experience Platform Query Service.
 exl-id: 275aa14e-f555-4365-bcd6-0dd6df2456b3
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1468'
 ht-degree: 1%
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 # Adobe-definierade SQL-funktioner i frågetjänsten
 
-Adobe-definierade funktioner, nedan kallade ADF:er, är färdiga funktioner i Adobe Experience Platform Query Service som hjälper till att utföra vanliga affärsrelaterade uppgifter på [!DNL Experience Event]-data. Dessa innehåller funktioner för [Sessioner](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html?lang=sv-SE) och [Attribution](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html?lang=sv-SE) som de som finns i Adobe Analytics.
+Adobe-definierade funktioner, nedan kallade ADF:er, är färdiga funktioner i Adobe Experience Platform Query Service som hjälper till att utföra vanliga affärsrelaterade uppgifter på [!DNL Experience Event]-data. Dessa innehåller funktioner för [Sessioner](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html) och [Attribution](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html) som de som finns i Adobe Analytics.
 
 Det här dokumentet innehåller information om Adobe-definierade funktioner som är tillgängliga i [!DNL Query Service].
 
@@ -47,7 +47,7 @@ När du arbetar med [!DNL Experience Event]-data från en webbplats, ett mobilpr
 
 Denna gruppering, eller sammanställning av data, hjälper till att associera händelserna för att hitta mer kontext om kundupplevelsen.
 
-Mer information om sessioner i Adobe Analytics finns i dokumentationen om [kontextmedvetna sessioner](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html?lang=sv-SE).
+Mer information om sessioner i Adobe Analytics finns i dokumentationen om [kontextmedvetna sessioner](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html).
 
 **Frågesyntax**
 
@@ -282,11 +282,11 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 ```console
                 id                 |       timestamp       |                 name                |                    previous_page                    
 |-----------------------------------+-----------------------+-------------------------------------+-----------------------------------------------------
- 457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:15:28.0 |                                     | 
- 457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:53:05.0 | Home                                | 
+ 457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:15:28.0 |                                     |
+ 457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:53:05.0 | Home                                |
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:53:45.0 | Kids                                | (Home)
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 19:22:34.0 |                                     | (Kids)
- 457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 20:01:12.0 | Home                                | 
+ 457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 20:01:12.0 | Home                                |
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 20:01:57.0 | Kids                                | (Home)
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 20:03:36.0 | Search Results                      | (Kids)
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 20:04:30.0 | Product Details: Pemmican Power Bar | (Search Results)
@@ -487,4 +487,4 @@ Med funktionerna som beskrivs här kan du skriva frågor för att få tillgång 
 
 I följande video visas hur du kör frågor i Adobe Experience Platform-gränssnittet och i en PSQL-klient. Dessutom används i videon exempel som omfattar enskilda egenskaper i ett XDM-objekt, som använder Adobe-definierade funktioner och som använder CREATE TABLE AS SELECT (CTAS).
 
->[!VIDEO](https://video.tv.adobe.com/v/3470200?captions=swe&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
