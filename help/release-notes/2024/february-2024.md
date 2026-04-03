@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform – februari 2024
 description: Versionsinformationen för Adobe Experience Platform från februari 2024.
 exl-id: 7e4b76b7-4027-4890-b869-1dbb79670c3e
-source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '1237'
 ht-degree: 99%
@@ -17,7 +17,7 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 
 - [Aviseringar](#alerts)
 - [Datainsamling](#data-collection)
-- [Mål &#x200B;](#destinations)
+- [Mål ](#destinations)
 - [Sandlådor](#sandboxes)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
@@ -50,7 +50,8 @@ Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att
 
 Mer information om datainsamlingar finns i [översikten över datainsamlingar](/help/tags/home.md).
 
-<!-- ## Data Prep {#data-prep}
+<!-- 
+## Data Prep {#data-prep}
 
 Data Prep allows data engineers to map, transform, and validate data to and from Experience Data Model (XDM).
 
@@ -62,7 +63,8 @@ Data Prep allows data engineers to map, transform, and validate data to and from
 
 {style="table-layout:auto"}
 
-For more information on Data Prep, read the [Data Prep overview](/help/data-prep/home.md). -->
+For more information on Data Prep, read the [Data Prep overview](/help/data-prep/home.md). 
+-->
 
 ## Mål  {#destinations}
 
