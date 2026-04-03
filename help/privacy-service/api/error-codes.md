@@ -3,7 +3,8 @@ title: Privacy Service felkoder i Adobe Experience Platform
 description: Förstå Privacy Service felkoder så att du kan diagnostisera fel, hantera jobbresultat programmatiskt och avgöra nästa steg när du skickar eller övervakar sekretessjobb.
 keywords: sekretesstjänst, felkoder, sekretessjobb, API-fel
 solution: Experience Platform
-source-git-commit: a312dabf5b8c3b52af31e2e127cd4bbeb8dd0021
+exl-id: 49b79093-4d4c-4b92-bd38-86879452dbfb
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '826'
 ht-degree: 2%
@@ -55,7 +56,7 @@ Domänerna som används i det här dokumentet är:
 I följande tabell visas alla offentliga felkoder för Privacy Service.
 
 | Felkod | HTTP-status | Titel | Beskrivning |
-| ---------- | ----------- | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------| 
+| ---------- | ----------- | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1000-400 | 400 | Formateringsfel | Ett eller flera datavärden för det angivna programmet har formateringsproblem. Mer information finns i jobbinformationen. |
 | 1001-400 | 400 | Ej auktoriserad | Din organisation har inte etablerats. Kontakta administratören om du vill ha mer information. |
 | 1010-400 | 400 | Behörigheter saknas | Du har inte behörighet att utföra den här åtgärden. Kontakta administratören för att begära åtkomst. |
