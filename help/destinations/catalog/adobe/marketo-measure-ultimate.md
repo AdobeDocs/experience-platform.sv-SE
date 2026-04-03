@@ -3,7 +3,7 @@ title: Marketo Measure Ultimate
 description: Lär dig hur du ansluter och aktiverar data till Marketo Measure Ultimate-målet.
 last-substantial-update: 2023-03-07T00:00:00Z
 exl-id: b4220841-8908-41ff-b977-dbeebfa787c8
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '782'
 ht-degree: 1%
@@ -103,7 +103,7 @@ Läs självstudiekursen [Exportera datauppsättningar](/help/destinations/ui/exp
 
 ## Validera dataexport {#exported-data}
 
-Om du vill validera en lyckad datauppsättningsexport kan du kontrollera att datauppsättningen har gått igenom till ditt [Snowflake datalager](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html?lang=sv-SE).
+Om du vill validera en lyckad datauppsättningsexport kan du kontrollera att datauppsättningen har gått igenom till ditt [Snowflake datalager](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html).
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
