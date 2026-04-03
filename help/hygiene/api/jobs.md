@@ -5,7 +5,7 @@ role: Developer
 hide: true
 hidefromtoc: true
 exl-id: d80a4be3-e072-4bb4-a56d-b34a20f88c78
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '481'
 ht-degree: 0%
@@ -14,9 +14,11 @@ ht-degree: 0%
 
 # Ta bort poster med hjälp av API:t för datahygien
 
-<!-- >[!IMPORTANT]
+<!-- 
+>[!IMPORTANT]
 >
->This endpoint represents the beta functionality for record deletes. For the latest functionality, please use the [`/workorder` endpoint](./workorder.md) instead. -->
+>This endpoint represents the beta functionality for record deletes. For the latest functionality, please use the [`/workorder` endpoint](./workorder.md) instead. 
+-->
 
 Med Data Hygiene API kan du programmässigt korrigera eller ta bort dina kunders lagrade personuppgifter i Adobe Experience Platform.
 
