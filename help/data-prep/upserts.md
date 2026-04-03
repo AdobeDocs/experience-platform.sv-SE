@@ -3,7 +3,7 @@ keywords: Experience Platform;home;populära topics;data prep;data prep;streamin
 title: Skicka uppdateringar av delar av rader till kundprofil i realtid med hjälp av Data Prep
 description: Lär dig hur du skickar uppdateringar av delar av rader till kundprofilen i realtid med Data Prep.
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: f988d7665a40b589ca281d439b6fca508f23cd03
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1363'
 ht-degree: 0%
@@ -133,7 +133,7 @@ I följande exempel visas ett exempel på en inkommande nyttolaststruktur som sk
 Följande åtgärder stöds av [!DNL Real-Time Customer Profile]:
 
 | Användning | Beskrivning |
-| --- | --- | 
+| --- | --- |
 | `create` | Standardåtgärden. Detta genererar en XDM-entitetsskapandemetod för [!DNL Real-Time Customer Profile]. |
 | `merge` | Detta genererar en XDM-entitetsuppdateringsmetod för [!DNL Real-Time Customer Profile]. |
 | `delete` | Detta genererar en XDM-entitetsborttagningsmetod för [!DNL Real-Time Customer Profile] och tar permanent bort data från [!DNL Profile store]. |
@@ -275,4 +275,4 @@ Följande visar en lista med kända begränsningar som ska beaktas när direktup
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet bör du nu förstå hur du direktuppspelar överföringar i [!DNL Data Prep] för att skicka uppdateringar av delar av rader till dina [!DNL Real-Time Customer Profile]-data, samtidigt som du skapar och länkar identiteter med en enda API-begäran. Mer information om andra [!DNL Data Prep]-funktioner finns i [[!DNL Data Prep] översikten](./home.md). Läs [!DNL Data Prep]utvecklarhandboken[[!DNL Data Prep]  om du vill lära dig hur du använder mappningsuppsättningar i &#x200B;](./api/overview.md)-API:t.
+Genom att läsa det här dokumentet bör du nu förstå hur du direktuppspelar överföringar i [!DNL Data Prep] för att skicka uppdateringar av delar av rader till dina [!DNL Real-Time Customer Profile]-data, samtidigt som du skapar och länkar identiteter med en enda API-begäran. Mer information om andra [!DNL Data Prep]-funktioner finns i [[!DNL Data Prep] översikten](./home.md). Läs [!DNL Data Prep]utvecklarhandboken[[!DNL Data Prep]  om du vill lära dig hur du använder mappningsuppsättningar i ](./api/overview.md)-API:t.
