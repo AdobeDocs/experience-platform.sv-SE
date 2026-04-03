@@ -2,9 +2,9 @@
 title: Tips för att maximera värdet med Adobe Experience Platform Data Distiller - OS656
 description: Lär dig att maximera värdet med Adobe Experience Platform Data Distiller genom att berika kundprofildata i realtid och använda beteendeinsikter för att skapa riktade målgrupper. Den här resursen innehåller ett exempel på en datamängd och en fallstudie som visar hur man använder modellen för senaste, frekventa, monetära (RFM) för kundsegmentering.
 exl-id: f3af4b9a-5024-471a-b740-a52fd226a985
-source-git-commit: 3a8c53a5c5e72231c195ccfab32109ed4971fa8b
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
-source-wordcount: '3663'
+source-wordcount: '3664'
 ht-degree: 0%
 
 ---
@@ -88,7 +88,8 @@ har importerats som en grupp och identifieras av en [!UICONTROL Batch ID]. Tabel
 
 ![Fliken &quot;Datauppsättningsaktivitet&quot; för den nyligen skapade datauppsättningen &quot;luma_web_data&quot; med tabellnamnet, batch-ID:t och &quot;Förhandsgranska datauppsättning&quot; markerad.](../images/data-distiller/top-tips-to-maximize-value/luma_web_data-dataset-details.png)
 
-<!-- ![The "Dataset activity" tab for the newly created "luma_web_data" dataset with the table name, batch ID and "Preview dataset" highlighted.]() 
+<!-- 
+![The "Dataset activity" tab for the newly created "luma_web_data" dataset with the table name, batch ID and "Preview dataset" highlighted.]() 
 My table name is; luma_web_data_20250312_235611_817 Should we explain the suffix? 
 -->
 
@@ -352,7 +353,7 @@ Om du vill effektivisera åtkomst och återanvändning skapar du en `VIEW` som l
 
 `CASE`-satserna i följande SQL-satser kategoriserar kunder i segment baserat på deras RFM-poäng och tilldelar resultaten till variabeln `RFM_Model`.
 
-+++Välj för att visa SQL
++++Välj om du vill visa SQL
 
 ```sql
 CREATE OR replace VIEW rfm_model_segment
@@ -519,7 +520,7 @@ Vyn [!UICONTROL Schedule details] visas. Här anger du följande information fö
 
 - **[!UICONTROL Execution Frequency]**: **Varje vecka**
 - **[!UICONTROL Day of Execution]**: **Måndag och tisdag**
-- **[!UICONTROL Schedule Execution Time]**: **10:10 UTC**
+- **[!UICONTROL Schedule Execution Time]**: **10:10 000 UTC**
 - **[!UICONTROL Schedule Period]**: **17 mars - 30 april 2025**
 
 Välj **[!UICONTROL Save]** för att bekräfta schemat.
