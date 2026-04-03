@@ -5,7 +5,7 @@ title: Visa datauppsättningsdata med API:t för dataåtkomst
 type: Tutorial
 description: Lär dig hur du hittar, får tillgång till och hämtar data som lagras i en datauppsättning med hjälp av API:t för dataåtkomst i Adobe Experience Platform. I det här dokumentet introduceras några av de unika funktionerna i API:t för dataåtkomst, som sidindelning och partiella hämtningar.
 exl-id: 1c1e5549-d085-41d5-b2c8-990876000f08
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1365'
 ht-degree: 0%
@@ -348,7 +348,7 @@ Beroende på om fil-ID:t pekar på en enskild fil eller en katalog kan den retur
 ```
 
 | Egenskap | Beskrivning |
-| -------- | ----------- | 
+| -------- | ----------- |
 | `data._links.self.href` | URL:en som den associerade filen ska hämtas från. |
 
 Det här svaret returnerar en katalog som innehåller två separata filer, med ID:n `{FILE_ID_2}` och `{FILE_ID_3}`. I det här fallet måste du följa URL:en för varje fil för att komma åt filen.
@@ -443,7 +443,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 ```
 
 | Egenskap | Beskrivning |
-| -------- | ----------- | 
+| -------- | ----------- |
 | `Range: bytes=0-99` | Anger intervallet med byte som ska hämtas. Om detta inte anges hämtas hela filen av API:t. I det här exemplet hämtas de första 100 byten. |
 
 **Svar**
