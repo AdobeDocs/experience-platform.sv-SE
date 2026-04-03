@@ -4,7 +4,7 @@ title: Twitter-tillägg för händelsevidarebefordran
 description: Med det här tillägget för vidarebefordran av Adobe Experience Platform-händelser kan du importera händelser till Twitter efter dina affärsbehov.
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: 54c240e5-6160-4654-ac5b-6afa8d99a765
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '999'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [[!DNL Twitter]](https://twitter.com/i/flow/login) är en onlinetjänst för sociala medier och sociala nätverk där användarna kan publicera och interagera med 280-teckenlånga meddelanden som kallas tweets. Användare kan interagera med Twitter via en webbläsare, mobil klientprogramvara eller programmatiskt via sina [API:er](https://developer.twitter.com/en/docs/twitter-api)
 
-Med tillägget [!DNL Twitter] API för webbkonverteringar [&#x200B; för vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Twitter]. Det här dokumentet beskriver tilläggets användningsfall, hur det installeras och hur du integrerar dess funktioner i [regler](../../../ui/managing-resources/rules.md) för vidarebefordran av händelser.
+Med tillägget [!DNL Twitter] API för webbkonverteringar [ för vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Twitter]. Det här dokumentet beskriver tilläggets användningsfall, hur det installeras och hur du integrerar dess funktioner i [regler](../../../ui/managing-resources/rules.md) för vidarebefordran av händelser.
 
 [!DNL Twitter] kräver [OAuth 1.0](https://developer.twitter.com/en/docs/authentication/oauth-1-0a) för autentisering med API:t [!DNL Twitter] [!DNL Web Conversions].
 
