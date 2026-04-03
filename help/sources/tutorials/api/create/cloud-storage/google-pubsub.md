@@ -3,7 +3,7 @@ title: Skapa en Google PubSub Source-anslutning med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Google PubSub-konto med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: f5b8f9bf-8a6f-4222-8eb2-928503edb24f
-source-git-commit: bad1e0a9d86dcce68f1a591060989560435070c5
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '1181'
 ht-degree: 0%
@@ -90,7 +90,7 @@ POST /connections
 
 Om du vill skapa en basanslutning med projektbaserad autentisering gör du en POST-begäran till `/connections`-slutpunkten och anger `projectId` och `credentials` i begärandetexten.
 
-+++Begäran
++++ Begäran
 
 ```shell
 curl -X POST \
@@ -123,9 +123,9 @@ curl -X POST \
 | `auth.params.credentials` | Autentiseringsuppgiften eller nyckeln som krävs för att autentisera [!DNL PubSub]. |
 | `connectionSpec.id` | Anslutningens spec-ID [!DNL PubSub]: `70116022-a743-464a-bbfe-e226a7f8210c`. |
 
-++++
++++
 
-+++svar
++++ Svar
 
 Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`). Detta grundläggande anslutnings-ID krävs i nästa steg för att skapa en källanslutning.
 
@@ -136,13 +136,13 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
 }
 ```
 
-++++
++++
 
 >[!TAB Ämnesbaserad och prenumerationsbaserad autentisering]
 
 Om du vill skapa en basanslutning med ämne- och prenumerationsbaserad autentisering gör du en POST-begäran till `/connections`-slutpunkten och anger `credentials`, `topicName` och `subscriptionName` i begärandetexten.
 
-+++Begäran
++++ Begäran
 
 ```shell
 curl -X POST \
@@ -179,7 +179,7 @@ curl -X POST \
 
 +++
 
-+++svar
++++ Svar
 
 Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`). Detta grundläggande anslutnings-ID krävs i nästa steg för att skapa en källanslutning.
 
@@ -190,7 +190,7 @@ Ett lyckat svar returnerar information om den nyligen skapade anslutningen, inkl
 }
 ```
 
-++++
++++
 
 >[!ENDTABS]
 
