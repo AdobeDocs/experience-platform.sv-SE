@@ -3,7 +3,7 @@ keywords: Experience Platform;home;populära topics;access control;attribute-bas
 title: Attributbaserad åtkomstkontroll Skapa en roll
 description: Hantera roller via behörighetsgränssnittet i Adobe Experience Cloud.
 exl-id: 85699716-339d-4992-8390-95563c7ea7fe
-source-git-commit: b665d0edce713f1b252e07125aabab79d52a9cba
+source-git-commit: ed966156c253a8c07380079013d98c578821ae03
 workflow-type: tm+mt
 source-wordcount: '737'
 ht-degree: 0%
@@ -24,8 +24,8 @@ Om du vill börja hantera roller går du till **[!UICONTROL Permissions]** i [Ad
 >id="platform_permissions_roles_about_create"
 >title="Skapa ny roll"
 >abstract="Skapa nya roller för att kategorisera användare som interagerar med din Experience Platform-instans bättre. Du kan t.ex. skapa en roll för ett internt marknadsföringsteam och tillämpa etiketten för reglerade hälsodata (RHD) på den rollen, så att ditt interna marknadsföringsteam kan komma åt skyddad hälsoinformation (PHI). Du kan också skapa en roll för en extern byrå och neka rollåtkomst till PHI-data genom att inte använda RHD-etiketten på den rollen."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html?lang=sv-SE" text="Hantera en roll"
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/abac/end-to-end-guide#label-roles" text="Använd etiketter för en roll"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html" text="Hantera en roll"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/end-to-end-guide#label-roles" text="Använd etiketter för en roll"
 
 Om du vill skapa en ny roll väljer du **[!UICONTROL Create role]**.
 
@@ -59,9 +59,11 @@ Du får en varning om att rollen har sparats. Välj **[!UICONTROL Close]** om du
 
 Den nya rollen har skapats och du omdirigeras till sidan **[!UICONTROL Roles]** där du ser den nya rollen i listan.
 
-<!-- The following video is intended to support your understanding of creating a new role and managing users for that role.
+<!-- 
+The following video is intended to support your understanding of creating a new role and managing users for that role.
 
->[!VIDEO](https://video.tv.adobe.com/v/3475977/?captions=swe&learn=on) -->
+>[!VIDEO](https://video.tv.adobe.com/v/336081/?learn=on) 
+-->
 
 ## Duplicera en roll
 
