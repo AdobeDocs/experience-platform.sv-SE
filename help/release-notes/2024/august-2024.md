@@ -2,8 +2,8 @@
 title: Versionsinformation om Adobe Experience Platform – augusti 2020
 description: Versionsinformation för augusti 2024 för Adobe Experience Platform.
 exl-id: 153891e9-fd82-4894-a047-c8d82f214fef
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
-workflow-type: ht
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+workflow-type: tm+mt
 source-wordcount: '1556'
 ht-degree: 100%
 
@@ -15,7 +15,7 @@ ht-degree: 100%
 
 >[!TIP]
 >
->Visa en [översikt över exempeldokumentationen ](https://experienceleague.adobe.com/sv/docs/experience-platform/rtcdp/use-cases/overview) för att lära dig mer om olika användningsfall, som prospektering, förvärv och mer som din organisation kan uppnå med Real-Time CDP.
+>Visa en [översikt över exempeldokumentationen ](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/use-cases/overview) för att lära dig mer om olika användningsfall, som prospektering, förvärv och mer som din organisation kan uppnå med Real-Time CDP.
 
 Uppdateringar av befintliga funktioner och dokumentation i Experience Platform:
 
