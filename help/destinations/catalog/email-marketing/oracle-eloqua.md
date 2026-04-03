@@ -3,7 +3,7 @@ keywords: e-post;E-post;e-post;e-postmål;oracle eloqua;oracle
 title: (Filer) Oracle Eloqua-anslutning
 description: Oracle Eloqua är en SaaS-plattform (Software as a service) för automatiserad marknadsföring som erbjuds av Oracle och som hjälper B2B-marknadsförare och organisationer att hantera marknadsföringskampanjer och generera säljleads.
 exl-id: 6eaa79ff-8874-423b-bdff-aa04f6101a53
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '790'
 ht-degree: 0%
