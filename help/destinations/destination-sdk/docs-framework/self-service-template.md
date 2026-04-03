@@ -2,7 +2,7 @@
 title: Självbetjäningsmall // Ersätt med namnet på destinationen
 description: Använd den här mallen för att skapa offentlig dokumentation för destinationen i Adobe Experience Platform-katalogen. // Ersätt med stycket i avsnittet Översikt
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1710'
 ht-degree: 0%
