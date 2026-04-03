@@ -4,7 +4,7 @@ description: Skapa en datadelning live från Snowflake för att få uppdateringa
 last-substantial-update: 2026-03-24T00:00:00Z
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 4a00e46a-dedb-4dd3-b496-b0f4185ea9b0
-source-git-commit: f74680fa35490f0e8b2d371739ecf8ef3eed74c9
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1637'
 ht-degree: 0%
