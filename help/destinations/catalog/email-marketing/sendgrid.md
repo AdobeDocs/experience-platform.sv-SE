@@ -3,7 +3,7 @@ keywords: e-post;E-post;e-post;e-postadresser;slutrutnätsmål
 title: SendGrid-anslutning
 description: Använd SendGrid-målet för att exportera dina egna data och aktivera dem i SendGrid för dina affärsbehov.
 exl-id: 6f22746f-2043-4a20-b8a6-097d721f2fe7
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1928'
 ht-degree: 0%
@@ -34,7 +34,7 @@ Följande objekt krävs innan du börjar konfigurera målet.
 
 ![Inställningssidan för API-nycklar för SendGrid med knappen Skapa API-nyckel.](../../assets/catalog/email-marketing/sendgrid/01-api-key.jpg)
 
-Innan du aktiverar data till SendGrid-målet måste du ha ett [schema](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=sv-SE), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=sv-SE) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=sv-SE) som skapats i [!DNL Experience Platform]. Se även avsnittet [limits](#limits) längre ned på den här sidan.
+Innan du aktiverar data till SendGrid-målet måste du ha ett [schema](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html), en [datamängd](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html) och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som skapats i [!DNL Experience Platform]. Se även avsnittet [limits](#limits) längre ned på den här sidan.
 
 >[!IMPORTANT]
 >
@@ -123,7 +123,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i självs
 
 ### Fyll i målinformation {#destination-details}
 
-När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=sv-SE) för det här målet måste du ange följande information:
+När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) för det här målet måste du ange följande information:
 
 * **[!UICONTROL Name]**: Det namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En valfri beskrivning som hjälper dig att identifiera det här målet i framtiden.
