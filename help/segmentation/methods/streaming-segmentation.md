@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Guide för strömningssegmentering
 description: Lär dig mer om direktuppspelningssegmentering, inklusive vad det är, hur du skapar en publik som utvärderas med direktuppspelningssegmentering och hur du visar målgrupper som skapats med direktuppspelningssegmentering.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 518afcfaabb9867452dc6ee94bef103ec167da78
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '2033'
 ht-degree: 0%
@@ -49,12 +49,12 @@ Om du behöver utvärdera en segmentdefinition med hjälp av direktuppspelning e
 
 Låt oss till exempel säga att du har två målgrupper, med en målgrupps schemadata och andra schemadata för boendeupplevelser:
 
-| Målgrupp | Schema | Source type | Frågedefinition | Audience ID |
+| Målgrupp | Schema | Source type | Frågedefinition | Målgrupps-ID |
 | -------- | ------ | ----------- | ---------------- | ----------- |
-| Invånare i Kalifornien | Profil | Grupp | Hemadressen är i delstaten Kalifornien | `e3be6d7f-1727-401f-a41e-c296b45f607a` |
-| Senaste utcheckningar | Experience Event | Direktuppspelning | Har minst en utcheckning under det senaste dygnet | `9e1646bb-57ff-4309-ba59-17d6c5bab6a1` |
+| Kalifornien | Profil | Grupp | Hemadressen är i delstaten Kalifornien | `e3be6d7f-1727-401f-a41e-c296b45f607a` |
+| Senaste utcheckningar | Experience Event | Direktuppspelning | Har minst en utcheckning de senaste 24 timmarna | `9e1646bb-57ff-4309-ba59-17d6c5bab6a1` |
 
-Om du vill använda gruppkomponenten i en direktuppspelad målgrupp måste du referera till gruppmålgruppen med segmentsegment.
+Om du vill använda gruppkomponenten i din direktuppspelande målgrupp måste du skapa en referens till gruppmålgruppen med hjälp av segment.
 
 En exempelregeluppsättning som skulle kombinera de två målgrupperna skulle se ut så här:
 
@@ -68,12 +68,12 @@ Den resulterande målgruppen *kommer* att utvärderas med direktuppspelningssegm
 
 Om du vill kombinera två målgrupper med händelsedata kan du **inte** bara kombinera de två händelserna. Du måste skapa båda målgrupperna och sedan skapa en annan målgrupp som använder `inSegment` för att referera till båda dessa målgrupper.
 
-Exempel: Du har två målgrupper där båda målgrupperna har data för evenemangsschema:
+Låt oss till exempel säga att ni har två målgrupper, med båda målgrupperna som har händelseschemadata för upplevelsehändelser:
 
-| Målgrupp | Schema | Källtyp | Frågedefinition | Målgrupps-ID |
+| Målgrupp | Schema | Source type | Frågedefinition | Målgrupps-ID |
 | -------- | ------ | ----------- | ---------------- | ----------- |
 | Senaste avhopp | Experience event | Grupp | Har minst en händelse om att användaren överger den under de senaste 24 timmarna | `e3be6d7f-1727-401f-a41e-c296b45f607a` |
-| Senaste utcheckningar | Upplevelsehändelse | Streaming | Har minst en utcheckning de senaste 24 timmarna | `9e1646bb-57ff-4309-ba59-17d6c5bab6a1` |
+| Senaste utcheckningar | Experience Event | Direktuppspelning | Har minst en utcheckning de senaste 24 timmarna | `9e1646bb-57ff-4309-ba59-17d6c5bab6a1` |
 
 I den här situationen skulle du behöva skapa en tredje målgrupp enligt följande:
 
@@ -85,22 +85,22 @@ inSegment("e3be6d7f-1727-401f-a41e-c296b45f607a") and inSegment("9e1646bb-57ff-4
 >
 >Alla befintliga segmentdefinitioner som matchar linjalerna utvärderas fortfarande med hjälp av direktuppspelning eller kantsegmentering tills de redigeras.
 >
->Dessutom kommer alla befintliga segmentdefinitioner som för närvarande uppfyller de andra utvärderingskriterierna för streaming- eller kantsegmentering att fortsätta utvärderas med streaming- eller kantsegmentering.
+>Dessutom kommer alla befintliga segmentdefinitioner som för närvarande uppfyller de andra kriterierna för utvärdering av direktuppspelning eller kantsegmentering att utvärderas även fortsättningsvis med hjälp av direktuppspelning eller kantsegmentering.
 
 ## Kopplingsprincip {#merge-policy}
 
-Alla **nya eller redigerade** segmentdefinitioner som kvalificerar sig för streaming eller kantsegmentering **måste** finnas i sammanslagningspolicyn Aktiv i Edge.
+Alla **nya eller redigerade**-segmentdefinitioner som kvalificerar för direktuppspelning eller kantsegmentering **måste** finnas i sammanfogningsprincipen Aktiv på Edge.
 
-Om det inte finns någon aktiv kopplingsprofil måste du [konfigurera kopplingsprofilen](../../profile/merge-policies/ui-guide.md#configure) och ställa in den så att den är aktiv i Edge.
+Om det inte finns någon aktiv sammanfogningsprincip måste du [konfigurera din sammanfogningsprincip](../../profile/merge-policies/ui-guide.md#configure) och ange att den ska vara aktiv vid sidan.
 
 
 +++
 
 >[!ENDSHADEBOX]
 
-Strömningssegmentering är möjligheten att utvärdera målgrupper i Adobe Experience Platform i nära realtid samtidigt som man fokuserar på datafärd.
+Direktuppspelningssegmentering är möjligheten att utvärdera målgrupper i Adobe Experience Platform i nära realtid samtidigt som man fokuserar på datainsamling.
 
-Med strömmande segmentering sker nu publikkvalificering som strömmande data når Experience Platform, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. På så sätt kan ni utvärdera data när de skickas till Experience Platform och automatiskt hålla målgruppsmedlemskapet uppdaterat.
+Med direktuppspelningssegmentering blir det numera en upplevelse av målgruppskvalificering när data strömmas in i Experience Platform, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. På så sätt kan ni utvärdera data när de skickas till Experience Platform och automatiskt hålla målgruppsmedlemskapet uppdaterat.
 
 ## Tillgängliga regeluppsättningar {#rulesets}
 
@@ -123,39 +123,39 @@ En regeluppsättning är berättigad till direktuppspelningssegmentering om den 
 
 En segmentdefinition är **inte** berättigad till direktuppspelningssegmentering i följande scenarier:
 
-- Segmentdefinitionen består av segment eller egenskaper i Adobe Audience Manager (AAM).
-- Segmentdefinitionen omfattar flera enheter (frågor för flera enheter).
-- Segmentdefinitionen innehåller en kombination av en enskild händelse och en `inSegment`-händelse.
-   - Du kan till exempel länka följande i en enda regeluppsättning: `inSegment("e3be6d7f-1727-401f-a41e-c296b45f607a") and  CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("commerce.checkouts", false))  WHEN(<= 24 hours before now)])`.
-- Segmentdefinitionen använder &quot;Ignorera år&quot; som en del av tidsbegränsningen.
+- Segmentdefinitionen innehåller segment eller egenskaper för Adobe Audience Manager (AAM).
+- Segmentdefinitionen innehåller flera enheter (frågor om flera enheter).
+- Segmentdefinitionen innehåller en kombination av en enda händelse och en `inSegment`-händelse.
+   - Du kan till exempel kedja följande i en enda regeluppsättning: `inSegment("e3be6d7f-1727-401f-a41e-c296b45f607a") and  CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("commerce.checkouts", false))  WHEN(<= 24 hours before now)])`.
+- I segmentdefinitionen används&quot;Ignorera år&quot; som en del av tidsbegränsningarna.
 
 Observera följande riktlinjer som gäller frågor om direktuppspelningssegmentering:
 
 | Frågetyp | Riktlinje |
 | ---------- | -------- |
 | En enda händelselinjaluppsättning | Uppslagsfönstret är begränsat till **en dag**. |
-| Fråga med händelsehistorik | <ul><li>Bakgrundsfönstret är begränsat till **en dag**.</li><li>Det finns ett strikt tidsordningsvillkor **måste** mellan händelserna.</li><li>Frågor med minst en negerad händelse stöds. Hela händelsen **kan dock inte** vara en negation.</li></ul> |
+| Fråga med händelsehistorik | <ul><li>Uppslagsfönstret är begränsat till **en dag**.</li><li>Det finns ett strikt tidsordningsvillkor **måste** mellan händelserna.</li><li>Frågor med minst en negerad händelse stöds. Hela händelsen **kan dock inte** vara en negation.</li></ul> |
 
 Om en segmentdefinition ändras så att den inte längre uppfyller villkoren för direktuppspelningssegmentering, kommer segmentdefinitionen automatiskt att växla från&quot;direktuppspelning&quot; till&quot;Gruppering&quot;.
 
-Dessutom sker segmentinkvalificering i realtid, på samma sätt som segmentkvalificering. Det innebär att om en publik inte längre är kvalificerad för ett segment kommer den omedelbart att vara okvalificerad. Om segmentdefinitionen t.ex. efterfrågar &quot;Alla användare som har köpt röda skor under de senaste tre timmarna&quot;, kommer alla profiler som ursprungligen kvalificerades för segmentdefinitionen att bli okvalificerade efter tre timmar.
+Dessutom sker okvalificerat segment, på samma sätt som segmentkvalificering, i realtid. Om en publik inte längre kvalificerar sig för ett segment blir det därför omedelbart okvalificerat. Om segmentdefinitionen till exempel frågar efter&quot;Alla användare som har köpt röda skor de senaste tre timmarna&quot;, efter tre timmar, kommer alla profiler som ursprungligen kvalificerades för segmentdefinitionen att vara okvalificerade.
 
 ### Kombinera målgrupper {#combine-audiences}
 
-För att kunna kombinera data från både batch- och strömningskällor måste du separera batch- och strömningskomponenterna till separata målgrupper.
+För att kunna kombinera data från både batch- och direktuppspelningskällor måste ni separera batch- och direktuppspelningskomponenterna till separata målgrupper.
 
-### Profilattribut och Experience Event {#profile-and-event}
+### Profilattribut och upplevelsehändelse {#profile-and-event}
 
-Vi tar exempelvis hänsyn till följande två exempelmålgrupper:
+Låt oss till exempel ta följande två exempelmålgrupper i beaktande:
 
 | Målgrupp | Schema | Source type | Frågedefinition | Målgrupps-ID |
 | -------- | ------ | ----------- | ---------------- | ----------- |
-| Invånare i Kalifornien | Profil | Grupp | Hemadressen är i delstaten Kalifornien | `e3be6d7f-1727-401f-a41e-c296b45f607a` |
-| Senaste utcheckningar | Experience Event | Streaming | Har minst en utcheckning under det senaste dygnet | `9e1646bb-57ff-4309-ba59-17d6c5bab6a1` |
+| Kalifornien | Profil | Grupp | Hemadressen är i delstaten Kalifornien | `e3be6d7f-1727-401f-a41e-c296b45f607a` |
+| Senaste utcheckningar | Experience Event | Direktuppspelning | Har minst en utcheckning de senaste 24 timmarna | `9e1646bb-57ff-4309-ba59-17d6c5bab6a1` |
 
-Om du vill använda gruppkomponenten i en direktuppspelad målgrupp måste du referera till gruppmålgruppen med segmentsegment.
+Om du vill använda gruppkomponenten i din direktuppspelande målgrupp måste du skapa en referens till gruppmålgruppen med hjälp av segment.
 
-Så en regeluppsättning med exempel som kombinerar de två målgrupperna ser ut så här:
+En exempelregeluppsättning som skulle kombinera de två målgrupperna skulle se ut så här:
 
 ```
 inSegment("e3be6d7f-1727-401f-a41e-c296b45f607a") and 
@@ -163,7 +163,7 @@ CHAIN(xEvent, timestamp, [C0: WHAT(eventType.equals("commerce.checkouts", false)
 WHEN(<= 24 hours before now)])
 ```
 
-Den resulterande målgruppen *kommer* att utvärderas med hjälp av strömningssegmentering, eftersom den utnyttjar gruppmålgruppens medlemskap genom att referera till gruppmålgruppskomponenten.
+Den resulterande målgruppen *kommer* att utvärderas med direktuppspelningssegmentering, eftersom den utnyttjar gruppmålgruppens medlemskap genom att referera till gruppmålskomponenten.
 
 ### Flera upplevelsehändelser {#two-events}
 
@@ -238,9 +238,9 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 
 **Svar**
 
-Om svaret blir bra returneras HTTP-status 200 med information om den segmentdefinition du nyss skapade.
+Ett lyckat svar returnerar HTTP-status 200 med information om den segmentdefinition du nyss skapade.
 
-+++Ett exempelsvar när en segmentdefinition skapas.
++++Ett exempelsvar när du skapar en segmentdefinition.
 
 ```json
 {
@@ -313,11 +313,11 @@ Du kan hämta alla målgrupper som utvärderas med hjälp av direktuppspelningss
 
 >[!TAB Segmenteringstjänstens API]
 
-Hämta en lista över alla segmentdefinitioner som utvärderas med hjälp av strömmande segmentering inom organisationen genom att göra en förfrågan om GET till slutpunkten `/segment/definitions`.
+Hämta en lista över alla segmentdefinitioner som har utvärderats med hjälp av direktuppspelningssegmentering i organisationen genom att göra en GET-begäran till slutpunkten `/segment/definitions`.
 
 **API-format**
 
-Du måste inkludera frågeparametern `evaluationInfo.synchronous.enabled=true` i sökvägen för begäran om du vill hämta segmentdefinitioner som utvärderats med hjälp av direktuppspelningssegmentering.
+Du måste inkludera frågeparametern `evaluationInfo.synchronous.enabled=true` i sökvägen för begäran för att hämta segmentdefinitioner som utvärderats med hjälp av direktuppspelningssegmentering.
 
 ```http
 GET /segment/definitions?evaluationInfo.continuous.enabled=true
@@ -435,7 +435,7 @@ Mer detaljerad information om den returnerade segmentdefinitionen finns i [stöd
 
 >[!TAB Målgruppsportal]
 
-Du kan hämta alla målgrupper som är aktiverade för strömmande segmentering inom organisationen genom att använda filter i Audience Portal. Välj ![filterikonen](../../images/icons/filter.png) för att visa filterlistan.
+Du kan hämta alla målgrupper som är aktiverade för direktuppspelningssegmentering inom organisationen med hjälp av filter i Audience Portal. Välj ![filterikonen](../../images/icons/filter.png) för att visa filterlistan.
 
 ![Filterikonen är markerad i målportalen.](../images/methods/filter-audiences.png)
 
@@ -443,15 +443,15 @@ Gå till **[!UICONTROL Update frequency]** och välj [!UICONTROL Streaming] inom
 
 ![Uppdateringsfrekvensen för direktuppspelning har valts och visar alla målgrupper i organisationen som utvärderas med direktuppspelningssegmentering.](../images/methods/streaming/filter-streaming.png)
 
-Om du vill läsa mer om att visa målgrupper i Experience Platform kan du läsa [Audience Portal-guiden](../ui/audience-portal.md).
+Om du vill veta mer om hur du visar målgrupper i Experience Platform kan du läsa [guiden för målportalen](../ui/audience-portal.md).
 
 >[!ENDTABS]
 
-## Målgruppsdetaljer {#audience-details}
+## Målgruppsinformation {#audience-details}
 
-Du kan visa information om en specifik målgrupp som utvärderats med hjälp av strömmande segmentering genom att välja den i Audience Portal.
+Du kan visa information om en viss målgrupp som utvärderats med hjälp av direktuppspelningssegmentering genom att markera den i målportalen.
 
-När du har valt en målgrupp på Audience Portal visas sidan för målgruppsinformation. Detta visar information om målgruppen, inklusive en sammanfattning av målgruppens detaljer, mängden kvalificerade profiler över tid samt de mål som målgruppen har aktiverats på.
+När du har valt en målgrupp på Audience Portal visas sidan med målgruppsinformation. Här visas information om målgruppen, inklusive en sammanfattning av målgruppsinformationen, antalet kvalificerade profiler över tiden samt vilka mål målgruppen har aktiverats för.
 
 ![Sidan med målgruppsinformation visas för en målgrupp som utvärderats med direktuppspelningssegmentering.](../images/methods/streaming/audience-details.png)
 
