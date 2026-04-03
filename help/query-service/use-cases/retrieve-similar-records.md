@@ -2,9 +2,9 @@
 title: Hämta liknande poster med funktioner för högre ordning
 description: Lär dig hur du identifierar och hämtar liknande eller relaterade poster från en eller flera datauppsättningar baserat på ett likhetsmått och likhetströskelvärde. Det här arbetsflödet kan framhäva meningsfulla relationer eller överlappningar mellan olika datauppsättningar.
 exl-id: 4810326a-a613-4e6a-9593-123a14927214
-source-git-commit: 27eab04e409099450453a2a218659e576b8f6ab4
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
-source-wordcount: '4031'
+source-wordcount: '4030'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ Använd den här vägledningen när du vill identifiera produkter från olika da
 
 Dokumentet beskriver processen att implementera en likhetskoppling, som sedan använder högre ordningsfunktioner i Data Distiller för att beräkna likheterna mellan datauppsättningar och filtrera dem baserat på valda attribut. SQL-kodfragment och förklaringar tillhandahålls för varje steg i processen. Arbetsflödet implementerar likhetskopplingar med Jaccards likhetsmått och tokenisering med Data Distiller funktioner i högre ordning. Dessa metoder används sedan för att identifiera och hämta liknande eller relaterade poster från en eller flera datauppsättningar baserade på ett likhetsmått. Nyckelavsnitten i processen är: [tokenisering med funktioner i högre ordning](#data-transformation), [korskopplingen för unika element](#cross-join-unique-elements), [likhetsberäkningen för kort](#compute-the-jaccard-similarity-measure) och [tröskelbaserad filtrering](#similarity-threshold-filter).
 
-## Förhandskrav
+## Förutsättningar
 
 Innan du fortsätter med det här dokumentet bör du känna till följande koncept:
 
@@ -30,7 +30,7 @@ Innan du fortsätter med det här dokumentet bör du känna till följande konce
 
 ## Komma igång
 
-Data Distiller SKU krävs för att utföra de högre ordningsfunktionerna på dina Adobe Experience Platform-data. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentanten för mer information.
+Data Distiller SKU krävs för att utföra de högre ordningsfunktionerna på dina Adobe Experience Platform-data. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentant för mer information.
 
 ## Fastställ likhet {#establish-similarity}
 
@@ -697,7 +697,7 @@ WHERE jaccard_similarity>=0.4
 
 Resultatet av den här frågan ger kolumnerna för likhetskopplingen enligt nedan:
 
-+++Markera för att expandera
++++ Markera för att expandera
 
 |   | SetA_ProductNames | SetA_ProductNames |
 |---|--------------------------|------------------------|
@@ -707,7 +707,7 @@ Resultatet av den här frågan ger kolumnerna för likhetskopplingen enligt neda
 
 {style="table-layout:auto"}
 
-+++:
++++
 
 ### Nästa steg {#next-steps}
 
@@ -717,4 +717,4 @@ Genom att läsa det här dokumentet kan du nu använda den här logiken för att
 - Datarensning: för att förbättra datakvaliteten.
 - Korganalys: för att ge insikter om kundbeteende, preferenser och potentiella möjligheter till korsförsäljning.
 
-Om du inte redan har gjort det rekommenderar vi att du läser översikten över funktionen [AI/ML](../data-distiller/ml-feature-pipelines/overview.md). Använd den översikten för att lära dig hur Data Distiller och den maskininlärning du föredrar kan skapa anpassade datamodeller som stöder era marknadsföringsfall med data från Experience Platform.
+Om du inte redan har gjort det rekommenderar vi att du läser översikten över funktionen [AI/ML](../data-distiller/ml-feature-pipelines/overview.md). Använd den översikten för att lära dig hur Data Distiller och den maskininlärning du föredrar kan skapa anpassade datamodeller som stöder era marknadsföringsexempel med data från Experience Platform.
