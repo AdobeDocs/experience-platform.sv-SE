@@ -4,7 +4,7 @@ solution: Experience Platform
 title: SQL-syntax i frågetjänst
 description: Det här dokumentet innehåller information om och förklarar den SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '4686'
 ht-degree: 1%
@@ -223,8 +223,8 @@ AS (select_query)
 | `schema` | XDM-schemats titel. Använd bara den här satsen om du vill koppla den nya tabellen till ett befintligt XDM-schema. |
 | `rowvalidation` | (Valfritt) Aktiverar validering på radnivå för varje batch som hämtas till datauppsättningen. Standardvärdet är true. |
 | `label` | (Valfritt) Använd värdet `PROFILE` för att etikettera datauppsättningen som aktiverad för profilinmatning. |
-| `transform` | (Valfritt) Tillämpar funktionstekniska omformningar (till exempel strängindexering, kodning med ett enda varv eller TF-IDF) innan datauppsättningen materialiseras. Den här satsen används för förhandsgranskning av omformade funktioner. Mer information finns i [`TRANSFORM`-satsdokumentationen &#x200B;](#transform). |
-| `select_query` | En `SELECT`-standardsats som definierar datauppsättningen. Mer information finns i avsnittet [`SELECT`-frågor &#x200B;](#select-queries). |
+| `transform` | (Valfritt) Tillämpar funktionstekniska omformningar (till exempel strängindexering, kodning med ett enda varv eller TF-IDF) innan datauppsättningen materialiseras. Den här satsen används för förhandsgranskning av omformade funktioner. Mer information finns i [`TRANSFORM`-satsdokumentationen ](#transform). |
+| `select_query` | En `SELECT`-standardsats som definierar datauppsättningen. Mer information finns i avsnittet [`SELECT`-frågor ](#select-queries). |
 
 >[!NOTE]
 >
@@ -397,7 +397,7 @@ DROP TABLE [IF EXISTS] [db_name.]table_name
 
 ## SKAPA DATABAS
 
-Kommandot `CREATE DATABASE` skapar en Azure Data Lake Storage-databas (ADLS).
+Kommandot `CREATE DATABASE` skapar en ADLS-databas (Azure Data Lake Storage).
 
 ```sql
 CREATE DATABASE [IF NOT EXISTS] db_name
@@ -892,7 +892,7 @@ Kommandot `FILTER CONTEXT` beräknar statistik på en delmängd av datauppsättn
 Konsolutdata visas enligt nedan.
 
 ```console
-|     Statistics ID      | 
+|     Statistics ID      |
 | ---------------------- |
 | adc_geometric_stats_1  |
 (1 row)
