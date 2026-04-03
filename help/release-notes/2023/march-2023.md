@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform mars 2023
 description: Versionsinformationen för Adobe Experience Platform i mars 2023.
 exl-id: 3f4d764a-77cd-4e4a-ae11-e97a23006a53
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '2020'
-ht-degree: 26%
+ht-degree: 27%
 
 ---
 
@@ -47,11 +47,11 @@ Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Nytt snabbstartsarbetsflöde för Meta Conversions API (Beta) | Få tillgång till nya arbetsflöden för snabbstart under ”Komma igång” från startskärmen för datainsamling! Med [snabbstartsarbetsflödet för Meta Conversions API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html?lang=sv-SE#quick-start) kan kunderna snabbt samla in och vidarebefordra händelsedata, från serversidan till Meta för annonskonverteringar med bara några få enkla steg. |
+| Nytt snabbstartsarbetsflöde för Meta Conversions API (Beta) | Få tillgång till nya arbetsflöden för snabbstart under ”Komma igång” från startskärmen för datainsamling! Med [snabbstartsarbetsflödet för Meta Conversions API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html#quick-start) kan kunderna snabbt samla in och vidarebefordra händelsedata, från serversidan till Meta för annonskonverteringar med några enkla steg. |
 | Nytt snabbstartsarbetsflöde för Mobile SDK (Beta) | Få tillgång till nya arbetsflöden för snabbstart under ”Komma igång” från startskärmen för datainsamling! Med [snabbstartsarbetsflödet för Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) kan du snabbt implementera Mobile SDK och validera grundläggande mobilhändelser i några enkla steg. |
-| [!DNL Braze]-tillägg för händelsevidarebefordring | Med tillägget [[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html?lang=sv-SE) för vidarebefordran av händelser kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka det till [!DNL Braze] i form av händelser på serversidan med API:erna för användarspårning i [!DNL Braze]. |
-| [!DNL Epsilon]-tillägg för händelsevidarebefordring | Med tillägget [[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/overview.html?lang=sv-SE) kan du utnyttja händelsevidarebefordran för att hämta händelseinformation i Adobe Experience Platform Edge Network och skicka den till [!DNL Epsilon] med hjälp av [!DNL Epsilon] Event API. |
-| [!DNL Mixpanel]-tillägg för händelsevidarebefordring | Tillägget [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html?lang=sv-SE) gör det möjligt för kunder att utnyttja händelsevidarebefordran för att hämta händelseinformation i Adobe Experience Platform Edge Network och skicka den till Mixpanel med API:t för spårningshändelser. |
+| [!DNL Braze]-tillägg för händelsevidarebefordring | Med tillägget [[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) för vidarebefordran av händelser kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka det till [!DNL Braze] i form av händelser på serversidan med API:erna för användarspårning i [!DNL Braze]. |
+| [!DNL Epsilon]-tillägg för händelsevidarebefordring | Med tillägget [[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/overview.html) kan du utnyttja händelsevidarebefordran för att hämta händelseinformation i Adobe Experience Platform Edge Network och skicka den till [!DNL Epsilon] med hjälp av [!DNL Epsilon] Event API. |
+| [!DNL Mixpanel]-tillägg för händelsevidarebefordring | Tillägget [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) gör det möjligt för kunder att utnyttja händelsevidarebefordran för att hämta händelseinformation i Adobe Experience Platform Edge Network och skicka den till Mixpanel med API:t för spårningshändelser. |
 
 {style="table-layout:auto"}
 
@@ -64,7 +64,7 @@ Med dataförberedelse kan utvecklare mappa, omvandla och validera data till och 
 | Funktion | Beskrivning |
 | --- | --- |
 | Allmän tillgång till filtrering av Adobe Analytics-data | Ni kan nu använda funktionerna för dataförberedelser för att tillämpa regler och villkor för att filtrera era era analysdata innan ni hämtar dem till kundprofilen i realtid. Mer information finns i handboken om [filtrering av analysdata för profilintagning](../../sources/tutorials/ui/create/adobe-applications/analytics.md#filtering-for-profile). |
-| Nya funktioner för kodning och avkodning av URL-strängar | <ul><li>Funktionen `get_url_encoded` tar en URL som indata och ersätter eller kodar specialtecken med ASCII-tecken.</li><li>Funktionen `get_url_decoded` tar en URL som indata och avkodar ASCII-tecken till specialtecken.</li></ul> Mer information finns i handboken [Dataförberedelser &#x200B;](../../data-prep/functions.md). En omfattande lista över reserverade tecken och deras motsvarande kodade tecken finns i handboken om [specialtecken](../../data-prep/functions.md#special-characters). |
+| Nya funktioner för kodning och avkodning av URL-strängar | <ul><li>Funktionen `get_url_encoded` tar en URL som indata och ersätter eller kodar specialtecken med ASCII-tecken.</li><li>Funktionen `get_url_decoded` tar en URL som indata och avkodar ASCII-tecken till specialtecken.</li></ul> Mer information finns i handboken [Dataförberedelser ](../../data-prep/functions.md). En omfattande lista över reserverade tecken och deras motsvarande kodade tecken finns i handboken om [specialtecken](../../data-prep/functions.md#special-characters). |
 
 Mer information om dataprep finns i [översikten för dataprep](../../data-prep/home.md).
 
@@ -86,7 +86,7 @@ Mer information om dataprep finns i [översikten för dataprep](../../data-prep/
 
 {style="table-layout:auto"}
 
-**Ny eller uppdaterad funktion** {#destinations-new-updated-functionality}
+**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
 
 | Funktionalitet | Beskrivning |
 | ----------- | ----------- |
@@ -137,10 +137,10 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 | Fältgrupp | [[!UICONTROL AJO Entity tags]](https://github.com/adobe/xdm/pull/1672/files) | AJO Entity-taggar har lagts till i [!UICONTROL AJO Entity Fields], som motsvarar en resa eller kampanj |
 | Fältgrupp | (Flera) | Flera fält har lagts till för [[!UICONTROL Journey Orchestration Step Event Common Fields]](https://github.com/adobe/xdm/pull/1671/files) |
 | Fältgrupp | (Flera) | [Flera XDM-händelsetyper har lagts till för [!UICONTROL Media Reporting]](https://github.com/adobe/xdm/pull/1670/files). |
-| Fältgrupp | [!UICONTROL Workfront Change Event] | Fältgrupperna `Full Record` och `Accessor Employee Ids` lades till. |
+| Fältgrupper | [!UICONTROL Workfront Change Event] | Fältgrupperna `Full Record` och `Accessor Employee Ids` lades till. |
 | Datatyp | [[!UICONTROL Product list item]](https://github.com/adobe/xdm/pull/1685/files) | [!UICONTROL Refund Amount] lades till för att ange det belopp som återbetalats för artikeln, om någon. |
-| Datatyp | [[!UICONTROL Order &#x200B;]](https://github.com/adobe/xdm/pull/1685/files) | [!UICONTROL Refunds List] har lagts till i listan över återbetalningar för den här ordern. |
-| Datatyp | [[!UICONTROL Product List Item &#x200B;]](https://github.com/adobe/xdm/pull/1677/files) | Produktkategorierna har lagts till i listan över kategoridata för den här produkten. |
+| Datatyp | [[!UICONTROL Order ]](https://github.com/adobe/xdm/pull/1685/files) | [!UICONTROL Refunds List] har lagts till i listan över återbetalningar för den här ordern. |
+| Datatyp | [[!UICONTROL Product List Item ]](https://github.com/adobe/xdm/pull/1677/files) | Produktkategorierna har lagts till i listan över kategoridata för den här produkten. |
 | Datatyp | [!UICONTROL Session details information] | `pev3`-strängfältet som [anger vilken typ av medieström som används för rapportering](https://github.com/adobe/xdm/pull/1676/files) har lagts till. Egenskapen `pccr` har också lagts till och anger om en omdirigering har gjorts. |
 | Datatyp | [!UICONTROL Requisition List] | Tillhandahåller egenskaperna för [rekvisitionslistan](https://github.com/adobe/xdm/pull/1675/files). De innehåller namn, ID och beskrivning. |
 | Datatyp | [!UICONTROL Commerce] | Datatypen [Commerce har uppdaterats](https://github.com/adobe/xdm/pull/1675/files) så att den omfattar `requisitionListOpens`, `requisitionListAdds`, `requisitionListRemovals` och `requisitionList`. |
