@@ -1,8 +1,8 @@
 ---
 title: Stöd för privata länkar för källor i användargränssnittet
-description: Lär dig hur du använder privata Azure-länkar för källor i Experience Platform-gränssnittet.
+description: Lär dig hur du använder Azure privata länkar för källor i Experience Platform användargränssnitt.
 exl-id: 2882729e-2d46-48dc-9227-51dda5bf7dfb
-source-git-commit: 4d82b0a7f5ae9e0a7607fe7cb75261e4d3489eff
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '789'
 ht-degree: 0%
