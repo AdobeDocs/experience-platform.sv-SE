@@ -4,7 +4,7 @@ title: Real-Time Customer Data Platform hemsida och Dashboards
 description: Förstå olika instrumentpaneler, startsidan och förstagångsupplevelsen för användare av Adobe Real-Time CDP.
 feature: Dashboards, Get Started
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '895'
 ht-degree: 4%
@@ -38,7 +38,7 @@ Widgeten [!UICONTROL Getting started with Real-Time Customer Profile] är uppdel
 >id="platform_home_metrics_totalProfiles"
 >title="Totalt antal profiler"
 >abstract="Det totala antalet profiler ni har inom Experience Platform. Antalet baseras på organisationens kopplingsprofil och inkluderar inte profilfragment. Antalet profiler uppdateras en gång var 24:e timme."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/ui/user-guide.html?lang=sv-SE#profile-count" text="Läs mer i dokumentationen"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/ui/user-guide.html#profile-count" text="Läs mer i dokumentationen"
 
 Kontrollpanelen för mätvärden visar aktuell information om dina Experience Platform-data. Kontrollpanelen är uppdelad i två avsnitt:
 
@@ -76,7 +76,8 @@ Resurswidgeten innehåller ytterligare dokumentationsresurser som du kan referer
 * [Koppla mål](../destinations/home.md)
 * [Hantera åtkomst](../access-control/abac/overview.md)
 
-<!-- ### Successful profile records
+<!-- 
+### Successful profile records
 
 In the leaderboard **[!UICONTROL Successful profile records]** shows the total number of records that have been successfully processed into the profile.
 
@@ -108,4 +109,5 @@ In the leaderboard, **[!UICONTROL Failed profile records]** counts the number of
 
 The **[!UICONTROL Failed profile records]** metric card shows this count, and includes a graphical representation that helps you see how failures have trended during the time shown below the graphic. This chart is updated hourly. Select **[!UICONTROL View datasets]** to see more details about the profile records.
 
-The number of failed profile records is updated hourly. -->
+The number of failed profile records is updated hourly. 
+-->
