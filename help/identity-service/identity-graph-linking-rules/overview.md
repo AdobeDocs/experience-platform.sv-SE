@@ -2,7 +2,7 @@
 title: Länkningsregler för identitetsdiagram
 description: Lär dig mer om länkningsregler för identitetsdiagram i identitetstjänsten.
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 38d331bd9265f25a3aebdcbd20ae5fc30a93e960
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '1605'
 ht-degree: 0%
@@ -38,14 +38,15 @@ Följande dokument är viktiga för att förstå [!DNL Identity Graph Linking Ru
 
 Titta på följande videofilmer för att lära dig mer om några av de grundläggande aspekterna i Länkningsregler för identitetsdiagram.
 
-<!-- CARDS
+<!-- 
+CARDS
 {target = _blank}
-* https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/overview
-* https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation 
+* https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/overview
+* https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation 
 
     {description = Learn how to use the graph simulator to test out identity graph linking rules.}
 
-* https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings
+* https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings
     {description = Learn how to enable and configure identity graph linking rules to build accurate customer profiles}
 -->
 <!-- START CARDS HTML - DO NOT MODIFY BY HAND -->
@@ -54,8 +55,8 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/overview" title="Översikt över regler för länkning av identitetsdiagram" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3448276/?captions=swe&format=jpeg&nocache=1747851655227" alt="Översikt över regler för länkning av identitetsdiagram"
+                    <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/overview" title="Översikt över regler för länkning av identitetsdiagram" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3448250/?format=jpeg&nocache=1747851655227" alt="Översikt över regler för länkning av identitetsdiagram"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -63,11 +64,11 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/overview" target="_blank" rel="referrer" title="Översikt över regler för länkning av identitetsdiagram">Översikt över länkningsregler för identitetsdiagram</a>
+                        <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/overview" target="_blank" rel="referrer" title="Översikt över regler för länkning av identitetsdiagram">Översikt över länkningsregler för identitetsdiagram</a>
                     </p>
                     <p class="is-size-6">Få en översikt över hur regler för länkning av identitetsdiagram hjälper dataarkitekter att bibehålla korrekta kundprofiler och förhindra att diagram komprimeras.</p>
                 </div>
-                <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/overview" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/overview" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                     <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                 </a>
             </div>
@@ -77,8 +78,8 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation" title="Länkningsregler för identitetsdiagram - diagramsimulering" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3444047/?captions=swe&format=jpeg&nocache=1747851655237" alt="Länkningsregler för identitetsdiagram - diagramsimulering"
+                    <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation" title="Länkningsregler för identitetsdiagram - diagramsimulering" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3444032/?format=jpeg&nocache=1747851655237" alt="Länkningsregler för identitetsdiagram - diagramsimulering"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -86,11 +87,11 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation" target="_blank" rel="referrer" title="Länkningsregler för identitetsdiagram - diagramsimulering">Länkningsregler för identitetsdiagram - diagramsimulering</a>
+                        <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation" target="_blank" rel="referrer" title="Länkningsregler för identitetsdiagram - diagramsimulering">Länkningsregler för identitetsdiagram - diagramsimulering</a>
                     </p>
                     <p class="is-size-6">Lär dig hur du använder diagramsimulatorn för att testa länkningsregler för identitetsdiagram.</p>
                 </div>
-                <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/graph-simulation" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                     <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                 </a>
             </div>
@@ -100,8 +101,8 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" title="Länkningsregler för identitetsdiagram - identitetsinställningar" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3475966/?captions=swe&format=jpeg&nocache=1747851655218" alt="Länkningsregler för identitetsdiagram - identitetsinställningar"
+                    <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" title="Länkningsregler för identitetsdiagram - identitetsinställningar" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3458487/?format=jpeg&nocache=1747851655218" alt="Länkningsregler för identitetsdiagram - identitetsinställningar"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -109,11 +110,11 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" target="_blank" rel="referrer" title="Länkningsregler för identitetsdiagram - identitetsinställningar">Länkningsregler för identitetsdiagram - identitetsinställningar</a>
+                        <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" target="_blank" rel="referrer" title="Länkningsregler för identitetsdiagram - identitetsinställningar">Länkningsregler för identitetsdiagram - identitetsinställningar</a>
                     </p>
                     <p class="is-size-6">Lär dig hur du aktiverar och konfigurerar länkningsregler för identitetsdiagram för att skapa korrekta kundprofiler</p>
                 </div>
-                <a href="https://experienceleague.adobe.com/sv/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                <a href="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/identities/graph-linking-rules/identity-settings" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                     <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                 </a>
             </div>
