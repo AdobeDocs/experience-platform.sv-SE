@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Koppla DbVisualizer till frågetjänsten
 description: Det här dokumentet går igenom stegen för att ansluta DbVisualizer till Adobe Experience Platform Query Service.
 exl-id: badb0d89-1713-438c-8a9c-d1404051ff5f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
-source-wordcount: '878'
+source-wordcount: '876'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ I det här dokumentet beskrivs stegen för att ansluta databasverktyget [!DNL Db
 
 Den här guiden kräver att du redan har tillgång till skrivbordsappen [!DNL DbVisualizer] och känner till hur du navigerar i gränssnittet. Om du vill hämta datorprogrammet [!DNL DbVisualizer] eller om du vill ha mer information läser du [officiell [!DNL DbVisualizer] dokumentation](https://www.dbvis.com/download/).
 
-Om du vill få de nödvändiga autentiseringsuppgifterna för att ansluta [!DNL &#x200B; DbVisualizer] till Experience Platform måste du ha tillgång till arbetsytan Frågor i Experience Platform-gränssnittet. Kontakta din organisationsadministratör om du inte har tillgång till arbetsytan Frågor.
+Om du vill få de nödvändiga autentiseringsuppgifterna för att ansluta [!DNL  DbVisualizer] till Experience Platform måste du ha tillgång till arbetsytan Frågor i Experience Platform-gränssnittet. Kontakta din organisationsadministratör om du inte har tillgång till arbetsytan Frågor.
 
 ## Skapa en databasanslutning {#connect-database}
 
@@ -29,7 +29,7 @@ När du har valt **[!DNL PostgreSQL]** i listan [!DNL Connections] visas en [!DN
 
 ### Ange drivrutinsegenskaper för anslutningen {#properties}
 
-Välj fliken **[!DNL Properties]** på fliken för objektvyn i [!DNL PostgreSQL] följt av **[!DNL Driver Properties]** från navigeringssidlisten. Mer information om [drivrutinsegenskaper](https://confluence.dbvis.com/display/UG130/Configuring+Connection+Properties#ConfiguringConnectionProperties-DriverProperties) finns i den officiella dokumentationen.
+Välj fliken [!DNL PostgreSQL] på fliken för objektvyn i **[!DNL Properties]** följt av **[!DNL Driver Properties]** från navigeringssidlisten. Mer information om [drivrutinsegenskaper](https://confluence.dbvis.com/display/UG130/Configuring+Connection+Properties#ConfiguringConnectionProperties-DriverProperties) finns i den officiella dokumentationen.
 
 Ange sedan drivrutinsegenskaperna som beskrivs i tabellen nedan.
 
