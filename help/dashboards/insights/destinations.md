@@ -2,7 +2,7 @@
 title: Destinationsinsikter
 description: Upptäck den SQL som ger er målgruppsinsikter och använder dessa frågor för att generera anpassade insikter för att ytterligare utforska aktiveringen av data från Adobe Experience Platform.
 exl-id: 762a9960-e7a5-4796-80c7-ef745157cc04
-source-git-commit: cce576c00823a0c02e4b639f0888a466a5af6a0c
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '1137'
 ht-degree: 0%
@@ -26,7 +26,7 @@ Frågor som besvaras av den här insikten:
 - Vad är det totala antalet aktiverade målgrupper som filtreras efter ett visst mål?
 - Vad är antalet aktiverade målgrupper för varje mål?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 SELECT
@@ -57,7 +57,7 @@ Frågor som besvaras av den här insikten:
 - Hur många målgrupper aktiveras över alla destinationer?
 - Vad är det totala antalet aktiverade målgrupper?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 SELECT count(segment_id) AS Activated_Audiences_Count
@@ -71,7 +71,7 @@ WHERE
 
 +++
 
-Se [Aktivera målgrupper för alla målgruppswidgetar &#x200B;](../guides/destinations.md#activated-audiences-across-all-destinations) för information om utseendet och funktionaliteten för den här insikten.
+Se [Aktivera målgrupper för alla målgruppswidgetar ](../guides/destinations.md#activated-audiences-across-all-destinations) för information om utseendet och funktionaliteten för den här insikten.
 
 ## Aktiva destinationer per målplattform {#active-destinations-by-destination-platform}
 
@@ -81,7 +81,7 @@ Frågor som besvaras av den här insikten:
 - Hur ser de aktiva destinationerna ut efter målplattform?
 - Vad är antalet aktiva destinationer uppdelat efter respektive målplattform?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 SELECT destination_platform_name AS Destination_Platform_Name,
@@ -106,7 +106,7 @@ Frågor som besvaras av den här insikten:
 - Hur ser jag den övergripande trenden i målgruppsstorlek per mål under de angivna perioderna på 30 dagar, 90 dagar och 12 månader?
 - Vilka är de viktigaste egenskaperna hos den målgrupp som bidrar till storleken, till exempel toppar för alla e-postmarknadsföringskampanjer?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 SELECT d.destination_name,
@@ -152,7 +152,7 @@ Frågor som besvaras av den här insikten:
 - Hur många profiler har var och en av de gemensamma målgrupperna mellan två olika destinationer?
 - Vilken är den största målgruppen som två destinationer är mappade till?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 SELECT k.destination_name1,
@@ -214,7 +214,7 @@ SELECT k.destination_name1,
 
 +++
 
-Mer information om utseendet och funktionaliteten för den här insikten finns i [dokumentationen för widgeten &#x200B;](../guides/destinations.md#common-audiences) Vanliga målgrupper.
+Mer information om utseendet och funktionaliteten för den här insikten finns i [dokumentationen för widgeten ](../guides/destinations.md#common-audiences) Vanliga målgrupper.
 
 ## Målstatus {#destination-status}
 
@@ -224,7 +224,7 @@ Frågor som besvaras av den här insikten:
 - Vilket är det totala antalet inaktiverade destinationer?
 - Hur stor är procentandelen som delas mellan aktiverade och inaktiverade destinationer?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 SELECT COUNT(CASE
@@ -247,7 +247,7 @@ Frågor som besvaras av den här insikten:
 - Hur många destinationer är konfigurerade för närvarande?
 - Hur har det totala antalet destinationer ändrats över tid?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 SELECT count(destination_id) AS total_number_of_destinations
@@ -266,7 +266,7 @@ Frågor som besvaras av den här insikten:
 - Vilken är den senaste storleken för en mappad publik och om den har ändrats under den senaste månaden?
 - Hur listar jag alla målgrupper som är mappade till ett mål baserat på hur allvarlig deras storlek har ändrats den senaste månaden?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 SELECT destination_name,
@@ -335,7 +335,7 @@ Frågor som besvaras av den här insikten:
 - Hur har antalet mappade målgrupper ändrats över tid?
 - Var kan jag jämföra två destinationer för att se målgruppen överlappas av varje mål?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 SELECT COUNT(segment_id) AS mapped_audiences_count
@@ -347,7 +347,8 @@ WHERE destination_id = 1458738325;
 
 Mer information om utseendet och funktionaliteten för den här insikten finns i dokumentationen för [Mappad målgruppswidget](../guides/destinations.md#mapped-audiences).
 
-<!-- Commented out until the Jan release as the SQL IS MISSING:
+<!-- 
+Commented out until the Jan release as the SQL IS MISSING:
 ## Mapped audiences by identity {#mapped-audiences-by-identity}
 
 Questions answered by this insight:
@@ -374,7 +375,7 @@ Frågor som besvaras av den här insikten:
 - Hur många målgrupper mappas till varje mål, sorterat efter de flesta i alla fall?
 - Hur ändras mappningen av målgrupper till mål från en ögonblicksbild till en annan?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 SELECT qsaccel.profile_agg.adwh_dim_destination.destination_name,
@@ -403,7 +404,7 @@ Frågor som besvaras av den här insikten:
 - Hur hittar jag en lista över alla destinationer sorterade efter det senaste uppdateringsdatumet?
 - Hur kan jag jämföra två mål baserat på de senaste aktiveringarna?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 SELECT
@@ -434,7 +435,7 @@ Frågor som besvaras av den här insikten:
 - Hur hittar jag en lista över målgrupper som aktiverats av en viss målgrupp från de flesta till de senaste?
 - Hur hittar jag en lista över målgrupper efter det datum då den aktiverades för ett specifikt mål?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 SELECT c.destination_name,
@@ -465,7 +466,7 @@ Frågor som besvaras av den här insikten:
 - Hur hittar jag en lista över destinationer med det datum då de skapades?
 - Vilken ny destination skapades nyligen?
 
-+++Välj för att visa den SQL som genererar den här insikten
++++Välj om du vill visa den SQL som genererar den här insikten
 
 ```sql
 SELECT DISTINCT
@@ -486,7 +487,8 @@ LIMIT
 
 Mer information om utseendet och funktionaliteten för den här insikten finns i [dokumentationen för den nyligen skapade målwidgeten](../guides/destinations.md#recently-created-destinations) .
 
-<!-- Commented out until the Jan release as SQL MISSING FROM WIKI:
+<!-- 
+Commented out until the Jan release as SQL MISSING FROM WIKI:
 
 ## Unmapped audiences by identity {#unmapped-audiences-by-identity}
 
