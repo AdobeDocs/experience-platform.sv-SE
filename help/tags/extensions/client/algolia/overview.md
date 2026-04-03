@@ -2,7 +2,7 @@
 title: Översikt över tillägget Algolia-taggar
 description: Läs mer om tillägget Algolia-taggar i Adobe Experience Platform.
 exl-id: 8409bf8b-fae2-44cc-8466-9942f7d92613
-source-git-commit: 6eee26df3841a7829625361fc726bf59a278f867
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1954'
 ht-degree: 0%
@@ -17,7 +17,7 @@ Det här tillägget drivs av en nyckelfunktion:
 
 * **[!DNL Algolia]Insikter**: Hämtar och skickar automatiskt användarinteraktionshändelser till [!DNL Algolia], vilket möjliggör kraftfull analys, personaliserade upplevelser och förbättrad sökrelevans.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Du måste ha ett giltigt [!DNL Algolia]-konto för att kunna använda det här tillägget. Gå till [[!DNL Algolia] registreringssidan](https://dashboard.algolia.com/users/sign_up) och skapa ett konto om du inte redan har ett.
 
@@ -92,7 +92,7 @@ Lägg till åtgärden **[!UICONTROL Click]** i taggregeln för att skicka klicka
 ![](../../../images/extensions/client/algolia/clicked.png)
 
 Mer information om händelsekategorierna finns i [Klickade objekt-ID:n efter sökning](https://www.algolia.com/doc/api-reference/api-methods/clicked-object-ids-after-search/)
-och [Handböcker för objekt-ID:n som klickats &#x200B;](https://www.algolia.com/doc/api-reference/api-methods/clicked-object-ids/) .
+och [Handböcker för objekt-ID:n som klickats ](https://www.algolia.com/doc/api-reference/api-methods/clicked-object-ids/) .
 
 ### Konverterad {#converted}
 
@@ -152,7 +152,7 @@ Lägg till åtgärden **[!UICONTROL Purchased]** i taggregeln för att skicka k�
 ![](../../../images/extensions/client/algolia/purchased.png)
 
 Mer information om händelsekategorierna finns i [Inköpta objekt-ID:n efter sökning](https://www.algolia.com/doc/api-reference/api-methods/purchased-object-ids-after-search/)
-och [&#x200B; Inköpta objekt-ID:n &#x200B;](https://www.algolia.com/doc/api-reference/api-methods/purchased-object-ids/) .
+och [ Inköpta objekt-ID:n ](https://www.algolia.com/doc/api-reference/api-methods/purchased-object-ids/) .
 
 ### Visad {#viewed}
 
