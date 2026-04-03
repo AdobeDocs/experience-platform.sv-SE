@@ -3,7 +3,7 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;medgiv
 title: Datatypen Innehåll och inställningar
 description: Datatypen Godkänn för sekretess, Personalization och marknadsföringsinställningar är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från era dataåtgärder.
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: bb90bbddf33bc4b0557026a0f34965ac37475c65
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '2305'
 ht-degree: 0%
@@ -16,7 +16,7 @@ Datatypen [!UICONTROL Consent for Privacy, Personalization and Marketing Prefere
 
 Det här dokumentet beskriver strukturen och den avsedda användningen av fälten som anges av datatypen [!UICONTROL Consents and Preferences].
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Det här dokumentet kräver en fungerande förståelse av XDM och användning av scheman i [!DNL Experience Platform]. Läs följande dokumentation innan du fortsätter:
 
