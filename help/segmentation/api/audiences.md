@@ -3,7 +3,7 @@ title: Målgrupps-API-slutpunkt
 description: Använd målgruppsslutpunkten i Adobe Experience Platform Segmentation Service API för att skapa, hantera och uppdatera målgrupper för er organisation programmatiskt.
 role: Developer
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
-source-git-commit: 63fa87ac9777b3ac66d990dd4bfbd202f07b0eba
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1592'
 ht-degree: 0%
@@ -33,7 +33,7 @@ GET /audiences?{QUERY_PARAMETERS}
 
 >[!NOTE]
 >
->Om du använder den här slutpunkten utan frågeparametrar returneras **inte** för inaktiva målgrupper. Om du däremot använder den här slutpunkten tillsammans med frågeparametern `property=audienceId`, returneras inaktiva målgrupper **&#x200B;**.
+>Om du använder den här slutpunkten utan frågeparametrar returneras **inte** för inaktiva målgrupper. Om du däremot använder den här slutpunkten tillsammans med frågeparametern `property=audienceId`, returneras inaktiva målgrupper ****.
 
 Följande frågeparametrar kan användas när en lista över målgrupper hämtas:
 
@@ -183,7 +183,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över målgrupper som sk
 ```
 
 | Egenskap | Målgruppstyp | Beskrivning |
-| -------- | ------------- | ----------- | 
+| -------- | ------------- | ----------- |
 | `id` | Båda | En systemgenererad skrivskyddad identifierare för målgruppen. |
 | `audienceId` | Båda | Om målgruppen är en plattformsgenererad målgrupp är detta samma värde som `id`. Om målgruppen genereras externt anges det här värdet av klienten. |
 | `schema` | Båda | Målgruppens XDM-schema (Experience Data Model). |
@@ -246,7 +246,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
 ```
 
 | Egenskap | Beskrivning |
-| -------- | ----------- | 
+| -------- | ----------- |
 | `name` | Namnet på publiken. |
 | `description` | En beskrivning av publiken. |
 | `type` | Ett fält som visar om målgruppen är plattformsgenererad eller är en externt genererad målgrupp. Möjliga värden är `SegmentDefinition` och `ExternalSegment`. En `SegmentDefinition` refererar till en målgrupp som har skapats i Platform, medan en `ExternalSegment` refererar till en målgrupp som inte har genererats i Platform. |
@@ -339,7 +339,7 @@ GET /audiences/{AUDIENCE_ID}
 ```
 
 | Parameter | Beskrivning |
-| --------- | ----------- | 
+| --------- | ----------- |
 | `{AUDIENCE_ID}` | ID:t för den målgrupp du försöker hämta. Observera att det här är fältet `id` och att det **inte** är fältet `audienceId`. |
 
 **Begäran**
@@ -472,7 +472,7 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
 ```
 
 | Egenskap | Beskrivning |
-| -------- | ----------- | 
+| -------- | ----------- |
 | `audienceId` | Målgruppens ID. För externt genererade målgrupper kan det här värdet anges av användaren. |
 | `name` | Namnet på publiken. |
 | `namespace` | Namnutrymmet för målgruppen. |
