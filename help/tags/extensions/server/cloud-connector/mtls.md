@@ -2,7 +2,7 @@
 title: mTLS (Mutual Transport Layer Security) - översikt
 description: Lär dig hur du kan använda mTLS för att säkert hämta offentliga certifikat som utfärdats av Adobe för händelsevidarebefordran.
 exl-id: e8ee8655-213d-4d2a-93d4-d62824b53b1d
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '605'
 ht-degree: 0%
