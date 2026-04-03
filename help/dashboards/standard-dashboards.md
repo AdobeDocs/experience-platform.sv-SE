@@ -2,7 +2,7 @@
 title: Standardinstrumentpaneler
 description: Lär dig hur du skapar och hanterar anpassade instrumentpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera nyckelvärden.
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '1553'
 ht-degree: 0%
@@ -14,11 +14,13 @@ ht-degree: 0%
 Använd Adobe Experience Platform Dashboards för att få bättre insikter och anpassa visualiseringen via funktionen Dashboards. Använd den här funktionen för att skapa och hantera anpassade kontrollpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera viktiga nyckeltal som är relevanta för organisationen.
 
 
-<!-- Getting started / permissions section commented out for Beta. This will be necessary after GA only
+<!-- 
+Getting started / permissions section commented out for Beta. This will be necessary after GA only
 
 ## Getting started
 
-To view dashboards in Adobe Experience Platform you must have the appropriate permissions enabled. Please read the [dashboards permissions documentation](./permissions.md#available-permissions) to learn how to grant users the ability to view, edit, and update Experience Platform dashboards using Adobe Admin Console. If you do not have administrator privileges for your organization, contact your product administrator to obtain the required permissions. -->
+To view dashboards in Adobe Experience Platform you must have the appropriate permissions enabled. Please read the [dashboards permissions documentation](./permissions.md#available-permissions) to learn how to grant users the ability to view, edit, and update Experience Platform dashboards using Adobe Admin Console. If you do not have administrator privileges for your organization, contact your product administrator to obtain the required permissions. 
+-->
 
 ## Skapa en anpassad kontrollpanel
 
@@ -28,10 +30,12 @@ Om du vill skapa en anpassad kontrollpanel navigerar du först till instrumentpa
 
 Innan du lägger till en anpassad kontrollpanel är kontrollpanelernas lager tomt och en&quot;Inga kontrollpaneler hittades&quot; visas. meddelande. När du har skapat en kontrollpanel visas alla kontrollpaneler i kontrollpanelens lager.
 
-<!-- >[!NOTE]
+<!-- 
+>[!NOTE]
 >
 >To edit an existing dashboard, select the dashboard name from the inventory list followed by the pencil icon (![A pencil icon.](/help/images/icons/edit.png))
->![A custom inventory listed in the dashboard inventory.](./images/standard-dashboards/dashbaord-inventory.png "A custom inventory listed in the dashboard inventory."){width="100" zoomable="yes"} -->
+>![A custom inventory listed in the dashboard inventory.](./images/standard-dashboards/dashbaord-inventory.png "A custom inventory listed in the dashboard inventory."){width="100" zoomable="yes"} 
+-->
 
 Dialogrutan [!UICONTROL Create dashboard] visas. Ange ett användarvänligt, beskrivande namn för den samling widgetar som du vill skapa och välj **[!UICONTROL Save]**.
 
@@ -182,4 +186,4 @@ Om du vill identifiera tillgängliga förkonfigurerade mått och visualiseringar
 
 Titta på följande video för att få en bättre förståelse för kontrollpaneler i Experience Platform:
 
->[!VIDEO](https://video.tv.adobe.com/v/3432450?captions=swe&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3409637?quality=12&learn=on)
