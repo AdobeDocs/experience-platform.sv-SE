@@ -4,7 +4,7 @@ description: Lär dig hur du ansluter Didomi till Adobe Experience Platform med 
 last-substantial-update: 2025-07-29T00:00:00Z
 badge: Beta
 exl-id: c59bcfb8-e831-4a13-8b0e-4c6d538f1059
-source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '893'
 ht-degree: 0%
@@ -25,7 +25,7 @@ Använd [!DNL Didomi]-källan för att strömma data om användarsamtycke och in
 
 ![Databearbetningsarkitekturen för Didomi.](../../images/tutorials/create/didomi/flux.jpeg)
 
-## Förhandskrav
+## Förutsättningar
 
 Slutför de nödvändiga stegen nedan för att ansluta ditt [!DNL Didomi]-konto till Experience Platform.
 
@@ -80,7 +80,7 @@ Om du vill skapa en datauppsättning väljer du [!UICONTROL Datasets] i den vän
 För att säkerställa kompatibilitet med Experience Platform måste din webkrok uppfylla följande krav.
 
 | Fält | Beskrivning | Exempel |
-| --- | --- | --- | 
+| --- | --- | --- |
 | Klienthemlighet | Den hemliga nyckel som är kopplad till dina Adobe API-autentiseringsuppgifter. | `d8f3b2e1-4c9a-4a7f-9b2e-8f1c3d2a1b6e` |
 | API-nyckel | Den offentliga API-nyckel som används för att autentisera begäranden till Adobe-tjänster. |  |
 | Typ av bidrag | Den metod som används för att hämta en åtkomsttoken från auktoriseringsservern. Ange det här värdet till `client_credentials`. | `client_credentials` |
@@ -94,7 +94,7 @@ För att säkerställa kompatibilitet med Experience Platform måste din webkrok
 Konfigurera sedan följande alternativ för [!DNL webhook].
 
 | Fält | Beskrivning | Värde |
-| ---| --- | --- | 
+| ---| --- | --- |
 | Begäranrubriker | De anpassade rubrikerna för [!DNL webhook]. Se till att du inkluderar `x-adobe-flow-id`. Du kan hämta det här värdet när [dataflödet har skapats](../../tutorials/ui/create/consent-and-preferences/didomi.md#retrieve-the-streaming-endpoint-url). | `{"Content-Type": "application/json", "Cache-Control": "no-cache", "x-adobe-flow-id": "{DATAFLOW_ID}"}` |
 | Förenkla | Den här egenskapen måste kontrolleras eftersom den ser till att [!DNL webhook]-data skickas som ett platt objekt. | Aktiverad |
 | Händelsetyper | Välj den specifika gruppen med [!DNL Didomi] händelser (`event.*` eller `user.*`) som ska utlösa [!DNL webhook]. Använd `event.*` för att spåra samtycke eller ändringar av inställningar och använd `user.*` för att spåra uppdateringar av användarprofiler. Det här valet krävs för att säkerställa att endast kompatibla händelser skickas till Adobe. Adobe har bara stöd för ett schema per dataflöde, så om du väljer båda händelsetyperna kan det leda till inmatningsfel. | Listan över händelsetyper som stöds är: <ul><li>`Event.created`</li><li>`Event.updated`</li><li>`Event.deleted`</li><li>`User.created`</li><li>`User.updated`</li><li>`User.deleted`</li></ul> |
