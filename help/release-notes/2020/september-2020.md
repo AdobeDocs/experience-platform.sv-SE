@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: September 8, 2020
 author: crhoades, ens25212
 exl-id: bf401f3a-b088-4cbd-9a64-224294b797b9
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '866'
 ht-degree: 35%
@@ -72,7 +72,7 @@ Flera juridiska och organisatoriska bestämmelser ger användare rätt att på b
 | ------- | ----------- |
 | Stöd för LGPD (Brasilien) | Sekretessjobb kan nu skapas enligt Brasiliens [!DNL Lei Geral de Proteção de Dados] (LGPD)-reglering. Dessa jobb registreras under regelkoden `lgpd_bra`. |
 
-Mer information om tjänsten finns i [översikten över Privacy Service](../../privacy-service/home.md).
+Mer information om tjänsten finns i [översikten över integritetstjänst](../../privacy-service/home.md).
 
 ## Kundprofil i realtid {#profile}
 
