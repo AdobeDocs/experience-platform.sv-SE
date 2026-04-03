@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett dataflöde med Analytics Source i användargränssnittet
 description: I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en analyskälla med hjälp av Experience Platform UI.
 exl-id: 108a69e5-d7d9-4ca1-a364-38ea54aa74ff
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '1417'
 ht-degree: 0%
@@ -30,7 +30,8 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [[!DNL Real-Time Customer Profile]](../../../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [[!DNL Data Prep]](../../../../data-prep/home.md): Tillåter datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
-<!-- ## Add data
+<!-- 
+## Add data
 
 After creating your analytics source account, the **[!UICONTROL Add data]** step appears, providing an interface for you to explore your analytics account's table hierarchy.
 
@@ -43,7 +44,8 @@ After creating your analytics source account, the **[!UICONTROL Add data]** step
 
 Once you find the source data, select the table, then select **[!UICONTROL Next]**.
 
-![select-data](../../../images/tutorials/dataflow/table-based/select-data.png) -->
+![select-data](../../../images/tutorials/dataflow/table-based/select-data.png) 
+-->
 
 ## Ange information om dataflöde
 
