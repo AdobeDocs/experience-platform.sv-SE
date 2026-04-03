@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: f6d700087241fb3a467934ae8e64d04f5c1d98fa
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1028'
 ht-degree: 0%
@@ -78,7 +78,7 @@ En pover visas med en lista över alla fält som kan visas i tabellen.
 ![De attribut som kan visas för dispositionssektionen.](../images/ui/overview/compositions-customize-table.png)
 
 | Fält | Beskrivning |
-| ----- | ----------- | 
+| ----- | ----------- |
 | [!UICONTROL Name] | Namnet på publiken. |
 | [!UICONTROL Status] | Publiken. Möjliga värden för fältet är `Draft`, `Inactive` och `Published`. |
 | [!UICONTROL Created] | Tid och datum då målgruppen skapades. |
@@ -126,4 +126,4 @@ När ni är klara med att skapa er målgrupp kommer målgruppen att analyseras a
 
 Användargränssnittet [!DNL Segmentation Service] innehåller ett omfattande arbetsflöde som gör att du kan skapa marknadsföringsbara målgrupper utifrån [!DNL Real-Time Customer Profile]-data.
 
-Om du vill veta mer om [!DNL Segmentation Service] kan du fortsätta läsa dokumentationen. Läs [[!DNL Segmentation Service] utvecklarhandboken](../api/overview.md) om du vill lära dig hur du använder [!DNL Segmentation Service]-API:t.
+Om du vill veta mer om [!DNL Segmentation Service] kan du fortsätta läsa dokumentationen. Läs [!DNL Segmentation Service]utvecklarhandboken[[!DNL Segmentation Service]  om du vill lära dig hur du använder ](../api/overview.md)-API:t.
