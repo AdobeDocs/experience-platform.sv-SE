@@ -1,11 +1,11 @@
 ---
-title: Versionsinformation om Adobe Experience Platform från augusti 2022
+title: Versionsinformation om Adobe Experience Platform för augusti 2022
 description: Versionsinformation för augusti 2022 för Adobe Experience Platform.
 exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
-source-git-commit: 25697d341b2970eeb20d9f2507ee701ade8046d3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1967'
-ht-degree: 21%
+ht-degree: 22%
 
 ---
 
@@ -117,7 +117,7 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 | Komponenttyp | Namn | Beskrivning |
 | --- | --- | --- |
 | Klass | [[!UICONTROL AJO Entity Class]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/ajo-entity-class.schema.json) | En postbaserad klass för att skapa uppslagsscheman för Adobe Journey Optimizer. |
-| Fältgrupp | [[!UICONTROL Workfront Work Objects]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/workobjects-all.schema.json) | En omslutningsfältgrupp som refererar till alla objektspecifika fältgrupper på den lägre nivån för Adobe Workfront. |
+| Fältgrupper | [[!UICONTROL Workfront Work Objects]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/workobjects-all.schema.json) | En omslutningsfältgrupp som refererar till alla objektspecifika fältgrupper på den lägre nivån för Adobe Workfront. |
 
 {style="table-layout:auto"}
 
@@ -125,10 +125,10 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 
 | Komponenttyp | Namn | Beskrivning |
 | --- | --- | --- |
-| Fältgrupp | [[!UICONTROL Journey Orchestration Step Event Common Fields]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/journeyOrchestration/stepEvents/journeyStepEventCommonFieldsMixin.schema.json) | Två nya egenskaper har lagts till: `origTimeStamp` och `experienceID`. |
-| Fältgrupp | [[!UICONTROL Segment Membership Details]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/segmentation.schema.json) | Förutom [!UICONTROL XDM Individual Profile] kan den här fältgruppen nu även användas i scheman baserat på klassen XDM Business Account. |
-| Fältgrupp | (Flera) | Flera fältgrupper som rör Marketo B2B-aktiviteter har uppdaterats till stabil status. Mer information finns i följande [pull-begäran](https://github.com/adobe/xdm/pull/1593/files). |
-| Fältgrupp | (Flera) | Flera väderrelaterade fältgrupper har uppdaterats för att åtgärda fel som uppstod för `uvIndex` och `sunsetTime`. Mer information finns i följande [pull-begäran](https://github.com/adobe/xdm/pull/1602/files). |
+| Fältgrupper | [[!UICONTROL Journey Orchestration Step Event Common Fields]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/journeyOrchestration/stepEvents/journeyStepEventCommonFieldsMixin.schema.json) | Två nya egenskaper har lagts till: `origTimeStamp` och `experienceID`. |
+| Fältgrupper | [[!UICONTROL Segment Membership Details]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/segmentation.schema.json) | Förutom [!UICONTROL XDM Individual Profile] kan den här fältgruppen nu även användas i scheman baserat på klassen XDM Business Account. |
+| Fältgrupper | (Flera) | Flera fältgrupper som rör Marketo B2B-aktiviteter har uppdaterats till stabil status. Mer information finns i följande [pull-begäran](https://github.com/adobe/xdm/pull/1593/files). |
+| Fältgrupper | (Flera) | Flera väderrelaterade fältgrupper har uppdaterats för att åtgärda fel som uppstod för `uvIndex` och `sunsetTime`. Mer information finns i följande [pull-begäran](https://github.com/adobe/xdm/pull/1602/files). |
 | Datatyp | [[!UICONTROL Product list item]](https://github.com/adobe/xdm/blob/master/components/datatypes/productlistitem.schema.json) | En ny egenskap `productImageUrl` har lagts till. |
 | Datatyp | [[!UICONTROL Qoe Data details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/qoedatadetails.schema.json) | En ny egenskap `framesPerSecond` har lagts till. |
 | Datatyp | [[!UICONTROL Session details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/sessiondetails.schema.json) | `sdkVersion` har bytt namn till `appVersion`. `meta:enum` och `description` fält har också uppdaterats. |
