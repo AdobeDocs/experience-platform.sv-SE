@@ -2,7 +2,7 @@
 title: Lista över lägen, startsamlingens datatyp
 description: Läs mer om datatypen List of states Start Data Type Experience Data Model (XDM).
 exl-id: adeb3e91-7266-41ce-b406-f7fd5dbb2236
-source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '108'
 ht-degree: 0%
