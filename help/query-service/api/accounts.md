@@ -5,7 +5,7 @@ title: API-slutpunkt för konton
 description: Du kan skapa ett frågetjänstkonto för beständig .
 role: Developer
 exl-id: 1667f4a5-e6e5-41e9-8f9d-6d2c63c7d7d6
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '498'
 ht-degree: 1%
@@ -22,7 +22,7 @@ Slutpunkterna som används i den här guiden ingår i API:t för frågetjänsten
 
 ## Skapa ett konto
 
-Du kan skapa ett integrationskonto för frågetjänsten genom att göra en POST-förfrågan till slutpunkten `/accounts`.
+Du kan skapa ett integrationskonto för frågetjänsten genom att göra en POST-begäran till slutpunkten `/accounts`.
 
 **API-format**
 
@@ -135,7 +135,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nya Query Ser
 
 ## Visa alla konton
 
-Du kan hämta en lista över alla integrationskonton för frågetjänsten genom att göra en GET-förfrågan till slutpunkten `/accounts`.
+Du kan hämta en lista över alla integrationskonton för frågetjänsten genom att göra en GET-begäran till slutpunkten `/accounts`.
 
 **API-format**
 
