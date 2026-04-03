@@ -3,7 +3,7 @@ title: Pega Profile Connector
 description: Använd Pega Profile Connector för Amazon S3 i Adobe Experience Platform för att exportera fullständiga eller inkrementella, eller båda, profildata till Amazon S3-molnlagring. I Pega Customer Decision Hub kan datafält schemaläggas i kundprofil-Designer för att importera profildata regelbundet från Amazon S3-lagring.
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: f422f21b-174a-4b93-b05d-084b42623314
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1225'
 ht-degree: 0%
@@ -107,7 +107,7 @@ Fyll i de obligatoriska fälten och välj **[!UICONTROL Connect to destination]*
 
 När du har upprättat autentiseringsanslutningen till [!DNL Amazon S3] anger du följande information för målet:
 
-![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega Profile Connector &#x200B;](../../assets/catalog/personalization/pega-profile/pega-profile-connect-destination.png)
+![Bild av gränssnittsskärmen som visar slutförda fält för målinformationen för Pega Profile Connector ](../../assets/catalog/personalization/pega-profile/pega-profile-connect-destination.png)
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Next]**. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
@@ -147,7 +147,7 @@ För [!DNL Pega Profile Connector] mål skapar [!DNL Experience Platform] en `.c
 En import av profildata från S3 infogar data i [!DNL Pega Customer]-profildatalagret. Importerade kundprofildata kan valideras i [!DNL Pega Customer Profile Designer], vilket visas i följande bild.
 ![Bild av gränssnittsskärmen där du kan validera Adobe-profildata i Designer för kundprofil](../../assets/catalog/personalization/pega-profile/pega-profile-data.png)
 
-I [!DNL Pega Customer Decision Hub] kan dataadministratörer konfigurera datajobb i [!DNL Customer Profile Designer] så att profildata importeras periodiskt från S3 enligt följande bild. Mer information om hur du konfigurerar datajobb att importera profildata från [&#x200B; finns i &#x200B;](#additional-resources)ytterligare resurser[!DNL Amazon S3].
+I [!DNL Pega Customer Decision Hub] kan dataadministratörer konfigurera datajobb i [!DNL Customer Profile Designer] så att profildata importeras periodiskt från S3 enligt följande bild. Mer information om hur du konfigurerar datajobb att importera profildata från [ finns i ](#additional-resources)ytterligare resurser[!DNL Amazon S3].
 ![Bild av gränssnittsskärmen för att konfigurera datajobb i kundprofilen Designer](../../assets/catalog/personalization/pega-profile/pega-profile-screen-image1.png)
 
 ## Ytterligare resurser {#additional-resources}
