@@ -2,9 +2,9 @@
 title: Samla in information om handel, produkter och beställningar med Adobe Experience Platform Web SDK
 description: Lär dig hur du lägger till produktrelaterade data eller en kundvagn med Adobe Experience Platform Web SDK.
 exl-id: 3c79e776-89ef-494b-a2ea-3c23efce09ae
-source-git-commit: 9b2ecedfafbafed042eba73a034cb9b9e95af579
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
-source-wordcount: '785'
+source-wordcount: '786'
 ht-degree: 0%
 
 ---
@@ -51,7 +51,7 @@ I det här avsnittet beskrivs de fält som är tillgängliga i objektet `commerc
 
 Expandera avsnittet nedan om du vill se ett exempel på ett Web SDK-kommando med ett fält från objektet `commerce`.
 
-+++`productViews`
++++ productViews
 
 Ett grundläggande SDK `sendEvent`-anrop för webben som anger att fältet `productViews` ska vara `1`:
 
@@ -91,7 +91,7 @@ I det här avsnittet beskrivs alla fält som stöds av objektet `order`.
 
 Expandera avsnittet nedan om du vill se ett exempel på ett Web SDK-kommando som använder objektet `commerce`.
 
-+++`Order` objektexempel
++++ `Order` objektexempel
 
 Ett Web SDK `sendEvent`-anrop som anger det `order` -objekt som gäller för flera produkter i `productListItems`-arrayen:
 
@@ -151,7 +151,7 @@ Produktlistan anger vilka produkter som är relaterade till motsvarande åtgärd
 
 Expandera avsnitten nedan om du vill se exempel på Web SDK-kommandon som använder objektet `productListItems`.
 
-+++`productListItems`-exempel
++++ `productListItems`-exempel
 
 Ett Web SDK `sendEvent`-anrop som anger `productViews` för flera produkter i `productListItems`-arrayen:
 
@@ -179,7 +179,7 @@ alloy("sendEvent",{
 
 +++
 
-+++`productListAdds`-exempel
++++ `productListAdds`-exempel
 
 Ett Web SDK `sendEvent`-anrop som anger `productListAdds`-händelsen för flera produkter i `productListItems`-arrayen:
 
@@ -213,7 +213,7 @@ alloy("sendEvent",{
 
 +++
 
-+++`checkouts`-exempel
++++ `checkouts`-exempel
 
 Ett Web SDK `sendEvent`-anrop som anger `checkouts`-händelsen för flera produkter i `productListItems`-arrayen:
 
