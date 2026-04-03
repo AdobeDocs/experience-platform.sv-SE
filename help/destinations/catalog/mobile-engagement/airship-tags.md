@@ -3,7 +3,7 @@ keywords: luftfartygets etikett;luftfartygets destination
 title: Ansluta till luftfartygets taggar
 description: Skicka enkelt Adobe Audience Data till Airship som målgruppstaggar för målinriktning inom Airship.
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1052'
 ht-degree: 1%
