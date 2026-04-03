@@ -2,10 +2,10 @@
 title: Guide för konfiguration av länkningsregler för identitetsdiagram
 description: Lär dig mer om de olika implementeringstyperna som du kan konfigurera med Länkningsregler för identitetsdiagram.
 exl-id: fd0afb0b-a368-45b9-bcdc-f2f3b7508cee
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '1951'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -240,7 +240,7 @@ Du infogar både ett ej hashas (offline) CRMID och ett hashas (online) CRMID. F�
 Konfigurera följande inställningar i diagramsimuleringsgränssnittet innan du simulerar diagrammet.
 
 | Visningsnamn | Identitetssymbol | Identitetstyp | Unikt per diagram | Namnområdesprioritet |
-| --- | --- | --- | --- | --- | 
+| --- | --- | --- | --- | --- |
 | CRMID | CRMID | CROSS_DEVICE | ✔️ | 1 |
 | CRMIDhash | CRMIDhash | CROSS_DEVICE | ✔️ | 2 |
 | ECID | ECID | COOKIE | | 3 |
@@ -265,7 +265,7 @@ CRMIDhash: John, ECID: 111
 CRMIDhash: Jane, ECID: 111
 ```
 
-![Ett delat enhetsdiagram med hashade CRMID &#x200B;](../images/configs/intermediate/shared-device-hashed-crmid.png)
+![Ett delat enhetsdiagram med hashade CRMID ](../images/configs/intermediate/shared-device-hashed-crmid.png)
 
 >[!TAB Felaktiga data]
 
@@ -281,6 +281,7 @@ CRMID: Jane, CRMIDhash: aaaa
 ![Ett delat enhetsdiagram med ett fel i hashprocessen, vilket leder till ett icke-unikt kraschat CRMID.](../images/configs/intermediate/hashing-error.png)
 
 >[!ENDTABS]
+
 <!-- 
 ### Use case: You are using Real-Time CDP and Adobe Commerce
 
@@ -339,7 +340,8 @@ Email: jane@g, ECID: 111
 
 ![A graph that displays a member and a guest who share a device.](../images/configs/intermediate/shared-device-member-and-guest.png)
 
->[!ENDTABS] -->
+>[!ENDTABS] 
+-->
 
 ### Användningsfall: Dina data innehåller tre unika namnutrymmen
 
