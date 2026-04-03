@@ -1,7 +1,8 @@
 ---
 title: Extern granskning av Source-system
 description: Läs mer om den externa fältgruppen Source System Audit Details Experience Data Model (XDM).
-source-git-commit: 656070cf69e3713c7889f53d51937e0e70085d96
+exl-id: 6aa154f3-620f-4a2e-9e33-a0757d0491c1
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '136'
 ht-degree: 0%
