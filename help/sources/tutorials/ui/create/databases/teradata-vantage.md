@@ -3,7 +3,7 @@ keywords: Experience Platform;home;populära topics;Teradata Vantage
 title: Skapa en Teradata Vantage Source-anslutning i användargränssnittet
 description: Lär dig hur du skapar en Teradata Vantage-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 3fdb09fa-128a-477b-9144-d4ef3ed18ea6
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '399'
 ht-degree: 0%
