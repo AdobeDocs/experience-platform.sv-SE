@@ -3,7 +3,7 @@ keywords: Experience Platform;home;populära topics;access control;attribute-bas
 title: Attributbaserad åtkomstkontroll Hantera användare
 description: Hantera användare och användargrupper via behörighetsgränssnittet i Adobe Experience Cloud.
 exl-id: 16450867-040a-4be1-a6c0-f03d0a1b90ba
-source-git-commit: b665d0edce713f1b252e07125aabab79d52a9cba
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '918'
 ht-degree: 0%
@@ -16,13 +16,14 @@ ht-degree: 0%
 >id="platform_permissions_users_about"
 >title="Vad är användare?"
 >abstract="Användare är de personer som har tillgång till Experience Platform. En enskild användares åtkomst till en organisations resurser hanteras via roller."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/access-control/abac/permissions-ui/roles" text="Hantera roller"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/access-control/abac/permissions-ui/roles" text="Hantera roller"
 
 Användare är de personer som har tillgång till Adobe Experience Platform. En enskild användares åtkomst till en organisations resurser hanteras via [roller](./roles.md){target="_blank"}. En organisation kan också skapa [användargrupper](#user-groups) för att ge sömlös åtkomst till flera användares samtidigt. Användare hanteras i Admin Console och användare som är kopplade till Adobe Experience Platform produktkort visas som en del av användarlistan i Experience Platform.
 
 ## Hantera användare
 
-<!-- ADD LINKS INTO IMPORTANT NOTE BELOW
+<!-- 
+ADD LINKS INTO IMPORTANT NOTE BELOW
 >[!IMPORTANT]
 >
 >[!UICONTROL Permissions] manages access control for existing Experience Platform users. To add users to Experience Platform, navigate to Adobe Admin Console through the **[!UICONTROL Edit in admin console]** option. To learn how to add users through the Admin Console, follow the [adding users to Experience Platform](...){#target="_blank"} guide.
@@ -56,7 +57,8 @@ Dialogrutan **[!UICONTROL Add Roles]** visas. Markera de roller du vill lägga t
 
 Om du vill ta bort en roll från användaren markerar du **X** bredvid rollens namn.
 
-<!-- ADD LINKS INTO IMPORTANT NOTE BELOW
+<!-- 
+ADD LINKS INTO IMPORTANT NOTE BELOW
 
 >[!NOTE]
 >
@@ -73,11 +75,12 @@ En bekräftelsedialogruta visas. Välj **[!UICONTROL Confirm]** om du vill ta bo
 
 Användargrupper är flera användare som har grupperats tillsammans och har tillgång till samma funktioner.
 
-<!-- ADD LINKS INTO IMPORTANT NOTE BELOW
+<!-- 
+ADD LINKS INTO IMPORTANT NOTE BELOW
 >[!IMPORTANT]
 >
 >[!UICONTROL Permissions] manages access control for existing Experience Platform user groups. To add user groups to Experience Platform, navigate to Admin Console through the **[!UICONTROL Edit in admin console]** option. To learn how to add user groups in the Admin Console, follow the [adding user groups to Experience Platform](...){#target="_blank"} guide.
- -->
+-->
 
 Om du vill visa organisationens användare går du till **[!UICONTROL Permissions]** i [Adobe Experience Cloud](https://experience.adobe.com/){target="_blank"}.Välj **[!UICONTROL Groups]** i avsnittet **[!UICONTROL Users]** i den vänstra panelen.
 
@@ -170,5 +173,5 @@ Nu vet du hur du visar information och roller för en användare, en användargr
 <!--
 The following video is intended to support your understanding of developer and API credentials.
 
->[!VIDEO](https://video.tv.adobe.com/v/3446402/?captions=swe&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3426407/?learn=on)
 -->
