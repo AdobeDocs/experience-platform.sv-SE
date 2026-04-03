@@ -2,7 +2,7 @@
 title: Ingenjörsfunktioner för maskininlärning
 description: Lär dig hur du omvandlar data i Adobe Experience Platform till funktioner eller variabler som kan användas av en maskininlärningsmodell. Använd Data Distiller för att beräkna HTML-funktioner i stor skala och dela dem med maskininlärningsmiljön.
 exl-id: 7fe017c9-ec46-42af-ac8f-734c4c6e24b5
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1140'
 ht-degree: 11%
@@ -57,7 +57,7 @@ df_labels.head()
 Antal klasser: 50000
 
 |   | eventType | userId | subscriptionOcced | random_row_number_for_user |
-| ---  |   ---  |   ---  |   ---  |   --- | 
+| ---  |   ---  |   ---  |   ---  |   --- |
 | 0 | directMarketing.emailClicked | 01027994177972439148069092698714414382 | 0 | 1 |
 | 1 | directMarketing.emailOpened | 01054714817856066632264746967668888198 | 0 | 1 |
 | 2 | web.formFilledOut | 01117296890525140996735553609305695042 | 1 | 15 |
@@ -87,7 +87,7 @@ Med en lämplig fråga kan du samla ihop händelserna i datauppsättningen till 
 
 Följande fråga sammanställer dessa händelser:
 
-+++Markera för att visa exempelfrågan
++++Välj för att visa exempelfrågan
 
 ```python
 query_features = f"""
@@ -147,7 +147,7 @@ df_features.head()
 **Exempelutdata**
 
 |   | userId | emailsReceived | e-postÖppnad | emailsClickade | productsViewed | propositionInteracts | propositionDisjected | webLinkClicks | minutes_since_emailSent | minutes_since_emailOpened | minutes_since_emailClick | minutes_since_productView | minutes_since_propositionInteract | minutes_since_propositionDismiss | minutes_since_linkClick |
-| --- |    --- |    ---   |  ---  |   ---  |   ---  |  ---  |  ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   --- | 
+| --- |    --- |    ---   |  ---  |   ---  |   ---  |  ---  |  ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   --- |
 | 0 | 01102546977582484968046916668339306826 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0,0 | NaN | NaN | NaN | NaN | Ingen | NaN |
 | 1 | 01102546977582484968046916668339306826 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0,0 | NaN | NaN | NaN | NaN | Ingen | NaN |
 | 2 | 01102546977582484968046916668339306826 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0,0 | NaN | NaN | NaN | NaN | Ingen | NaN |
@@ -160,7 +160,7 @@ df_features.head()
 
 Slutligen kan etikettfrågan och funktionsfrågan kombineras till en enda fråga som returnerar en utbildningsdatauppsättning med etiketter och funktioner:
 
-+++Markera för att visa exempelfrågan
++++Välj för att visa exempelfrågan
 
 ```python
 query_training_set = f"""
@@ -230,7 +230,7 @@ df_training_set.head()
 **Exempelutdata**
 
 |  | userId | eventType | tidsstämpel | subscriptionOcced | emailsReceived | e-postÖppnad | emailsClickade | productsViewed | propositionInteracts | propositionDisjected | webLinkClicks | minutes_since_emailSent | minutes_since_emailOpened | minutes_since_emailClick | minutes_since_productView | minutes_since_propositionInteract | minutes_since_propositionDismiss | minutes_since_linkClick | random_row_number_for_user |
-| ---  |  --- |   ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---   | ---  |  ---  |  ---  |  --- |    
+| ---  |  --- |   ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---   | ---  |  ---  |  ---  |  --- |
 | 0 | 02554909162592418347780983091131567290 | directMarketing.emailSent | 2023-06-17 13:44:59.086 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0,0 | NaN | NaN | NaN | NaN | Ingen | NaN | 1 |
 | 1 | 01130334080340815140184601481559659945 | directMarketing.emailOpened | 2023-06-19 06:01:55.366 | 0 | 1 | 3 | 0 | 1 | 0 | 0 | 0 | 1921,0 | 0,0 | NaN | 1703,0 | NaN | Ingen | NaN | 1 |
 | 2 | 01708961660028351393477273586554010192 | web.formFilledOut | 2023-06-19 18:36:49.083 | 1 | 1 | 2 | 2 | 0 | 0 | 0 | 0 | 2365,0 | 26,0 | 1,0 | NaN | NaN | Ingen | NaN | 7 |
@@ -252,7 +252,7 @@ Om du gör det måste du göra några ändringar i utbildningsfrågan:
 
 Om du tillämpar dessa ändringar får du följande fråga:
 
-+++Markera för att visa exempelfrågan
++++Välj för att visa exempelfrågan
 
 ```python
 ctas_table_name = "propensity_training_set"
@@ -484,4 +484,4 @@ Query completed successfully in 473.8 seconds
 
 ## Nästa steg:
 
-Genom att läsa det här dokumentet har du lärt dig att omvandla data i Adobe Experience Platform till funktioner, eller variabler, som kan användas av en maskininlärningsmodell. Nästa steg på vägen mot att skapa funktionsledningar från Experience Platform till anpassade modeller i maskininlärningsmiljön är att [exportera funktionsdatauppsättningar](./export-data.md).
+Genom att läsa det här dokumentet har du lärt dig att omvandla data i Adobe Experience Platform till funktioner, eller variabler, som kan användas av en maskininlärningsmodell. Nästa steg på vägen mot att skapa funktionsledningar från Experience Platform för anpassade modeller i maskininlärningsmiljön är att [exportera funktionsdatauppsättningar](./export-data.md).
