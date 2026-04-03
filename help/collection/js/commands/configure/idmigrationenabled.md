@@ -47,7 +47,7 @@ Som vägledning bör du vänta tills AMCV-cookie har passerat sin längsta livst
 
 ## Uppdateringar för Audience Manager trait
 
-När XDM-formaterade data skickas till Audience Manager under migreringen måste dessa data konverteras till signaler. Dina egenskaper måste uppdateras för att återspegla de nya nycklarna i XDM. Den här processen blir enklare om du använder [BAAAM-verktyget](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html#getting-started-with-bulk-management).
+När XDM-formaterade data skickas till Audience Manager under migreringen måste dessa data konverteras till signaler. Dina egenskaper måste uppdateras för att återspegla de nya nycklarna i XDM. Den här processen blir enklare om du använder [BAAAM-verktyget](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html?lang=sv-SE#getting-started-with-bulk-management).
 
 ## Migrering av ID från tredje part {#third-party-id}
 

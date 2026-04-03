@@ -76,7 +76,7 @@ Första parts-cookies är mest effektiva när de ställs in med en server som an
 >
 >Cookies som anges med JavaScript `document.cookie`-metoden (inklusive med tagg-metoden [`cookie.set()`](../tags/cookie.md)) skyddas nästan aldrig från webbläsarprinciper som begränsar cookie-varaktighet.
 
-Observera att `A`- eller `AAAA`-poster bara stöds för att ange och spåra cookies. Den primära metoden för datainsamling är via en DNS `CNAME`. FPID:n anges med en `A`- eller `AAAA`-post och skickas till Adobe med en `CNAME`. Med [Adobe-hanterat certifikatprogram](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html#adobe-managed-certificate-program) kan du konfigurera `CNAME` för datainsamling.
+Observera att `A`- eller `AAAA`-poster bara stöds för att ange och spåra cookies. Den primära metoden för datainsamling är via en DNS `CNAME`. FPID:n anges med en `A`- eller `AAAA`-post och skickas till Adobe med en `CNAME`. Med [Adobe-hanterat certifikatprogram](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=sv-SE#adobe-managed-certificate-program) kan du konfigurera `CNAME` för datainsamling.
 
 ### När cookien ska ställas in {#when-to-set-cookie}
 
@@ -105,7 +105,7 @@ Du kan skicka FPID:n till Edge Network på två sätt:
 
 Om du vill ange en FPID-cookie från din egen domän måste du konfigurera din egen `CNAME` för dina SDK-webbsamtal och sedan aktivera cookie-funktionen för första parts-ID i din datastream-konfiguration. Med en `CNAME`-post i din DNS kan du skapa ett alias från ett domännamn till ett annat. Det här aliaset kan hjälpa till att få tredjepartstjänster att se ut som om de är en del av din egen domän, så att deras cookies ser ut som cookies från första part. När datainsamling från första part har aktiverats med en `CNAME` skickas alla cookies för din domän på begäranden som görs till datainsamlingsslutpunkten.
 
-1. Arbeta med Adobe för att skapa en `CNAME`-post för datainsamling som används i din organisation. Se det [Adobe-hanterade certifikatprogrammet](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/adobe-managed-cert) för hela processen.
+1. Arbeta med Adobe för att skapa en `CNAME`-post för datainsamling som används i din organisation. Se det [Adobe-hanterade certifikatprogrammet](https://experienceleague.adobe.com/sv/docs/core-services/interface/data-collection/adobe-managed-cert) för hela processen.
 1. Aktivera alternativet **[!UICONTROL First Party ID Cookie]** i din datastream. Den här inställningen anger för Edge Network att referera till den angivna cookien vid sökning efter ett enhets-ID från en annan leverantör i stället för att leta upp värdet i identitetskartan. När du aktiverar den här inställningen måste du ange namnet på den cookie där FPID förväntas lagras. Mer information finns i [Skapa och konfigurera datastreams](/help/datastreams/configure.md#advanced-options).
 
    ![Plattformens gränssnittsbild visar datastream-konfigurationen som markerar cookie-inställningen för första parts-ID](/help/collection/js/assets/first-party-id-datastreams.png)
@@ -198,7 +198,7 @@ Om du migrerar till enhets-ID:n från en tidigare implementering kan det vara sv
 
 | Besök | Beskrivning |
 | --- | --- |
-| Första besök | Anta att du ännu inte har börjat ange FPID-cookie. Det ECID som finns i [AMCV-cookien](https://experienceleague.adobe.com/docs/id-service/using/intro/cookies.html#section-c55af54828dc4cce89f6118655d694c8) är den identifierare som används för att identifiera besökaren. |
+| Första besök | Anta att du ännu inte har börjat ange FPID-cookie. Det ECID som finns i [AMCV-cookien](https://experienceleague.adobe.com/docs/id-service/using/intro/cookies.html?lang=sv-SE#section-c55af54828dc4cce89f6118655d694c8) är den identifierare som används för att identifiera besökaren. |
 | Andra besöket | Utrullningen av FPID-lösningen har startats. Befintligt ECID finns fortfarande och är fortfarande den primära identifieraren för besökaridentifiering. |
 | Tredje besök | Mellan det andra och tredje besöket har det gått tillräckligt lång tid innan ECID har tagits bort på grund av webbläsarprincipen. Eftersom FPID angavs med en DNS `A`-post kvarstår dock FPID:t. FPID betraktas nu som det primära ID:t och används för att skicka ut ECID, som skrivs till slutanvändarens enhet. Användaren betraktas nu som en ny besökare i Adobe Experience Platform- och Experience Cloud-lösningar. |
 | Fjärde besöket | Mellan det tredje och fjärde besöket har det gått tillräckligt lång tid innan ECID har tagits bort på grund av webbläsarprincipen. Precis som vid det föregående besöket beror FPID fortfarande på hur det var inställt. Nu genereras samma ECID som vid det föregående besöket. Användaren ser samma användare som vid föregående besök i Adobe Experience Platform- och Experience Cloud-lösningar. |

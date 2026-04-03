@@ -15,7 +15,7 @@ Nyttolastobjektet `identityMap` är det sätt som du talar om för Edge Network 
 * **Häfta aktivitet till en person över olika enheter och kanaler.** [Identitetstjänsten](/help/identity-service/home.md) länkar identiteterna som du skickar till ett [identitetsdiagram](/help/identity-service/features/identity-graph-viewer.md) och kopplar anonyma beteenden på enhetsnivå till en känd person.
 * **Skapa enhetliga kundprofiler.** [Kundprofilen i realtid](/help/profile/home.md) använder den primära identitet som du anger för att förankra händelser och attribut i en enda profil, vilket möjliggör segmentering på personnivå och målgruppsbyggande.
 * **Aktivera målgrupper på underordnade mål.** Många [Destinationer](/help/destinations/home.md) kräver matchade identiteter på personnivå (hash-kodade e-postmeddelanden, telefonnummer osv.) för att matcha målgrupperna mot deras användarbaser.
-* **Samordna flerkanalsresor.** [Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html) använder lösta identiteter för att utlösa och personalisera resor över e-post-, push- och appkanaler baserat på en besökares autentiserade beteende.
+* **Samordna flerkanalsresor.** [Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=sv-SE) använder lösta identiteter för att utlösa och personalisera resor över e-post-, push- och appkanaler baserat på en besökares autentiserade beteende.
 
 På den här sidan beskrivs hur du skapar `identityMap`-nyttolaster, väljer rätt inställningar för varje identitet och hanterar vanliga implementeringsscenarier.
 

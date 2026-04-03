@@ -34,7 +34,7 @@ I följande tabell visas den kombinerade effekten av `defaultConsent` och `setCo
 
 >[!NOTE]
 >
->Identitets- och medgivandecookies anges även när en besökare avanmäler sig. Dessa cookies är nödvändiga för att uppfylla besökarens inställningar för datainsamling. Se [Webbcookies för SDK](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/cookies/web-sdk) för en fullständig lista över cookies som anges av Web SDK.
+>Identitets- och medgivandecookies anges även när en besökare avanmäler sig. Dessa cookies är nödvändiga för att uppfylla besökarens inställningar för datainsamling. Se [Webbcookies för SDK](https://experienceleague.adobe.com/sv/docs/core-services/interface/data-collection/cookies/web-sdk) för en fullständig lista över cookies som anges av Web SDK.
 
 När en besökare återger sitt samtycke efter att tidigare ha återkallat det (genom att anropa `setConsent` med `"general": "in"` efter `"general": "out"`), fortsätter Web SDK att skicka händelser och använder det befintliga ECID:t från cookien om det inte har gått ut. Besökarens identitet bevaras.
 

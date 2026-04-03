@@ -78,7 +78,7 @@ Nej. Alla som använder Adobe Digital Experience kan använda Adobe Experience P
 * Kunder som *inte* har åtkomst till Experience Platform eller CDP i realtid och som vill använda [!DNL Web SDK] måste konfigurera rätt behörigheter för att skapa scheman och datastreams i användargränssnittet för datainsamlingen eller Experience Platform.
 * Kunder som har åtkomst till Experience Platform eller CDP i realtid och som vill använda [!DNL Web SDK] måste konfigurera rätt behörigheter för att skapa scheman, datamängder, identitetsnamnutrymmen och datastreams i användargränssnittet för datainsamlingen eller Experience Platform-gränssnittet.
 
-Mer information om hur du konfigurerar dessa behörigheter finns i vår dokumentation om [behörighetshantering för datainsamling](https://experienceleague.adobe.com/docs/experience-platform/collection/permissions.html).
+Mer information om hur du konfigurerar dessa behörigheter finns i vår dokumentation om [behörighetshantering för datainsamling](https://experienceleague.adobe.com/docs/experience-platform/collection/permissions.html?lang=sv-SE).
 
 ## Vem ska använda Web SDK?
 
@@ -144,11 +144,11 @@ Om du använder våra SDK:er och skickar XDM till Edge Network kan du med dessa 
 
 ## Vad är en CNAME- eller First Party-domän och varför spelar det någon roll?
 
-Se det [Adobe-hanterade certifikatprogrammet](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/adobe-managed-cert) i guiden för bastjänster.
+Se det [Adobe-hanterade certifikatprogrammet](https://experienceleague.adobe.com/sv/docs/core-services/interface/data-collection/adobe-managed-cert) i guiden för bastjänster.
 
 ## Använder Adobe Experience Platform Web SDK cookies? Om så är fallet, vilka cookies använder den?
 
-Se [Adobe Experience Platform Web SDK-cookies](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/cookies/web-sdk) i guiden för bastjänster.
+Se [Adobe Experience Platform Web SDK-cookies](https://experienceleague.adobe.com/sv/docs/core-services/interface/data-collection/cookies/web-sdk) i guiden för bastjänster.
 
 ## Vilka webbläsare stöder Adobe Experience Platform Web SDK?
 
