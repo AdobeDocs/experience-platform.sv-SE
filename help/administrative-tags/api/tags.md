@@ -3,7 +3,7 @@ title: Slutpunkt för enhetliga taggar
 description: Lär dig hur du skapar, uppdaterar, hanterar och tar bort taggkategorier och taggar med Adobe Experience Platform API:er.
 role: Developer
 exl-id: 6687d1da-a5e4-435a-9f99-1b0f9ac98088
-source-git-commit: 717a4ea0568200c940cf9b8f26f4dd2aa9c00a3e
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1860'
 ht-degree: 1%
@@ -34,7 +34,7 @@ I följande ordlista markeras skillnaden mellan en **tagg** och en **taggkategor
 
 ## Hämta en lista med taggkategorier {#get-tag-categories}
 
-Du kan hämta en lista med taggkategorier som tillhör din organisation genom att göra en GET-förfrågan till slutpunkten `/tagCategory`.
+Du kan hämta en lista över taggkategorier som tillhör din organisation genom att göra en GET-begäran till slutpunkten `/tagCategory`.
 
 **API-format**
 
@@ -55,7 +55,7 @@ Följande valfria frågeparametrar kan användas när taggkategorier hämtas.
 
 **Begäran**
 
-+++En exempelbegäran om att lista alla taggkategorier i organisationen
++++Ett exempel på en förfrågan om att lista alla taggkategorier i organisationen
 
 ```shell
 curl -X GET https://experience.adobe.io/unifiedtags/tagCategory
@@ -71,7 +71,7 @@ curl -X GET https://experience.adobe.io/unifiedtags/tagCategory
 
 Ett lyckat svar returnerar HTTP-status 200 med en lista över alla taggkategorier för din organisation.
 
-+++Ett exempelsvar som innehåller en lista över alla taggkategorier i organisationen.
++++Ett exempelsvar som innehåller en lista med alla taggkategorier i organisationen.
 
 ```json
 {
@@ -104,7 +104,7 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över alla taggkategorie
 >
 >Endast systemadministratören och produktadministratören kan använda detta API-anrop.
 
-Du kan skapa en ny taggkategori genom att göra en POST-förfrågan till slutpunkten `/tagCategory`.
+Du kan skapa en ny taggkategori genom att göra en POST-begäran till slutpunkten `/tagCategory`.
 
 **API-format**
 
@@ -114,7 +114,7 @@ POST /tagCategory
 
 **Begäran**
 
-+++En exempelbegäran om att skapa en ny taggkategori.
++++Ett exempel på en begäran om att skapa en ny taggkategori.
 
 ```shell
 curl -X POST https://experience.adobe.io/unifiedtags/tagCategory
@@ -159,7 +159,7 @@ Ett exempelsvar returnerar HTTP-status 200 med information om din nyligen skapad
 
 ## Hämta en specifik taggkategori {#get-tag-category}
 
-Du kan hämta en specifik taggkategori som tillhör din organisation genom att göra en GET-förfrågan till `/tagCategory`-slutpunkten och ange taggkategorins ID.
+Du kan hämta en specifik taggkategori som tillhör din organisation genom att göra en GET-begäran till slutpunkten `/tagCategory` och ange taggkategorins ID.
 
 **API-format**
 
@@ -173,7 +173,7 @@ GET /tagCategory/{TAG_CATEGORY_ID}
 
 **Begäran**
 
-+++En exempelbegäran om att hämta en specifik taggkategori
++++Ett exempel på en begäran om att hämta en specifik taggkategori
 
 ```shell
 curl -X GET https://experience.adobe.io/unifiedtags/tagCategory/e2b7c656-067b-4413-a366-adde0401df50 \
@@ -238,7 +238,7 @@ PATCH /tagCategory/{TAG_CATEGORY_ID}
 
 **Begäran**
 
-+++En exempelbegäran om att uppdatera en specifik taggkategori
++++Ett exempel på en begäran om att uppdatera en specifik taggkategori
 
 ```shell
 curl -X PATCH https://experience.adobe.io/unifiedtags/tagCategory/e2b7c656-067b-4413-a366-adde0401df50 \
@@ -305,7 +305,7 @@ DELETE /tagCategory/{TAG_CATEGORY_ID}
 
 **Begäran**
 
-+++En exempelbegäran om att ta bort en specifik taggkategori
++++En exempelbegäran om att ta bort en viss taggkategori
 
 ```shell
 curl -X DELETE https://experience.adobe.io/unifiedtags/tagCategory/e2b7c656-067b-4413-a366-adde0401df50 \
@@ -323,7 +323,7 @@ Ett lyckat svar returnerar HTTP-status 200 tillsammans med ett tomt svar.
 
 ## Hämta en lista med taggar {#get-tags}
 
-Du kan hämta en lista med taggar som tillhör din organisation genom att göra en GET-förfrågan till slutpunkten `/tags` och ID:t för taggkategorin.
+Du kan hämta en lista med taggar som tillhör din organisation genom att göra en GET-begäran till slutpunkten `/tags` och ID:t för taggkategorin.
 
 **API-format**
 
@@ -345,7 +345,7 @@ Följande valfria frågeparametrar kan användas vid hämtning av taggar.
 
 **Begäran**
 
-+++En exempelbegäran om att hämta alla taggar som tillhör en viss taggkategori
++++Ett exempel på en begäran om att hämta alla taggar som tillhör en viss taggkategori
 
 ```shell
 curl -X GET https://experience.adobe.io/unifiedtags/tags?property=tagCategoryId=e2b7c656-067b-4413-a366-adde0401df50
@@ -508,7 +508,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om taggarna som tillh
 >
 >Om du skapar en tagg som inte är kategoriserad behöver du **inte** administratörsbehörighet.
 
-Du kan skapa en ny tagg genom att göra en POST-förfrågan till slutpunkten `/tags`.
+Du kan skapa en ny tagg genom att göra en POST-begäran till slutpunkten `/tags`.
 
 **API-format**
 
@@ -518,7 +518,7 @@ POST /tags
 
 **Begäran**
 
-+++En exempelbegäran om att skapa en ny tagg.
++++Ett exempel på en förfrågan om att skapa en ny tagg.
 
 ```shell
 curl -X POST https://experience.adobe.io/unifiedtags/tags
@@ -575,7 +575,7 @@ Ett lyckat svar returnerar HTTP-status 201 med information om taggen som du nyss
 
 ## Hämta en specifik tagg {#get-tag}
 
-Du kan hämta en specifik tagg som tillhör din organisation genom att göra en GET-förfrågan till slutpunkten `/tags` och ange ID:t för taggen som du vill hämta.
+Du kan hämta en specifik tagg som tillhör din organisation genom att göra en GET-begäran till slutpunkten `/tags` och ange ID:t för taggen som du vill hämta.
 
 **API-format**
 
@@ -589,7 +589,7 @@ GET /tags/{TAG_ID}
 
 **Begäran**
 
-+++En exempelbegäran om att hämta en specifik tagg
++++Ett exempel på en begäran om att hämta en specifik tagg
 
 ```shell
 curl -X GET https://experience.adobe.io/unifiedtags/tags/2bd5ddd9-7284-4767-81d9-c75b122f2a6a \
@@ -605,7 +605,7 @@ curl -X GET https://experience.adobe.io/unifiedtags/tags/2bd5ddd9-7284-4767-81d9
 
 Ett lyckat svar returnerar HTTP-status 200 med information om den angivna taggen.
 
-+++Ett exempelsvar som innehåller information om den angivna taggen.
++++Ett exempelsvar som innehåller information om den angivna taggen. 
 
 ```json
 {
@@ -639,7 +639,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna taggen
 
 ## Validera taggar {#validate-tags}
 
-Du kan validera om det finns taggar genom att göra en POST-förfrågan till slutpunkten `/tags/validate`.
+Du kan validera om det finns taggar genom att göra en POST-begäran till slutpunkten `/tags/validate`.
 
 **API-format**
 
@@ -649,7 +649,7 @@ POST /tags/validate
 
 **Begäran**
 
-+++Ett exempel på en begäran om validering av de angivna tagg-ID:n.
++++Ett exempel på en förfrågan om att validera de angivna tagg-ID:n.
 
 ```shell
 curl -X POST https://experience.adobe.io/unifiedtags/tags/validate
@@ -719,7 +719,7 @@ PATCH /tags/{TAG_ID}
 
 **Begäran**
 
-+++En exempelbegäran om att uppdatera en specifik tagg
++++Ett exempel på en begäran om att uppdatera en specifik tagg
 
 ```shell
 curl -X GET https://experience.adobe.io/unifiedtags/tags/2bd5ddd9-7284-4767-81d9-c75b122f2a6a \
@@ -789,7 +789,7 @@ DELETE /tags/{TAG_ID}
 
 **Begäran**
 
-+++En exempelbegäran om att ta bort en specifik tagg
++++En exempelbegäran om att ta bort en viss tagg
 
 ```shell
 curl -X DELETE https://experience.adobe.io/unifiedtags/tags/2bd5ddd9-7284-4767-81d9-c75b122f2a6a \
