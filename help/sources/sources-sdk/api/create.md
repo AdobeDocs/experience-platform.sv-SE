@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en ny anslutningsspecifikation med API:t för Flow Service
 description: I följande dokument beskrivs hur du skapar en anslutningsspecifikation med API:t för Flow Service och integrerar en ny källa med självbetjäningskällor.
 exl-id: 0b0278f5-c64d-4802-a6b4-37557f714a97
-source-git-commit: 16cc811a545414021b8686ae303d6112bcf6cebb
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '773'
 ht-degree: 0%
