@@ -3,7 +3,7 @@ title: Indexutbyte
 description: Anslut till Index Exchange (Index) och aktivera data så att målgruppssegmenten kan hanteras av avtal som skapas i Index-gränssnittet.
 last-substantial-update: 2026-01-27T00:00:00Z
 exl-id: 6d2a8553-5e8c-4eeb-ac25-5e4c2bdc5758
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1202'
 ht-degree: 0%
@@ -89,7 +89,7 @@ Målgrupper som stöds av olika typer av målgruppsdata:
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
-| --------- | ---------- | --------- | 
+| --------- | ---------- | --------- |
 | Exporttyp | **[!UICONTROL Segment export]** | Exporterar alla medlemmar i ett segment (publik) med identifierarna (IDFA, GAID eller andra) som används i målet [!DNL Index Exchange]. |
 | Exportfrekvens | **[!UICONTROL Batch]** | Exporterar filer till underordnade plattformar med intervallen 3, 6, 8, 12 eller 24 timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
 
