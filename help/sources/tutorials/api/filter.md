@@ -2,7 +2,7 @@
 title: Filtrera radnivådata för en Source med API:t för flödestjänsten
 description: I den här självstudiekursen beskrivs hur du filtrerar data på källnivå med API:t för Flow Service
 exl-id: 224b454e-a079-4df3-a8b2-1bebfb37d11f
-source-git-commit: fe7025b7e48634232d823f8380610c6409b2d4b1
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1820'
 ht-degree: 2%
@@ -70,7 +70,7 @@ curl -X GET \
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar statuskoden 200 och anslutningsspecifikationerna för [!DNL Google BigQuery], inklusive information om dess frågespråk och logiska operatorer som stöds.
 
@@ -183,7 +183,7 @@ curl -X GET \
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar innehållet och strukturen för dina data.
 
@@ -392,7 +392,7 @@ curl -X POST \
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen.
 
@@ -488,7 +488,7 @@ curl -X GET \
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar dina dataflödesdetaljer, inklusive information om dess motsvarande käll- och målanslutningar. Du måste tänka på ditt käll- och målanslutnings-ID, eftersom dessa värden krävs senare, för att kunna publicera dataflödet.
 
@@ -617,7 +617,7 @@ curl -X GET \
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar information om din källanslutning. Notera versionen eftersom du behöver det här värdet i nästa steg för att kunna uppdatera din källanslutning.
 
@@ -735,7 +735,7 @@ curl -X PATCH \
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar ditt källanslutnings-ID och -tagg (version).
 
@@ -779,7 +779,7 @@ curl -X POST \
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar ditt källanslutnings-ID och -tagg (version).
 
@@ -823,7 +823,7 @@ curl -X POST \
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar ID:t och motsvarande tagg för den publicerade målanslutningen.
 
@@ -868,7 +868,7 @@ curl -X POST \
 
 +++
 
-+++svar
++++Svar
 
 Ett lyckat svar returnerar ID:t och motsvarande `etag` i dataflödet.
 
