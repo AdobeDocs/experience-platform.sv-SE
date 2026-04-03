@@ -2,7 +2,7 @@
 title: Marketo Engage Destination
 description: Marketo Engage är den enda heltäckande CXM-lösningen (Customer Experience Management) för marknadsföring, reklam, analys och handel. Använd det för att automatisera och hantera aktiviteter från CRM-lead-hantering och kundengagemang till kontobaserad marknadsföring och intäktsattribuering.
 exl-id: 5ae5f114-47ba-4ff6-8e42-f8f43eb079f7
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '959'
 ht-degree: 1%
@@ -100,7 +100,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 >* Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions).
 >* För att aktivera data behöver du behörigheterna **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-Mer information om hur du konfigurerar målet och aktiverar målgrupper finns i [Push an Adobe Experience Platform Audience to a Marketo Static List](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html?lang=sv-SE) i dokumentationen för Marketo.
+Mer information om hur du konfigurerar målet och aktiverar målgrupper finns i [Push an Adobe Experience Platform Audience to a Marketo Static List](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html) i dokumentationen för Marketo.
 
 I videon nedan visas också stegen för att konfigurera ett Marketo-mål och aktivera målgrupper.
 
@@ -113,7 +113,7 @@ I videon nedan visas också stegen för att konfigurera ett Marketo-mål och akt
 >* De två begränsningar som anges i videon gäller inte längre. Du kan nu mappa många andra profilattributfält utöver den information om målgruppsmedlemskap som stöddes när videon spelades in. Du kan också exportera målgruppsmedlemmar till Marketo som ännu inte finns i dina statiska Marketo-listor, och dessa läggs till i listorna.
 >* I **[!UICONTROL Schedule audience step]** av aktiveringsarbetsflödet behövde du i Marketo V1 lägga till en **[!UICONTROL Mapping ID]** manuellt för att kunna exportera data till Marketo. Det här manuella steget behövs inte längre i Marketo V2.
 
->[!VIDEO](https://video.tv.adobe.com/v/3440162?captions=swe&quality=12)
+>[!VIDEO](https://video.tv.adobe.com/v/338248?quality=12)
 
 ## Bildskärmsmål {#monitor-destination}
 
@@ -123,4 +123,4 @@ När du har anslutit till målet och etablerat ett måldataflöde kan du använd
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
-Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [översikten över datastyrning](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=sv-SE).
+Alla [!DNL Adobe Experience Platform]-mål är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning finns i [översikten över datastyrning](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
