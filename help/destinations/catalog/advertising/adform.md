@@ -3,7 +3,7 @@ title: Anpassa
 description: Adform är en ledande leverantör av programmatiska mediainköp och säljlösningar. Genom att ansluta Adform till Adobe Experience Platform kan du aktivera dina första målgrupper via Adform baserat på Experience Cloud ID (ECID).
 last-substantial-update: 2025-10-23T00:00:00Z
 exl-id: b87fe57f-10e3-4c10-9156-f102244fbbe7
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1075'
 ht-degree: 1%
@@ -28,16 +28,16 @@ För att du bättre ska kunna förstå hur och när du ska använda Adform-måle
 
 Använd det här målet för att skicka Adobe [!DNL Real-Time CDP]-målgrupper till Adform för aktivering baserat på Experience Cloud ID (ECID) och Adforms ID Fusion. Adforms ID Fusion är Adforms ID-matchningstjänst för aktivering av era första målgrupper baserat på Experience Cloud ID (ECID).
 
-Ett vanligt fall är omdirigering av webbplatsbesökare till din webbplats eller app baserat på Experience Cloud-id (ECID). Allt du behöver göra är att skicka Experience Cloud ID (ECID) till Adform via de [Event Streaming](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking) eller [Adform Extensions på klientsidan](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/catalog/analytics/adform) som är tillgängliga. Efter det kan du dela målgrupper med Adobe via Adform-målet för aktivering - enbart baserat på Experience Cloud ID (ECID).
+Ett vanligt fall är omdirigering av webbplatsbesökare till din webbplats eller app baserat på Experience Cloud-id (ECID). Allt du behöver göra är att skicka Experience Cloud ID (ECID) till Adform via de [Event Streaming](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking) eller [Adform Extensions på klientsidan](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/analytics/adform) som är tillgängliga. Efter det kan du dela målgrupper med Adobe via Adform-målet för aktivering - enbart baserat på Experience Cloud ID (ECID).
 
 ## Förutsättningar {#prerequisites}
 
 * Du måste vara en befintlig Adobe-kund för att kunna använda den här destinationen.
 * Du måste ha autentiseringsuppgifterna för Adform Audience Base Data Connection.
    * Om du inte har autentiseringsuppgifter för Adform Audience Base Data Connection kontaktar du din Adobe-representant.
-* För att synkroniseringen ska fungera på rätt sätt måste du antingen ha en [händelsedirektuppspelning](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking) eller [klientanslutning](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/catalog/analytics/adform) från dina enheter till Adform Site Tracking.
+* För att synkroniseringen ska fungera på rätt sätt måste du antingen ha en [händelsedirektuppspelning](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking) eller [klientanslutning](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/analytics/adform) från dina enheter till Adform Site Tracking.
    * Om du inte har någon händelsedirektuppspelning eller klientanslutning från dina enheter till Adform Site Tracking kontaktar du din Adobe-representant.
-   * Adform tillhandahåller [!DNL Adobe Experience Cloud] tillägg för både [Event Streaming](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking) och [client-side](https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/catalog/analytics/adform).
+   * Adform tillhandahåller [!DNL Adobe Experience Cloud] tillägg för både [Event Streaming](https://exchange.adobe.com/apps/ec/600102/adform-s2s-site-tracking) och [client-side](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/analytics/adform).
 
 
 ## Identiteter som stöds {#supported-identities}
