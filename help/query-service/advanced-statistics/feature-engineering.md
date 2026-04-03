@@ -3,7 +3,7 @@ title: SQL-tillägg för funktionskonstruktion
 description: Läs mer om SQL-tillägget Data Distiller för framtagning av data för avancerad statistisk modellering. Det täcker de tillgängliga teknikerna för extrahering, omformning och markering.
 role: Developer
 exl-id: 622c8ef3-9651-46b3-ad22-021a93190149
-source-git-commit: e7bc30c153f67c59e9c04e8c8df60394f48871d0
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '735'
 ht-degree: 0%
@@ -70,7 +70,8 @@ Använd dessa transformers för att konvertera och koda kategoriserade data till
 
 Fokusera sedan på att välja en deluppsättning av de viktigaste funktionerna i den ursprungliga uppsättningen. Denna process hjälper till att minska dimensioneringen av dina data, vilket gör det enklare för dina modeller att bearbeta och förbättra den övergripande modellprestandan.
 
-<!-- Commented out as it 
+<!-- 
+Commented out as it 
 ## Supported machine learning algorithms {#supported-ml-algorithms}
 
 Once you have preprocessed your data, use the feature engineering SQL extension to prepare your data for the following machine learning algorithms:
@@ -86,7 +87,8 @@ Use logical regression to predict categorical outcomes and linear regression to 
 
 Use a clustering algorithm to group data points into distinct clusters based on their similarities.
 
-- **[`K-Means`](./feature-transformation.md#kmeans)**: Use `K-Means` for unsupervised learning tasks to partition data into a specified number of clusters, with each data point assigned to the cluster with the nearest mean. -->
+- **[`K-Means`](./feature-transformation.md#kmeans)**: Use `K-Means` for unsupervised learning tasks to partition data into a specified number of clusters, with each data point assigned to the cluster with the nearest mean. 
+-->
 
 ## Implementera OPTIONS-satsen {#options-clause}
 
