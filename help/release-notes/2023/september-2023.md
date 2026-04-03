@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform september 2023
 description: Versionsinformationen för Adobe Experience Platform från september 2023.
 exl-id: ff7fb0c1-6941-4339-8648-58f9b9e9a91f
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
-source-wordcount: '2244'
-ht-degree: 26%
+source-wordcount: '2242'
+ht-degree: 29%
 
 ---
 
@@ -37,7 +37,7 @@ Beräknade attribut gör det enkelt att sammanfatta händelsedata i profilattrib
 
 ## Aviseringar {#alerts}
 
-Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika Experience Platform-aktiviteter. Du kan prenumerera på olika varningsregler via fliken [!UICONTROL Alerts] i Experience Platform användargränssnitt och du kan välja att ta emot varningsmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
+Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika Experience Platform-aktiviteter. Du kan prenumerera på olika aviseringsregler på fliken [!UICONTROL Alerts] i Experience Platform-användargränssnittet och du kan välja att ta emot aviseringssmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
 
 **Nya eller uppdaterade funktioner**
 
@@ -70,7 +70,7 @@ Adobe Experience Platform tillhandahåller en uppsättning tekniker som gör att
 | Typ | Funktion | Beskrivning |
 | --- | --- | --- |
 | Dataströmmar | Stöd för enhetssökning | När du konfigurerar en datastream kan du nu välja vilken nivå av enhetssökningsinformation som ska samlas in. Enhetssökningsinformation innehåller information om enheten, maskinvaran, operativsystemet och webbläsaren som används för att interagera med sidan. <br> Det går inte att samla in information om enhetssökning tillsammans med användaragent- och klienttips. Om du väljer att samla in enhetsinformation inaktiveras samlingen av användaragent- och klienttips och vice versa. All enhetssökningsinformation lagras i fältgruppen `xdm:device`. Läs mer i dokumentationen om [konfiguration av datastreams](../../datastreams/configure.md#geolocation-device-lookup). |
-| Tillägg | API-tillägg för [!DNL TikTok]-webbhändelser | Med tillägget [[!DNL TikTok] API:t för webbhändelser](https://exchange.adobe.com/apps/ec/109834/tiktok-web-events-api) kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka det till [!DNL TikTok] i form av händelser på serversidan med hjälp av API:t för webbhändelser i [!DNL TikTok] . |
+| Tillägg | [!DNL TikTok] API-tillägg för webbhändelser | Med tillägget [[!DNL TikTok] API:t för webbhändelser](https://exchange.adobe.com/apps/ec/109834/tiktok-web-events-api) kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka det till [!DNL TikTok] i form av händelser på serversidan med hjälp av API:t för webbhändelser i [!DNL TikTok] . |
 
 {style="table-layout:auto"}
 
@@ -109,7 +109,7 @@ Mer information om Experience Platform datahygien finns i [översikten över dat
 
 [!DNL Destinations] är förbyggda integrationer med målplattformar som möjliggör sömlös aktivering av data från Adobe Experience Platform. Du kan använda mål för att aktivera dina kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och många andra användningsområden.
 
-**Nya eller uppdaterade mål** {#new-updated-destinations}
+**Nya eller uppdaterade destinationer** {#new-updated-destinations}
 
 | Mål | Nytt eller uppdaterat | Beskrivning |
 | ----------- |----------------|----------- |
@@ -125,11 +125,11 @@ Mer information om Experience Platform datahygien finns i [översikten över dat
 
 Add these to release notes as they go out
 
-| [[!DNL Qualtrics]] | New | Use the aggregation of multiple sources of operational data in Adobe Experience Platform as an input in Qualtrics Experience ID to better understand your customers and enable targeted outreach to close the gap when it comes to understanding intent, emotion and experience drivers. | 
+| [[!DNL Qualtrics]] | New | Use the aggregation of multiple sources of operational data in Adobe Experience Platform as an input in Qualtrics Experience ID to better understand your customers and enable targeted outreach to close the gap when it comes to understanding intent, emotion and experience drivers. |
 
 -->
 
-**Ny eller uppdaterad funktion** {#destinations-new-updated-functionality}
+**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
 
 | Funktionalitet | Beskrivning |
 | ----------- | ----------- |
@@ -139,7 +139,7 @@ Add these to release notes as they go out
 
 **Korrigeringar och förbättringar** {#destinations-fixes-and-enhancements}
 
-- Använd [övervakning av genomskinlighet](../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-streaming-destinations) som nu är tillgänglig för företagsmål ([HTTP API](../../destinations/catalog/streaming/http-destination.md), [Amazon Kinesis](../../destinations/catalog/cloud-storage/amazon-kinesis.md) och [Azure Event Hubs](../../destinations/catalog/cloud-storage/azure-event-hubs.md)) vid körningsnivån för att övervaka aktiveringsmått och status i [dataflödesdetaljvyn](../../dataflows/ui/monitor-destinations.md#dataflow-run-details-page), med ytterligare information via felkoder och felsökningsmeddelanden.
+- Använd [övervakning av genomskinlighet](../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-streaming-destinations) som nu är tillgänglig för företagsmål ([HTTP API](../../destinations/catalog/streaming/http-destination.md), [Amazon Kinesis](../../destinations/catalog/cloud-storage/amazon-kinesis.md) och [Azure Event Hubs](../../destinations/catalog/cloud-storage/azure-event-hubs.md)) vid körningsnivån för dataflöden för att övervaka aktiveringsmått och status i [dataflödesdetaljvyn](../../dataflows/ui/monitor-destinations.md#dataflow-run-details-page), med ytterligare information via felkoder och felsökningsmeddelanden.
 - När du uppdaterar namnet på målgrupper som är mappade till [Google Ad Manager](../../destinations/catalog/advertising/google-ad-manager.md), [Google Display &amp; Video 360](../../destinations/catalog/advertising/google-dv360.md) och andra mål som använder [målgruppsuppdateringsmallar](../../destinations/destination-sdk/metadata-api/update-audience-template.md), återspeglas nu dessa namnändringar nedströms i målet.
 
 Mer allmän information om destinationer finns i [målöversikten](../../destinations/home.md).
@@ -191,7 +191,7 @@ Adobe Experience Platforms identitetstjänst ger dig en heltäckande bild av din
 | Funktion | Beskrivning |
 | --- | --- |
 | Förbättringar i användargränssnittet för identitetstjänsten | Använd det förbättrade verktyget för att skapa namnutrymmen i Experience Platform-användargränssnittet för att bättre hantera dina anpassade namnutrymmen och motsvarande identitetstyper. Det förbättrade användargränssnittet för identitetstjänsten ger dig: <ul><li>Sammanhangsbaserad upplevelse: visuella indikeringar, klarhet och sammanhang för vad ett identitetsnamnutrymme är och identitetstyper är.</li><li>Noggrannhet: Bättre felhantering utan fler dubblerade identitetsnamn.</li><li>Identifiering: Åtkomst till dokumentation inifrån en produktdialogruta.</li></ul> Mer information finns i handboken [Skapa anpassade namnutrymmen](../../identity-service/features/namespaces.md#create-namespaces). |
-| Ändringar av begränsningar för identitetsdiagram | Gränsen för identitetsdiagram har ändrats från 150 identiteter till 50 identiteter. När en ny identitet har importerats till ett fullständigt diagram tas den äldsta identiteten som baseras på tidsstämpeln för inmatningen och identitetstypen bort. Cookie-identitetstyper prioriteras för borttagning. Kontakta Adobe Account Team om du vill ändra identitetstypen om din produktionssandlåda innehåller: <ul><li>ett anpassat namnutrymme där personidentifierarna (t.ex. CRM-ID:n) är konfigurerade som cookie/enhetsidentitetstyp.</li><li>ett anpassat namnutrymme där cookie-/enhetsidentifierare har konfigurerats som identitetstyp för olika enheter.</li></ul> Dessa förfrågningar behandlas manuellt av Adobe Engineering. Mer information finns i [skyddsutkastet för Identity Service-data](../../identity-service/guardrails.md) och i guiden om [tillstånd för datahanteringslicenser &#x200B;](../../landing/license-usage-and-guardrails/data-management-best-practices.md). |
+| Ändringar av begränsningar för identitetsdiagram | Gränsen för identitetsdiagram har ändrats från 150 identiteter till 50 identiteter. När en ny identitet har importerats till ett fullständigt diagram tas den äldsta identiteten som baseras på tidsstämpeln för inmatningen och identitetstypen bort. Cookie-identitetstyper prioriteras för borttagning. Kontakta Adobe Account Team om du vill ändra identitetstypen om din produktionssandlåda innehåller: <ul><li>ett anpassat namnutrymme där personidentifierarna (t.ex. CRM-ID:n) är konfigurerade som cookie/enhetsidentitetstyp.</li><li>ett anpassat namnutrymme där cookie-/enhetsidentifierare har konfigurerats som identitetstyp för olika enheter.</li></ul> Dessa förfrågningar behandlas manuellt av Adobe Engineering. Mer information finns i [skyddsutkastet för Identity Service-data](../../identity-service/guardrails.md) och i guiden om [tillstånd för datahanteringslicenser ](../../landing/license-usage-and-guardrails/data-management-best-practices.md). |
 
 {style="table-layout:auto"}
 
