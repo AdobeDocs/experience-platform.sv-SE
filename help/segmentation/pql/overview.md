@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Profile Query Language (PQL) - översikt
 description: Den här guiden ger en allmän översikt över PQL, som handlar om riktlinjer för formatering och innehåller exempel på PQL-uttryck.
 exl-id: 4f7ab50e-89a3-42db-b74a-c6f2d86c9bcb
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '706'
 ht-degree: 0%
@@ -74,7 +74,7 @@ Följande tabell visar de olika kategorierna av PQL-funktioner som stöds, inklu
 | -------- | ---------- |
 | Boolean | Används för att implementera booleskt algebra inom PQL. Mer information om de här funktionerna finns i dokumentet [boolesk funktion](./boolean-functions.md). |
 | Jämförelse | Används för att jämföra olika PQL-element. Mer information om de här funktionerna finns i dokumentet [för jämförelsefunktioner](./comparison-functions.md). |
-| Array, lista och uppsättning | Används för att interagera med arrayer, listor och uppsättningar. Mer information om de här funktionerna finns i [arrayen, listan och dokumentet &#x200B;](./array-functions.md) med inställningsfunktioner. |
+| Array, lista och uppsättning | Används för att interagera med arrayer, listor och uppsättningar. Mer information om de här funktionerna finns i [arrayen, listan och dokumentet ](./array-functions.md) med inställningsfunktioner. |
 | Karta | Används för att interagera med kartor. Mer information om de här funktionerna finns i dokumentet [mappningsfunktioner](./map-functions.md). |
 | Sträng | Används för att interagera med strängar. Mer information om de här funktionerna finns i [strängfunktionsdokumentet](./string-functions.md). |
 | Objekt | Används för att interagera med objekt. Mer information om de här funktionerna finns i [objektfunktionsdokumentet](./object-functions.md). |
