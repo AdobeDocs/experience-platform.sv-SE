@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Array-, List- och Set PQL-funktioner
 description: Profile Query Language (PQL) har funktioner som gör det enklare att interagera med arrayer, listor och strängar.
 exl-id: 5ff2b066-8857-4cde-9932-c8bf09e273d3
-source-git-commit: c4d034a102c33fda81ff27bee73a8167e9896e62
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '820'
 ht-degree: 0%
@@ -261,7 +261,7 @@ Funktionen `bottomN` används för att returnera de sista `N` objekten i en arra
 ```
 
 | Argument | Beskrivning |
-| --------- | ----------- | 
+| --------- | ----------- |
 | `{ARRAY}` | Den array eller lista som ska sorteras. |
 | `{VALUE}` | Den egenskap som arrayen eller listan ska sorteras i. |
 | `{AMOUNT}` | Antalet artiklar som ska returneras. |
