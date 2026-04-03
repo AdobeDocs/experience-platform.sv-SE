@@ -4,7 +4,7 @@ description: Läs mer om modellinformation i Adobe Experience Platform.
 hide: true
 hidefromtoc: true
 exl-id: 74a8ef82-cff9-4a7e-95c8-f915eb664eda
-source-git-commit: 6623c7dad0fc4ddb7cb79e8f474b824915f130fc
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '3171'
 ht-degree: 0%
@@ -104,7 +104,7 @@ I modellarkitekturen och utbildningsavsnittet beskrivs hur AI-modellen kan utfor
 | --- | --- | --- |
 | Vilken arkitektur använder modellen? | Typ av neuralnätverk, ensemble-metod osv. | Modellen utnyttjar GBDT (Gradient Boosting Decision Trees) med XGBoost, optimerat för strukturerade data. Det har utbildats på historiska kundhändelsesekvenser för att identifiera prediktiva beteendemönster. |
 | Vilka algoritmer tillämpades? | Maskininlärningstekniker som användes. | Modellen byggs med en övervakad inlärningsstrategi som utnyttjar GBDT (Gradient Boosting Decision Trees) med XGBoost som den primära inlärningsalgoritmen. Dessutom ingår logistisk regression som en basmodell för riktmärkning av prediktiv precision. |
-| Vilka utbildningsramverk användes? | Bibliotek eller plattformar som används för utbildning. | Modellen utvecklades med TensorFlow, XGBoost och scikit-learn. Utbildning körs på Adobe AI-molninfrastruktur med grafikprocessorerna NVIDIA V100 som stöder storskaliga datamängder. |
+| Vilka utbildningsramverk användes? | Bibliotek eller plattformar som används för utbildning. | Modellen utvecklades med TensorFlow, XGBoost och scikit-learn. Utbildning körs på Adobe AI molninfrastruktur med grafikprocessorerna NVIDIA V100 som stöder storskaliga datamängder. |
 | Vilka beräkningsresurser användes för utbildningen? | Maskinvaru- och molnresurserna som användes för utbildning. | NVIDIA V100 GPU:er, utbildade i Google Cloud-infrastruktur. |
 | Vilka bedömningsmetoder användes? | Mätvärden och testmetoder som användes för utvärderingen. | AUC-ROC, precisionsåterkallning och korsvalidering. |
 
