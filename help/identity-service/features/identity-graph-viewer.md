@@ -2,7 +2,7 @@
 title: Identity Graph Viewer
 description: Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
 exl-id: ccd5f8d8-595b-4636-9191-553214e426bd
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1379'
 ht-degree: 0%
@@ -81,7 +81,7 @@ Den högra listen visar information om en vald identitet, inklusive dess senaste
 Följande tabell innehåller ytterligare information om de egenskaper för datakälla som visas i den högra listen:
 
 | Datakälla | Beskrivning |
-| --- | --- | 
+| --- | --- |
 | Batch-ID | Den automatiskt genererade identifierare som motsvarar dina gruppdata. |
 | Datauppsättnings-ID | Den automatiskt genererade identifierare som motsvarar datauppsättningen. |
 | Namn på datauppsättning | Namnet på den datauppsättning som innehåller dina batchdata. |
