@@ -2,7 +2,7 @@
 title: Borttagningar i identitetstjänsten
 description: I det här dokumentet finns en översikt över de olika mekanismer som du kan använda för att ta bort dina identitetsdata i Experience Platform, och för att skapa klarhet om hur identitetsdiagram kan påverkas.
 exl-id: 0619d845-71c1-4699-82aa-c6436815d5b3
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1197'
 ht-degree: 1%
@@ -60,7 +60,7 @@ Du kan använda katalogtjänsten för att skicka begäranden om borttagning av d
 
 ### Utgångsdatum för datauppsättning i Datahygien
 
-Med arbetsytan [[!UICONTROL Data Hygiene] &#x200B;](../../hygiene/ui/overview.md) i Adobe Experience Platform-gränssnittet kan du schemalägga förfallodatum för datauppsättningar. När en datauppsättning når sitt förfallodatum startar datasjön, identitetstjänsten och kundprofilen i realtid separata processer för att ta bort datauppsättningens innehåll från sina respektive tjänster. Mer information finns i guiden om att [hantera förfallodatum för datauppsättningar med arbetsytan [!UICONTROL Data Hygiene]](../../hygiene/ui/dataset-expiration.md).
+Med arbetsytan [[!UICONTROL Data Hygiene] ](../../hygiene/ui/overview.md) i Adobe Experience Platform-gränssnittet kan du schemalägga förfallodatum för datauppsättningar. När en datauppsättning når sitt förfallodatum startar datasjön, identitetstjänsten och kundprofilen i realtid separata processer för att ta bort datauppsättningens innehåll från sina respektive tjänster. Mer information finns i guiden om att [hantera förfallodatum för datauppsättningar med arbetsytan [!UICONTROL Data Hygiene]](../../hygiene/ui/dataset-expiration.md).
 
 Tabellen nedan innehåller en beskrivning av skillnaderna mellan borttagning av datauppsättningar i katalogtjänsten och datahygien:
 
