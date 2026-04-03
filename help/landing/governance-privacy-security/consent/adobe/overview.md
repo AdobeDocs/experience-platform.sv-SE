@@ -6,7 +6,7 @@ description: Lär dig hur du bearbetar kundens medgivandesignaler i Adobe Experi
 role: Developer
 feature: Consent
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-source-git-commit: f988d7665a40b589ca281d439b6fca508f23cd03
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '1562'
 ht-degree: 0%
@@ -23,7 +23,7 @@ Detta dokument ger en översikt över hur ni konfigurerar era dataåtgärder fr�
 >
 >Det här dokumentet fokuserar på behandling av data om samtycke med hjälp av Adobe-standarden. Om du bearbetar medgivandedata i enlighet med IAB Transparency and Consent Framework (TCF) 2.0, se guiden om [TCF 2.0-stöd i Adobe Real-Time Customer Data Platform](../iab/overview.md).
 
-## Förhandskrav
+## Förutsättningar
 
 Handboken kräver en fungerande förståelse av de olika Experience Platform-tjänster som arbetar med att behandla data om samtycke:
 
@@ -51,7 +51,7 @@ I den aktuella versionen av stöd för tillståndsbearbetning i Experience Platf
 
 >[!NOTE]
 >
->Mer information om strukturen för de XDM-medgivandefält som nämns ovan finns i guiden för datatypen [[!UICONTROL Consents and Preferences] &#x200B;](/help/xdm/data-types/consents.md).
+>Mer information om strukturen för de XDM-medgivandefält som nämns ovan finns i guiden för datatypen [[!UICONTROL Consents and Preferences] ](/help/xdm/data-types/consents.md).
 
 När systemet har konfigurerats tolkar Experience Platform Web SDK datainsamlingsvärdet för den aktuella användaren för att avgöra om data ska skickas till Adobe Experience Platform Edge Network, tas bort från klienten eller bevaras tills datainsamlingsbehörigheten är inställd på ja eller nej.
 
@@ -67,7 +67,7 @@ Den här dialogrutan bör göra det möjligt för kunden att välja om de vill a
 
 Data för kundgodkännande måste skickas till en [!DNL Profile]-aktiverad datauppsättning vars schema innehåller medgivandefält. Dessa fält måste ingå i samma schema och datauppsättning som du använder för att samla in attributinformation om enskilda kunder.
 
-Mer information om hur du lägger till de här obligatoriska fälten i en [-aktiverad datauppsättning innan du fortsätter med den här guiden finns i självstudiekursen &#x200B;](./dataset.md)Konfigurera en datauppsättning för att hämta medgivandedata[!DNL Profile].
+Mer information om hur du lägger till de här obligatoriska fälten i en [-aktiverad datauppsättning innan du fortsätter med den här guiden finns i självstudiekursen ](./dataset.md)Konfigurera en datauppsättning för att hämta medgivandedata[!DNL Profile].
 
 ## Uppdatera sammanfogningsprinciper för [!DNL Profile] så att de innehåller medgivandedata {#merge-policies}
 
@@ -117,7 +117,8 @@ I avsnittet [Bläddra bland profiler efter identitet](../../../../profile/ui/use
 
 De nya medgivandeattributen visas inte som standard på en profils kontrollpanel. Du måste därför navigera till fliken **[!UICONTROL Attributes]** på informationssidan för en profil för att bekräfta att de har importerats som förväntat. Se guiden på [profilkontrollpanelen](../../../../profile/ui/profile-dashboard.md) för att lära dig hur du anpassar kontrollpanelen efter dina behov.
 
-<!-- (To be included once CJM is GA)
+<!-- 
+(To be included once CJM is GA)
 ## Handling consent in Customer Journey Management
 
 If you are using Customer Journey Management, after confirming that your profiles and segments contain consent data, you can start honoring customer [marketing preferences](../../../../xdm/data-types/consents.md#marketing) when pulling segments from Experience Platform. Specifically, profiles who have opted out of the email marketing preference should not be included in segments that are targeted for email campaigns.
