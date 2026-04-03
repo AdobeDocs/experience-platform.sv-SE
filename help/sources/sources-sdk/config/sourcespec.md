@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Konfigurera källspecifikationer för självbetjäningskällor (Batch SDK)
 description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
 exl-id: f814c883-b529-4ecc-bedd-f638bf0014b5
-source-git-commit: 2ff70ee6e4aa7fd723293e66000ccb161d61ab6a
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '2107'
 ht-degree: 0%
