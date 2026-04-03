@@ -2,7 +2,7 @@
 title: Datatyp för insamling av felinformation
 description: Läs mer om datatypen XDM (Error Details Collection Experience Data Model).
 exl-id: 54b03147-9bca-46af-86c8-90e42b4de26b
-source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '101'
 ht-degree: 0%
