@@ -1,9 +1,9 @@
 ---
 title: Arkitekturuppgraderingar till Real-Time CDP B2B edition
 description: Läs det här dokumentet om du vill veta mer om de omfattande uppgraderingarna av arkitekturen till Real-Time CDP B2B edition.
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: d958a947-e195-4dd4-a04c-63ad82829728
-source-git-commit: 056a7ff98e335b238fc03ab84b11c9a97221ddaa
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '1155'
 ht-degree: 1%
@@ -138,7 +138,8 @@ I den nya arkitekturen stöds inte slutpunkten&quot;skapa ett segmentjobb&quot; 
 
 Du kan nu hämta konto- och affärsmöjlighetsscheman som sökdimensionsenheter först efter att de har slutfört den dagliga enhetsupplösningsprocessen. Nya inmatade poster är inte tillgängliga för profilberikning eller segmentdefinitioner förrän nästa entitetsupplösningscykel har slutförts (vanligtvis var 24:e timme).
 
-<!-- ### Deprecation of audience creation via API for B2B entities
+<!-- 
+### Deprecation of audience creation via API for B2B entities
 
 Creation of audiences using B2B entities via API is being deprecated. The list of affected B2B entities include:
 
@@ -151,7 +152,8 @@ Creation of audiences using B2B entities via API is being deprecated. The list o
 * Marketing List
 * Marketing List Member
 
-Read the [segment definitions endpoint API guide](../segmentation/api/segment-definitions.md) for more information. -->
+Read the [segment definitions endpoint API guide](../segmentation/api/segment-definitions.md) for more information. 
+-->
 
 ### Ändringar av målgruppsimporter för flera enheter i sandlådeverktyg
 
