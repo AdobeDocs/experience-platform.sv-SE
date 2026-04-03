@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över innehållstaggning
 description: Innehållstaggning är en uppsättning AI-tjänster som gör att ni kan extrahera intelligenta funktioner från ert innehåll, ordna, effektivisera innehållsflödet och leverera mer slagkraftiga, personaliserade upplevelser till era kunder.
 exl-id: 65c527d7-b1bd-414f-aba1-8445676a7052
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '322'
 ht-degree: 0%
