@@ -4,7 +4,7 @@ title: Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '4933'
 ht-degree: 0%
@@ -4066,7 +4066,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 
 **Svar**
 
-+++Skapa utdataschema - svar
++++ Skapa utdataschema - svar
 
 ```json
 {
@@ -4372,6 +4372,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 
 ID:t i svaret representerar den unika identifieraren för det indatabchema som du har skapat. Kopiera ID:t från svaret eftersom du kommer att återanvända det i ett senare steg.
 
++++
+
 >[!ENDSHADEBOX]
 
 ### Skapa mappningsuppsättning {#create-mapping-set}
@@ -4382,7 +4384,7 @@ Skapa sedan mappningsuppsättningen med [data prep API](https://developer.adobe.
 
 **Begäran**
 
-+++Skapa mappningsuppsättning - begäran
++++ Skapa mappningsuppsättning - begäran
 
 >[!IMPORTANT]
 >
@@ -4775,7 +4777,7 @@ Om du vill lägga till generering av filmanifest till ett befintligt mål måste
 
 **Begäran**
 
-+++Lägg till filmanifest till befintlig målanslutning - Begäran
++++ Lägg till filmanifest till befintlig målanslutning - Begäran
 
 ```shell
 curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/targetConnections/{TARGET_CONNECTION_ID}' \
@@ -4795,6 +4797,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 ]'
 ```
 
++++
+
 >[!ENDSHADEBOX]
 
 ## Validera dataflöde (hämta dataflödeskörningar) {#get-dataflow-runs}
@@ -4807,7 +4811,7 @@ Använd API:t för dataflödeskörning om du vill kontrollera körningarna av et
 
 **Begäran**
 
-+++Körning av Get dataflow - begäran
++++ Körning av Get dataflow - begäran
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/foundation/flowservice/runs?property=flowId==eb54b3b3-3949-4f12-89c8-64eafaba858f' \
@@ -4823,7 +4827,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **Svar**
 
-+++Get data aflow running - Response
++++ Get data aflow running - Response
 
 ```json
 {
