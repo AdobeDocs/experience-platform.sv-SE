@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Mappningsfält för Marketo Engage Source
 description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo datamängder och deras motsvarande XDM-fält.
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: 83a249daddbee1ec264b6e505517325c76ac9b09
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1451'
 ht-degree: 4%
@@ -171,7 +171,7 @@ Läs översikten [XDM Business Campaign](../../../../xdm/classes/b2b/business-ca
 
 ## Programmedlemskap {#program-memberships}
 
-Läs översikten [XDM Business Campaign Members](../../../../xdm/classes/b2b/business-campaign-members.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i guiden [XDM Business Campaign Member Details &#x200B;](../../../../xdm/field-groups/b2b-campaign-members/details.md).
+Läs översikten [XDM Business Campaign Members](../../../../xdm/classes/b2b/business-campaign-members.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i guiden [XDM Business Campaign Member Details ](../../../../xdm/field-groups/b2b-campaign-members/details.md).
 
 | Source dataset | XDM-målfält | Anteckningar |
 | -------------- | --------------- | ----- |
