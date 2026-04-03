@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform april 2022
 description: Versionsinformationen för Adobe Experience Platform från april 2022.
 exl-id: 39233787-3089-4469-8363-b006ae41ae21
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '2556'
-ht-degree: 13%
+ht-degree: 15%
 
 ---
 
@@ -94,7 +94,7 @@ Mer information om [!DNL Data Prep] finns i [[!DNL Data Prep] översikten](../..
 
 | Funktion | Beskrivning |
 | ----------- | ----------- |
-| Avancerade målanslutningar för företag | Tre målanslutningar för företag är nu allmänt tillgängliga: [[!DNL Amazon Kinesis]](../../destinations/catalog/cloud-storage/amazon-kinesis.md), [[!DNL Azure Event Hubs]](../../destinations/catalog/cloud-storage/azure-event-hubs.md) och [[!DNL HTTP API]](../../destinations/catalog/streaming/http-destination.md). <br> Den allmänna tillgängligheten för Enterprise-målanslutningar omfattar alla funktioner som tidigare fanns i Beta-fasen och mycket mer: <ul><li>Nya autentiseringsfunktioner, inklusive [signatur för delad åtkomst i Azure Event Hubs](../../destinations/catalog/cloud-storage/azure-event-hubs.md#sas-authentication) och fler [autentiseringstyper](../../destinations/catalog/streaming/http-destination.md#authentication-information) (innehavartoken, OAuth2) i HTTP API-målet;</li><li>[Bakgrundsfyllning av tidigare profildata](../../destinations/catalog/streaming/http-destination.md#historical-data-backfill) (skickar historiska profiler som är kvalificerade för segmentet när det aktiveras första gången);</li><li>Data Flow Run-mätvärden stöds nu för dessa destinationer.</li><li>[Ytterligare segmentmetadata](../../destinations/catalog/streaming/http-destination.md#destination-details) ingår i datanyttolasten, inklusive segmentnamn och segmenttidsstämplar;</li><li>Stöd för [statiska IP-adresser](/help/destinations/catalog/streaming/ip-address-allow-list.md) för kunder som behöver tillåtslista Experience Platform.</li></ul> |
+| Avancerade målanslutningar för företag | Tre målanslutningar för företag är nu allmänt tillgängliga: [[!DNL Amazon Kinesis]](../../destinations/catalog/cloud-storage/amazon-kinesis.md), [[!DNL Azure Event Hubs]](../../destinations/catalog/cloud-storage/azure-event-hubs.md) och [[!DNL HTTP API]](../../destinations/catalog/streaming/http-destination.md). <br> Den allmänna tillgängligheten för Enterprise-målanslutningar omfattar alla funktioner som tidigare fanns i Beta-fasen och mycket mer: <ul><li>Nya autentiseringsfunktioner, inklusive [signaturer för delad åtkomst i Azure Event Hubs](../../destinations/catalog/cloud-storage/azure-event-hubs.md#sas-authentication) och fler [autentiseringstyper](../../destinations/catalog/streaming/http-destination.md#authentication-information) (innehavartoken, OAuth2) i HTTP API-målet;</li><li>[Bakgrundsfyllning av tidigare profildata](../../destinations/catalog/streaming/http-destination.md#historical-data-backfill) (skickar historiska profiler som är kvalificerade för segmentet när det aktiveras första gången);</li><li>Data Flow Run-mätvärden stöds nu för dessa destinationer.</li><li>[Ytterligare segmentmetadata](../../destinations/catalog/streaming/http-destination.md#destination-details) ingår i datanyttolasten, inklusive segmentnamn och segmenttidsstämplar;</li><li>Stöd för [statiska IP-adresser](/help/destinations/catalog/streaming/ip-address-allow-list.md) för kunder som behöver tillåtslista Experience Platform.</li></ul> |
 | Aviseringar i sitt sammanhang för måldataflöden | Du kan nu [prenumerera på aviseringar](../../destinations/ui/alerts.md) när du skapar ett måldataflöde och få varningsmeddelanden om status, slutförande eller fel i dataflödet. Du kan välja att få aviseringar i Experience Platform-gränssnittet eller via e-post. |
 
 ### Frisläppningsprocess för avancerade målanslutningar för företag {#release-process-enterprise-destinations}
@@ -107,7 +107,7 @@ Observera följande om du har använt dessa destinationer under Beta fas:
 - Om du vill konfigurera dessa destinationer från och med den 27 april, gör det med den nya GA-versionen av destinationerna.
 - Betakorten som markerats som inaktuella tas bort när releaseversionen är klar, vilket beräknas inträffa till slutet av fredagen den 29 april. Experience Platform tekniska team håller på att övervaka en lyckad lanseringsåtgärd.
 
-**Nya mål**
+**Nya destinationer**
 
 | Mål | Beskrivning |
 | ----------- | ----------- |
@@ -135,14 +135,14 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 | Globalt schema | [[!UICONTROL Data Hygiene Operation Request]](https://github.com/adobe/xdm/blob/master/schemas/hygiene/aep-hygiene-ops-record.schema.json) | Hämtar information om en datarensningsbegäran om att ta bort eller ändra poster i en angiven datamängd eller sandlåda. |
 | Beskrivning | [[!UICONTROL Time-series Granularity Descriptor]](https://github.com/adobe/xdm/blob/master/schemas/descriptors/time-series/descriptorTimeSeriesGranularity.schema.json) | Anger granulariteten för tidsserie- och sammanfattningsdata. När schemat används är schemats `timestamp`-fält den första tidsstämpeln i en period av den här granulariteten. |
 | Klass | [[!UICONTROL XDM Summary Metrics]](https://github.com/adobe/xdm/blob/master/components/classes/summary_metrics.schema.json) | Tillhandahåller försummerade mått med grupperingsdimensioner, t.ex. resultatet av en SQL SELECT med en GROUP BY. |
-| Fältgrupp | [[!UICONTROL Consent policies evaluation results map]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-consentResults.schema.json) | Hämtar utvärderingsresultatet för principen för samtycke för en individ. |
-| Fältgrupp | [[!UICONTROL Site Search]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-site-search.schema.json) | Hämtar platssökningsrelaterad information som sökfråga, filtrering och ordning. |
-| Fältgrupp | [[!UICONTROL Merge Leads]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/events/merge-leads.schema.json) | Hämtar information om en händelse där två eller flera leads sammanfogas. |
-| Fältgrupp | [[!UICONTROL Email Sent]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/events/emailsent.schema.json) | Hämtar information om en händelse där ett e-postmeddelande skickas till en mottagare. |
-| Fältgrupp | [[!UICONTROL Stitching Fields]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-stitching.schema.json) | Hämtar värden som beräknas genom identitetssammanfogningsprocessen för en händelse. |
-| Fältgrupp | [[!UICONTROL Secondary Recipient Detail For Audit]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/secondary-recipient-detail.schema.json) | En Adobe Journey Optimizer-fältgrupp som samlar in en sekundär mottagarinformation för en granskning. |
-| Fältgrupp | [[!UICONTROL XDM Business Account Person Relation Details]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/account-person/account-person-details.schema.json) | Hämtar information som är relaterad till en konto-person-relation. |
-| Fältgrupp | [[!UICONTROL Account Person Details]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/account-person/account-person-details.schema.json) | Hämtar information som är relaterad till en konto-person-relation. |
+| Fältgrupper | [[!UICONTROL Consent policies evaluation results map]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-consentResults.schema.json) | Hämtar utvärderingsresultatet för principen för samtycke för en individ. |
+| Fältgrupper | [[!UICONTROL Site Search]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-site-search.schema.json) | Hämtar platssökningsrelaterad information som sökfråga, filtrering och ordning. |
+| Fältgrupper | [[!UICONTROL Merge Leads]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/events/merge-leads.schema.json) | Hämtar information om en händelse där två eller flera leads sammanfogas. |
+| Fältgrupper | [[!UICONTROL Email Sent]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/events/emailsent.schema.json) | Hämtar information om en händelse där ett e-postmeddelande skickas till en mottagare. |
+| Fältgrupper | [[!UICONTROL Stitching Fields]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-stitching.schema.json) | Hämtar värden som beräknas genom identitetssammanfogningsprocessen för en händelse. |
+| Fältgrupper | [[!UICONTROL Secondary Recipient Detail For Audit]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/secondary-recipient-detail.schema.json) | En Adobe Journey Optimizer-fältgrupp som samlar in en sekundär mottagarinformation för en granskning. |
+| Fältgrupper | [[!UICONTROL XDM Business Account Person Relation Details]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/account-person/account-person-details.schema.json) | Hämtar information som är relaterad till en konto-person-relation. |
+| Fältgrupper | [[!UICONTROL Account Person Details]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/account-person/account-person-details.schema.json) | Hämtar information som är relaterad till en konto-person-relation. |
 | Datatyp | [[!UICONTROL Cart]](https://github.com/adobe/xdm/blob/master/components/datatypes/cart.schema.json) | Fångar information om en e-handelskundvagn. |
 | Datatyp | [[!UICONTROL Shipping]](https://github.com/adobe/xdm/blob/master/components/datatypes/shipping.schema.json) | Hämtar leveransinformation för en eller flera produkter. |
 | Datatyp | [[!UICONTROL Site Search]](https://github.com/adobe/xdm/blob/master/components/datatypes/sitesearch.schema.json) | Hämtar information om webbplatssökningsaktivitet. |
@@ -159,7 +159,7 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 | --- | --- | --- |
 | Globalt schema | [[!UICONTROL Destinations]](https://github.com/adobe/xdm/blob/master/schemas/destinations/destination.schema.json) | Nya uppräkningsvärden för `destinationCategory`. |
 | Beskrivning | [[!UICONTROL Friendly Name Descriptor]](https://github.com/adobe/xdm/blob/master/schemas/descriptors/display/alternateDisplayInfo.schema.json) | Stöd för borttagning av föreslagna värden (`meta:enum`) som inte behövs från standardfält har lagts till. |
-| Fältgrupp | [[!UICONTROL User Login Process]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-user-login-details.schema.json) | Fältet `createProfile` har lagts till. |
+| Fältgrupper | [[!UICONTROL User Login Process]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-user-login-details.schema.json) | Fältet `createProfile` har lagts till. |
 | Datatyp | [[!UICONTROL Commerce]](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/commerce.schema.json) | Flera kundvagnsrelaterade fält har lagts till. |
 | Datatyp | [[!UICONTROL Product list item]](https://github.com/adobe/xdm/blob/master/components/datatypes/productlistitem.schema.json) | Nya fält har lagts till för valda alternativ och rabattbelopp. |
 | Tillägg (Intelligent Services) | [[!UICONTROL Intelligent Services JourneyAI Send Time Optimization]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/intelligentServices/profile-journeyai-sendtimeoptimization.schema.json) | Optimera lagringsformatet för bakgrundsmusik. |
@@ -169,7 +169,7 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 
 {style="table-layout:auto"}
 
-Mer information om XDM i Experience Platform finns i [XDM-systemöversikt](../../xdm/home.md).
+Mer information om XDM i Experience Platform finns i [Systemöversikten över XDM](../../xdm/home.md).
 
 ## [!DNL Artificial Intelligence/Machine Learning services] {#ai/ml-services}
 
@@ -208,7 +208,7 @@ Real-Time CDP B2B edition bygger på Real-Time Customer Data Platform (Real-Time
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Stöd för funktionen `isDeleted` | Alla [!DNL Marketo]-datauppsättningar utom `Activities` har nu stöd för mappningen `isDeleted`. Den nya mappningen läggs automatiskt till i dina befintliga B2B-dataflöden. Du kan använda mappningen `isDeleted` för att filtrera bort poster som har tagits bort så att dina data i [!DNL Data Lake] är konsekventa med dina källdata. Mer information om `isDeleted` finns i guiden [[!DNL Marketo] för mappningsfält](../../sources/connectors/adobe-applications/mapping/marketo.md). |
+| Stöd för funktionen `isDeleted` | Alla [!DNL Marketo]-datauppsättningar utom `Activities` har nu stöd för mappningen `isDeleted`. Den nya mappningen läggs automatiskt till i dina befintliga B2B-dataflöden. Du kan använda mappningen `isDeleted` för att filtrera bort poster som har tagits bort så att dina data i [!DNL Data Lake] är konsekventa med dina källdata. Mer information om [[!DNL Marketo]  finns i guiden ](../../sources/connectors/adobe-applications/mapping/marketo.md)för mappningsfält`isDeleted`. |
 
 Mer information om Real-Time Customer Data Platform B2B edition finns i [B2B-översikten](../../rtcdp/b2b-overview.md).
 
