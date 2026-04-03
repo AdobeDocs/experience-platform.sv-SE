@@ -3,7 +3,7 @@ keywords: annonsering, reklamavdelning, reklamavdelning
 title: The Trade Desk connection
 description: Trade Desk är en självbetjäningsplattform för annonsköpare som kan genomföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för webbannonsering, video och mobilannonslager.
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1359'
 ht-degree: 0%
@@ -85,7 +85,7 @@ Förutsättningar beror på vilka identitetstyper du tänker använda för målg
 
 **För cookie-baserad målinriktning på[!DNL The Trade Desk]** kontrollerar du att det finns en mappning mellan ECID och [!DNL Trade Desk ID]. Gör så genom att följa stegen nedan:
 
-1. **Aktivera funktionen för ID-synkronisering**: Om det här är första gången du konfigurerar [!DNL The Trade Desk ID]-aktivering och du inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/sv/docs/id-service/using/id-service-api/methods/idsync) i Experience Cloud ID-tjänsten tidigare (med Adobe Audience Manager eller andra program) kontaktar du Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering.
+1. **Aktivera funktionen för ID-synkronisering**: Om det här är första gången du konfigurerar [!DNL The Trade Desk ID]-aktivering och du inte har aktiverat funktionen [ID-synkronisering](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync) i Experience Cloud ID-tjänsten tidigare (med Adobe Audience Manager eller andra program) kontaktar du Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering.
    * Om du tidigare har konfigurerat [!DNL The Trade Desk]-integreringar i Audience Manager överförs dina befintliga ID-synkroniseringar automatiskt till Experience Platform.
 
 2. **Instrumentera dina webbsidor**: Implementera kod på dina webbsidor för att skapa mappningar mellan [!DNL The Trade Desk ID] och Adobe ECID. På så sätt kan Experience Platform koppla Trade Desk-ID:n till kundprofiler.
@@ -139,7 +139,7 @@ När du kartlägger målgrupper rekommenderar Adobe att du använder Experience 
 >id="platform_destinations_required_mappings_ttd"
 >title="Förkonfigurerade mappningsuppsättningar"
 >abstract="Vi har förkonfigurerat dessa fyra mappningsuppsättningar åt dig. När du aktiverar data till The Trade Desk behöver de profiler som är kvalificerade för de aktiverade målgrupperna inte nödvändigtvis ha alla fyra identiteterna i profilerna, eftersom detta mål fungerar med någon av de målidentiteter som visas här. <br> För cookie-baserad målinriktning baserat på Trade Desk ID behöver du ett ECID i profilen och en ID-synkroniseringsmappning mellan Trade Desk ID och ECID."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-platform/destinations/catalog/advertising/tradedesk#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/catalog/advertising/tradedesk#preconfigured-mappings" text="Läs mer om förkonfigurerade mappningar"
 
 Följande identitetsmappningar är **förkonfigurerade och fyllda i automatiskt** för dig i arbetsflödet för målgruppsaktivering:
 
