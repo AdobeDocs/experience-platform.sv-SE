@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;frågetjänst;Query Service;spark sql;Spark sql;spark;spark sql functions;functions;
+keywords: Experience Platform;home;populära topics;query service;Query service;spark sql;Spark sql;spark;spark sql functions;functions;
 solution: Experience Platform
 title: Spark SQL-funktioner i frågetjänsten
 description: Lär dig mer om de Spark SQL-funktioner som stöds och som utökar SQL-funktionerna.
 exl-id: 59e6d82b-3317-456d-8c56-3efd5978433a
-source-git-commit: 7ac1521adb916313c8b53fe2a095821d756480be
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1903'
 ht-degree: 0%
