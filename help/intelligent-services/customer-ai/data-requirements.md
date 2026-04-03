@@ -6,7 +6,7 @@ title: Datakrav för kund-AI
 topic-legacy: Getting started
 description: Läs mer om de händelser, inmatningar och utmatningar som Kundens AI använder.
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: 73dea391f8fcb1d2d491c814b453afb4e538459d
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '2539'
 ht-degree: 0%
@@ -26,7 +26,7 @@ Här är stegen för att bygga benägenhetsmodeller och identifiera målgrupper 
 
 2. Prioritera användningsexempel: Vilka är de högsta prioriteringarna för företaget?
 
-3. Bygg modeller i kundens AI: Titta på den här [snabbsjälvstudiekursen](https://experienceleague.adobe.com/docs/platform-learn/tutorials/intelligent-services/configure-customer-ai.html?lang=sv-SE) och se vår [gränssnittshandbok](../customer-ai/user-guide/configure.md) för en steg-för-steg-process för att skapa en modell.
+3. Bygg modeller i kundens AI: Titta på den här [snabbsjälvstudiekursen](https://experienceleague.adobe.com/docs/platform-learn/tutorials/intelligent-services/configure-customer-ai.html) och se vår [gränssnittshandbok](../customer-ai/user-guide/configure.md) för en steg-för-steg-process för att skapa en modell.
 
 4. [Skapa segment](../customer-ai/user-guide/create-segment.md) med hjälp av modellresultat.
 
@@ -49,8 +49,8 @@ Kundens AI fungerar genom att analysera följande datauppsättningar för att f�
 
 - Adobe Analytics-data med [Analytics-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/analytics.md)
 - Adobe Audience Manager-data med [Audience Manager-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)
-- [Experience Event, datamängd](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html?lang=sv-SE)
-- [Data för kundupplevelsehändelser](https://experienceleague.adobe.com/docs/experience-platform/intelligent-services/data-preparation.html?lang=sv-SE#cee-schema)
+- [Experience Event, datamängd](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html)
+- [Data för kundupplevelsehändelser](https://experienceleague.adobe.com/docs/experience-platform/intelligent-services/data-preparation.html#cee-schema)
 
 Du kan lägga till flera datauppsättningar från olika källor om varje datauppsättning har samma identitetstyp (namnutrymme), till exempel ett ECID. Mer information om hur du lägger till flera datauppsättningar finns i användarhandboken för [Kund-AI](../customer-ai/user-guide/configure.md).
 
@@ -93,7 +93,7 @@ Kund-AI använder händelserna i dessa fyra standardfältgrupper som standard: C
 
 Om du vill visa en fältgrupp i Experience Platform-gränssnittet väljer du fliken **[!UICONTROL Schemas]** till vänster och sedan fliken **[!UICONTROL Field groups]**.
 
-| Fältgrupp | Händelsetyp | Sökväg till XDM-fält |
+| Fältgrupper | Händelsetyp | Sökväg till XDM-fält |
 | --- | --- | --- |
 | [!UICONTROL Commerce Details] | beställa | <li> `commerce.order.purchaseID` </li> <li> `productListItems.SKU` </li> |
 |  | productListViews | <li> `commerce.productListViews.value` </li> <li> `productListItems.SKU` </li> |
@@ -117,7 +117,7 @@ Dessutom kan kundens AI använda prenumerationsdata för att skapa bättre kundm
 
 ### Lägga till anpassade händelser och profilattribut {#add-custom-events}
 
-Om du har information som du vill inkludera utöver standardhändelsefälten [&#128279;](#standard-events)som används av kundens AI, kan du använda den [anpassade händelsekonfigurationen](./user-guide/configure.md#custom-events) för att förstärka de data som används av modellen.
+Om du har information som du vill inkludera utöver standardhändelsefälten [som används av kundens AI, kan du använda den ](#standard-events)anpassade händelsekonfigurationen[ för att förstärka de data som används av modellen.](./user-guide/configure.md#custom-events)
 
 #### När anpassade händelser ska användas
 
