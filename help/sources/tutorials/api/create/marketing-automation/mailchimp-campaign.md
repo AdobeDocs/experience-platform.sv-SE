@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett dataflöde för Mailchimp Campaign med hjälp av API:t för flödestjänsten
 description: Lär dig hur du ansluter Adobe Experience Platform till MailChimp Campaign med API:t för Flow Service.
 exl-id: fd4821c7-6fe1-4cad-8e13-3549dbe0ce98
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '1934'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 I följande självstudiekurs får du hjälp med att skapa en källanslutning och ett dataflöde för att överföra [!DNL Mailchimp Campaign]-data till Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) .
 
-## Förhandskrav
+## Förutsättningar
 
 Innan du kan ansluta [!DNL Mailchimp] till Adobe Experience Platform med OAuth 2-uppdateringskod måste du först hämta din åtkomsttoken för [!DNL MailChimp.] Se [[!DNL Mailchimp] OAuth 2-guiden](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/) för detaljerade instruktioner om hur du hittar din åtkomsttoken.
 
@@ -325,7 +325,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 För att källdata ska kunna användas i Experience Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en Experience Platform-datauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API &#x200B;](https://www.adobe.io/experience-platform-apis/references/schema-registry/) utförs.
+Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API ](https://www.adobe.io/experience-platform-apis/references/schema-registry/) utförs.
 
 Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../../../xdm/api/schemas.md).
 
@@ -467,7 +467,7 @@ A successful response returns details of the newly created mapping including its
 }
 ```
 
---->
+-->
 
 ## Skapa ett flöde {#flow}
 
