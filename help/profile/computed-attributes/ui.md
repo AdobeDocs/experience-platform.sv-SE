@@ -2,7 +2,7 @@
 title: Användargränssnittshandbok för beräknade attribut
 description: Lär dig hur du skapar, visar och uppdaterar beräknade attribut med Adobe Experience Platform-gränssnittet.
 exl-id: bc621167-6dba-473e-90e4-aac7ceb6579a
-source-git-commit: c2832821ea6f9f630e480c6412ca07af788efd66
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1497'
 ht-degree: 0%
