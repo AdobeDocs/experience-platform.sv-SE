@@ -2,7 +2,7 @@
 title: Användarbehörigheter för taggar
 description: Lär dig mer om de olika typerna av behörigheter som är tillgängliga för taggar och några grundläggande implementeringsstrategier för olika affärsanvändningsfall.
 exl-id: 9b48847a-6133-4dbd-b17d-e7b88152ad7d
-source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1260'
 ht-degree: 0%
