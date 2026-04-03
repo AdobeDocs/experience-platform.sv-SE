@@ -2,7 +2,7 @@
 title: Extension Manifest
 description: Lär dig hur du konfigurerar en JSON-manifestfil som informerar Adobe Experience Platform om hur du använder tillägget på rätt sätt.
 exl-id: 7cac020b-3cfd-4a0a-a2d1-edee1be125d0
-source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '2607'
 ht-degree: 0%
@@ -71,20 +71,20 @@ Konfigurationsobjektet ska struktureras på följande sätt:
       <td><code>schema</code></td>
       <td>Ett objekt av <a href="https://json-schema.org/">JSON-schema</a> som beskriver formatet för ett giltigt objekt som sparas från tilläggskonfigurationsvyn. Eftersom du är utvecklare av konfigurationsvyn är det ditt ansvar att se till att alla sparade inställningsobjekt matchar det här schemat. Det här schemat används även för validering när användare försöker spara data med Experience Platform tjänster.<br><br>Ett exempelschemaobjekt är följande:
 <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "properties": &lbrace;
-    "delay": &lbrace;
+  "properties": {
+    "delay": {
       "type": "number",
       "minimum": 1
-    &rbrace;
-  &rbrace;,
-  "required": &lbrack;
+    }
+  },
+  "required": [
     "delay"
-  &rbrack;,
+  ],
   "additionalProperties": false
-&rbrace;
+}
 </pre>
       Vi rekommenderar att du använder ett verktyg som <a href="https://www.jsonschemavalidator.net/">JSON-schemavalideraren</a> för att manuellt testa ditt schema.</td>
     </tr>
@@ -131,20 +131,20 @@ En typdefinition är ett objekt som används för att beskriva en händelse, ett
       <td><code>schema</code></td>
       <td>Ett objekt av <a href="https://json-schema.org/">JSON Schema</a> som beskriver formatet för ett giltigt inställningsobjekt som kan sparas av användaren. Inställningarna konfigureras och sparas vanligtvis av en användare med användargränssnittet i Datainsamling. I dessa fall kan tilläggsvyn vidta nödvändiga åtgärder för att validera de inställningar som användaren anger. Å andra sidan väljer vissa användare att använda tagg-API:er direkt utan hjälp av något användargränssnitt. Syftet med det här schemat är att göra det möjligt för Experience Platform att validera att inställningsobjekt som sparats av användare, oavsett om användargränssnittet används, är i ett format som är kompatibelt med biblioteksmodulen som ska agera på inställningsobjektet vid körning.<br><br>Ett exempelschemaobjekt är följande:<br>
 <pre class="JSON language-JSON hljs">
-&lbrace;
+{
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "properties": &lbrace;
-    "delay": &lbrace;
+  "properties": {
+    "delay": {
       "type": "number",
       "minimum": 1
-    &rbrace;
-  &rbrace;,
-  "required": &lbrack;
+    }
+  },
+  "required": [
     "delay"
-  &rbrack;,
+  ],
   "additionalProperties": false
-&rbrace;
+}
 </pre>
       Vi rekommenderar att du använder ett verktyg som <a href="https://www.jsonschemavalidator.net/">JSON-schemavalideraren</a> för att manuellt testa ditt schema.</td>
     </tr>
