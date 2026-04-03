@@ -1,13 +1,13 @@
 ---
 title: Filtrera källobjekt i användargränssnittet
-description: Lär dig navigera bland källobjekt som konton och dataflöden i användargränssnittet i Experience Platform.
+description: Lär dig navigera bland källobjekt som konton och dataflöden i Experience Platform-gränssnittet.
 hide: true
 hidefromtoc: true
 exl-id: 59c200cc-1be7-45a8-9d7a-55e6f11dbcf2
-source-git-commit: ca17854830edabaf2bd74265258d6f0096f2888e
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1407'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -20,10 +20,10 @@ Använd verktygen för filtrering, sökning och infogad åtgärd i Adobe Experie
 
 ## Kom igång
 
-Det är praktiskt att ha en förståelse för följande funktioner och begrepp i Experience Platform innan du arbetar med objektnavigeringsverktygen på källarbetsytan:
+Det är praktiskt att ha en förståelse för följande Experience Platform-funktioner och -begrepp innan du arbetar med objektnavigeringsverktygen på källarbetsytan:
 
-* [Källor](../../home.md): Använd källor i Experience Platform för att importera data från ett Adobe-program eller en datakälla från en tredje part.
-* [Administrativa taggar](../../../administrative-tags/overview.md): Använd administrativa taggar för att tillämpa metadatanyckelord på dina objekt och aktivera sökning för att hitta det objektet i Experience Platform-ekosystemet.
+* [Källor](../../home.md): Använd källor i Experience Platform för att importera data från ett Adobe-program eller en datakälla från tredje part.
+* [Administrativa taggar](../../../administrative-tags/overview.md): Använd administrativa taggar för att tillämpa metadatanyckelord på dina objekt och aktivera sökning för att hitta det objektet i Experience Platform ekosystem.
 * [Varningar](../../../observability/home.md): Använd varningar för att ta emot meddelanden som ger en uppdatering av status för objekt, t.ex. källans dataflöde.
 * [Dataflöden](../../../dataflows/home.md): Dataflöden är representationer av datajobb som flyttar data mellan Experience Platform. Du kan använda källarbetsytan för att skapa dataflöden som importerar data från en viss källa till Experience Platform.
 * [Datauppsättningar](../../../catalog/datasets/user-guide.md): En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader).
@@ -31,7 +31,7 @@ Det är praktiskt att ha en förståelse för följande funktioner och begrepp i
 
 ## Filterkällor, dataflöden {#filter-sources-dataflows}
 
-I användargränssnittet för Experience Platform väljer du **[!UICONTROL Sources]** i den vänstra navigeringen och sedan **[!UICONTROL Dataflows]** i den övre rubriken.
+I Experience Platform-gränssnittet väljer du **[!UICONTROL Sources]** i den vänstra navigeringen och sedan **[!UICONTROL Dataflows]** i den övre rubriken.
 
 ![Dataflödessidan i källarbetsytan](../../images/tutorials/filter/dataflows-page.png)
 
@@ -120,7 +120,7 @@ Om du vill ta bort alla filter väljer du **[!UICONTROL Clear all]**.
 
 ## Filtrera källkonton {#filter-sources-accounts}
 
-I användargränssnittet för Experience Platform väljer du [!UICONTROL Sources] i den vänstra navigeringen och sedan **[!UICONTROL Accounts]** i den övre rubriken. Du kan filtrera dina källkonton baserat på källan som de skapades med eller användaren som skapade dem.
+I Experience Platform-gränssnittet väljer du [!UICONTROL Sources] i den vänstra navigeringen och sedan **[!UICONTROL Accounts]** i den övre rubriken. Du kan filtrera dina källkonton baserat på källan som de skapades med eller användaren som skapade dem.
 
 ![Kontosidan i källarbetsytan](../../images/tutorials/filter/accounts.png)
 
@@ -154,7 +154,7 @@ Markera ellipserna (`...`) bredvid ett dataflödesnamn för en lista med infogad
 | --- | --- |
 | [!UICONTROL Edit schedule] | Välj **[!UICONTROL Edit schedule]** om du vill uppdatera matningsschemat för ditt dataflöde. Det går inte att redigera ett dataflöde som har ställts in på engångsintag. |
 | [!UICONTROL Disable dataflow] | Välj **[!UICONTROL Disable dataflow]** om du vill inaktivera ett dataflöde. Det här alternativet tar inte bort dataflödet. |
-| [!UICONTROL View in monitoring] | Välj **[!UICONTROL View in monitoring]** om du vill visa mått och status för dataflödet på kontrollpanelen. Mer information finns i handboken om [övervakning av källdata &#x200B;](../../../dataflows/ui/monitor-sources.md). |
+| [!UICONTROL View in monitoring] | Välj **[!UICONTROL View in monitoring]** om du vill visa mått och status för dataflödet på kontrollpanelen. Mer information finns i handboken om [övervakning av källdata ](../../../dataflows/ui/monitor-sources.md). |
 | [!UICONTROL Delete] | Välj **[!UICONTROL Delete]** om du vill ta bort dataflödet. |
 | [!UICONTROL Run on-demand] | Välj **[!UICONTROL Run on-demand]** om du vill utlösa en enda iteration för ett dataflöde. Mer information finns i guiden [Skapa ett dataflöde på begäran](../ui/on-demand-ingestion.md). |
 | [!UICONTROL Subscribe to alerts] | Välj **[!UICONTROL Subscribe to alerts]** om du vill visa ett popup-fönster med aviseringar som du kan prenumerera på: <ul><li>Körningsstart för källdataflöde: Välj den här aviseringen om du vill få ett meddelande när körningen av dataflödet på begäran börjar.</li><li>Källdataflöde har körts: Välj den här aviseringen om du vill få ett meddelande när körningen av dataflödet på begäran har slutförts.</li><li>Körningsfel för källdataflöde: Välj den här aviseringen när körningen av dataflödet på begäran misslyckas på grund av fel.</li></ul> Mer information finns i guiden om att [prenumerera på aviseringar för källdataflöden](../ui/alerts.md). |
@@ -163,4 +163,4 @@ Markera ellipserna (`...`) bredvid ett dataflödesnamn för en lista med infogad
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du lärt dig navigera genom källkonton och dataflödessidor. Mer information om källor finns i [Källöversikt](../../home.md).
+Genom att läsa det här dokumentet har du lärt dig navigera genom källkonton och dataflödessidor. Mer information om källor finns i [källöversikten](../../home.md).
