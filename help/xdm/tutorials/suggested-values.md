@@ -2,7 +2,7 @@
 title: Hantera föreslagna värden i API
 description: Lär dig hur du lägger till föreslagna värden i ett strängfält i API:t för schemaregister.
 exl-id: 96897a5d-e00a-410f-a20e-f77e223bd8c4
-source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '654'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Om du till skillnad från enum lägger till **föreslagna värden** i ett strän
 
 Den här guiden beskriver hur du hanterar föreslagna värden med [API:t för schemaregister](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). Anvisningar om hur du gör detta i Adobe Experience Platform användargränssnitt finns i [användargränssnittshandboken på enum och föreslagna värden](../ui/fields/enum.md).
 
-## Förhandskrav
+## Förutsättningar
 
 I den här handboken förutsätts du känna till elementen i schemakompositionen i XDM och hur du använder API:t för schemaregister för att skapa och redigera XDM-resurser. Om du behöver en introduktion läser du i följande dokumentation:
 
@@ -69,9 +69,11 @@ Du kan också definiera ett strängfält som inte innehåller en `enum`-array oc
 
 Eftersom strängen inte har någon `enum`-matris för att definiera begränsningar, kan egenskapen `meta:enum` utökas så att den innehåller nya värden.
 
-<!-- ## Manage suggested values for standard fields
+<!-- 
+## Manage suggested values for standard fields
 
-For existing standard fields, you can [add suggested values](#add-suggested-standard) or [remove suggested values](#remove-suggested-standard). -->
+For existing standard fields, you can [add suggested values](#add-suggested-standard) or [remove suggested values](#remove-suggested-standard). 
+-->
 
 ## Lägga till föreslagna värden i ett standardfält {#add-suggested-standard}
 
@@ -81,7 +83,7 @@ Om du vill utöka `meta:enum` för ett standardsträngfält kan du skapa en [ege
 >
 >Föreslagna värden för strängfält kan bara läggas till på schemanivå. Att utöka `meta:enum` för ett standardfält i ett schema påverkar alltså inte andra scheman som använder samma standardfält.
 
-Följande begäran lägger till föreslagna värden i standardfältet `eventType` (tillhandahålls av klassen [&#x200B; XDM ExperienceEvent](../classes/experienceevent.md)) för det schema som identifieras under `sourceSchema`:
+Följande begäran lägger till föreslagna värden i standardfältet `eventType` (tillhandahålls av klassen [ XDM ExperienceEvent](../classes/experienceevent.md)) för det schema som identifieras under `sourceSchema`:
 
 ```curl
 curl -X POST \
@@ -150,7 +152,8 @@ När du har använt beskrivningen svarar schemaregistret med följande när sche
 >}
 >```
 
-<!-- ### Remove suggested values {#remove-suggested-standard}
+<!-- 
+### Remove suggested values {#remove-suggested-standard}
 
 If a standard string field has predefined suggested values, you can remove any values that you do not wish to see in segmentation. This is done through by creating a [friendly name descriptor](../api/descriptors.md#friendly-name) for the schema that includes an `xdm:excludeMetaEnum` property.
 
@@ -210,7 +213,8 @@ A successful response returns HTTP status 201 (Created) and the details of the n
   "meta:containerId": "tenant",
   "@id": "f3a1dfa38a4871cf4442a33074c1f9406a593407"
 }
-``` -->
+``` 
+-->
 
 ## Hantera föreslagna värden för ett anpassat fält {#suggested-custom}
 
