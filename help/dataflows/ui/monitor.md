@@ -2,7 +2,7 @@
 title: Översikt över kontrollpanelen för övervakning
 description: Lär dig hur du använder kontrollpanelen för övervakning i användargränssnittet i Adobe Experience Platform
 exl-id: 06ea5380-d66e-45ae-aa02-c8060667da4e
-source-git-commit: cca405c58551a52a044ac513921298637974e88e
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '951'
 ht-degree: 0%
@@ -133,6 +133,8 @@ Genom att läsa det här dokumentet kan du nu navigera genom kontrollpanelen i a
 * [Övervaka målgruppsdata](monitor-audiences.md).
 * [Övervaka måldata](monitor-destinations.md).
 
-<!-- >[!TAB Prospect]
+<!-- 
+>[!TAB Prospect]
 
-Select **[!UICONTROL Prospect]** to update your dashboard and display metrics on prospecting data that has been ingested to Experience Platform over the course of a given period. **Note**: You can only view prospect data type activities if you are [entitled to prospect data](../../rtcdp/partner-data/prospecting.md). -->
+Select **[!UICONTROL Prospect]** to update your dashboard and display metrics on prospecting data that has been ingested to Experience Platform over the course of a given period. **Note**: You can only view prospect data type activities if you are [entitled to prospect data](../../rtcdp/partner-data/prospecting.md). 
+-->
