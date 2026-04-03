@@ -2,7 +2,7 @@
 title: Datatyp för insamling av kapitelinformation
 description: Lär dig mer om datatypen Kapitel Details Collection Experience Data Model (XDM).
 exl-id: 4f841f5a-3840-4da5-a3a4-ceecde87c684
-source-git-commit: 799a384556b43bc844782d8b67416c7eea77fbf0
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '177'
 ht-degree: 0%
@@ -17,13 +17,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Varje visningsnamn innehåller en länk med mer information om dess ljud- och videoparametrar. De länkade sidorna innehåller information om videoannonser som samlats in av Adobe, implementeringsvärden, nätverksparametrar, rapporter och viktiga överväganden.
+>Varje visningsnamn innehåller en länk med mer information om dess ljud- och videoparametrar. De länkade sidorna innehåller information om videoannonsdata som samlats in av Adobe, implementeringsvärden, nätverksparametrar, rapportering och viktiga överväganden.
 
 | Visningsnamn | Egenskap | Datatyp | Obligatoriskt | Beskrivning |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|-----------|----------|---------------------------------------------------|
-| [[!UICONTROL Chapter Length Or Duration]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html?lang=sv-SE#chapter-length) | `length` | heltal | Ja | Kapitelns längd i sekunder. |
-| [[!UICONTROL Chapter Name]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html?lang=sv-SE#chapter-name) | `friendlyName` | string | Nej | Namnet på kapitlet och/eller segmentet. |
-| [[!UICONTROL Chapter Offset]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html?lang=sv-SE#chapter-offset) | `offset` | heltal | Ja | Kapitelns förskjutning i innehållet (i sekunder) från början. |
-| [[!UICONTROL Chapter Position]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html?lang=sv-SE#chapter-position) | `index` | heltal | Ja | Placeringen (index, heltal) av kapitlet inuti innehållet. |
+| [[!UICONTROL Chapter Length Or Duration]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html#chapter-length) | `length` | heltal | Ja | Kapitelns längd i sekunder. |
+| [[!UICONTROL Chapter Name]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html#chapter-name) | `friendlyName` | string | Nej | Namnet på kapitlet och/eller segmentet. |
+| [[!UICONTROL Chapter Offset]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html#chapter-offset) | `offset` | heltal | Ja | Kapitelns förskjutning i innehållet (i sekunder) från början. |
+| [[!UICONTROL Chapter Position]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/chapter-parameters.html#chapter-position) | `index` | heltal | Ja | Placeringen (index, heltal) av kapitlet inuti innehållet. |
 
 {style="table-layout:auto"}
