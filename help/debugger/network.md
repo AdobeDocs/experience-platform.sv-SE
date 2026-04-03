@@ -6,7 +6,7 @@ seo-description: Experience Platform Debugger Network screen
 seo-title: Network Tab
 uuid: 839686c9-6e4f-4661-acf6-150ea24dc47f
 exl-id: ed0579ef-ec26-43df-9453-a395c105038a
-source-git-commit: df1a67e4b6f3d2eaeaba2b8d3c9b1588ee0b1461
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '215'
 ht-degree: 0%
@@ -19,7 +19,7 @@ Fliken **Nätverk** samlar alla Adobe Experience Cloud-lösningsanrop som gjorts
 
 ![](images/network.jpg)
 
-Den här skärmen är användbar när du vill jämföra nyckelvärdepar i olika träffar. Du kan bekräfta att de parametrar som används för integreringar, till exempel Experience Cloud Visitor-ID eller Kompletterande data-ID, är konsekventa för alla integreringar.
+Den här skärmen är användbar när du vill jämföra nyckelvärdepar i olika träffar. Du kan bekräfta att de parametrar som används för integreringar, som Experience Cloud Visitor ID eller Kompletterande data ID, är konsekventa för alla integreringar.
 
 >[!NOTE]
 >
@@ -35,9 +35,11 @@ Markera ett objekt i nätverksvyn om du vill visa en utökad vy. I det utökade 
 
 ![](images/network-expand.jpg)
 
-<!--Use the icon at the top of each column to copy the server call URL to your clipboard, where you can paste it into another document for reference or debugging purposes.
+<!--
+Use the icon at the top of each column to copy the server call URL to your clipboard, where you can paste it into another document for reference or debugging purposes.
 
-![](images/copy.jpg)-->
+![](images/copy.jpg)
+-->
 
 Om du vill rensa listan väljer du **[!UICONTROL Remove Events]**.
 
