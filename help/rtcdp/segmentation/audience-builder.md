@@ -2,11 +2,11 @@
 title: Audience Builder i Real-Time Customer Data Platform
 description: Lär dig hur du använder Audience Builder i Real-Time Customer Data Platform för att skapa målgrupper.
 feature: Get Started, Audiences
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: da87baad-b82a-4a45-89c3-cf20d66fe657
-source-git-commit: 809f80c721d6eedf5ee88dbb1cf4bf7e5a413614
+source-git-commit: ec31766ade15eb04907803c8cfe450fd9bdc1406
 workflow-type: tm+mt
-source-wordcount: '1079'
+source-wordcount: '1115'
 ht-degree: 0%
 
 ---
@@ -54,11 +54,15 @@ På fliken [!UICONTROL Attributes] kan du bläddra bland kontoattribut som tillh
 
 ![Fliken Attribut visas i Audience Builder](../assets/segmentation/audience-builder/attributes.png)
 
+>[!NOTE]
+>
+>Sammanfattningsdata är i **begränsad tillgänglighet**.
+
 När du väljer ett attribut kan du se sammanfattningsdata genom att välja [informationsikonen](../../images/icons/info.png). Sammanfattningsdata innehåller information om till exempel de översta värdena, en förklaring av vad fältet är, antalet poster för värdena samt procentandelen konton som innehåller värden för det här attributet.
 
 Avsnittet **[!UICONTROL Populated]** visar antalet poster där attributet är ifyllt jämfört med det totala antalet tillgängliga poster samt procentandelen konton som har ett värde för det här fältet.
 
-Avsnittet **[!UICONTROL Top values]** visar de vanligaste värdena för attributet och innehåller detaljer som värdet, antalet poster som har värdet samt den procentandel av det totala antalet poster som värdet representerar.
+Avsnittet **[!UICONTROL Top values]** visar de vanligaste värdena för attributet och innehåller detaljer som värdet, antalet poster som har värdet samt den procentandel av det totala antalet poster som värdet representerar. Antalet poster för varje fält bestäms av profilögonblicksbilden, som ger en konsoliderad vy över posterna efter att alla data i den bidragande datauppsättningen har sammanfogats.
 
 ![En portfölj som visar en fullt ifylld version av sammanfattningsdata för ett attribut.](../assets/segmentation/audience-builder/full-summary-data.png){width="300"}
 
