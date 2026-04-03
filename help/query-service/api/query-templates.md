@@ -5,7 +5,7 @@ title: Frågemallar för API-slutpunkt
 description: Den här guiden beskriver de olika API-anrop för frågemallar som du kan göra med hjälp av API:t för frågetjänsten.
 role: Developer
 exl-id: 14cd7907-73d2-478f-8992-da3bdf08eacc
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '977'
 ht-degree: 0%
@@ -18,11 +18,11 @@ ht-degree: 0%
 
 I följande avsnitt beskrivs de olika API-anrop du kan göra med API:t [!DNL Query Service]. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran med obligatoriska rubriker och ett exempelsvar.
 
-Mer information om hur du skapar mallar med användargränssnittet i Experience Platform finns i [dokumentationen för användargränssnittsmallar](../ui/query-templates.md).
+Information om hur du skapar mallar med Experience Platform-gränssnittet finns i [dokumentationen för användargränssnittsmallar](../ui/query-templates.md).
 
 ### Hämta en lista med frågemallar
 
-Du kan hämta en lista med alla frågemallar för din organisation genom att göra en GET-förfrågan till slutpunkten `/query-templates`.
+Du kan hämta en lista över alla frågemallar för din organisation genom att göra en GET-begäran till slutpunkten `/query-templates`.
 
 **API-format**
 
@@ -44,7 +44,7 @@ Här följer en lista med tillgängliga frågeparametrar för att lista frågema
 | `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. `orderby=created` sorterar till exempel resultat efter skapade i stigande ordning. Om du lägger till en `-` före skapad (`orderby=-created`) sorteras objekt efter att de har skapats i fallande ordning. |
 | `limit` | Anger sidstorleksgränsen för att styra antalet resultat som ska inkluderas på en sida. (*Standardvärde: 20*) |
 | `start` | Ange en tidsstämpel för ISO-format för att beställa resultaten. Om inget startdatum anges returnerar API-anropet de äldsta mallarna först och fortsätter sedan att visa de senaste resultaten.<br> ISO-tidsstämplar tillåter olika nivåer av granularitet för datum och tid. Grundläggande ISO-tidsstämplar har formatet `2020-09-07` för att uttrycka datumet 7 september 2020. Ett mer komplext exempel skrivs som `2022-11-05T08:15:30-05:00` och motsvarar 5 november 2022, 8:15:30 am, US Eastern Standard Time. En tidszon kan anges med en UTC-förskjutning och anges med suffixet Z (`2020-01-01T01:01:01Z`). Om ingen tidszon anges är standardvärdet noll. |
-| `property` | Filtrera resultat baserat på fält. Filtren **måste** vara HTML escape. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `name` och `userId`. Den enda operatorn som stöds är `==` (lika med). `name==my_template` returnerar till exempel alla frågemallar med namnet `my_template`. |
+| `property` | Filtrera resultat baserat på fält. Filtren **måste** vara HTML escape-konverterade. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `name` och `userId`. Den enda operatorn som stöds är `==` (lika med). `name==my_template` returnerar till exempel alla frågemallar med namnet `my_template`. |
 
 **Begäran**
 
@@ -113,7 +113,7 @@ Ett godkänt svar returnerar HTTP-status 200 med en lista över frågemallar fö
 
 ### Skapa en frågemall
 
-Du kan skapa en frågemall genom att göra en POST-förfrågan till slutpunkten `/query-templates`.
+Du kan skapa en frågemall genom att göra en POST-begäran till slutpunkten `/query-templates`.
 
 **API-format**
 
@@ -140,7 +140,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/query-templates
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `sql` | Den SQL-fråga som du vill skapa. Du kan antingen använda standard-SQL eller en parameterersättning. Om du vill använda en parameterersättning i SQL måste du lägga till en `$` som prefix i parameternyckeln. `$key`, till exempel, och ange parametrarna som används i SQL som JSON-nyckelvärdepar i fältet `queryParameters`. De värden som skickas här är standardparametrarna som används i mallen. Om du vill åsidosätta de här parametrarna måste du åsidosätta dem i POSTEN. |
+| `sql` | Den SQL-fråga som du vill skapa. Du kan antingen använda standard-SQL eller en parameterersättning. Om du vill använda en parameterersättning i SQL måste du lägga till en `$` som prefix i parameternyckeln. `$key`, till exempel, och ange parametrarna som används i SQL som JSON-nyckelvärdepar i fältet `queryParameters`. De värden som skickas här är standardparametrarna som används i mallen. Om du vill åsidosätta de här parametrarna måste du åsidosätta dem i POST-begäran. |
 | `name` | Namnet på frågemallen. |
 | `queryParameters` | Ett nyckelvärdepar som ersätter parametriserade värden i SQL-satsen. Det krävs bara **om** du använder parameterersättningar i den SQL som du anger. Ingen värdetypskontroll utförs för dessa nyckelvärdepar. |
 
@@ -180,7 +180,7 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om den n
 
 ### Hämta en angiven frågemall
 
-Du kan hämta en specifik frågemall genom att göra en GET-begäran till `/query-templates/{TEMPLATE_ID}`-slutpunkten och ange ID:t för frågemallen i begärandesökvägen.
+Du kan hämta en specifik frågemall genom att göra en GET-begäran till slutpunkten `/query-templates/{TEMPLATE_ID}` och ange ID:t för frågemallen i sökvägen för begäran.
 
 **API-format**
 
@@ -189,7 +189,7 @@ GET /query-templates/{TEMPLATE_ID}
 ```
 
 | Egenskap | Beskrivning |
-| -------- | ----------- | 
+| -------- | ----------- |
 | `{TEMPLATE_ID}` | Värdet `id` för den frågemall som du vill hämta. |
 
 **Begäran**
@@ -238,7 +238,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna fråge
 
 ### Uppdatera en angiven frågemall
 
-Du kan uppdatera en viss frågemall genom att göra en PUT-begäran till `/query-templates/{TEMPLATE_ID}`-slutpunkten och ange ID:t för frågemallen i sökvägen för begäran.
+Du kan uppdatera en viss frågemall genom att göra en PUT-begäran till slutpunkten `/query-templates/{TEMPLATE_ID}` och ange ID:t för frågemallen i sökvägen till begäran.
 
 **API-format**
 
@@ -254,7 +254,7 @@ PUT /query-templates/{TEMPLATE_ID}
 
 >[!NOTE]
 >
->Begäran från PUT kräver att både SQL- och namnfältet fylls i och **skriver över** det aktuella innehållet i frågemallen.
+>PUT-begäran kräver att både SQL- och namnfältet fylls i och **skriver över** det aktuella innehållet i den frågemallen.
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/foundation/query/query-templates/0094d000-9062-4e6a-8fdb-05606805f08f
@@ -273,7 +273,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/query/query-templates/0094
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `sql` | Den SQL-fråga som du vill skapa. Du kan antingen använda standard-SQL eller en parameterersättning. Om du vill använda en parameterersättning i SQL måste du lägga till en `$` som prefix i parameternyckeln. `$key`, till exempel, och ange parametrarna som används i SQL som JSON-nyckelvärdepar i fältet `queryParameters`. De värden som skickas här är standardparametrarna som används i mallen. Om du vill åsidosätta de här parametrarna måste du åsidosätta dem i POSTEN. |
+| `sql` | Den SQL-fråga som du vill skapa. Du kan antingen använda standard-SQL eller en parameterersättning. Om du vill använda en parameterersättning i SQL måste du lägga till en `$` som prefix i parameternyckeln. `$key`, till exempel, och ange parametrarna som används i SQL som JSON-nyckelvärdepar i fältet `queryParameters`. De värden som skickas här är standardparametrarna som används i mallen. Om du vill åsidosätta de här parametrarna måste du åsidosätta dem i POST-begäran. |
 | `name` | Namnet på frågemallen. |
 | `queryParameters` | Ett nyckelvärdepar som ersätter parametriserade värden i SQL-satsen. Det krävs bara **om** du använder parameterersättningar i den SQL som du anger. Ingen värdetypskontroll utförs för dessa nyckelvärdepar. |
 
