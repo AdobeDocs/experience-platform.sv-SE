@@ -3,7 +3,7 @@ title: Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
 last-substantial-update: 2025-01-16T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1799'
 ht-degree: 0%
@@ -104,7 +104,6 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
       * Perioden (`.`) tecken (ASCII-kod 46). Du kan till exempel normalisera &quot;jane.doe@gmail.com&quot; till &quot;janedoe@gmail.com&quot;.
      * Plustecknet (`+`) (ASCII-kod 43) och alla efterföljande tecken. Till exempel normalisera &quot;janedoe+home@gmail.com&quot; till &quot;janedoe@gmail.com&quot;.
   
-
 ## Normalisering av telefonnummer och krav på hashning {#phone-hashing}
 
 Det här behöver du veta om att överföra telefonnummer:
@@ -164,7 +163,7 @@ CRM-målet [!DNL The Trade Desk] är en daglig batchfilöverföring och kräver 
 
 ### Fyll i målinformation {#fill-in-details}
 
-Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=sv-SE) för det här målet måste du ange följande information:
+Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. När [konfigurerar](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) för det här målet måste du ange följande information:
 
 * **[!UICONTROL Account Type]**: Välj alternativet **[!UICONTROL Existing Account]**.
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
