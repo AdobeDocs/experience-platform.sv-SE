@@ -1,13 +1,13 @@
 ---
 title: Bildskärmssegmentering
 description: Lär dig hur du använder kontrollpanelen för övervakning för att observera kantsegmenteringens genomströmning.
-source-git-commit: 809f80c721d6eedf5ee88dbb1cf4bf7e5a413614
+exl-id: 7abba7e8-1f2d-4a21-a93f-8bda7aa4d849
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '532'
 ht-degree: 0%
 
 ---
-
 
 # Bildskärmssegmentering
 
@@ -19,7 +19,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Experien
 
 * [Datastreams](../../datastreams/overview.md): Med datastreams kan du ansluta Experience Platform Edge Network till din datamängd.
 * [Kapacitet](../../landing/license-usage-and-guardrails/capacity.md): I Experience Platform kan du få reda på om din organisation har överskridit några av dina skyddsprofiler och du får information om hur du åtgärdar dessa problem.
-* [Edge-segmentering](../../segmentation/methods/edge-segmentation.md): Edge-segmentering är möjligheten att omedelbart utvärdera segmentdefinitioner i Adobe Experience Platform [&#x200B; vid kanten](../../landing/edge-and-hub-comparison.md), vilket möjliggör användning av samma sida och nästa sidpersonalisering.
+* [Edge-segmentering](../../segmentation/methods/edge-segmentation.md): Edge-segmentering är möjligheten att omedelbart utvärdera segmentdefinitioner i Adobe Experience Platform [ vid kanten](../../landing/edge-and-hub-comparison.md), vilket möjliggör användning av samma sida och nästa sidpersonalisering.
 
 ## Åtkomst {#access}
 
