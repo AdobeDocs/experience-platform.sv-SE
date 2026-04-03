@@ -2,7 +2,7 @@
 title: Metodtips för tillstånd för datahantering
 description: Lär dig mer om de bästa metoderna och verktygen du kan använda för att bättre hantera dina licensrättigheter med Adobe Experience Platform.
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: 163ff97da651ac3a68b5e37e8745b10440519e6f
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '3390'
 ht-degree: 0%
@@ -182,7 +182,9 @@ Det finns ett antal rapporter som hjälper dig att förstå hur profilarkivet ä
 
 * **Rapports-API:t för datauppsättningsöverlappning**: Visar de datauppsättningar som bidrar mest till din adresserbara publik. Du kan använda den här rapporten för att identifiera vilka [!DNL ExperienceEvent] datauppsättningar som du vill ange en förfallotid för. Mer information finns i självstudiekursen om att [generera överlappningsrapporten för datauppsättningen](../../profile/tutorials/dataset-overlap-report.md).
 * **Rapport-API:t för identitetsöverlappning**: Visar de identitetsnamnutrymmen som bidrar mest till din adresserbara publik. Mer information finns i självstudiekursen om att [generera rapporten om identitetsöverlappning](../../profile/api/preview-sample-status.md#generate-the-identity-namespace-overlap-report).
-<!-- * **Unknown Profiles Report API**: Exposes the impact of applying pseudonymous expirations for different time thresholds. You can use this report to identify which pseudonymous expirations threshold to apply. See the tutorial on [generating the unknown profiles report](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) for more information.
+
+<!-- 
+* **Unknown Profiles Report API**: Exposes the impact of applying pseudonymous expirations for different time thresholds. You can use this report to identify which pseudonymous expirations threshold to apply. See the tutorial on [generating the unknown profiles report](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) for more information.
 -->
 
 ### Förfallodatum för pseudonyma profildata {#pseudonymous-profile-expirations}
@@ -191,7 +193,7 @@ Använd funktionen för pseudonyma profiler för att automatiskt ta bort data so
 
 ### Användargränssnitt för datauppsättning - Upplev kvarhållande av händelsedatauppsättning {#data-retention}
 
-Konfigurera inställningar för förfallodatum och kvarhållande för datauppsättningar för att framtvinga en fast kvarhållningsperiod för dina data i datasjön och profilarkivet. När kvarhållningsperioden är slut tas data bort. Experience Event-datas förfallodatum tar bara bort händelser och tar inte bort profilklassdata, vilket minskar den totala datavolymen [&#x200B; i användningsstatistik för licenser. &#x200B;](total-data-volume.md) Mer information finns i handboken om [inställning av datalagringsprincip](../../catalog/datasets/user-guide.md#data-retention-policy).
+Konfigurera inställningar för förfallodatum och kvarhållande för datauppsättningar för att framtvinga en fast kvarhållningsperiod för dina data i datasjön och profilarkivet. När kvarhållningsperioden är slut tas data bort. Experience Event-datas förfallodatum tar bara bort händelser och tar inte bort profilklassdata, vilket minskar den totala datavolymen [ i användningsstatistik för licenser. ](total-data-volume.md) Mer information finns i handboken om [inställning av datalagringsprincip](../../catalog/datasets/user-guide.md#data-retention-policy).
 
 ### Utgångsdatum för profilupplevelsehändelser {#event-expirations}
 
