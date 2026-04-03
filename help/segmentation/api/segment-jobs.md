@@ -4,7 +4,7 @@ title: API-slutpunkt för segmentjobb
 description: Segmentjobbens slutpunkt i Adobe Experience Platform Segmentation Service API gör att du kan hantera segmentjobb för din organisation programmatiskt.
 role: Developer
 exl-id: 105481c2-1c25-4f0e-8fb0-c6577a4616b3
-source-git-commit: 83a249daddbee1ec264b6e505517325c76ac9b09
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1232'
 ht-degree: 0%
@@ -358,7 +358,7 @@ GET /segment/jobs/{SEGMENT_JOB_ID}
 ```
 
 | Egenskap | Beskrivning |
-| -------- | ----------- | 
+| -------- | ----------- |
 | `{SEGMENT_JOB_ID}` | Värdet `id` för segmentjobbet som du vill hämta. |
 
 **Begäran**
@@ -583,7 +583,7 @@ DELETE /segment/jobs/{SEGMENT_JOB_ID}
 ```
 
 | Egenskap | Beskrivning |
-| -------- | ----------- | 
+| -------- | ----------- |
 | `{SEGMENT_JOB_ID}` | Värdet `id` för segmentjobbet som du vill ta bort. |
 
 **Begäran**
