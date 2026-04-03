@@ -2,7 +2,7 @@
 title: Datastyrning i frågetjänst
 description: Den här översikten täcker de viktigaste elementen i datahanteringen i Experience Platform Query Service.
 exl-id: 37543d43-bd8c-4bf9-88e5-39de5efe3164
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '3131'
 ht-degree: 0%
@@ -135,9 +135,9 @@ Mer information finns i guiden om tillgängliga [SSL-alternativ för klientanslu
 
 Kryptering är användning av en algoritmisk process för att omvandla data till kodad och oläslig text för att säkerställa att informationen skyddas och inte är tillgänglig utan en dekrypteringsnyckel.
 
-Med datakompatibiliteten för frågetjänsten säkerställs att data alltid krypteras. Data-in-Transition är alltid HTTPS-kompatibel och data-i-rest krypteras i ett Azure Data Lake-arkiv med hjälp av nycklar på systemnivå. Mer information finns i dokumentationen om [hur data krypteras i Adobe Experience Platform](../../landing/governance-privacy-security/encryption.md). Mer information om hur vilande data krypteras i Azure Data Lake Storage finns i den [officiella Azure-dokumentationen](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption).
+Med datakompatibiliteten för frågetjänsten säkerställs att data alltid krypteras. Data-in-Transition är alltid HTTPS-kompatibel och data-i-rest krypteras i en Azure Data Lake-butik med hjälp av nycklar på systemnivå. Mer information finns i dokumentationen om [hur data krypteras i Adobe Experience Platform](../../landing/governance-privacy-security/encryption.md). Mer information om hur vilande data krypteras i Azure Data Lake Storage finns i [Azure officiella dokumentation](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption).
 
-Data-in-Transition är alltid HTTPS-kompatibel och på liknande sätt när data ligger i viloläge sker krypteringen med kundhanteringsnyckeln (CMK), som redan stöds av Data Lake Management. Den version som stöds för närvarande är TLS1.2. Läs [kundhanterade nycklar (CMK) &#x200B;](../../landing/governance-privacy-security/customer-managed-keys/overview.md) om du vill veta hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
+Data-in-Transition är alltid HTTPS-kompatibel och på liknande sätt när data ligger i viloläge sker krypteringen med kundhanteringsnyckeln (CMK), som redan stöds av Data Lake Management. Den version som stöds för närvarande är TLS1.2. Läs [kundhanterade nycklar (CMK) ](../../landing/governance-privacy-security/customer-managed-keys/overview.md) om du vill veta hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
 
 
 ## Granskning {#audit}
@@ -170,7 +170,7 @@ Följande tabell visar de frågekategorier som har hämtats av granskningsloggar
 
 Nedan finns en lista med tre utökade serverloggar som innehåller mer information än de som finns i frågeloggarna. De utökade loggarna finns i frågekategorierna för granskningsloggar:
 
-1. **Metafrågeloggar**: När en fråga körs körs olika associerade underfrågor till serverdelen (till exempel parsning). Dessa typer av frågor kallas för metadatafrågor. Deras relevanta information finns i granskningsloggarna.
+1. **Meta-frågeloggar**: När en fråga körs körs olika associerade backend-underfrågor (till exempel parsing). Dessa typer av frågor kallas för metadatafrågor. Deras relevanta information finns i granskningsloggarna.
 1. **Sessionsloggar**: Systemet skapar en sessionspostlogg för en användare när de loggar in på frågetjänsten oavsett om de kör en fråga eller inte.
 1. **Anslutningsloggar från tredje part**: En anslutningsgranskningslogg skapas när en användare ansluter frågetjänsten till en tredjepartsklient.
 
@@ -200,7 +200,7 @@ Mer information om [identitetsdata för sekretessförfrågningar](../../privacy-
 
 Frågetjänstfunktioner för datastyrning förenklar och effektiviserar processen för kategorisering av data och efterlevnad av regler för dataanvändning. När data har identifierats kan du med Query Service tilldela den primära identiteten till alla utdatamängder. Du **måste** lägga till identiteter i datauppsättningen för att underlätta förfrågningar om datasekretess och arbeta mot datakompatibilitet.
 
-Schemadatafält kan anges som ett identitetsfält via Experience Platform UI och Query Service. Du kan också [markera de primära identiteterna med SQL-kommandot ALTER TABLE &#x200B;](../sql/syntax.md#alter-table). Det är särskilt användbart att ange en identitet med kommandot `ALTER TABLE` när datauppsättningar skapas med SQL i stället för direkt från ett schema via Experience Platform-gränssnittet. I dokumentationen finns instruktioner om hur du [definierar identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md) när du använder standardscheman.
+Schemadatafält kan anges som ett identitetsfält via Experience Platform UI och Query Service. Du kan också [markera de primära identiteterna med SQL-kommandot ALTER TABLE ](../sql/syntax.md#alter-table). Det är särskilt användbart att ange en identitet med kommandot `ALTER TABLE` när datauppsättningar skapas med SQL i stället för direkt från ett schema via Experience Platform-gränssnittet. I dokumentationen finns instruktioner om hur du [definierar identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md) när du använder standardscheman.
 
 ## Datahygien {#data-hygiene}
 
