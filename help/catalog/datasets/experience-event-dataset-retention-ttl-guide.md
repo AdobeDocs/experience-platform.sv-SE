@@ -2,7 +2,7 @@
 title: Hantera lagring av Experience Event-datauppsättningar i Data Lake med TTL
 description: Lär dig hur du utvärderar, ställer in och hanterar lagring av Experience Event-datauppsättningar i datasjön med hjälp av TTL-konfigurationer (Time-To-Live) med Adobe Experience Platform API:er. Den här guiden förklarar hur TTL-radnivåförfallodatum stöder principer för datalagring, optimerar lagringseffektiviteten och säkerställer effektiv livscykelhantering. Här finns också användningsexempel och metodtips som hjälper dig att effektivt tillämpa TTL.
 exl-id: d688d4d0-aa8b-4e93-a74c-f1a1089d2df0
-source-git-commit: a4662d1042122fa9c3260c0e53c50bd78935cf31
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '2471'
 ht-degree: 0%
@@ -318,7 +318,8 @@ Giltighetstid på radnivå kräver följande tekniska villkor:
 TTL-värden för datauppsättningar utvärderas och bearbetas var 30:e dag, vilket innebär att alla poster som har gått ut tas bort. En händelse anses ha upphört att gälla om den förtärdes i Experience Platform för mer än 30 dagar sedan (importdatum > 30 dagar) och dess händelsedatum överskrider den definierade kvarhållningsperioden (TTL).
 +++
 
-<!-- ### How soon will the Dataset Retention job delete data from Profile services?
+<!-- 
+### How soon will the Dataset Retention job delete data from Profile services?
 
 +++Answer
 Once a retention policy is set, existing events that already exceed the newly defined TTL are immediately deleted. Newer events remain until their timestamps surpass the retention period.
@@ -328,7 +329,8 @@ For example, if you apply a 30-day expiration policy on May 15th, the following 
 - New events receive a 30-day expiration as they are ingested.
 - Existing events with a timestamp older than April 15th are immediately deleted.
 - Existing events with a timestamp after April 15th are set to expire 30 days after their timestamp (for example, an event from April 18th would be deleted on May 18th).
-+++ -->
++++ 
+-->
 
 ### Kan jag ange olika bevarandepolicyer för datavinje- och profiltjänster?
 
