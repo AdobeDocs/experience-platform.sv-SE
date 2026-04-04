@@ -31,14 +31,14 @@ Kom igång genom att läsa materialet i länkarna nedan för att bekanta dig med
     <div><strong>Förbättra din inlärning</strong><br/>Upptäck, felsök och förstärka din förståelse av produktkunskaper utan att avbryta dina arbetsflöden.</div>
     </td>
     <td>
-    <a href="https://experienceleague.adobe.com/en/playlists/experience-platform-get-started-with-ai-assistant"><img src="./assets/landing/ai-videos.png" style="width:100%;max-height:100%"></a>
+    <a href="https://experienceleague.adobe.com/sv/playlists/experience-platform-get-started-with-ai-assistant"><img src="./assets/landing/ai-videos.png" style="width:100%;max-height:100%"></a>
     <div><strong>Besök videouppspelningslistan för AI Assistant</strong><br/>Lär dig mer om de många olika utmaningar och användningsområden som du kan använda med AI Assistant.</div>
     </td>
   </tr>
   <tr style="border: 0;">
     <td align="center"><a href="./home.md"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
     <td align="center"><a href="./home.md#product-knowledge"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
-    <td align="center"><a href="https://experienceleague.adobe.com/en/playlists/experience-platform-get-started-with-ai-assistant"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
+    <td align="center"><a href="https://experienceleague.adobe.com/sv/playlists/experience-platform-get-started-with-ai-assistant"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
     </tr>
 </table>
 
@@ -437,11 +437,11 @@ Titta på följande videofilmer för att lära dig mer om hur du använder AI As
 
 Läs följande för exempel på användning av AI Assistant (äldre):
 
-* [Minska introduktionstiden för nya medlemmar i ditt team](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/onboard-new-team-members-in-less-than-half-the-time-with-ai/ba-p/706153)
-* [Tydligare målgrupper och optimerade marknadsföringsåtgärder](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-helps-optimize-marketing-operations-by-de/ba-p/696002)
-* [Kontrollera beroenden och minimera risken under dataperifieringar](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-minimizes-risk-during-data-updates-by-checking/ba-p/713364)
-* [Upptäck och distribuera nya funktioner snabbare](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/discover-and-deploy-new-features-faster-with-ai-assistant-in/ba-p/731125)
-* [Revolutionera kundsupporten med AI Assistant](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-in-adobe-experience-platform-revolutionizing/ba-p/735416)
+* [Minska introduktionstiden för nya medlemmar i ditt team](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/onboard-new-team-members-in-less-than-half-the-time-with-ai/ba-p/706153?profile.language=sv)
+* [Tydligare målgrupper och optimerade marknadsföringsåtgärder](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-helps-optimize-marketing-operations-by-de/ba-p/696002?profile.language=sv)
+* [Kontrollera beroenden och minimera risken under dataperifieringar](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-minimizes-risk-during-data-updates-by-checking/ba-p/713364?profile.language=sv)
+* [Upptäck och distribuera nya funktioner snabbare](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/discover-and-deploy-new-features-faster-with-ai-assistant-in/ba-p/731125?profile.language=sv)
+* [Revolutionera kundsupporten med AI Assistant](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-in-adobe-experience-platform-revolutionizing/ba-p/735416?profile.language=sv)
 
 >[!TAB Ytterligare videoinnehåll]
 
@@ -462,9 +462,9 @@ Klicka på länkarna nedan för att få en bättre förståelse för hur AI Assi
 <a href="./home.md" target="_blank">Dokumentation</a> - <a href="./ui-guide.md" target="_blank">Användargränssnittsguide</a> - <a href="./access.md" target="_blank">Åtkomst till AI Assistant</a> - <a href="./privacy.md" target="_blank">Integritet, säkerhet och styrning</a> - <a href="./faq.md" target="_blank">Vanliga frågor</a>
 </td>
 <td><strong>Adobe Journey Optimizer</strong><br/>
-<a href="https://experienceleague.adobe.com/en/docs/journey-optimizer/using/get-started/ai-assistant" target="_blank">Dokumentation</a>
+<a href="https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/get-started/ai-assistant" target="_blank">Dokumentation</a>
 </td>
 <td><strong>Customer Journey Analytics</strong><br/>
-<a href="https://experienceleague.adobe.com/en/docs/analytics-platform/using/ai-assistant" target="_blank">Dokumentation</a>
+<a href="https://experienceleague.adobe.com/sv/docs/analytics-platform/using/ai-assistant" target="_blank">Dokumentation</a>
 </td>
 </tr></table>

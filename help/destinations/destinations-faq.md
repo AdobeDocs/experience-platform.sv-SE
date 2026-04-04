@@ -199,7 +199,7 @@ Detaljerade förklaringar av kraven för ID-matchning finns i [Krav för ID-matc
 +++Svar
 Nej, det krävs inte att Web SDK aktiverar målgrupper för [[!DNL Adobe Target]](catalog/personalization/adobe-target-connection.md).
 
-Om [[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html) används i stället för Web SDK stöds endast nästa sessionspersonalisering.
+Om [[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html?lang=sv-SE) används i stället för Web SDK stöds endast nästa sessionspersonalisering.
 
 För [anpassning av hela och nästa sida](ui/activate-edge-personalization-destinations.md) måste du använda antingen Web SDK eller [Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/). Mer implementeringsinformation finns i dokumentationen om att [aktivera målgrupper mot kantmål](ui/activate-edge-personalization-destinations.md).
 +++
@@ -231,7 +231,7 @@ Målgruppsdefinitioner sprids till Edge Network på upp till en timme. Men om en
 ### Var kan jag se de aktiverade attributen i [!DNL Adobe Target]? {#target-activated-attributes-location}
 
 +++Svar
-Attribut kommer att vara tillgängliga för användning i Target i erbjudanden från [JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html) och [HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html).
+Attribut kommer att vara tillgängliga för användning i Target i erbjudanden från [JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html?lang=sv-SE) och [HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html?lang=sv-SE).
 +++
 
 ### Kan jag skapa ett mål utan ett datastream och sedan lägga till ett datastream till samma mål vid en senare tidpunkt? {#destination-without-datastream}
