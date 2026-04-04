@@ -33,7 +33,7 @@ ht-degree: 0%
 
 Titta på videon nedan om du vill få en kort översikt över hur du konfigurerar anslutningen [!DNL Adobe Target] i Experience Platform.
 
->[!VIDEO](https://video.tv.adobe.com/v/3418799/?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3449797/?captions=swe&quality=12&learn=on)
 
 ## Användningsexempel som stöds baserat på implementeringstyp {#supported-use-cases}
 
