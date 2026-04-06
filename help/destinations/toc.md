@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: 5408dd8a442e6ad47f6c1e12326d04b2390bffaa
+source-git-commit: 79c277ea9e45c7cc9888e7d6c5edaf8d68904b03
 workflow-type: tm+mt
-source-wordcount: '1344'
+source-wordcount: '1349'
 ht-degree: 2%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 2%
    * [Identitetshantering i arbetsflödet för målaktivering](./how-destinations-work/identity-handling.md)
    * [Målgruppens livscykel på direktuppspelningsmål](./how-destinations-work/audience-lifecycle-streaming-destinations.md)
 * API-självstudier {#api}
-   * [Aktivera data till filbaserade mål med API:t för Flow Service &#x200B;](/help/destinations/api/activate-segments-file-based-destinations.md)
+   * [Aktivera data till filbaserade mål med API:t för Flow Service ](/help/destinations/api/activate-segments-file-based-destinations.md)
    * [Ansluta till direktuppspelningsmål och aktivera data med API:t för Flow Service](./api/streaming-destinations.md)
    * [Ansluta till filbaserade mål för e-postmarknadsföring och aktivera data med API:t för Flow Service](./api/connect-activate-batch-destinations.md)
    * [Aktivera målgrupper för batchdestinationer via ad hoc-aktiverings-API](./api/ad-hoc-activation-api.md)
@@ -33,7 +33,7 @@ ht-degree: 2%
    * [Ta bort destinationskonton](./api/delete-destination-account.md)
    * [Ta bort måldataflöden](./api/delete-destination-dataflow.md)
    * [Exportera datauppsättningar](/help/destinations/api/export-datasets.md)
-   * [Sortera och filtrera API-svar för mål](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html?lang=sv-SE#use-cases)
+   * [Sortera och filtrera API-svar för mål](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html#use-cases)
 * Användargränssnittsguider {#ui}
    * [Arbetsytan Destinationer](./ui/destinations-workspace.md)
    * [Skapa en ny målanslutning](./ui/connect-destination.md)
@@ -71,7 +71,7 @@ ht-degree: 2%
       * [(Äldre) (V2) Marketo Engage-anslutning](./catalog/adobe/marketo-engage.md)
       * [(Beta) Marketo Engage Person Sync-anslutning](./catalog/adobe/marketo-engage-person-sync.md)
       * [Marketo Measure Ultimate-anslutning](./catalog/adobe/marketo-measure-ultimate.md)
-      * [Experience Platform målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=sv-SE)
+      * [Experience Platform målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
       * [Sammansättningsanslutning för federerad publik](https://www.adobe.com/go/destinations-federated-audience-composition)
    * Advertising destinationer{#advertising}
       * [(Beta) Acxiom Audience Connection](./catalog/advertising/acxiom-audience-connection.md)
@@ -81,7 +81,8 @@ ht-degree: 2%
       * [Äldre Adobe Advertising Cloud DSP-anslutning](./catalog/advertising/adobe-advertising-cloud-dsp-connection-legacy.md)
       * [Adobe Advertising Cloud-tillägg](./catalog/advertising/adobe-advertising-cloud.md)
       * [Anpassa anslutning](./catalog/advertising/adform.md)
-      * [Amazon Ads-anslutning](./catalog/advertising/amazon-ads.md)
+      * [(Äldre) Amazon Ads-anslutning](./catalog/advertising/amazon-ads.md)
+      * [Amazon Ads v2-anslutning](./catalog/advertising/amazon-ads-v2.md)
       * [Tillägget Awin Advertiser Conversion Tag](./catalog/advertising/awin-conversiontag.md)
       * [Awin Advertiser Mastertag extension](./catalog/advertising/awin-mastertag.md)
       * [Bing Ads UET-tillägg (Universal Event Tracking)](./catalog/advertising/bing-ads.md)
@@ -331,4 +332,4 @@ ht-degree: 2%
       * [Självbetjäningsmall för dokumentation](./destination-sdk/docs-framework/self-service-template.md)
       * [Bästa tillvägagångssätt](./destination-sdk/docs-framework/authoring-best-practices.md)
 * [Vanliga frågor och svar](./destinations-faq.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

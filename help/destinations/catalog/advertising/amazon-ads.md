@@ -1,26 +1,32 @@
 ---
-title: Amazon Ads
-description: Amazon Ads erbjuder en rad alternativ som hjälper er att nå era annonsmål för registrerade säljare, leverantörer, bokleverantörer, KDP-författare (Kindle Direct Publishing), apputvecklare och/eller byråer. Integreringen av Amazon Ads med Adobe Experience Platform ger körklar integrering med Amazon Ads-produkter, inklusive Amazon DSP (ADSP). Med Amazon Ads-destinationen i Adobe Experience Platform kan man definiera målgrupper för annonsörer för målinriktning och aktivering i Amazon DSP.
+title: (Äldre) Amazon Ads
+description: Amazon Ads erbjuder en rad alternativ som hjälper er att nå era annonsmål för registrerade säljare, leverantörer, bokleverantörer, KDP-författare (Kindle Direct Publishing), apputvecklare och byråer. Integreringen av Amazon Ads med Adobe Experience Platform ger körklar integrering med Amazon Ads-produkter, inklusive Amazon DSP (ADSP). Med Amazon Ads-destinationen i Adobe Experience Platform kan man definiera målgrupper för annonsörer för målinriktning och aktivering i Amazon DSP.
 last-substantial-update: 2025-10-08T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 1e93c78b13159a2aed24d283e3768c670ad14097
 workflow-type: tm+mt
-source-wordcount: '2127'
+source-wordcount: '2156'
 ht-degree: 1%
 
 ---
 
-# Amazon Ads-anslutning {#amazon-ads}
+# (Äldre) Amazon Ads-anslutning {#amazon-ads}
 
 ## Översikt {#overview}
 
-[!DNL Amazon Ads] erbjuder en rad alternativ som hjälper dig att nå dina annonsmål för registrerade säljare, leverantörer, bokleverantörer, KDP-författare (Kindle Direct Publishing), apputvecklare och/eller byråer.
+[!DNL Amazon Ads] erbjuder en rad alternativ som hjälper dig att uppnå dina reklammål för registrerade säljare, leverantörer, bokleverantörer, KDP-författare (Kindle Direct Publishing), apputvecklare eller byråer.
 
-Integrationen [!DNL Amazon Ads] med [!DNL Adobe Experience Platform] ger körklar integrering med [!DNL Amazon Ads]-produkter, inklusive Amazon DSP (ADSP) och Amazon Marketing Cloud (AMC).
+>[!IMPORTANT]
+>
+>[[!DNL Amazon Ads v2]](./amazon-ads-v2.md) är det aktuella målet för alla nya [!DNL Amazon Ads]-anslutningar. Om du har en befintlig (äldre) [!DNL Amazon Ads]-anslutning fortsätter den att fungera utan nödvändiga ändringar. [[!DNL Amazon Ads v2]](./amazon-ads-v2.md) ansluter till [!DNL Ads Data Manager], som har stöd för utökade identitetstyper, adressrelaterade fält och datadelning mellan [!DNL Amazon Ads]-produkter, vilket förbättrar målgruppsanpassningen och målgruppsmatchningen jämfört med det här gamla målet.
+>
+>Efter slutet av april 2026 kommer namnet på [!DNL Amazon Ads v2] att ändras till [!DNL Amazon Ads] och det gamla kortet kommer att döljas, så att ett enda målkort finns kvar i katalogen. Befintliga gamla dataflöden fortsätter att fungera och du kan hantera dem på fliken **[!UICONTROL Browse]** efter det datumet.
 
-Med [!DNL Amazon Ads]-målet i [!DNL Adobe Experience Platform] kan användare definiera annonsörernas målgrupper för målinriktning och aktivering i Amazon DSP.  Dessutom kan användare överföra sina data till [!DNL Amazon Marketing Cloud] för att förstå målgruppens prestanda, annonsörens tillhandahållna dimensioner, medlemskap i Amazon-segment eller andra signaler som är tillgängliga i AMC. När annonsörer har överförts till AMC kan användare använda [!DNL Amazon Marketing Cloud] för att ändra, förbättra eller lägga till i målgruppsmedlemmar med hjälp av Amazon-signaler inifrån [!DNL Amazon Marketing Cloud].
+Integrationen [!DNL Amazon Ads] med [!DNL Adobe Experience Platform] ger körklar integrering med [!DNL Amazon Ads]-produkter, inklusive [!DNL Amazon DSP] (ADSP) och [!DNL Amazon Marketing Cloud] (AMC).
 
-AMC sammanför unika signaler från olika Amazon-ägda och styrda kanaler, som omfattar alla medier, inklusive visning, video, direktuppspelad TV, ljud och sponsrade annonser. Användare kan skicka kuraterade segment från [!DNL Adobe Experience Platform] till AMC för att förbättra inlärningen, till exempel målgruppernas marknadsgrupper, livsstilskohorter och varumärkesinteraktionsmönster. Augmenterade segment kan sedan användas för att optimera medieaktiveringar i Amazon DSP.
+Med [!DNL Amazon Ads]-målet i [!DNL Adobe Experience Platform] kan du definiera annonsörernas målgrupper för målinriktning och aktivering på [!DNL Amazon DSP]. Du kan också överföra dina data till [!DNL Amazon Marketing Cloud] för att förstå prestanda efter målgrupp, mått som tillhandahålls av annonsörer, medlemskap i Amazon-segment eller andra signaler som är tillgängliga i AMC. När annonsörer har överförts till AMC kan användare använda [!DNL Amazon Marketing Cloud] för att ändra, förbättra eller lägga till i målgruppsmedlemmar med hjälp av Amazon-signaler inifrån [!DNL Amazon Marketing Cloud].
+
+AMC sammanför unika signaler från olika Amazon-ägda och styrda kanaler, till exempel för visning, video, direktuppspelad TV, ljud och sponsrade annonser. Du kan skicka kuraterade segment från [!DNL Adobe Experience Platform] till AMC för att förbättra inlärningen, till exempel målgruppernas marknadsgrupper, livsstilskohorter och varumärkesinteraktionsmönster. Använd utökade segment för att optimera medieaktiveringar i [!DNL Amazon DSP].
 
 >[!IMPORTANT]
 >
@@ -32,38 +38,38 @@ För att du bättre ska kunna förstå hur och när du ska använda målet *[!DN
 
 ### Aktivering och målinriktning {#activation-and-targeting}
 
-Tack vare den här integreringen med Amazon DSP kan [!DNL Amazon Ads]-annonsörer skicka CDP-målgrupper från [!DNL Adobe Experience Platform] till Amazon DSP för att skapa marknadsföringsmålgrupper för annonsering. Målgrupper kan väljas inom Amazon DSP för positiv målinriktning och negativ målinriktning (undertryckning).
+Den här integreringen med [!DNL Amazon DSP] gör att [!DNL Amazon Ads] annonsörer kan skicka CDP-målgrupper från [!DNL Adobe Experience Platform] till [!DNL Amazon DSP] för att skapa marknadsföringsmålgrupper för annonsmarknadsföring. Du kan välja målgrupper inom [!DNL Amazon DSP] för positiv målinriktning och negativ målinriktning (undertryckning).
 
-### Analyser och mätningar {#analytics-and-measurement}
+### Analyser och mätning {#analytics-and-measurement}
 
-Integrationen med [!DNL Amazon Marketing Cloud] (AMC) gör att [!DNL Amazon Ads] annonsörer kan skicka CDP-segment från [!DNL Adobe Experience Platform]-formulär till AMC. Annonsörer kan sedan ansluta sig till CDP-indata med [!DNL Amazon Ads]-signaler och utföra anpassade analyser på ämnen som mediapåverkan, målgruppssegment och kundresor i sekretessformat. En annonsör kan t.ex. ladda upp en lista över sina befintliga kunder för att förstå hur den samlade marknadsföringskampanjen fungerar, eller aggregerad statistik över konverteringshändelser på Amazon, som att visa en produktinformationssida, lägga en produkt i en kundvagn eller köpa en produkt.
+Integrationen med [!DNL Amazon Marketing Cloud] (AMC) gör att [!DNL Amazon Ads] annonsörer kan skicka CDP-segment från [!DNL Adobe Experience Platform] till AMC. Du kan sedan ansluta CDP-indata med [!DNL Amazon Ads]-signaler och utföra anpassade analyser på ämnen som mediapåverkan, målgruppssegment och kundresor i ett sekretesskompatibelt format. Du kan t.ex. överföra en lista över befintliga kunder för att förstå hur annonskampanjen fungerar eller aggregerad statistik över konverteringshändelser på Amazon, som att visa en produktinformationssida, lägga till en produkt i en kundvagn eller köpa en produkt.
 
 ### Advertising-optimering {#advertising-optimization}
 
-Tack vare den här integreringen med [!DNL Amazon Marketing Cloud] (AMC) kan annonsörer överföra egna kundlistor och använda [!DNL Amazon Marketing Cloud] SQL för att utföra överlappningsanalyser, undertryckanden, tillägg eller optimeringar till målgrupper med jämna mellanrum innan de skapar en aktiveringsklar målgrupp i Amazon DSP för målgruppsanpassning.
+Integrationen med [!DNL Amazon Marketing Cloud] (AMC) gör att annonsörer kan ladda upp egna kundlistor och använda [!DNL Amazon Marketing Cloud] SQL för att utföra överlappningsanalyser, undertryckningar, tillägg eller optimeringar till målgrupper med jämna mellanrum innan en aktiveringsklar målgrupp skapas i Amazon DSP för målgruppsanpassning.
 
 ## Förutsättningar {#prerequisites}
 
-Om du vill använda anslutningen [!DNL Amazon Ads] med [!DNL Adobe Experience Platform] måste användarna först ha tillgång till ett Amazon DSP Advertiser-konto eller en [!DNL Amazon Marketing Cloud]-instans. Om du vill etablera de här instanserna går du till följande sida på webbplatsen [!DNL Amazon Ads]:
+Om du vill använda anslutningen [!DNL Amazon Ads] med [!DNL Adobe Experience Platform] måste användarna först ha tillgång till ett [!DNL Amazon DSP] Advertiser-konto eller en [!DNL Amazon Marketing Cloud]-instans. Om du vill etablera de här instanserna går du till följande sida på webbplatsen [!DNL Amazon Ads]:
 
 * [Kom igång med Amazon DSP](https://advertising.amazon.com/solutions/products/amazon-dsp)
 * [Kom igång med Amazon Marketing Cloud](https://advertising.amazon.com/solutions/products/amazon-marketing-cloud)
 
 ## Identiteter som stöds {#supported-identities}
 
-Anslutningen *[!DNL Amazon Ads]* stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service//features/namespaces.md). Mer information om vilka identiteter som stöds av [!DNL Amazon Ads] finns på [Amazon DSP Support Center](https://advertising.amazon.com/dsp/help/ss/en/audiences#GA6BC9BW52YFXBNE).
+Anslutningen *[!DNL Amazon Ads]* stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md). Mer information om vilka identiteter som stöds av [!DNL Amazon Ads] finns på [Amazon DSP Support Center](https://advertising.amazon.com/dsp/help/ss/en/audiences#GA6BC9BW52YFXBNE).
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
 | phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av [!DNL Adobe Experience Platform]. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
 | email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hash-adresser stöds av [!DNL Adobe Experience Platform]. Om källfältet innehåller ohashade attribut bör du kontrollera alternativet **[!UICONTROL Apply transformation]** så att [!DNL Experience Platform] automatiskt hash-kodar data vid aktiveringen. |
-| `firstName` | Användarens förnamn | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du [!UICONTROL Apply transformation] i Adobe UI. |
-| `lastName` | Användarens efternamn | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du [!UICONTROL Apply transformation] i Adobe UI. |
+| `firstName` | Användarens förnamn | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du **[!UICONTROL Apply transformation]** i användargränssnittet för [!DNL Adobe Experience Platform]. |
+| `lastName` | Användarens efternamn | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du **[!UICONTROL Apply transformation]** i användargränssnittet för [!DNL Adobe Experience Platform]. |
 | `street` | Användarens gatuminivå | Endast SHA256-hash-indata stöds. Normalisera före hashning. Aktivera **inte**-omvandling på Adobe-sidan. |
-| `city` | Användarens ort | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du [!UICONTROL Apply transformation] i Adobe UI. |
-| `state` | Användarens land | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du [!UICONTROL Apply transformation] i Adobe UI. |
-| `zip` | Användarens postnummer | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du [!UICONTROL Apply transformation] i Adobe UI. |
-| `country` | Användarens land | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du [!UICONTROL Apply transformation] i Adobe UI. |
+| `city` | Användarens ort | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du **[!UICONTROL Apply transformation]** i användargränssnittet för [!DNL Adobe Experience Platform]. |
+| `state` | Användarens land | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du **[!UICONTROL Apply transformation]** i användargränssnittet för [!DNL Adobe Experience Platform]. |
+| `zip` | Användarens postnummer | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du **[!UICONTROL Apply transformation]** i användargränssnittet för [!DNL Adobe Experience Platform]. |
+| `country` | Användarens land | Stöder normal text eller SHA256. Om oformaterad text används aktiverar du **[!UICONTROL Apply transformation]** i användargränssnittet för [!DNL Adobe Experience Platform]. |
 
 {style="table-layout:auto"}
 
@@ -106,7 +112,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 >
 >Om du vill ansluta till målet behöver du behörigheterna **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontrollsöversikten](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få den behörighet som krävs.
 
-Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
+Om du vill ansluta till det här målet följer du stegen som beskrivs i självstudiekursen [för destinationskonfiguration](/help/destinations/ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
 ### Autentisera till mål {#authenticate}
 
@@ -118,23 +124,23 @@ Du dirigeras till [!DNL Amazon Ads]-anslutningsgränssnittet där du först väl
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
-* **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
-* **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
+* **[!UICONTROL Name]**: Ett namn som identifierar det här målet.
+* **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet.
 * **[!UICONTROL Amazon Ads Connection]**: Välj ID för det [!DNL Amazon Ads]-målkonto som används för målet.
 
 >[!NOTE]
 >
->När du har sparat målkonfigurationen kan du inte ändra [!DNL Amazon Ads]-annons-ID, även om du autentiserar igen via ditt Amazon-konto. Om du vill använda ett annat [!DNL Amazon Ads] Advertiser-ID måste du skapa en ny målanslutning. Annonsörer som redan har konfigurerats för en integrering med ADSP måste skapa ett nytt målflöde om de vill att deras målgrupper ska levereras till AMC eller till ett annat ADSP-konto.
+>När du har sparat målkonfigurationen kan du inte ändra [!DNL Amazon Ads]-annons-ID, även om du autentiserar igen via ditt Amazon-konto. Om du vill använda ett annat [!DNL Amazon Ads] Advertiser-ID måste du skapa en ny målanslutning. Annonsörer som redan är konfigurerade för en integrering med ADSP måste skapa ett nytt målflöde om de vill att deras målgrupper ska levereras till AMC eller till ett annat ADSP-konto.
 
 * **[!UICONTROL Advertiser Region]**: Välj lämplig region där annonsören finns. Mer information om vilka marknadsplatser som stöds av respektive region finns i [Amazon Ads-dokumentationen](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints).
 
-* **[!UICONTROL Amazon Ads Consent Signal]**: Bekräfta att alla data som skickas via den här anslutningen har samtyckt till att använda personuppgifter för annonsändamål. &quot;GRANTED&quot; innebär att Amazon samtycker till att använda kundens personuppgifter för annonsering. Tillåtna värden är &quot;GRANTED&quot; och &quot;DENIED&quot;. Alla poster som skickas via anslutningar med &quot;DENIED&quot; kommer att refuseras för vidare användning inom Amazon Ads.
+* **[!UICONTROL Amazon Ads Consent Signal]**: Bekräfta att alla data som skickas via den här anslutningen har samtyckt till att använda personuppgifter för annonsändamål. &quot;GRANTED&quot; innebär att Amazon samtycker till att använda kundens personuppgifter för annonsering. Tillåtna värden är &quot;GRANTED&quot; och &quot;DENIED&quot;. Alla poster som skickas via anslutningar med &quot;DENIED&quot; nekas för vidare användning inom [!DNL Amazon Ads].
 
 ![Konfigurera nytt mål](../../assets/catalog/advertising/amazon-ads/amazon_ads_consent_input.png)
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med användargränssnittet](/help/destinations/ui/alerts.md).
 
 Välj **[!UICONTROL Next]** när du är klar med att ange information för målanslutningen.
 
@@ -155,8 +161,8 @@ Anslutningen [!DNL Amazon Ads] har stöd för hash-kodade e-postadresser och has
 
 * Om du vill mappa hash-kodade e-postadresser väljer du identitetsnamnområdet `Email_LC_SHA256` som ett källfält.
 * Om du vill mappa hash-kodade telefonnummer markerar du identitetsnamnområdet `Phone_SHA256` som ett källfält.
-* Om du vill mappa ohashade e-postadresser eller telefonnummer markerar du motsvarande ID-namnutrymmen som källfält och markerar alternativet `Apply Transformation` om du vill att Experience Platform ska hash-koda identiteterna när de aktiveras.
-* *NYTT från och med versionen från september 2024*: Amazon Ads kräver att du mappar ett fält som innehåller ett `countryCode`-värde i ISO-format med två tecken för att underlätta identitetsupplösningsprocessen (till exempel: USA, GB, MX, CA och så vidare). Anslutningar utan `countryCode` mappningar kommer att få negativ effekt på identitetsmatchningsfrekvenserna.
+* Om du vill mappa ohashade e-postadresser eller telefonnummer markerar du motsvarande ID-namnutrymmen som källfält och markerar alternativet **[!UICONTROL Apply transformation]** om du vill att [!DNL Experience Platform] ska hash-koda identiteterna vid aktiveringen.
+* *NYTT från och med versionen från september 2024*: Amazon Ads kräver att du mappar ett fält som innehåller ett `countryCode`-värde i ISO-format med två tecken för att underlätta identitetsupplösningsprocessen (till exempel: USA, GB, MX, CA och så vidare). Anslutningar utan `countryCode` mappningar resulterar i en negativ inverkan på identitetsmatchningsfrekvenserna.
 
 >[!NOTE]
 >
@@ -166,17 +172,17 @@ Anslutningen [!DNL Amazon Ads] har stöd för hash-kodade e-postadresser och has
 >* SHA256-hash krävs, antingen på klientsidan eller genom att aktivera Adobe omformningsinställning.
 >* I Adobe UI finns en kryssruta för att tillämpa omvandling per identitetsfält under anslutningsinställningar.
 
-Du väljer bara ett angivet målfält en gång i en destinationskonfiguration för [!DNL Amazon Ads]-kopplingen.  Om du till exempel skickar e-post för företag kan du inte heller mappa personlig e-post i samma målkonfiguration.
+Du väljer bara ett angivet målfält en gång i en destinationskonfiguration för [!DNL Amazon Ads]-kopplingen. Om du till exempel skickar e-post för företag kan du inte heller mappa personlig e-post i samma målkonfiguration.
 
-Vi rekommenderar att du mappar så många fält du har. Om bara ett källattribut är tillgängligt kan du mappa ett enskilt fält. Målet [!DNL Amazon Ads] använder alla mappade fält för mappningsändamål, vilket ger högre matchningsfrekvenser om fler fält anges. Mer information om godkända identifierare finns på [hjälpsidan för Amazon Ads hashed-målgrupper](https://advertising.amazon.com/dsp/help/ss/en/audiences#GA6BC9BW52YFXBNE).
+Mappa så många fält som möjligt. Om bara ett källattribut är tillgängligt kan du mappa ett enskilt fält. Målet [!DNL Amazon Ads] använder alla mappade fält för mappningsändamål, vilket ger högre matchningsfrekvenser om fler fält anges. Mer information om godkända identifierare finns på [hjälpsidan för Amazon Ads hashed-målgrupper](https://advertising.amazon.com/dsp/help/ss/en/audiences#GA6BC9BW52YFXBNE).
 
 ## Exporterade data/Validera dataexport {#exported-data}
 
-När målgruppen har överförts kan du validera att målgruppen har skapats och överförts korrekt enligt följande steg:
+När målgruppen har överförts kontrollerar du att den har skapats och överförts korrekt enligt följande steg:
 
-**För Amazon DSP**
+**För[!DNL Amazon DSP]**
 
-Navigera till din **[!UICONTROL Advertiser ID]** > **[!UICONTROL Audiences]** > **[!UICONTROL Advertiser Audiences]**. Om målgruppen skapades och uppfyller det minsta antalet målgruppsmedlemmar visas statusen `Active`. Mer information om er målgruppsstorlek och räckvidd finns i den prognostiserade panelen Reach till höger om användargränssnittet i Amazon DSP.
+Navigera till **[!UICONTROL Advertiser ID]** > **[!UICONTROL Audiences]** > **[!UICONTROL Advertiser Audiences]**. Om målgruppen skapades och uppfyller det minsta antalet målgruppsmedlemmar visas statusen `Active`. Mer information om målgruppens storlek och räckvidd finns i den prognostiserade panelen Reach till höger om användargränssnittet för [!DNL Amazon DSP].
 
 ![Verifiering av målgruppsgenerering i Amazon DSP](../../assets/catalog/advertising/amazon-ads/amazon_ads_image_3.png)
 
