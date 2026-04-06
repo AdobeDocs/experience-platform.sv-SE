@@ -265,7 +265,7 @@ CRMIDhash: John, ECID: 111
 CRMIDhash: Jane, ECID: 111
 ```
 
-![Ett delat enhetsdiagram med hashade CRMID ](../images/configs/intermediate/shared-device-hashed-crmid.png)
+![Ett delat enhetsdiagram med hashade CRMID &#x200B;](../images/configs/intermediate/shared-device-hashed-crmid.png)
 
 >[!TAB Felaktiga data]
 

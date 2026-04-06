@@ -126,4 +126,4 @@ När ni är klara med att skapa er målgrupp kommer målgruppen att analyseras a
 
 Användargränssnittet [!DNL Segmentation Service] innehåller ett omfattande arbetsflöde som gör att du kan skapa marknadsföringsbara målgrupper utifrån [!DNL Real-Time Customer Profile]-data.
 
-Om du vill veta mer om [!DNL Segmentation Service] kan du fortsätta läsa dokumentationen. Läs [!DNL Segmentation Service]utvecklarhandboken[[!DNL Segmentation Service]  om du vill lära dig hur du använder ](../api/overview.md)-API:t.
+Om du vill veta mer om [!DNL Segmentation Service] kan du fortsätta läsa dokumentationen. Läs [!DNL Segmentation Service]utvecklarhandboken[[!DNL Segmentation Service]  om du vill lära dig hur du använder &#x200B;](../api/overview.md)-API:t.

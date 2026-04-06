@@ -74,7 +74,7 @@ Följande tabell visar de olika kategorierna av PQL-funktioner som stöds, inklu
 | -------- | ---------- |
 | Boolean | Används för att implementera booleskt algebra inom PQL. Mer information om de här funktionerna finns i dokumentet [boolesk funktion](./boolean-functions.md). |
 | Jämförelse | Används för att jämföra olika PQL-element. Mer information om de här funktionerna finns i dokumentet [för jämförelsefunktioner](./comparison-functions.md). |
-| Array, lista och uppsättning | Används för att interagera med arrayer, listor och uppsättningar. Mer information om de här funktionerna finns i [arrayen, listan och dokumentet ](./array-functions.md) med inställningsfunktioner. |
+| Array, lista och uppsättning | Används för att interagera med arrayer, listor och uppsättningar. Mer information om de här funktionerna finns i [arrayen, listan och dokumentet &#x200B;](./array-functions.md) med inställningsfunktioner. |
 | Karta | Används för att interagera med kartor. Mer information om de här funktionerna finns i dokumentet [mappningsfunktioner](./map-functions.md). |
 | Sträng | Används för att interagera med strängar. Mer information om de här funktionerna finns i [strängfunktionsdokumentet](./string-functions.md). |
 | Objekt | Används för att interagera med objekt. Mer information om de här funktionerna finns i [objektfunktionsdokumentet](./object-functions.md). |

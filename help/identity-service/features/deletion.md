@@ -60,7 +60,7 @@ Du kan använda katalogtjänsten för att skicka begäranden om borttagning av d
 
 ### Utgångsdatum för datauppsättning i Datahygien
 
-Med arbetsytan [[!UICONTROL Data Hygiene] ](../../hygiene/ui/overview.md) i Adobe Experience Platform-gränssnittet kan du schemalägga förfallodatum för datauppsättningar. När en datauppsättning når sitt förfallodatum startar datasjön, identitetstjänsten och kundprofilen i realtid separata processer för att ta bort datauppsättningens innehåll från sina respektive tjänster. Mer information finns i guiden om att [hantera förfallodatum för datauppsättningar med arbetsytan [!UICONTROL Data Hygiene]](../../hygiene/ui/dataset-expiration.md).
+Med arbetsytan [[!UICONTROL Data Hygiene] &#x200B;](../../hygiene/ui/overview.md) i Adobe Experience Platform-gränssnittet kan du schemalägga förfallodatum för datauppsättningar. När en datauppsättning når sitt förfallodatum startar datasjön, identitetstjänsten och kundprofilen i realtid separata processer för att ta bort datauppsättningens innehåll från sina respektive tjänster. Mer information finns i guiden om att [hantera förfallodatum för datauppsättningar med arbetsytan [!UICONTROL Data Hygiene]](../../hygiene/ui/dataset-expiration.md).
 
 Tabellen nedan innehåller en beskrivning av skillnaderna mellan borttagning av datauppsättningar i katalogtjänsten och datahygien:
 

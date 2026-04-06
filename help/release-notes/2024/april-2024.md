@@ -21,7 +21,7 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 
 - [Kontrollpaneler](#dashboards)
 - [Datainsamling](#data-collection)
-- [Mål ](#destinations)
+- [Mål &#x200B;](#destinations)
 - [Identitetstjänst](#identity-service)
 - [Övervakning](#monitoring)
 - [Frågetjänst](#query-service)

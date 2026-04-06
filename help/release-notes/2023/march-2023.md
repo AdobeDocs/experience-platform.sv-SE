@@ -64,7 +64,7 @@ Med dataförberedelse kan utvecklare mappa, omvandla och validera data till och 
 | Funktion | Beskrivning |
 | --- | --- |
 | Allmän tillgång till filtrering av Adobe Analytics-data | Ni kan nu använda funktionerna för dataförberedelser för att tillämpa regler och villkor för att filtrera era era analysdata innan ni hämtar dem till kundprofilen i realtid. Mer information finns i handboken om [filtrering av analysdata för profilintagning](../../sources/tutorials/ui/create/adobe-applications/analytics.md#filtering-for-profile). |
-| Nya funktioner för kodning och avkodning av URL-strängar | <ul><li>Funktionen `get_url_encoded` tar en URL som indata och ersätter eller kodar specialtecken med ASCII-tecken.</li><li>Funktionen `get_url_decoded` tar en URL som indata och avkodar ASCII-tecken till specialtecken.</li></ul> Mer information finns i handboken [Dataförberedelser ](../../data-prep/functions.md). En omfattande lista över reserverade tecken och deras motsvarande kodade tecken finns i handboken om [specialtecken](../../data-prep/functions.md#special-characters). |
+| Nya funktioner för kodning och avkodning av URL-strängar | <ul><li>Funktionen `get_url_encoded` tar en URL som indata och ersätter eller kodar specialtecken med ASCII-tecken.</li><li>Funktionen `get_url_decoded` tar en URL som indata och avkodar ASCII-tecken till specialtecken.</li></ul> Mer information finns i handboken [Dataförberedelser &#x200B;](../../data-prep/functions.md). En omfattande lista över reserverade tecken och deras motsvarande kodade tecken finns i handboken om [specialtecken](../../data-prep/functions.md#special-characters). |
 
 Mer information om dataprep finns i [översikten för dataprep](../../data-prep/home.md).
 
@@ -139,8 +139,8 @@ XDM är en specifikation med öppen källkod som tillhandahåller gemensamma str
 | Fältgrupp | (Flera) | [Flera XDM-händelsetyper har lagts till för [!UICONTROL Media Reporting]](https://github.com/adobe/xdm/pull/1670/files). |
 | Fältgrupper | [!UICONTROL Workfront Change Event] | Fältgrupperna `Full Record` och `Accessor Employee Ids` lades till. |
 | Datatyp | [[!UICONTROL Product list item]](https://github.com/adobe/xdm/pull/1685/files) | [!UICONTROL Refund Amount] lades till för att ange det belopp som återbetalats för artikeln, om någon. |
-| Datatyp | [[!UICONTROL Order ]](https://github.com/adobe/xdm/pull/1685/files) | [!UICONTROL Refunds List] har lagts till i listan över återbetalningar för den här ordern. |
-| Datatyp | [[!UICONTROL Product List Item ]](https://github.com/adobe/xdm/pull/1677/files) | Produktkategorierna har lagts till i listan över kategoridata för den här produkten. |
+| Datatyp | [[!UICONTROL Order &#x200B;]](https://github.com/adobe/xdm/pull/1685/files) | [!UICONTROL Refunds List] har lagts till i listan över återbetalningar för den här ordern. |
+| Datatyp | [[!UICONTROL Product List Item &#x200B;]](https://github.com/adobe/xdm/pull/1677/files) | Produktkategorierna har lagts till i listan över kategoridata för den här produkten. |
 | Datatyp | [!UICONTROL Session details information] | `pev3`-strängfältet som [anger vilken typ av medieström som används för rapportering](https://github.com/adobe/xdm/pull/1676/files) har lagts till. Egenskapen `pccr` har också lagts till och anger om en omdirigering har gjorts. |
 | Datatyp | [!UICONTROL Requisition List] | Tillhandahåller egenskaperna för [rekvisitionslistan](https://github.com/adobe/xdm/pull/1675/files). De innehåller namn, ID och beskrivning. |
 | Datatyp | [!UICONTROL Commerce] | Datatypen [Commerce har uppdaterats](https://github.com/adobe/xdm/pull/1675/files) så att den omfattar `requisitionListOpens`, `requisitionListAdds`, `requisitionListRemovals` och `requisitionList`. |

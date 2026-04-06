@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [[!DNL Twitter]](https://twitter.com/i/flow/login) är en onlinetjänst för sociala medier och sociala nätverk där användarna kan publicera och interagera med 280-teckenlånga meddelanden som kallas tweets. Användare kan interagera med Twitter via en webbläsare, mobil klientprogramvara eller programmatiskt via sina [API:er](https://developer.twitter.com/en/docs/twitter-api)
 
-Med tillägget [!DNL Twitter] API för webbkonverteringar [ för vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Twitter]. Det här dokumentet beskriver tilläggets användningsfall, hur det installeras och hur du integrerar dess funktioner i [regler](../../../ui/managing-resources/rules.md) för vidarebefordran av händelser.
+Med tillägget [!DNL Twitter] API för webbkonverteringar [&#x200B; för vidarebefordran av händelser](../../../ui/event-forwarding/overview.md) kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Twitter]. Det här dokumentet beskriver tilläggets användningsfall, hur det installeras och hur du integrerar dess funktioner i [regler](../../../ui/managing-resources/rules.md) för vidarebefordran av händelser.
 
 [!DNL Twitter] kräver [OAuth 1.0](https://developer.twitter.com/en/docs/authentication/oauth-1-0a) för autentisering med API:t [!DNL Twitter] [!DNL Web Conversions].
 

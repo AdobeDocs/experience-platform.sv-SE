@@ -17,7 +17,7 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 
 - [Aviseringar](#alerts)
 - [Datainsamling](#data-collection)
-- [Mål ](#destinations)
+- [Mål &#x200B;](#destinations)
 - [Sandlådor](#sandboxes)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)

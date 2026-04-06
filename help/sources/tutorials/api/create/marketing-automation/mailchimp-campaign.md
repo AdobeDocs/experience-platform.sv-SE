@@ -325,7 +325,7 @@ Ett lyckat svar returnerar den unika identifieraren (`id`) för den nyligen skap
 
 För att källdata ska kunna användas i Experience Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Målschemat används sedan för att skapa en Experience Platform-datauppsättning där källdata finns.
 
-Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API ](https://www.adobe.io/experience-platform-apis/references/schema-registry/) utförs.
+Ett mål-XDM-schema kan skapas genom att en POST-begäran till [schemats register-API &#x200B;](https://www.adobe.io/experience-platform-apis/references/schema-registry/) utförs.
 
 Detaljerade steg om hur du skapar ett mål-XDM-schema finns i självstudiekursen [Skapa ett schema med API:t](../../../../../xdm/api/schemas.md).
 

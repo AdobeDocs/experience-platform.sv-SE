@@ -515,7 +515,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## Importera CSV-filer
 
-För att kunna importera CSV-filer måste du skapa en klass, ett schema och en datauppsättning som stöder CSV. Detaljerad information om hur du skapar den klass och det schema som behövs finns i instruktionerna i [självstudiekursen ](../../xdm/api/ad-hoc.md) där du kan skapa ad hoc-scheman.
+För att kunna importera CSV-filer måste du skapa en klass, ett schema och en datauppsättning som stöder CSV. Detaljerad information om hur du skapar den klass och det schema som behövs finns i instruktionerna i [självstudiekursen &#x200B;](../../xdm/api/ad-hoc.md) där du kan skapa ad hoc-scheman.
 
 >[!NOTE]
 >

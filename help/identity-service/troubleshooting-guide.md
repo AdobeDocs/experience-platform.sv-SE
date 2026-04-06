@@ -55,7 +55,7 @@ Fält som ZIP-koder och IP-adresser ska inte märkas som identiteter för enskil
 
 ## Varför länkar inte mina identitetsfält på det sätt jag förväntar mig?
 
-Med [`/cluster/members`-slutpunkten ](./api/list-cluster-identites.md) i identitetstjänstens API kan du visa associerade identiteter för ett eller flera identitetsfält. Om svaret inte returnerar de länkade identiteter som du förväntar dig ska du se till att du anger rätt identitetsinformation i dina XDM-data. Mer information finns i avsnittet [Tillhandahålla XDM-data till identitetstjänsten](./home.md) i översikten för identitetstjänsten.
+Med [`/cluster/members`-slutpunkten &#x200B;](./api/list-cluster-identites.md) i identitetstjänstens API kan du visa associerade identiteter för ett eller flera identitetsfält. Om svaret inte returnerar de länkade identiteter som du förväntar dig ska du se till att du anger rätt identitetsinformation i dina XDM-data. Mer information finns i avsnittet [Tillhandahålla XDM-data till identitetstjänsten](./home.md) i översikten för identitetstjänsten.
 
 ## Vad är ett identitetsnamnutrymme?
 

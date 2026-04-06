@@ -29,7 +29,7 @@ Innan du läser den här guiden bör du läsa [[!DNL JupyterLab] användarhandbo
 
 >[!IMPORTANT]
 >
->För PySpark- och Scala-anteckningsböcker om du får ett fel med anledningen&quot;RPC-fjärrklienten har kopplats från&quot;. Detta innebär vanligtvis att minnet håller på att ta slut för drivrutinen eller en exekvering. Försök med att växla till [&quot;gruppläge&quot; ](#mode) för att lösa det här felet.
+>För PySpark- och Scala-anteckningsböcker om du får ett fel med anledningen&quot;RPC-fjärrklienten har kopplats från&quot;. Detta innebär vanligtvis att minnet håller på att ta slut för drivrutinen eller en exekvering. Försök med att växla till [&quot;gruppläge&quot; &#x200B;](#mode) för att lösa det här felet.
 
 Följande information definierar den maximala mängden data som kan läsas, vilken typ av data som användes och den beräknade tidsramen som läser data.
 

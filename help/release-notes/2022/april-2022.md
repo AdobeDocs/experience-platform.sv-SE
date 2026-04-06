@@ -208,7 +208,7 @@ Real-Time CDP B2B edition bygger på Real-Time Customer Data Platform (Real-Time
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Stöd för funktionen `isDeleted` | Alla [!DNL Marketo]-datauppsättningar utom `Activities` har nu stöd för mappningen `isDeleted`. Den nya mappningen läggs automatiskt till i dina befintliga B2B-dataflöden. Du kan använda mappningen `isDeleted` för att filtrera bort poster som har tagits bort så att dina data i [!DNL Data Lake] är konsekventa med dina källdata. Mer information om [[!DNL Marketo]  finns i guiden ](../../sources/connectors/adobe-applications/mapping/marketo.md)för mappningsfält`isDeleted`. |
+| Stöd för funktionen `isDeleted` | Alla [!DNL Marketo]-datauppsättningar utom `Activities` har nu stöd för mappningen `isDeleted`. Den nya mappningen läggs automatiskt till i dina befintliga B2B-dataflöden. Du kan använda mappningen `isDeleted` för att filtrera bort poster som har tagits bort så att dina data i [!DNL Data Lake] är konsekventa med dina källdata. Mer information om [[!DNL Marketo]  finns i guiden &#x200B;](../../sources/connectors/adobe-applications/mapping/marketo.md)för mappningsfält`isDeleted`. |
 
 Mer information om Real-Time Customer Data Platform B2B edition finns i [B2B-översikten](../../rtcdp/b2b-overview.md).
 

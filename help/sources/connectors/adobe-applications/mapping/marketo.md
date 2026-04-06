@@ -171,7 +171,7 @@ Läs översikten [XDM Business Campaign](../../../../xdm/classes/b2b/business-ca
 
 ## Programmedlemskap {#program-memberships}
 
-Läs översikten [XDM Business Campaign Members](../../../../xdm/classes/b2b/business-campaign-members.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i guiden [XDM Business Campaign Member Details ](../../../../xdm/field-groups/b2b-campaign-members/details.md).
+Läs översikten [XDM Business Campaign Members](../../../../xdm/classes/b2b/business-campaign-members.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i guiden [XDM Business Campaign Member Details &#x200B;](../../../../xdm/field-groups/b2b-campaign-members/details.md).
 
 | Source dataset | XDM-målfält | Anteckningar |
 | -------------- | --------------- | ----- |
