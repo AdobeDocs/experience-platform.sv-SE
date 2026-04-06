@@ -134,7 +134,7 @@ Mer information om datainsamling i Experience Platform finns i [datainsamlingsö
 
 | Mål | Beskrivning |
 | ----------- | ----------- |
-| [[!DNL Adobe Campaign Managed Cloud Services]](../../destinations/catalog/email-marketing/adobe-campaign-managed-services.md) | Adobe Campaign Managed Cloud Services är en plattform för att designa flerkanaliga kundupplevelser och en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring. [Kom igång med kampanj](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html). Observera att den här integreringen fungerar med [Adobe Campaign version 8.4 eller senare](https://experienceleague.adobe.com/docs/campaign/campaign-v8/new/release-notes.html#release-8-4-1). |
+| [[!DNL Adobe Campaign Managed Cloud Services]](../../destinations/catalog/email-marketing/adobe-campaign-managed-services.md) | Adobe Campaign Managed Cloud Services är en plattform för att designa flerkanaliga kundupplevelser och en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring. [Kom igång med kampanj](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html?lang=sv-SE). Observera att den här integreringen fungerar med [Adobe Campaign version 8.4 eller senare](https://experienceleague.adobe.com/docs/campaign/campaign-v8/new/release-notes.html?lang=sv-SE#release-8-4-1). |
 | [[!DNL Salesforce CRM]](../../destinations/catalog/crm/salesforce.md) | Målet [!DNL Salesforce CRM] har uppdaterats för att stödja både kontakt- och lead-uppdateringar samt prestandaförbättringar för snabbare uppdateringar. |
 
 {style="table-layout:auto"}
