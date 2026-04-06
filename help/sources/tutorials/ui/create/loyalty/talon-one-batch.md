@@ -2,10 +2,9 @@
 title: Infoga batchdata från Talon.one i Experience Platform med användargränssnittet
 description: Lär dig hur du importerar batchdata från Talon.En till Adobe Experience Platform med hjälp av användargränssnittet. Den här guiden innehåller inställningar, dataurval och konfiguration av dataflöde.
 badge: Beta
-hide: true
-hidefromtoc: true
+last-substantial-update: 2026-04-06T00:00:00Z
 exl-id: 65a8ae42-0c0f-4bc5-b99e-52b02ab2130a
-source-git-commit: 9c4c4a3bce2329e65abf5e8cfcc2f20ec2799045
+source-git-commit: f3026e0a717c07d95f12e3aeaf380ddc1b87c712
 workflow-type: tm+mt
 source-wordcount: '1518'
 ht-degree: 0%
