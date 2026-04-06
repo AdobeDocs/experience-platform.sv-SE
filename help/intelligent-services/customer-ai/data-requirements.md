@@ -26,7 +26,7 @@ Här är stegen för att bygga benägenhetsmodeller och identifiera målgrupper 
 
 2. Prioritera användningsexempel: Vilka är de högsta prioriteringarna för företaget?
 
-3. Bygg modeller i kundens AI: Titta på den här [snabbsjälvstudiekursen](https://experienceleague.adobe.com/docs/platform-learn/tutorials/intelligent-services/configure-customer-ai.html?lang=sv-SE) och se vår [gränssnittshandbok](../customer-ai/user-guide/configure.md) för en steg-för-steg-process för att skapa en modell.
+3. Bygg modeller i kundens AI: Titta på den här [snabbsjälvstudiekursen](https://experienceleague.adobe.com/docs/platform-learn/tutorials/intelligent-services/configure-customer-ai.html) och se vår [gränssnittshandbok](../customer-ai/user-guide/configure.md) för en steg-för-steg-process för att skapa en modell.
 
 4. [Skapa segment](../customer-ai/user-guide/create-segment.md) med hjälp av modellresultat.
 
@@ -49,8 +49,8 @@ Kundens AI fungerar genom att analysera följande datauppsättningar för att f�
 
 - Adobe Analytics-data med [Analytics-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/analytics.md)
 - Adobe Audience Manager-data med [Audience Manager-källkopplingen](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)
-- [Experience Event, datamängd](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html?lang=sv-SE)
-- [Data för kundupplevelsehändelser](https://experienceleague.adobe.com/docs/experience-platform/intelligent-services/data-preparation.html?lang=sv-SE#cee-schema)
+- [Experience Event, datamängd](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html)
+- [Data för kundupplevelsehändelser](https://experienceleague.adobe.com/docs/experience-platform/intelligent-services/data-preparation.html#cee-schema)
 
 Du kan lägga till flera datauppsättningar från olika källor om varje datauppsättning har samma identitetstyp (namnutrymme), till exempel ett ECID. Mer information om hur du lägger till flera datauppsättningar finns i användarhandboken för [Kund-AI](../customer-ai/user-guide/configure.md).
 

@@ -314,7 +314,7 @@ I följande video visas hur du kör frågor i Adobe Experience Platform-gränssn
 >
 >Gränssnittet som visas i videon är inaktuellt, men logiken som används i arbetsflödet är densamma.
 
->[!VIDEO](https://video.tv.adobe.com/v/3470200?captions=swe&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
 
 ## Övervaka och hantera samtidiga sessioner {#monitor-manage-sessions}
 

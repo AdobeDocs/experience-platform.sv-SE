@@ -31,14 +31,14 @@ Kom igång genom att läsa materialet i länkarna nedan för att bekanta dig med
     <div><strong>Förbättra din inlärning</strong><br/>Upptäck, felsök och förstärka din förståelse av produktkunskaper utan att avbryta dina arbetsflöden.</div>
     </td>
     <td>
-    <a href="https://experienceleague.adobe.com/sv/playlists/experience-platform-get-started-with-ai-assistant"><img src="./assets/landing/ai-videos.png" style="width:100%;max-height:100%"></a>
+    <a href="https://experienceleague.adobe.com/en/playlists/experience-platform-get-started-with-ai-assistant"><img src="./assets/landing/ai-videos.png" style="width:100%;max-height:100%"></a>
     <div><strong>Besök videouppspelningslistan för AI Assistant</strong><br/>Lär dig mer om de många olika utmaningar och användningsområden som du kan använda med AI Assistant.</div>
     </td>
   </tr>
   <tr style="border: 0;">
     <td align="center"><a href="./home.md"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
     <td align="center"><a href="./home.md#product-knowledge"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
-    <td align="center"><a href="https://experienceleague.adobe.com/sv/playlists/experience-platform-get-started-with-ai-assistant"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
+    <td align="center"><a href="https://experienceleague.adobe.com/en/playlists/experience-platform-get-started-with-ai-assistant"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
     </tr>
 </table>
 
@@ -99,7 +99,7 @@ Du kan använda Product Support Agent i AI Assistant (äldre) för att felsöka 
 
 Watch the following video for more information on the security features of AI Assistant:
 
->[!VIDEO](https://video.tv.adobe.com/v/3441084/?captions=swe&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3441066/?learn=on)
 
 >[!BEGINSHADEBOX]
 
@@ -148,8 +148,8 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://video.tv.adobe.com/v/3441084/?captions=swe&learn=on" title="AI Assistant - säkerhetsöversikt" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3441084/?captions=swe&format=jpeg&nocache=1732633205785" alt="AI Assistant - säkerhetsöversikt"
+                    <a href="https://video.tv.adobe.com/v/3441066/?learn=on" title="AI Assistant - säkerhetsöversikt" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3441066/?format=jpeg&nocache=1732633205785" alt="AI Assistant - säkerhetsöversikt"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -157,12 +157,12 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://video.tv.adobe.com/v/3441084/?captions=swe&learn=on" target="_blank" rel="referrer" title="AI Assistant - säkerhetsöversikt">AI Assistant - säkerhetsöversikt</a>
+                        <a href="https://video.tv.adobe.com/v/3441066/?learn=on" target="_blank" rel="referrer" title="AI Assistant - säkerhetsöversikt">AI Assistant - säkerhetsöversikt</a>
                     </p>
                     <p class="is-size-6">I den här videon finns en omfattande översikt över säkerhetsfunktionerna och processerna i AI Assistant. Dessutom kan du läsa faktablad om AI Assistant för mer information om säkerhetsarkitekturen i AI Assistant.</p>
                 </div>
                 <div style="display: flex; flex-direction: row;">
-                  <a href="https://video.tv.adobe.com/v/3441084/?captions=swe&learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                  <a href="https://video.tv.adobe.com/v/3441066/?learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                       <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                   </a>
                   <a href="https://www.adobe.com/content/dam/cc/en/trust-center/ungated/whitepapers/experience-cloud/adobe-ai-assistant-in-aep-security-fact-sheet.pdf" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="margin-top: 1rem; margin-left: 0.5rem;">
@@ -178,8 +178,8 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://video.tv.adobe.com/v/3441028?captions=swe&learn=on" title="AI Assistant - produktkunskap" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3441028/?captions=swe&format=jpeg&nocache=1732633205780" alt="AI Assistant - produktkunskap"
+                    <a href="https://video.tv.adobe.com/v/3441024?learn=on" title="AI Assistant - produktkunskap" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3441024/?format=jpeg&nocache=1732633205780" alt="AI Assistant - produktkunskap"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -187,12 +187,12 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://video.tv.adobe.com/v/3441028?captions=swe&learn=on" target="_blank" rel="referrer" title="AI Assistant - produktkunskap">AI Assistant - produktkunskap</a>
+                        <a href="https://video.tv.adobe.com/v/3441024?learn=on" target="_blank" rel="referrer" title="AI Assistant - produktkunskap">AI Assistant - produktkunskap</a>
                     </p>
                     <p class="is-size-6">I AI Assistant avser produktkännedom begrepp och ämnen som beskrivs i Experience League dokumentation. Titta på den här videon om du vill ha information om hur du kan använda AI Assistant för att vägleda dina uppgifter utan att lämna arbetsflödena. </p>
                 </div>
                 <div style="display: flex; flex-direction: row;">
-                  <a href="https://video.tv.adobe.com/v/3441028?captions=swe&learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                  <a href="https://video.tv.adobe.com/v/3441024?learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                       <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                   </a>
                     <a href="home.md#product-knowledge" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="margin-top: 1rem; margin-left: 0.5rem;">
@@ -206,8 +206,8 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://video.tv.adobe.com/v/3444036?captions=swe&learn=on&enablevpops" title="AI Assistant - driftsinsikter" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3444036/?captions=swe&format=jpeg&nocache=1732633205785" alt="AI Assistant - driftsinsikter"
+                    <a href="https://video.tv.adobe.com/v/3444031?learn=on&enablevpops" title="AI Assistant - driftsinsikter" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3444031/?format=jpeg&nocache=1732633205785" alt="AI Assistant - driftsinsikter"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -215,12 +215,12 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://video.tv.adobe.com/v/3444036/?captions=swe&learn=on" target="_blank" rel="referrer" title="AI Assistant - driftsinsikter">AI Assistant, driftsinsikter</a>
+                        <a href="https://video.tv.adobe.com/v/3444031/?learn=on" target="_blank" rel="referrer" title="AI Assistant - driftsinsikter">AI Assistant, driftsinsikter</a>
                     </p>
                     <p class="is-size-6">Användningsinsikter avser svar som genereras av AI Assistant när frågor ställs om metadata för dina objekt. I den här videon får du lära dig hur du kan använda driftsinsikter för att identifiera användnings-, lagrings- och hygieninsikter för dataobjekten i organisationen.</p>
                 </div>
                 <div style="display: flex; flex-direction: row;">
-                  <a href="https://video.tv.adobe.com/v/3444036/?captions=swe&learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                  <a href="https://video.tv.adobe.com/v/3444031/?learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                       <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                   </a>
                   <a href="./ui-guide.md#operational-insights" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="margin-top: 1rem; margin-left: 0.5rem;">
@@ -236,8 +236,8 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://video.tv.adobe.com/v/3475923/?captions=swe&learn=on" title="Få tillgång till AI Assistant" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3475923/?captions=swe&format=jpeg&nocache=1732633204686" alt="Få tillgång till AI Assistant"
+                    <a href="https://video.tv.adobe.com/v/3436470/?learn=on" title="Få tillgång till AI Assistant" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3436470/?format=jpeg&nocache=1732633204686" alt="Få tillgång till AI Assistant"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -245,12 +245,12 @@ Titta på följande videofilmer för att lära dig mer om några av de grundläg
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://video.tv.adobe.com/v/3475923/?captions=swe&learn=on" target="_blank" rel="referrer" title="Få tillgång till AI Assistant">Få åtkomst till AI Assistant</a>
+                        <a href="https://video.tv.adobe.com/v/3436470/?learn=on" target="_blank" rel="referrer" title="Få tillgång till AI Assistant">Få åtkomst till AI Assistant</a>
                     </p>
                     <p class="is-size-6">I den här videon får du lära dig hur du kan använda gränssnittet [!DNL Permissions] för att få åtkomst till AI Assistant.</p>
                 </div>
                 <div style="display: flex; flex-direction: row;">
-                  <a href="https://video.tv.adobe.com/v/3475923/?captions=swe&learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                  <a href="https://video.tv.adobe.com/v/3436470/?learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                       <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                   </a>
                   <a href="./access.md" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="margin-top: 1rem; margin-left: 0.5rem;">
@@ -273,8 +273,8 @@ Titta på följande videofilmer för att lära dig mer om hur du använder AI As
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://video.tv.adobe.com/v/3475934/?captions=swe&learn=on" title="Minska starttiden" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3475934/?captions=swe&format=jpeg&nocache=1732633205780" alt="Minska starttiden"
+                    <a href="https://video.tv.adobe.com/v/3438032/?learn=on" title="Minska starttiden" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3438032/?format=jpeg&nocache=1732633205780" alt="Minska starttiden"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -282,11 +282,11 @@ Titta på följande videofilmer för att lära dig mer om hur du använder AI As
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://video.tv.adobe.com/v/3475934/?captions=swe&learn=on" target="_blank" rel="referrer" title="Minska starttiden">Minska starttiden</a>
+                        <a href="https://video.tv.adobe.com/v/3438032/?learn=on" target="_blank" rel="referrer" title="Minska starttiden">Minska starttiden</a>
                     </p>
                     <p class="is-size-6">I den här videon får du lära dig hur du kan använda AI Assistant för att minska introduktionstiden.</p>
                 </div>
-                <a href="https://video.tv.adobe.com/v/3475934/?captions=swe&learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                <a href="https://video.tv.adobe.com/v/3438032/?learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                     <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                 </a>
             </div>
@@ -296,8 +296,8 @@ Titta på följande videofilmer för att lära dig mer om hur du använder AI As
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://video.tv.adobe.com/v/3441991?captions=swe&learn=on" title="Rensa bort störande målgrupper" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3441991/?captions=swe&format=jpeg&nocache=1732633205785" alt="Rensa bort störande målgrupper"
+                    <a href="https://video.tv.adobe.com/v/3435532?learn=on" title="Rensa bort störande målgrupper" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3435532/?format=jpeg&nocache=1732633205785" alt="Rensa bort störande målgrupper"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -305,11 +305,11 @@ Titta på följande videofilmer för att lära dig mer om hur du använder AI As
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://video.tv.adobe.com/v/3441991?captions=swe&learn=on" target="_blank" rel="referrer" title="Rensa bort störande målgrupper">Tydligare målgrupper</a>
+                        <a href="https://video.tv.adobe.com/v/3435532?learn=on" target="_blank" rel="referrer" title="Rensa bort störande målgrupper">Tydligare målgrupper</a>
                     </p>
                     <p class="is-size-6">I den här videon får du lära dig hur du använder AI Assistant för att rensa bort störande delar av publiken och optimera marknadsföringsåtgärderna.</p>
                 </div>
-                  <a href="https://video.tv.adobe.com/v/3441991?captions=swe&learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                  <a href="https://video.tv.adobe.com/v/3435532?learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                       <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                   </a>  
             </div>
@@ -321,8 +321,8 @@ Titta på följande videofilmer för att lära dig mer om hur du använder AI As
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://video.tv.adobe.com/v/3440966/?captions=swe&learn=on" title="Kom igång med panelen Identifiera" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3440966/?captions=swe&format=jpeg&nocache=1732633205780" alt="Kom igång med panelen Identifiera"
+                    <a href="https://video.tv.adobe.com/v/3440962/?learn=on" title="Kom igång med panelen Identifiera" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3440962/?format=jpeg&nocache=1732633205780" alt="Kom igång med panelen Identifiera"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -330,12 +330,12 @@ Titta på följande videofilmer för att lära dig mer om hur du använder AI As
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://video.tv.adobe.com/v/3440966/?captions=swe&learn=on" target="_blank" rel="referrer" title="Kom igång med panelen Identifiera">Kom igång med panelen Discovery</a>
+                        <a href="https://video.tv.adobe.com/v/3440962/?learn=on" target="_blank" rel="referrer" title="Kom igång med panelen Identifiera">Kom igång med panelen Discovery</a>
                     </p>
                     <p class="is-size-6">I den här videon får du lära dig mer om panelen för upptäckt i AI Assistant och hur du kan använda den för att komma igång med AI Assistant.</p>
                 </div>
                 <div style="display: flex; flex-direction: row;">
-                  <a href="https://video.tv.adobe.com/v/3440966/?captions=swe&learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                  <a href="https://video.tv.adobe.com/v/3440962/?learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                       <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                   </a>
                   <a href="./ui-guide.md#use-discoverability" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="margin-top: 1rem; margin-left: 0.5rem;">
@@ -349,8 +349,8 @@ Titta på följande videofilmer för att lära dig mer om hur du använder AI As
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://video.tv.adobe.com/v/3441742/?captions=swe&learn=on" title="Verifiera och validera AI-svar" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3441742/?captions=swe&format=jpeg&nocache=1732633205785" alt="Verifiera och validera AI-svar"
+                    <a href="https://video.tv.adobe.com/v/3441738/?learn=on" title="Verifiera och validera AI-svar" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3441738/?format=jpeg&nocache=1732633205785" alt="Verifiera och validera AI-svar"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -358,12 +358,12 @@ Titta på följande videofilmer för att lära dig mer om hur du använder AI As
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://video.tv.adobe.com/v/3441742/?captions=swe&learn=on" target="_blank" rel="referrer" title="Verifiera och validera AI-svar">Verifiera och validera AI-svar</a>
+                        <a href="https://video.tv.adobe.com/v/3441738/?learn=on" target="_blank" rel="referrer" title="Verifiera och validera AI-svar">Verifiera och validera AI-svar</a>
                     </p>
                     <p class="is-size-6">I den här videon får du lära dig hur du kan använda AI Assistant för att verifiera och validera svar.</p>
                 </div>
                 <div style="display: flex; flex-direction: row;">
-                  <a href="https://video.tv.adobe.com/v/3441742/?captions=swe&learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                  <a href="https://video.tv.adobe.com/v/3441738/?learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                       <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                   </a>
                   <a href="./ui-guide.md#verify-operational-insights-responses" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="margin-top: 1rem; margin-left: 0.5rem;">
@@ -379,8 +379,8 @@ Titta på följande videofilmer för att lära dig mer om hur du använder AI As
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://video.tv.adobe.com/v/3441684/?captions=swe&learn=on" title="Effektivare analys av innehåll och effekter" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3441684/?captions=swe&format=jpeg&nocache=1732633205780" alt="Effektivare analys av innehåll och effekter"
+                    <a href="https://video.tv.adobe.com/v/3441680/?learn=on" title="Effektivare analys av innehåll och effekter" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3441680/?format=jpeg&nocache=1732633205780" alt="Effektivare analys av innehåll och effekter"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -388,11 +388,11 @@ Titta på följande videofilmer för att lära dig mer om hur du använder AI As
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://video.tv.adobe.com/v/3441684/?captions=swe&learn=on" target="_blank" rel="referrer" title="Effektivare analys av innehåll och effekter">Utför mer effektiv analys av innehåll och påverkan</a>
+                        <a href="https://video.tv.adobe.com/v/3441680/?learn=on" target="_blank" rel="referrer" title="Effektivare analys av innehåll och effekter">Utför mer effektiv analys av innehåll och påverkan</a>
                     </p>
                     <p class="is-size-6">I den här videon får du lära dig hur du kan använda AI Assistant för att utföra mer effektiv effektanalys innan du gör några ändringar i dataobjekten.</p>
                 </div>
-                <a href="https://video.tv.adobe.com/v/3441684/?captions=swe&learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                <a href="https://video.tv.adobe.com/v/3441680/?learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                     <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                 </a>
             </div>
@@ -402,8 +402,8 @@ Titta på följande videofilmer för att lära dig mer om hur du använder AI As
         <div class="card" style="height: 100%; display: flex; flex-direction: column; height: 100%;">
             <div class="card-image">
                 <figure class="image x-is-16by9">
-                    <a href="https://video.tv.adobe.com/v/3443187?captions=swe&learn=on" title="Använd Product Support Agent i AI Assistant" target="_blank" rel="referrer">
-                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3443187/?captions=swe&format=jpeg&nocache=1732633205785" alt="Använd Product Support Agent i AI Assistant"
+                    <a href="https://video.tv.adobe.com/v/3443183?learn=on" title="Använd Product Support Agent i AI Assistant" target="_blank" rel="referrer">
+                        <img class="is-bordered-r-small" src="https://video.tv.adobe.com/v/3443183/?format=jpeg&nocache=1732633205785" alt="Använd Product Support Agent i AI Assistant"
                              style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; overflow: hidden; display: block; margin: auto;">
                     </a>
                 </figure>
@@ -411,12 +411,12 @@ Titta på följande videofilmer för att lära dig mer om hur du använder AI As
             <div class="card-content is-padded-small" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
                 <div class="top-card-content">
                     <p class="headline is-size-6 has-text-weight-bold">
-                        <a href="https://video.tv.adobe.com/v/3443187?captions=swe&learn=on" target="_blank" rel="referrer" title="Använd Product Support Agent i AI Assistant">Använd produktsupportagent i AI-assistenten</a>
+                        <a href="https://video.tv.adobe.com/v/3443183?learn=on" target="_blank" rel="referrer" title="Använd Product Support Agent i AI Assistant">Använd produktsupportagent i AI-assistenten</a>
                     </p>
                     <p class="is-size-6">I den här videon får du lära dig hur du kan använda Product Support Agent för att felsöka utan att behöva lämna dina arbetsflöden.</p>
                 </div>
                 <div style="display: flex; flex-direction: row;">
-                  <a href="https://video.tv.adobe.com/v/3443187?captions=swe&learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
+                  <a href="https://video.tv.adobe.com/v/3443183?learn=on" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="align-self: flex-start; margin-top: 1rem;">
                       <span class="spectrum-Button-label has-no-wrap has-text-weight-bold">Bevakning</span>
                   </a>
                   <a href="./new-features/customer-support.md" target="_blank" rel="referrer" class="spectrum-Button spectrum-Button--outline spectrum-Button--primary spectrum-Button--sizeM" style="margin-top: 1rem; margin-left: 0.5rem;">
@@ -437,11 +437,11 @@ Titta på följande videofilmer för att lära dig mer om hur du använder AI As
 
 Läs följande för exempel på användning av AI Assistant (äldre):
 
-* [Minska introduktionstiden för nya medlemmar i ditt team](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/onboard-new-team-members-in-less-than-half-the-time-with-ai/ba-p/706153?profile.language=sv)
-* [Tydligare målgrupper och optimerade marknadsföringsåtgärder](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-helps-optimize-marketing-operations-by-de/ba-p/696002?profile.language=sv)
-* [Kontrollera beroenden och minimera risken under dataperifieringar](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-minimizes-risk-during-data-updates-by-checking/ba-p/713364?profile.language=sv)
-* [Upptäck och distribuera nya funktioner snabbare](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/discover-and-deploy-new-features-faster-with-ai-assistant-in/ba-p/731125?profile.language=sv)
-* [Revolutionera kundsupporten med AI Assistant](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-in-adobe-experience-platform-revolutionizing/ba-p/735416?profile.language=sv)
+* [Minska introduktionstiden för nya medlemmar i ditt team](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/onboard-new-team-members-in-less-than-half-the-time-with-ai/ba-p/706153)
+* [Tydligare målgrupper och optimerade marknadsföringsåtgärder](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-helps-optimize-marketing-operations-by-de/ba-p/696002)
+* [Kontrollera beroenden och minimera risken under dataperifieringar](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-minimizes-risk-during-data-updates-by-checking/ba-p/713364)
+* [Upptäck och distribuera nya funktioner snabbare](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/discover-and-deploy-new-features-faster-with-ai-assistant-in/ba-p/731125)
+* [Revolutionera kundsupporten med AI Assistant](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-in-adobe-experience-platform-revolutionizing/ba-p/735416)
 
 >[!TAB Ytterligare videoinnehåll]
 
@@ -462,9 +462,9 @@ Klicka på länkarna nedan för att få en bättre förståelse för hur AI Assi
 <a href="./home.md" target="_blank">Dokumentation</a> - <a href="./ui-guide.md" target="_blank">Användargränssnittsguide</a> - <a href="./access.md" target="_blank">Åtkomst till AI Assistant</a> - <a href="./privacy.md" target="_blank">Integritet, säkerhet och styrning</a> - <a href="./faq.md" target="_blank">Vanliga frågor</a>
 </td>
 <td><strong>Adobe Journey Optimizer</strong><br/>
-<a href="https://experienceleague.adobe.com/sv/docs/journey-optimizer/using/get-started/ai-assistant" target="_blank">Dokumentation</a>
+<a href="https://experienceleague.adobe.com/en/docs/journey-optimizer/using/get-started/ai-assistant" target="_blank">Dokumentation</a>
 </td>
 <td><strong>Customer Journey Analytics</strong><br/>
-<a href="https://experienceleague.adobe.com/sv/docs/analytics-platform/using/ai-assistant" target="_blank">Dokumentation</a>
+<a href="https://experienceleague.adobe.com/en/docs/analytics-platform/using/ai-assistant" target="_blank">Dokumentation</a>
 </td>
 </tr></table>

@@ -103,7 +103,7 @@ Läs självstudiekursen [Exportera datauppsättningar](/help/destinations/ui/exp
 
 ## Validera dataexport {#exported-data}
 
-Om du vill validera en lyckad datauppsättningsexport kan du kontrollera att datauppsättningen har gått igenom till ditt [Snowflake datalager](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html?lang=sv-SE).
+Om du vill validera en lyckad datauppsättningsexport kan du kontrollera att datauppsättningen har gått igenom till ditt [Snowflake datalager](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html).
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
