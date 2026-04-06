@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: 2c7cc6d29eae13cd8caa387063ae9ab80ca65e1e
+source-git-commit: d284a2a833bca1770d6680987888368fe22736e8
 workflow-type: tm+mt
-source-wordcount: '1089'
+source-wordcount: '1094'
 ht-degree: 7%
 
 ---
@@ -107,6 +107,7 @@ ht-degree: 7%
       - [Anslutning för lokal filöverföring](connectors/local-system/local-file-upload.md)
    - Lojalitet {#loyalty}
       - [Kapillärströmningshändelser](connectors/loyalty/capillary.md)
+      - [Kobie](connectors/loyalty/kobie.md)
       - [Talon.One](connectors/loyalty/talon-one.md)
    - Automatisering av marknadsföring {#marketing-automation}
       - [Braze Currents](connectors/marketing-automation/braze.md)
@@ -322,6 +323,8 @@ ht-degree: 7%
          - [Lokal filöverföring](tutorials/ui/create/local-system/local-file-upload.md)
       - Lojalitet {#loyalty}
          - [Kapillärströmningshändelser](tutorials/ui/create/loyalty/capillary.md)
+         - [Kobie (batch)](tutorials/ui/create/loyalty/kobie-batch.md)
+         - [Kobie (strömning)](tutorials/ui/create/loyalty/kobie-streaming.md)
          - [Talon.One Streaming Events](tutorials/ui/create/loyalty/talon-one-streaming.md)
          - [Talon.One Batch Source Connector](tutorials/ui/create/loyalty/talon-one-batch.md)
       - Automatisering av marknadsföring {#marketing-automation}
@@ -409,4 +412,4 @@ ht-degree: 7%
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Vanliga frågor och svar](./troubleshooting.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/flow-service/)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
