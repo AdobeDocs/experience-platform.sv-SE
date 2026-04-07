@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: Läs mer om standardanvändning och hastighetsbegränsningar för dataaktivering.
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 1f733dd25fafed153c8d1065555d2ca45bbb11f1
+source-git-commit: c6a8a516afe31c5c6eaef67712fc646c2944d31d
 workflow-type: tm+mt
-source-wordcount: '1745'
+source-wordcount: '1810'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [produktbeskrivning](https://helpx.adobe.com/se/legal/product-descriptions.html) om faktiska användningsbegränsningar, utöver den här sidan med skyddsförslag.
+>Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions.html) om faktiska användningsbegränsningar, utöver den här sidan med skyddsförslag.
 
 Den här sidan innehåller standardvärden för användning och hastighetsbegränsningar för aktiveringsbeteende. När du granskar följande skyddsutkast antas att du har [anslutit till mål](/help/destinations/ui/connect-destination.md) korrekt.
 
@@ -50,6 +50,7 @@ Skyddsritningarna nedan gäller vanligtvis för aktivering via [alla måltyper](
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
 | Maximalt antal målgrupper till ett enda mål | 250 | Prestandaskydd | Rekommendationen är att mappa högst 250 målgrupper till en enda målinstans. <br><br> Om du behöver aktivera fler än 250 målgrupper till ett mål kan du antingen: <ul><li> Dela upp målgrupper som du inte längre vill aktivera, eller</li><li>[Skapa en ny målinstans](ui/connect-destination.md) och mappa målgrupper till den.</li></ul> <br> Observera att för vissa destinationer kan du vara begränsad till färre än 250 målgrupper mappade till målet. Dessa destinationer beskrivs längre ned på sidan i respektive avsnitt. |
+| Maximalt antal målgrupper som aktiveras samtidigt till ett mål | 50 | Prestandaskydd | Det går inte att gruppaktivera mer än 50 målgrupper åt gången per mål. Det bästa är att aktivera målgrupper i grupper om 20, vänta några minuter och sedan upprepa. Om fler än 50 målgrupper aktiveras samtidigt kan processen fastna eller tas emot i målet med färre målgrupper än förväntat. |
 | Maximalt antal attribut som har mappats till ett mål | 50 | Prestandaskydd | Om det finns flera mål- och måltyper kan du välja profilattribut och identiteter att mappa för export. För optimala prestanda bör maximalt 50 attribut mappas till en målinstans. |
 | Högsta antal destinationer | 100 | Systemstyrt skyddsräcke | Du kan skapa högst 100 mål som du kan ansluta och aktivera data till, *per sandbox*. [Edge personaliseringsmål (Anpassad anpassning)](#edge-destinations-activation) kan utgöra högst 10 av de 100 rekommenderade målen. |
 | Typ av data som aktiveras för destinationer | Profildata, inklusive identiteter och identitetskarta | Systemstyrt skyddsräcke | För närvarande går det bara att exportera *profilpostattribut* till mål. XDM-attribut som beskriver händelsedata stöds för närvarande inte för export. |
@@ -196,7 +197,7 @@ Uppgifter om begränsningströsklar eller begränsningar för angivna destinatio
 I följande dokumentation finns mer information om andra Experience Platform-servicemarginaler, om tidsfördröjningsinformation från början till slut och licensieringsinformation från [!DNL Real-Time CDP] Produktbeskrivningsdokument:
 
 * [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
-* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=sv-SE#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
-* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
-* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/se/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+* [Avancerade latensdiagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
+* [Real-Time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-Time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
