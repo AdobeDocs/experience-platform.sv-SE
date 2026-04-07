@@ -2,11 +2,11 @@
 title: Audience Builder i Real-Time Customer Data Platform
 description: Lär dig hur du använder Audience Builder i Real-Time Customer Data Platform för att skapa målgrupper.
 feature: Get Started, Audiences
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=sv-SE#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: da87baad-b82a-4a45-89c3-cf20d66fe657
-source-git-commit: ec31766ade15eb04907803c8cfe450fd9bdc1406
+source-git-commit: fed1c2e2fea0b2de67c75b24cb636f68a1a3e035
 workflow-type: tm+mt
-source-wordcount: '1115'
+source-wordcount: '1146'
 ht-degree: 0%
 
 ---
@@ -54,13 +54,13 @@ På fliken [!UICONTROL Attributes] kan du bläddra bland kontoattribut som tillh
 
 ![Fliken Attribut visas i Audience Builder](../assets/segmentation/audience-builder/attributes.png)
 
->[!NOTE]
+>[!AVAILABILITY]
 >
->Sammanfattningsdata är i **begränsad tillgänglighet**.
+>Sammanfattningsdata är i **begränsad tillgänglighet** och kan användas i både B2B edition och B2P Edition.
 
 När du väljer ett attribut kan du se sammanfattningsdata genom att välja [informationsikonen](../../images/icons/info.png). Sammanfattningsdata innehåller information om till exempel de översta värdena, en förklaring av vad fältet är, antalet poster för värdena samt procentandelen konton som innehåller värden för det här attributet.
 
-Avsnittet **[!UICONTROL Populated]** visar antalet poster där attributet är ifyllt jämfört med det totala antalet tillgängliga poster samt procentandelen konton som har ett värde för det här fältet.
+Avsnittet **[!UICONTROL Populated]** visar procentandelen konton som har ett värde för det här fältet.
 
 Avsnittet **[!UICONTROL Top values]** visar de vanligaste värdena för attributet och innehåller detaljer som värdet, antalet poster som har värdet samt den procentandel av det totala antalet poster som värdet representerar. Antalet poster för varje fält bestäms av profilögonblicksbilden, som ger en konsoliderad vy över posterna efter att alla data i den bidragande datauppsättningen har sammanfogats.
 
@@ -74,11 +74,17 @@ Om ett attribut är fyllt av mindre än 25 % av kontona visas i stället ![datav
 
 ![En portfölj som visar en version av sammanfattningsdata för ett attribut när det är fyllt av mindre än 25 % av kontona.](../assets/segmentation/audience-builder/empty-summary-data.png){width="300"}
 
+När du lägger till ett attribut med sammanfattningsdata kan du även se sammanfattningsdata i regelbyggarbetsytan.
+
+![Attributet med sammanfattningsdata visas.](/help/rtcdp/assets/segmentation/audience-builder/attribute-summary.png)
+
+Du kan antingen använda listrutan för att välja bland de översta värdena eller ange ett värde som automatiskt kan evalueras till ett av de översta värdena.
+
+![Listrutan där du kan lägga till attributets värde är markerad.](/help/rtcdp/assets/segmentation/audience-builder/attribute-summary-dialog.png)
+
 >[!NOTE]
 >
->Sammanfattningsdata är bara tillgängliga om attributet tillhör schemat Konto, Person eller Möjlighet. Dessutom visas de översta värdena bara om fältet **inte** innehåller för många olika värden och om dessa fälts värden ofta upprepas.
->
->Sammanfattningsdata uppdateras **dagligen**.
+>Sammanfattningsdata uppdateras på **daglig**-basis. Sammanfattningsdata stöds **inte** för attribut vars värden är antingen matriser eller nyckel/värde-par.
 
 Dessutom har attributet **[!UICONTROL Ingestion Type]**. Injektionstypen talar om datas ursprung och kan vara något av följande värden: **[!UICONTROL Batch]**, **[!UICONTROL Streaming/Edge]** eller **[!UICONTROL No Data Ingested]**.
 
