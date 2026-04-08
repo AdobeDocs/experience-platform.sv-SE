@@ -2,7 +2,7 @@
 title: Mappningsfält för Adobe Analytics Source Connector
 description: Mappa Adobe Analytics-fält till XDM-fält med Analytics Source Connector.
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
-source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+source-git-commit: e735d9e68ca5a49f8a4e1cbf3ea4264796117a78
 workflow-type: tm+mt
 source-wordcount: '3832'
 ht-degree: 0%
@@ -298,69 +298,69 @@ Mer information om hur du utför dessa omformningar med hjälp av frågetjänste
 +++Välj det här alternativet om du vill visa en tabell med inaktuella avancerade mappningsfält
 
 | Datafeed | XDM-fält | XDM-typ | Beskrivning |
-| — | — | — | — ||
-| `post_evar1`<br/>`[...]`<br/>`post_evar250` | `_experience.analytics.customDimensions.`<br/>`eVars.eVar1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`eVars.eVar250` | sträng | eVars för anpassad analys. Varje organisation kan använda eVars på olika sätt. |
-| `post_prop1`<br/>`[...]`<br/>`post_prop75` | `_experience.analytics.customDimensions.`<br/>`props.prop1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`props.prop75` | sträng | anpassade analysfunktioner. Varje organisation kan använda olika uttryck. |
-| `post_browser_height` | `environment.browserDetails.viewportHeight` | heltal | webbläsarens höjd i pixlar. |
+| --- | --- | --- | --- |
+| `post_evar1`<br/>`[...]`<br/>`post_evar250` | `_experience.analytics.customDimensions.`<br/>`eVars.eVar1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`eVars.eVar250` | string | eVars för anpassade analyser. Varje organisation kan använda eVars på olika sätt. |
+| `post_prop1`<br/>`[...]`<br/>`post_prop75` | `_experience.analytics.customDimensions.`<br/>`props.prop1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`props.prop75` | string | Custom Analytics-proppar. Varje organisation kan använda olika uttryck. |
+| `post_browser_height` | `environment.browserDetails.viewportHeight` | heltal | Webbläsarens höjd i pixlar. |
 | `post_browser_width` | `environment.browserDetails.viewportWidth` | heltal | Webbläsarens bredd i pixlar. |
-| `post_campaign` | `marketing.trackingCode` | sträng | Variabeln som används i spårningskoddimensionen. |
-| `post_channel` | `web.webPageDetails.siteSection` | sträng | Variabeln som används i dimensionen Platsavsnitt. |
-| `post_cust_visid` | `endUserIDs._experience.aacustomid.id` | sträng | Det anpassade besökar-ID:t, om det har angetts. |
-| `post_first_hit_page_url` | `_experience.analytics.endUser.`<br/>`firstWeb.webPageDetails.URL` | sträng | URL:en för den första sidan som besökaren når. |
-| `post_first_hit_pagename` | `_experience.analytics.endUser.`<br/>`firstWeb.webPageDetails.name` | sträng | En variabel som används i startsidans dimension. Sidnamnet på besökarens startsida. |
-| `post_keywords` | `search.keywords` | sträng | Nyckelorden som samlades in för träffen. |
-| `post_page_url` | `web.webPageDetails.URL` | sträng | URL:en för sidträffen. |
-| `post_pagename` | `web.webPageDetails.pageViews.value` | sträng | är lika med 1 i träffar som har ett sidnamn. Detta liknar måttet för Adobe Analytics sidvisning. |
-| `post_purchaseid` | `commerce.order.purchaseID` | sträng | Variabel som används för att unikt identifiera inköp. |
-| `post_referrer` | `web.webReferrer.URL` | sträng | URL:en för föregående sida. |
-| `post_state` | `_experience.analytics.customDimensions.`<br/>`stateProvince` | sträng | Lägesvariabel. |
-| `post_user_server` | `web.webPageDetails.server` | sträng | En variabel som används i serverdimensionen. |
-| `post_zip` | `_experience.analytics.customDimensions.`<br/>`postalCode` | sträng | En variabel som används för att fylla i dimensionen Postnummer. |
+| `post_campaign` | `marketing.trackingCode` | string | Variabeln som används i spårningskoddimensionen. |
+| `post_channel` | `web.webPageDetails.siteSection` | string | Variabeln som används i dimensionen Platsavsnitt. |
+| `post_cust_visid` | `endUserIDs._experience.aacustomid.id` | string | Anpassat besökar-ID, om det är angivet. |
+| `post_first_hit_page_url` | `_experience.analytics.endUser.`<br/>`firstWeb.webPageDetails.URL` | string | URL:en för den första sidan som besökaren når. |
+| `post_first_hit_pagename` | `_experience.analytics.endUser.`<br/>`firstWeb.webPageDetails.name` | string | En variabel som används i dimensionen Ursprungligt på startsidan. Sidnamnet på besökarens startsida. |
+| `post_keywords` | `search.keywords` | string | Nyckelorden som samlades in för träffen. |
+| `post_page_url` | `web.webPageDetails.URL` | string | URL:en för sidträffen. |
+| `post_pagename` | `web.webPageDetails.pageViews.value` | string | Lika med 1 i träffar som har ett sidnamn. Detta liknar måttet för Adobe Analytics sidvisning. |
+| `post_purchaseid` | `commerce.order.purchaseID` | string | Variabel som används för att unikt identifiera inköp. |
+| `post_referrer` | `web.webReferrer.URL` | string | Föregående sidas URL. |
+| `post_state` | `_experience.analytics.customDimensions.`<br/>`stateProvince` | string | State-variabel. |
+| `post_user_server` | `web.webPageDetails.server` | string | En variabel som används i serverdimensionen. |
+| `post_zip` | `_experience.analytics.customDimensions.`<br/>`postalCode` | string | En variabel som används för att fylla i postkodsdimensionen. |
 | `browser` | `_experience.analytics.environment.`<br/>`browserID` | heltal | Webbläsarens numeriska ID. |
-| `domain` | `environment.domain` | sträng | Variabeln som används i domändimensionen. Den baseras på användarens internetleverantör. |
-| `first_hit_referrer` | `_experience.analytics.endUser.`<br/>`firstWeb.webReferrer.URL` | sträng | Den första refererande URL:en för besökaren. |
-| `geo_city` | `placeContext.geo.city` | sträng | Namnet på träffens stad. Detta baseras på träffens IP-adress. |
-| `geo_dma` | `placeContext.geo.dmaID` | heltal | Det numeriska ID:t för träffens demografiska område. Detta baseras på träffens IP-adress. |
-| `geo_region` | `placeContext.geo.stateProvince` | sträng | Namnet på träffens tillstånd eller region. Detta baseras på träffens IP-adress. |
-| `geo_zip` | `placeContext.geo.postalCode` | sträng | Träffens postnummer. Detta baseras på träffens IP-adress. |
+| `domain` | `environment.domain` | string | Variabeln som används i domändimensionen. Den baseras på användarens internetleverantör. |
+| `first_hit_referrer` | `_experience.analytics.endUser.`<br/>`firstWeb.webReferrer.URL` | string | Den första refererande URL:en för besökaren. |
+| `geo_city` | `placeContext.geo.city` | string | Namnet på träffens stad. Detta baseras på träffens IP-adress. |
+| `geo_dma` | `placeContext.geo.dmaID` | heltal | Numeriskt ID för det demografiska området för träffen. Detta baseras på träffens IP-adress. |
+| `geo_region` | `placeContext.geo.stateProvince` | string | Namnet på antingen delstat eller region för träffen. Detta baseras på träffens IP-adress. |
+| `geo_zip` | `placeContext.geo.postalCode` | string | Träffens postnummer. Detta baseras på träffens IP-adress. |
 | `os` | `_experience.analytics.environment.`<br/>`operatingSystemID` | heltal | Det numeriska ID som representerar besökarens operativsystem. Detta baseras på kolumnen user_agent. |
-| `search_page_num` | `search.pageDepth` | heltal | Den här variabeln används av dimensionen Alla söksidrankning och anger vilken sida med sökresultat din webbplats | visade sig på innan användaren klickade igenom till din webbplats. |
-| `visit_keywords` | `_experience.analytics.session.`<br/>`search.keywords` | sträng | En variabel som används i dimensionen Sök nyckelord. |
+| `search_page_num` | `search.pageDepth` | heltal | Den här variabeln används av dimensionen Rankning för alla söksidor, och anger vilken sida av sökresultaten för webbplatsen | visades innan användaren klickade igenom till din plats. |
+| `visit_keywords` | `_experience.analytics.session.`<br/>`search.keywords` | string | En variabel som används i söknyckelordsdimensionen. |
 | `visit_num` | `_experience.analytics.session.`<br/>`num` | heltal | En variabel som används i dimensionen Besöksnummer. Detta börjar vid 1 och ökar stegvis varje gång ett nytt besök startar (per användare). |
 | `visit_page_num` | `_experience.analytics.session.`<br/>`depth` | heltal | En variabel som används i dimensionen Träff. Värdet ökar med 1 för varje träff som användaren skapar och återställs efter varje besök. |
-| `visit_referrer` | `_experience.analytics.session.`<br/>`web.webReferrer.URL` | sträng | Den första referenten av besöket. |
+| `visit_referrer` | `_experience.analytics.session.`<br/>`web.webReferrer.URL` | string | Den första referenten till besöket. |
 | `visit_search_page_num` | `_experience.analytics.session.`<br/>`search.pageDepth` | heltal | Besökets första sidnamn. |
-| `post_prop1`<br/>`[...]`<br/>`post_prop75` | `_experience.analytics.customDimensions.`<br/>`listprops.prop1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`listprops.prop75` | Object | Custom Analytics Props, konfigurerad som listprops. Den innehåller en avgränsad lista med värden. |
+| `post_prop1`<br/>`[...]`<br/>`post_prop75` | `_experience.analytics.customDimensions.`<br/>`listprops.prop1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`listprops.prop75` | Objekt | Anpassade analysprops, konfigurerade som listprops. Den innehåller en avgränsad lista med värden. |
 | `post_hier1`<br/>`[...]`<br/>`post_hier5` | `_experience.analytics.customDimensions.`<br/>`hierarchies.hier1`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`hierarchies.hier5` | Objekt | Används av hierarkivariabler och innehåller en avgränsad lista med värden. | {values (array), delimiter (string)} |
 | `post_mvvar1`<br/>`[...]`<br/>`post_mvvar3` | `_experience.analytics.customDimensions.`<br/>`lists.list1.list[]`<br/>`[...]`<br/>`_experience.analytics.customDimensions.`<br/>`lists.list3.list[]` | array | En lista med variabelvärden. Innehåller en avgränsad lista med anpassade värden, beroende på implementering. | {value (string), key (string)} |
 | `post_cookies` | `environment.browserDetails.cookiesEnabled` | boolesk | Variabel som används i Cookie-supportdimensionen. |
-| `post_event_list` | `commerce.purchases`,<br/>`commerce.productViews`,<br/>`commerce.productListOpens`,<br/>`commerce.checkouts`,<br/>`commerce.productListAdds`,<br/>`commerce.productListRemovals`,<br/>`commerce.productListViews` | Objekt | Standardhandelshändelser som utlöses för träffen. | {id (sträng), värde (tal)} |
-| `post_event_list` | `_experience.analytics.event1to100.event1`<br/>`[...]`<br/>`_experience.analytics.event901to1000.event1000` | Objekt | Anpassade händelser som utlösts av träffen.| {id (Object), value (Object)} |
+| `post_event_list` | `commerce.purchases`,<br/>`commerce.productViews`,<br/>`commerce.productListOpens`,<br/>`commerce.checkouts`,<br/>`commerce.productListAdds`,<br/>`commerce.productListRemovals`,<br/>`commerce.productListViews` | Objekt | Standardhändelser för e-handel utlöste träffen. | {id (sträng), value (number)} |
+| `post_event_list` | `_experience.analytics.event1to100.event1`<br/>`[...]`<br/>`_experience.analytics.event901to1000.event1000` | Objekt | Anpassade händelser som utlöses vid träffen. | {id (Object), value (Object)} |
 | `post_java_enabled` | `environment.browserDetails.javaEnabled` | boolesk | En flagga som anger om Java™ är aktiverat. |
 | `post_latitude` | `placeContext.geo._schema.latitude` | tal |   |
 | `post_longitude` | `placeContext.geo._schema.longitude` | tal |   |
-| `post_page_event` | `web.webInteraction.type` | sträng | Den typ av träff som skickas i bildbegäran (standardträff, hämtningslänk, avslutningslänk eller anpassad länk som klickats på). |
-| `post_page_event` | `web.webInteraction.linkClicks.value` | tal | är lika med 1 om träffen är ett länkklick. Detta liknar måttet för sidhändelser i Adobe Analytics. |
-| `post_page_event_var1` | `web.webInteraction.URL` | sträng | Den här variabeln används bara för förfrågningar om länkspårningsbilder. Det är URL:en för den nedladdningslänk, avslutningslänk eller anpassade länk som du klickar på. |
-| `post_page_event_var2` | `web.webInteraction.name` | sträng | Den här variabeln används bara för förfrågningar om länkspårningsbilder. Det är länkens egna namn. |
+| `post_page_event` | `web.webInteraction.type` | string | Den typ av träff som skickas i bildbegäran (standardträff, nedladdningslänk, slutlänk eller anpassad länk som klickats). |
+| `post_page_event` | `web.webInteraction.linkClicks.value` | tal | Lika med 1 om träffen är ett länkklick. Detta liknar måttet för sidhändelser i Adobe Analytics. |
+| `post_page_event_var1` | `web.webInteraction.URL` | string | Den här variabeln används bara för förfrågningar om länkspårningsbilder. Det är URL:en för den nedladdningslänk, avslutningslänk eller anpassade länk som du klickar på. |
+| `post_page_event_var2` | `web.webInteraction.name` | string | Den här variabeln används bara för förfrågningar om länkspårningsbilder. Det är länkens egna namn. |
 | `post_page_type` | `web.webPageDetails.isErrorPage` | boolesk | Detta används för att fylla i dimensionen Sidor som inte hittades. Variabeln ska antingen vara tom eller innehålla &quot;ErrorPage&quot; |
-| `post_pagename_no_url` | `web.webPageDetails.name` | tal | Sidans namn (om det angetts). Om ingen sida anges lämnas värdet tom. |
-| `post_product_list` | `productListItems[].items` | array | Produktlistan, som skickas via produktvariabeln. | {SKU (sträng), kvantitet (heltal), priceTotal (tal)} |
-| `post_search_engine` | `search.searchEngine` | sträng | Det numeriska ID som representerar sökmotorn som refererade besökaren till din webbplats. |
+| `post_pagename_no_url` | `web.webPageDetails.name` | tal | Namnet på sidan (om den har angetts). Om ingen sida anges lämnas värdet tom. |
+| `post_product_list` | `productListItems[].items` | array | Produktlistan, som den skickas via variabeln products. | {SKU (sträng), quantity (heltal), priceTotal (tal)} |
+| `post_search_engine` | `search.searchEngine` | string | Det numeriska ID som representerar sökmotorn som refererade besökaren till din webbplats. |
 | `mvvar1_instances` | `.list.items[]` | Objekt | Lista med variabelvärden. Innehåller en avgränsad lista med anpassade värden, beroende på implementering. |
 | `mvvar2_instances` | `.list.items[]` | Objekt | Lista med variabelvärden. Innehåller en avgränsad lista med anpassade värden, beroende på implementering. |
 | `mvvar3_instances` | `.list.items[]` | Objekt | Lista med variabelvärden. Innehåller en avgränsad lista med anpassade värden, beroende på implementering. |
 | `color` | `device.colorDepth` | heltal | ID för färgdjup, baserat på värdet för kolumnen c_color. |
-| `first_hit_ref_type` | `_experience.analytics.endUser.`<br/>`firstWeb.webReferrer.type` | sträng | Det numeriska ID som representerar referenstypen för besökarens första referent. |
+| `first_hit_ref_type` | `_experience.analytics.endUser.`<br/>`firstWeb.webReferrer.type` | string | Det numeriska ID:t som representerar referenstypen för besökarens första referent. |
 | `first_hit_time_gmt` | `_experience.analytics.endUser.`<br/>`firstTimestamp` | heltal | Tidsstämpel för besökarens första träff i UNIX®-tid. |
-| `geo_country` | `placeContext.geo.countryCode` | sträng | Förkortning av det land som träffen kom från, baserat på IP. |
-| `geo_latitude` | `placeContext.geo._schema.latitude` | tal | | |
-| `geo_longitude` | `placeContext.geo._schema.longitude` | tal | | | |
-| `paid_search` | `search.isPaid` | boolesk | En flagga som ställs in om träffen matchar betalsökningsidentifiering. |
-| `ref_type` | `web.webReferrer.type` | sträng | Ett numeriskt ID som representerar typen av referens för träffen. |
+| `geo_country` | `placeContext.geo.countryCode` | string | Förkortning av det land som träffen kom från, baserat på IP. |
+| `geo_latitude` | `placeContext.geo._schema.latitude` | tal |  |
+| `geo_longitude` | `placeContext.geo._schema.longitude` | tal |  |
+| `paid_search` | `search.isPaid` | boolesk | En flagga som anges om träffen matchar betalsökningsidentifiering. |
+| `ref_type` | `web.webReferrer.type` | string | Ett numeriskt ID som representerar typen av referens för träffen. |
 | `visit_paid_search` | `_experience.analytics.session.`<br/>`search.isPaid` | boolesk | En flagga (1=betald, 0=inte betald) som anger om besökets första träff kom från en betald sökträff. |
-| `visit_ref_type` | `_experience.analytics.session.`<br/>`web.webReferrer.type` | sträng | Numeriskt ID som representerar referenstypen för den första referenten i besöket. |
-| `visit_search_engine` | `_experience.analytics.session.`<br/>`search.searchEngine` | sträng | Numeriskt ID för besökets första sökmotor. |
-| `visit_start_time_gmt` | `_experience.analytics.session.`<br/>`timestamp` | heltal | Tidsstämpel för besökets första träff i UNIX®-tid. |
+| `visit_ref_type` | `_experience.analytics.session.`<br/>`web.webReferrer.type` | string | Numeriskt ID som representerar referenstypen för besökets första referent. |
+| `visit_search_engine` | `_experience.analytics.session.`<br/>`search.searchEngine` | string | Numeriskt ID för besökets första sökmotor. |
+| `visit_start_time_gmt` | `_experience.analytics.session.`<br/>`timestamp` | heltal | Tidsstämpel för första besöket på UNIX®-tid. |
 
 +++
