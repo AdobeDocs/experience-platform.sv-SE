@@ -2,13 +2,14 @@
 title: Redigera anpassad publik
 description: Reddit Ads knyter varumärken till personer som aktivt utforskar sina passioner och problem i realtid. Genom att kombinera målgruppsinriktade, communitystyrda konversationer med flexibla annonsformat och robust målinriktning kan Reddit Ads hjälpa annonsörer att nå engagerade målgrupper, få bättre resultat och lära sig direkt från communities som formar kultur online. Den här guiden är till för annonsörer och medieteam som använder Adobe Experience Platform för att skicka målgrupper till Reddit Ads. Det täcker vad ni behöver för att koppla samman era konton, kartlägga identiteter och aktivera målgrupper.
 last-substantial-update: 2026-03-31T00:00:00Z
-source-git-commit: c7c74ba9b5c6a66f92dc6a5403d4f2c5614c0049
+exl-id: bcce02bd-d508-47a0-8f5c-bf162db1859d
+badgeBeta: label="Beta" type="Informative"
+source-git-commit: 28bbad7ccbec0b669082658b912d0b52e0374667
 workflow-type: tm+mt
-source-wordcount: '1230'
+source-wordcount: '1231'
 ht-degree: 1%
 
 ---
-
 
 # [!DNL Reddit Custom Audience]-anslutning {#reddit-custom-audience-connection}
 
