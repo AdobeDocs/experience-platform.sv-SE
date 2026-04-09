@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Guide för strömningssegmentering
 description: Lär dig mer om direktuppspelningssegmentering, inklusive vad det är, hur du skapar en publik som utvärderas med direktuppspelningssegmentering och hur du visar målgrupper som skapats med direktuppspelningssegmentering.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: ff25ba5c519e02000ac5725031a15627052e8eb2
+source-git-commit: 0be405c34f7fa9d01691059658429652318c13bb
 workflow-type: tm+mt
 source-wordcount: '2117'
 ht-degree: 0%
@@ -476,5 +476,3 @@ Alla **nya eller redigerade**-segmentdefinitioner som kvalificerar för direktup
 Om det inte finns någon aktiv sammanfogningsprincip måste du [konfigurera din sammanfogningsprincip](../../profile/merge-policies/ui-guide.md#configure) och ange att den ska vara aktiv vid sidan.
 
 +++
-
->[!ENDSHADEBOX]
