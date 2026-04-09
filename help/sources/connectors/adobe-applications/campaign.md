@@ -3,22 +3,20 @@ keywords: Experience Platform;hem;populära ämnen;Adobe Campaign Managed Cloud 
 title: Adobe Campaign Managed Cloud Services
 description: Lär dig hur du ansluter Campaign Managed Cloud Services till Experience Platform via användargränssnittet
 exl-id: 8f18bf73-ebf1-4b4e-a12b-964faa0e24cc
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 1d29cdd39075aad937d078aa116ec2f6e6ec6a56
 workflow-type: tm+mt
-source-wordcount: '747'
+source-wordcount: '1030'
 ht-degree: 0%
 
 ---
 
 # Adobe Campaign Managed Cloud Services
 
-Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med hjälp av Experience Platform tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
+Adobe Campaign Managed Cloud Services erbjuder en hanterad plattform för att utforma flerkanaliga kundupplevelser med stöd för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring. Mer information finns i [Adobe Campaign v8-dokumentationen](https://experienceleague.adobe.com/docs/campaign/campaign-v8/campaign-home.html?lang=sv).
 
-Adobe Campaign Managed Cloud Services är en Managed Services-plattform för design av kundupplevelser i olika kanaler och utgör en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring. Mer information finns i [Adobe Campaign v8-dokumentationen](https://experienceleague.adobe.com/docs/campaign/campaign-v8/campaign-home.html?lang=sv).
+Med Adobe Campaign Managed Cloud Services källanslutning kan du importera och spåra loggdata från Adobe Campaign v8 till Adobe Experience Platform. Den här kopplingen fungerar som en batchkälla inom plattformen.
 
-Med Adobe Campaign Managed Cloud Services-källan kan du hämta leveransloggar för Adobe Campaign v8 och spåra loggdata till Adobe Experience Platform.
-
-## Förhandskrav
+## Förutsättningar
 
 Innan du kan skapa en källanslutning för att överföra Campaign v8 till Experience Platform måste du först uppfylla följande krav:
 
@@ -30,7 +28,7 @@ Innan du kan skapa en källanslutning för att överföra Campaign v8 till Exper
 
 >[!IMPORTANT]
 >
->Du måste ha tillgång till Adobe Campaign v8 Client Console för att kunna visa dina loggdata i Campaign. Besök [dokumentationen för Campaign v8](https://experienceleague.adobe.com/docs/campaign/campaign-v8/deploy/connect.html?lang=sv-SE) om du vill ha information om hur du hämtar och installerar klientkonsolen.
+>Du måste ha tillgång till Adobe Campaign v8 Client Console för att kunna visa dina loggdata i Campaign. Besök [dokumentationen för Campaign v8](https://experienceleague.adobe.com/docs/campaign/campaign-v8/deploy/connect.html) om du vill ha information om hur du hämtar och installerar klientkonsolen.
 
 Logga in på Campaign v8-instansen via klientkonsolen. Under fliken [!DNL Explorer] väljer du [!DNL Administration] och sedan [!DNL Configuration]. Välj sedan [!DNL Data schemas] och använd sedan filtret `broadLog` för namn eller etikett. I listan som visas väljer du källschemat för mottagarleveransloggarna med namnet `broadLogRcp`.
 
@@ -69,6 +67,20 @@ Detaljerade instruktioner om hur du skapar ett schema finns i guiden om att [ska
 ### Skapa en datauppsättning {#create-a-dataset}
 
 Slutligen måste du skapa en datauppsättning för dina scheman. Detaljerade instruktioner om hur du skapar en datauppsättning finns i guiden om att [skapa en datauppsättning i användargränssnittet](../../../catalog/datasets/user-guide.md).
+
+## Förväntad fördröjning för Adobe Campaign Managed Cloud Services-källa {#latency}
+
+Sluttotal latens från en Campaign-händelse till datatillgänglighet i Experience Platform är vanligtvis 15-30 minuter i standardkonfigurationer (inklusive 15 minuters replikering, export av mikrobatchar och ett schemalagt Experience Platform-dataflöde), med normala datavolymer och utan eftersläpning. Detta är en nästan realtidsprocess som uppnås genom schemalagd synkronisering av mikrobatchar (vanligtvis i tiominutersintervall), men det är inte kontinuerlig direktuppspelning.
+
+| Scenario | Information | Förväntad fördröjning |
+| --- | --- | --- |
+| Kampanjhändelse genereras i en instans av en mellanleverantör/meddelandecenter | En leverans- eller spårningshändelse (skicka, öppna, klicka osv.) inträffar på en körningsnod för Campaign v8 (mitten/meddelandecenter). | Realtid i Campaign-miljön (visas för närvarande inte i Experience Platform). |
+| Replikering från körningsmiljön till Campaign-marknadsföringsdatabasen | Händelsedata replikeras från mitten/meddelandecenter till Campaign-marknadsföringsdatabasen ([!DNL Snowflake] eller [!DNL Postgres], beroende på kundens storlek). Standardintegreringsmönster förutsätter ett regelbundet replikeringsjobb. | ~15 minuter, baserat på den vanliga 15-minutersperioden för replikering. |
+| Exportera från Campaign-marknadsföringsdatabas till landningszon (till exempel [!DNL Data Landing Zone], [!DNL Amazon S3] eller [!DNL Azure Blob]) | Ett exportarbetsflöde (Export Service) i Campaign körs enligt ett schema för att extrahera nya/ändrade leveransloggar och spåra dem och skriva dem som mikrobatchar till en filbaserad landningszon. | Minuter, plus exportschemats intervall. |
+| Experience Platform källdataflöde hämtar exporterade filer | Adobe Campaign Managed Cloud Services-källan har konfigurerats som ett batchdataflöde i Experience Platform [!DNL Flow Service]. Den skannar regelbundet in landningszonen, importerar nya filer och skriver dem i de konfigurerade ExperienceEvent-datamängderna. Övervakning visar &quot;lyckade batchar&quot; och &quot;misslyckade batchar&quot;. | Minuter, plus datumflödets schemaintervall. |
+| Tillgängliga data i data Lake och Real-Time Customer Profile | När batchen har importerats landas posterna i datasjön och (om datauppsättningen är profilaktiverad) läggs in i kundprofilen i realtid. Standardavtal för Experience Platform-licensavtal för batchanvändning och profilförtäring gäller. | Inom samma körfönster som dataflödet, dvs. kort efter att batchkörningen har slutförts. Poster blir vanligtvis tillgängliga på några minuter för tjänster längre fram i kedjan. |
+
+{style="table-layout:auto"}
 
 ## Skapa en källanslutning till Adobe Campaign Managed Cloud Services med hjälp av Experience Platform användargränssnitt
 
