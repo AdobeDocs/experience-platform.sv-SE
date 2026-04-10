@@ -2,9 +2,9 @@
 title: B2B-namnutrymmen och scheman
 description: Det här dokumentet innehåller en översikt över anpassade namnutrymmen som krävs när du skapar en B2B-källkoppling.
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
+source-git-commit: 87137090aec806b1568dab8cbe9ce785fbc959d2
 workflow-type: tm+mt
-source-wordcount: '1538'
+source-wordcount: '1595'
 ht-degree: 0%
 
 ---
@@ -47,12 +47,12 @@ Följande tabell innehåller exempelvärden samt ytterligare information om hur 
 | `ACCESS_TOKEN` | Den auktoriseringstoken som krävs för att slutföra anrop till Experience Platform API:er. I självstudiekursen om [autentisering och åtkomst av Experience Platform API:er](../../../../landing/api-authentication.md) finns mer information om hur du hämtar din `{ACCESS_TOKEN}`. | `Bearer {ACCESS_TOKEN}` |
 | `META_SCOPE` | Med avseende på [!DNL Marketo] är det här värdet fast och alltid inställt på: `ent_dataservices_sdk`. | `ent_dataservices_sdk` |
 | `CONTAINER_ID` | Behållaren `global` innehåller alla standardklasser som tillhandahålls av Adobe- och Experience Platform-partners, schemafältgrupper, datatyper och scheman. Med avseende på [!DNL Marketo] är det här värdet fast och ställs alltid in på `global`. | `global` |
-| `TECHNICAL_ACCOUNT_ID` | En autentiseringsuppgift som används för att integrera med Adobe I/O. | `D42AEVJZTTJC6LZADUBVPA15@techacct.adobe.com` |
+| `TECHNICAL_ACCOUNT_ID` | En autentiseringsuppgift som används för att integrera med [Adobe Developer Console](https://developer.adobe.com/). Följ stegen nedan för att hämta ditt ID för ditt tekniska konto:<ul><li>Navigera till [Adobe Developer Console](https://developer.adobe.com/) och öppna projektet.</li><li>Öppna **autentiseringsuppgiften** som använder _tjänstkontot (JWT)_. **Obs!** Detta kan kallas Enterprise i det äldre användargränssnittet.</li><li>Inloggningsinformationen ska visa ditt klient-ID, ditt tekniska konto-ID, organisations-ID och andra JWT-metadata.</li></ul>. | `D42AEVJZTTJC6LZADUBVPA15@techacct.adobe.com` |
 | `IMS` | Identity Management System (IMS) utgör ramverket för autentisering till Adobes tjänster. Med avseende på [!DNL Marketo] är det här värdet fast och alltid inställt på: `ims-na1.adobelogin.com`. | `ims-na1.adobelogin.com` |
 | `IMS_ORG` | En företagsenhet som kan äga eller licensiera produkter och tjänster och ge åtkomst till sina medlemmar. Se självstudiekursen [Konfigurera utvecklarkonsolen och [!DNL Postman]](../../../../landing/postman.md) för instruktioner om hur du hämtar din `{ORG_ID}`-information. | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
 | `SANDBOX_NAME` | Namnet på den virtuella sandlådepartition som du använder. | `prod` |
 | `TENANT_ID` | Ett ID som används för att se till att de resurser du skapar namnges korrekt och finns i din organisation. | `b2bcdpproductiontest` |
-| `PLATFORM_URL` | URL-slutpunkten som du gör API-anrop till. Det här värdet är fast och är alltid inställt på: `http://platform.adobe.io/`. | `http://platform.adobe.io/` |
+| `PLATFORM_URL` | URL-slutpunkten som du gör API-anrop till. Det här värdet är fast och är alltid inställt på: `platform.adobe.io/`. | `platform.adobe.io/` |
 
 {style="table-layout:auto"}
 
