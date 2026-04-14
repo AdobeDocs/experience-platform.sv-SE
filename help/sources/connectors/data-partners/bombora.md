@@ -3,9 +3,9 @@ title: Bomborametod
 description: Läs mer om Bombora Intent-källan på Experience Platform.
 last-substantial-update: 2025-03-26T00:00:00Z
 exl-id: d2e81207-8ef5-4e52-bbac-a2fa262d8d08
-source-git-commit: 04af34d439ba76b0d0053ba9de45ca962458d3e8
+source-git-commit: 627d939678a6bde0e7298e71f0dc142d46dc8e99
 workflow-type: tm+mt
-source-wordcount: '1593'
+source-wordcount: '1591'
 ht-degree: 0%
 
 ---
@@ -36,13 +36,13 @@ Som B2B-marknadsförare kan du skapa en kontolista i Real-Time CDP, identifiera 
 
 Med inbyggda annonsplattformar kan ni se till att ert innehåll når beslutsfattare i relevanta sammanhang. Ni kan även utöka kampanjer till avancerad TV och leverera annonser till viktiga konton. Detta flerkanaliga arbetssätt säkerställer enhetliga meddelanden på olika plattformar och maximerar engagemanget och konverteringsgraden.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Läs igenom följande avsnitt för nödvändiga steg innan du ansluter [!DNL Bombora] till Experience Platform.
 
 ### IP-adress tillåtelselista
 
-En lista med IP-adresser måste läggas till i en tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress i tillåtelselista &#x200B;](../../ip-address-allow-list.md).
+En lista med IP-adresser måste läggas till i en tillåtelselista innan du kan arbeta med källanslutningar. Om du inte lägger till dina regionspecifika IP-adresser i tillåtelselista kan det leda till fel eller sämre prestanda när du använder källor. Mer information finns på sidan [IP-adress i tillåtelselista ](../../ip-address-allow-list.md).
 
 ### Konfigurera behörigheter i Experience Platform
 
@@ -79,13 +79,13 @@ Schemat [!DNL Bombora] kallas **B2B Bombora Account Intent**. Det är informatio
 
 * Klass - XDM [!DNL Bombora Account Intent]
 * Namnutrymme - B2B [!DNL Bombora Account Intent]
-* Primär identitet - `intentID`
+* Primär identitet - `intentID` (**Obligatoriskt fält**)
 * Relationer - B2B-konto
 
 | Fältnamn | Datatyp | Beskrivning |
-|------------------------|-----------|----------------------------------------------------------------------------------------|
+| --- | --- | --- |
 | `extSourceSystemAudit` | OBJEKT | Det här fältet används av systemet för granskning av källsystem. |
-| `_id` | STRÄNG | Det här fältet används av systemet som en unik identifierare. |
+| `_id` | STRÄNG | Det här fältet genereras av systemet. |
 | `accountDomain` | STRÄNG | Det här fältet innehåller kontodomänen. |
 | `accountID` | STRÄNG | Det här fältet innehåller det B2B-konto-ID som den här intent-posten är associerad med. |
 | `bomboraAccountName` | STRÄNG | Det här fältet innehåller företagets ID i Bombora. |
