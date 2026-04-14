@@ -1,12 +1,10 @@
 ---
 title: Anslut databaser till Experience Platform med API:t för Flow Service
 description: Lär dig hur du ansluter databaser till Experience Platform med API:er.
-badgeUltimate: label="Ultimate" type="Positive"
-badgeBeta: label="Beta" type="Informative"
 exl-id: c3974bab-8e67-49a1-b1a5-d453cf7bfd1d
-source-git-commit: 6a30e1983a6dcf8e1340281a9385eb8e73b927f6
+source-git-commit: 23b8d5d49e217d587dfe3d68631e6056c61b2cb8
 workflow-type: tm+mt
-source-wordcount: '553'
+source-wordcount: '530'
 ht-degree: 1%
 
 ---
@@ -15,9 +13,7 @@ ht-degree: 1%
 
 >[!AVAILABILITY]
 >
->* Källan [!DNL Databricks] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
->
->* Källan [!DNL Databricks] är i betaversion. Läs [villkoren](../../../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
+>Källan [!DNL Databricks] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
 
 Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL Databricks]-konto till Adobe Experience Platform med [[!DNL Flow Service] API](https://developer.adobe.com/experience-platform-apis/references/flow-service/).
 

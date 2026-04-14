@@ -2,12 +2,11 @@
 title: Databricks
 description: Lär dig mer om de nödvändiga stegen som krävs för att ansluta Databricks till Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
-badgeBeta: label="Beta" type="Informative"
-last-substantial-update: 2025-06-17T00:00:00Z
+last-substantial-update: 2026-03-14T00:00:00Z
 exl-id: 2f082898-aa0e-47a1-a4bf-077c21afdfee
-source-git-commit: 96e395e3b3d977d7eb04c400f6fd290977bf1101
+source-git-commit: 23b8d5d49e217d587dfe3d68631e6056c61b2cb8
 workflow-type: tm+mt
-source-wordcount: '628'
+source-wordcount: '606'
 ht-degree: 0%
 
 ---
@@ -16,15 +15,13 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->* Källan [!DNL Databricks] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
->
->* Källan [!DNL Databricks] är i betaversion. Läs [villkoren](../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
+>Källan [!DNL Databricks] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
 
 [!DNL Databricks] är en molnbaserad plattform som utformats för dataanalys, maskininlärning och AI. Du kan använda [!DNL Databricks] för att integrera och tillhandahålla en helhetsmiljö för att bygga, distribuera och hantera datalösningar i stor skala.
 
 Använd [!DNL Databricks]-källan för att ansluta ditt konto och importera dina [!DNL Databricks]-data till Adobe Experience Platform.
 
-## Förhandskrav
+## Förutsättningar
 
 Slutför de nödvändiga stegen för att ansluta ditt [!DNL Databricks]-konto till Experience Platform.
 
@@ -159,7 +156,7 @@ fs.azure.sas.{CONTAINER_NAME}.{STORAGE-ACCOUNT}.blob.core.windows.net {SAS-TOKEN
 | Lagringskonto | Namnet på ditt lagringskonto. Du kan hämta det här värdet genom att hämta dina [!DNL Azure Blob Storage]-autentiseringsuppgifter. |
 | SAS-token | Underskriftstoken för delad åtkomst för din [!DNL Azure Blob Storage]. Du kan hämta det här värdet genom att hämta dina [!DNL Azure Blob Storage]-autentiseringsuppgifter. |
 
-![Användargränssnittet för databaser på Azure.](../../images/tutorials/create/databricks/databricks-ui.png)
+![Gränssnittet för databaser på Azure.](../../images/tutorials/create/databricks/databricks-ui.png)
 
 Om det inte anges misslyckas kopieringsaktiviteten i flödet och följande fel returneras:
 

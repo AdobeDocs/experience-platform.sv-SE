@@ -1,12 +1,10 @@
 ---
 title: Ansluta databaser till Experience Platform med användargränssnittet
 description: Lär dig hur du ansluter databaser till Experience Platform via användargränssnittet.
-badgeUltimate: label="Ultimate" type="Positive"
-badgeBeta: label="Beta" type="Informative"
 exl-id: 877e22c0-cb77-45bb-88c9-54fdde2d6905
-source-git-commit: 6a30e1983a6dcf8e1340281a9385eb8e73b927f6
+source-git-commit: 23b8d5d49e217d587dfe3d68631e6056c61b2cb8
 workflow-type: tm+mt
-source-wordcount: '461'
+source-wordcount: '438'
 ht-degree: 2%
 
 ---
@@ -15,9 +13,7 @@ ht-degree: 2%
 
 >[!AVAILABILITY]
 >
->* Källan [!DNL Databricks] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
->
->* Källan [!DNL Databricks] är i betaversion. Läs [villkoren](../../../../home.md#terms-and-conditions) i källresursöversikten om du vill ha mer information om hur du använder betatecknade källor.
+>Källan [!DNL Databricks] är tillgänglig i källkatalogen för användare som har köpt Real-Time CDP Ultimate.
 
 Läs den här vägledningen när du vill lära dig hur du ansluter ditt [!DNL Databricks]-konto till Adobe Experience Platform med hjälp av källarbetsytan i användargränssnittet.
 

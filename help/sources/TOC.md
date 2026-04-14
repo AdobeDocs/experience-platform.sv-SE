@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: d284a2a833bca1770d6680987888368fe22736e8
+source-git-commit: 23b8d5d49e217d587dfe3d68631e6056c61b2cb8
 workflow-type: tm+mt
-source-wordcount: '1094'
+source-wordcount: '1091'
 ht-degree: 7%
 
 ---
@@ -74,10 +74,10 @@ ht-degree: 7%
       - [Amazon Redshift-anslutning](connectors/databases/redshift.md)
       - [Apache Hive på Azure HDInsights-kontakten](connectors/databases/hive.md)
       - [Apache Spark på Azure HDInsights-kontakten](connectors/databases/spark.md)
-      - [Azure Databricks-koppling](connectors/databases/databricks.md)
       - [Azure Data Explorer Connector](connectors/databases/data-explorer.md)
       - [Azure Synapse Analytics Connector](connectors/databases/synapse-analytics.md)
       - [Azure Table Storage Connector](connectors/databases/ats.md)
+      - [Databricks-koppling](connectors/databases/databricks.md)
       - [Google BigQuery-koppling](connectors/databases/bigquery.md)
       - [GreenPlum-kontakt](connectors/databases/greenplum.md)
       - [HP Vertica-koppling](connectors/databases/hp-vertica.md)
@@ -167,10 +167,10 @@ ht-degree: 7%
          - [Amazon Redshift](tutorials/api/create/databases/redshift.md)
          - [Apache Hive på Azure HDInsights](tutorials/api/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights](tutorials/api/create/databases/spark.md)
-         - [Azure-databaser](tutorials/api/create/databases/databricks.md)
          - [Azure Data Explorer](tutorials/api/create/databases/data-explorer.md)
          - [Azure Synapse Analytics](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure Table Storage](tutorials/api/create/databases/ats.md)
+         - [Databricks](tutorials/api/create/databases/databricks.md)
          - [Google BigQuery](tutorials/api/create/databases/bigquery.md)
          - [GreenPlum](tutorials/api/create/databases/greenplum.md)
          - [HP Vertica](tutorials/api/create/databases/hp-vertica.md)
@@ -290,10 +290,10 @@ ht-degree: 7%
          - [Amazon Redshift](tutorials/ui/create/databases/redshift.md)
          - [Apache Hive på Azure HDInsights](tutorials/ui/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights](tutorials/ui/create/databases/spark.md)
-         - [Azure-databaser](tutorials/ui/create/databases/databricks.md)
          - [Azure Data Explorer](tutorials/ui/create/databases/data-explorer.md)
          - [Azure Synapse Analytics](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure Table Storage](tutorials/ui/create/databases/ats.md)
+         - [Databricks](tutorials/ui/create/databases/databricks.md)
          - [Google Big Query](tutorials/ui/create/databases/bigquery.md)
          - [GreenPlum](tutorials/ui/create/databases/greenplum.md)
          - [HP Vertica](tutorials/ui/create/databases/hp-vertica.md)
@@ -412,4 +412,4 @@ ht-degree: 7%
 - [IP-adress tillåtelselista](ip-address-allow-list.md)
 - [Vanliga frågor och svar](./troubleshooting.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/flow-service/)
-- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+- [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
