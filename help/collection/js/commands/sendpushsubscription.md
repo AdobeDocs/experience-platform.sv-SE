@@ -1,23 +1,19 @@
 ---
 title: sendPushSubscription
 description: Registrera prenumerationer på push-meddelanden hos Adobe Experience Platform.
-source-git-commit: 3abe25a9c538bf4d1b439d48f624d8cad109a99e
+exl-id: 7cb13834-46f4-481c-bd9d-600083eb6cfb
+source-git-commit: 76ba5719bd922c4ff9bff6fda4a359b18f549c5e
 workflow-type: tm+mt
-source-wordcount: '416'
-ht-degree: 0%
+source-wordcount: '398'
+ht-degree: 1%
 
 ---
 
-
 # `sendPushSubscription` {#send-push-subscription}
-
->[!AVAILABILITY]
->
->Push-meddelanden för Web SDK finns för närvarande i **beta**. Funktionen och dokumentationen kan komma att ändras.
 
 Kommandot `sendPushSubscription` registrerar push-meddelandeprenumerationer hos Adobe Experience Platform. Det här kommandot hanterar hämtning av information om push-prenumerationer från webbläsaren och skickar dem till din konfigurerade datastam. Den finns i Web SDK version 2.29.0 eller senare.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Kontrollera att du har:`sendPushSubscription`
 

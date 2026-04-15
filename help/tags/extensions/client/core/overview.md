@@ -2,9 +2,9 @@
 title: Core Extension Overview
 description: Läs mer om Core-taggtillägget i Adobe Experience Platform.
 exl-id: 841f32ad-a6a8-49fb-a131-ef4faab47187
-source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
+source-git-commit: 0750a684c7383bd3f7cb18749078989ad5571816
 workflow-type: tm+mt
-source-wordcount: '5380'
+source-wordcount: '5387'
 ht-degree: 0%
 
 ---
@@ -122,7 +122,7 @@ Händelsen utlöses om en anpassad händelsetyp inträffar. Namngivna JavaScript
 
 #### Dataelement ändrat
 
-Händelsen utlöses om ett angivet dataelement ändras. Du måste ange ett namn för dataelementet. Du kan markera dataelementet genom att antingen skriva dess namn i textfältet eller genom att markera dataelementsikonen till höger om textfältet och välja i en lista som finns i dialogrutan som visas.
+Händelsen utlöses om ett angivet dataelement ändras. Sökningar efter ändringar görs en gång i sekunden. Du måste ange ett namn för dataelementet. Du kan markera dataelementet genom att antingen skriva dess namn i textfältet eller genom att markera dataelementsikonen till höger om textfältet och välja i en lista som finns i dialogrutan som visas.
 
 #### Direktsamtal {#direct-call-event}
 
