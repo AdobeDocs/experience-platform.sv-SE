@@ -6,9 +6,9 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: d61deb73493200bc10ada4745f725bb656f3e802
+source-git-commit: cc4abd44dc7fc5facd3011fbc533a08a55ebe33f
 workflow-type: tm+mt
-source-wordcount: '826'
+source-wordcount: '828'
 ht-degree: 19%
 
 ---
@@ -57,6 +57,7 @@ ht-degree: 19%
 * Vidarebefordran av händelser {#event-forwarding}
    * [Översikt](./ui/event-forwarding/overview.md)
    * [Komma igång](./ui/event-forwarding/getting-started.md)
+   * [Guidad konfiguration](./ui/event-forwarding/guided-setup.md)
    * [Konfigurera hemligheter](./ui/event-forwarding/secrets.md)
    * [Övervakning (Beta)](./ui/event-forwarding/monitoring.md)
 * Administrering {#admin}
@@ -111,7 +112,7 @@ ht-degree: 19%
             * [Byggalternativ](extensions/client/web-sdk/configure/custom-build-components.md)
             * [SDK, instans](extensions/client/web-sdk/configure/general.md)
             * [Dataströmmar](extensions/client/web-sdk/configure/datastreams.md)
-            * [Godkännande](extensions/client/web-sdk/configure/consent.md)
+            * [Samtycke](extensions/client/web-sdk/configure/consent.md)
             * [Identitet](extensions/client/web-sdk/configure/identity.md)
             * [Personalisering](extensions/client/web-sdk/configure/personalization.md)
             * [Datainsamling](extensions/client/web-sdk/configure/data-collection.md)
@@ -369,5 +370,5 @@ ht-degree: 19%
       * [Sökresurser](./api/guides/search.md)
       * [Hemligheter](./api/guides/secrets.md)
 * [Vanliga frågor och svar](./faq.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
 
