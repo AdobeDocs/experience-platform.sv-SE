@@ -36,10 +36,10 @@ Tabellen nedan visar de olika programmen. Den ger en kort beskrivning och ett hu
 
 | Program | Vad det är | Huvudsyfte |
 |---------------|------------|----------------|
-| [[!DNL Real-Time Customer Data Platform (Real-Time CDP)]](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/home) | Ansökan om kunddata och målgrupper | Samla era egna kunddata. Bygg målgrupper som uppdateras ofta. Skicka målgrupper och attribut till annonser, e-post, mobilappar och andra verktyg. Dataregler tillämpas. Samma produktfamilj har stöd för konsumentföretag, företagskunder och blandade modeller. Se produkthjälpen för utgåvor. |
-| [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/en/docs/journey-optimizer) | Ansökan om resa och meddelanden | Planera och kör personaliserade resor (till exempel välkomstvägar, kundlojalitet eller uppföljning efter service). Skicka meddelanden över flera kanaler med live-event och profildata. |
-| [[!DNL Customer Journey Analytics]](https://experienceleague.adobe.com/en/docs/customer-journey-analytics) | Analysprogram för alla kanaler | Mät och studera hur kunderna rör sig genom resor och hur marknadsföringen fungerar. Använder data som har förberetts i [!DNL Adobe Experience Platform]. |
-| [[!DNL Adobe Mix Modeler]](https://experienceleague.adobe.com/en/docs/mix-modeler) | Ansökan om marknadsföringsmätning och -planering | Samla mätvärden (inklusive blandningsmodellering av marknadsföring). Planera utgiftsscenarier för marknadsföring. Använder data som är anslutna via [!DNL Adobe Experience Platform] så att team kan se vad som driver resultat och planera budgetar. |
+| [[!DNL Real-Time Customer Data Platform (Real-Time CDP)]](https://experienceleague.adobe.com/sv/docs/experience-platform/rtcdp/home) | Ansökan om kunddata och målgrupper | Samla era egna kunddata. Bygg målgrupper som uppdateras ofta. Skicka målgrupper och attribut till annonser, e-post, mobilappar och andra verktyg. Dataregler tillämpas. Samma produktfamilj har stöd för konsumentföretag, företagskunder och blandade modeller. Se produkthjälpen för utgåvor. |
+| [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/sv/docs/journey-optimizer) | Ansökan om resa och meddelanden | Planera och kör personaliserade resor (till exempel välkomstvägar, kundlojalitet eller uppföljning efter service). Skicka meddelanden över flera kanaler med live-event och profildata. |
+| [[!DNL Customer Journey Analytics]](https://experienceleague.adobe.com/sv/docs/customer-journey-analytics) | Analysprogram för alla kanaler | Mät och studera hur kunderna rör sig genom resor och hur marknadsföringen fungerar. Använder data som har förberetts i [!DNL Adobe Experience Platform]. |
+| [[!DNL Adobe Mix Modeler]](https://experienceleague.adobe.com/sv/docs/mix-modeler) | Ansökan om marknadsföringsmätning och -planering | Samla mätvärden (inklusive blandningsmodellering av marknadsföring). Planera utgiftsscenarier för marknadsföring. Använder data som är anslutna via [!DNL Adobe Experience Platform] så att team kan se vad som driver resultat och planera budgetar. |
 
 >[!NOTE]
 >
@@ -104,10 +104,10 @@ Applikationerna är användarupplevelser och arbetsflöden på plattformen. Var 
 
 | Program | Vad det gör på egen hand (huvudarbete) | Vilket mål det hjälper er att nå |
 |-------------|-------------------------------------|------------------------------|
-| [[!DNL Real-Time Customer Data Platform (Real-Time CDP)]](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/home) | Hantera målgrupper och aktivering: bygg segment, uppdatera medlemskap ofta, skicka målgrupper och attribut till destinationer. Har stöd för användningsområden som konsumenter, företag och blandad användning beroende på din licens. | Nå rätt personer och exkludera fel i betalda, ägda och partnerkanaler med hjälp av era egna enhetliga kunddata. |
-| [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/en/docs/journey-optimizer) | Designa resor och skicka meddelanden: reagera på händelser, förgreningsvägar och skicka över kanaler från en och samma arbetsyta. | Kör personaliserade sekvenser (t.ex. onboarding, retention eller serviceuppföljning) som svarar på det som kunden just gjorde. |
-| [[!DNL Customer Journey Analytics]](https://experienceleague.adobe.com/en/docs/customer-journey-analytics) | Rapportera och analysera resor och kampanjresultat med en enda datamängd. | Se vad som hände och varför i alla kanaler så att ni kan förbättra er investering och upplevelse. |
-| [[!DNL Adobe Mix Modeler]](https://experienceleague.adobe.com/en/docs/mix-modeler) | Kombinera plattformsanslutna data med modeller för att mäta kanaler och köra planeringsscenarier. | Planera och justera marknadsföringsbudgeten med en stadig bild av hur kanaler och andra faktorer påverkar resultatet. |
+| [[!DNL Real-Time Customer Data Platform (Real-Time CDP)]](https://experienceleague.adobe.com/sv/docs/experience-platform/rtcdp/home) | Hantera målgrupper och aktivering: bygg segment, uppdatera medlemskap ofta, skicka målgrupper och attribut till destinationer. Har stöd för användningsområden som konsumenter, företag och blandad användning beroende på din licens. | Nå rätt personer och exkludera fel i betalda, ägda och partnerkanaler med hjälp av era egna enhetliga kunddata. |
+| [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/sv/docs/journey-optimizer) | Designa resor och skicka meddelanden: reagera på händelser, förgreningsvägar och skicka över kanaler från en och samma arbetsyta. | Kör personaliserade sekvenser (t.ex. onboarding, retention eller serviceuppföljning) som svarar på det som kunden just gjorde. |
+| [[!DNL Customer Journey Analytics]](https://experienceleague.adobe.com/sv/docs/customer-journey-analytics) | Rapportera och analysera resor och kampanjresultat med en enda datamängd. | Se vad som hände och varför i alla kanaler så att ni kan förbättra er investering och upplevelse. |
+| [[!DNL Adobe Mix Modeler]](https://experienceleague.adobe.com/sv/docs/mix-modeler) | Kombinera plattformsanslutna data med modeller för att mäta kanaler och köra planeringsscenarier. | Planera och justera marknadsföringsbudgeten med en stadig bild av hur kanaler och andra faktorer påverkar resultatet. |
 
 Kort och gott är hur man arbetar i arbetsgrupper (aktivering, resor, analys, marknadsföringsmätning). Plattformen är den plattform som innehåller kunddata och regler som alla dessa team litar på. Plattformen erbjuder även frågor och avancerad modellering via tjänsterna ovan.
 
@@ -212,9 +212,9 @@ Ditt kontrakt, din produktbeskrivning och din försäljningsorder kan ange avtal
 
 ### Var kan jag läsa mer? {#where-to-read-guardrails}
 
-&#x200B;* [Experience Platform och programskyddsutkast](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-diagrams/architecture-overview/guardrails) - Översikt över hur skyddsutkast fungerar på olika plattformar och i olika program.
-&#x200B;* [Garantier för datainhämtning](https://experienceleague.adobe.com/en/docs/experience-platform/ingestion/guardrails) - Inmatningsgenomströmning och relaterade begränsningar.
-&#x200B;* [Real-Time CDP skyddsräcken](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/guardrails/overview) - Segment, aktivering och användning av Real-Time CDP.
+&#x200B;* [Experience Platform och programskyddsutkast](https://experienceleague.adobe.com/sv/docs/blueprints-learn/architecture/architecture-diagrams/architecture-overview/guardrails) - Översikt över hur skyddsutkast fungerar på olika plattformar och i olika program.
+&#x200B;* [Garantier för datainhämtning](https://experienceleague.adobe.com/sv/docs/experience-platform/ingestion/guardrails) - Inmatningsgenomströmning och relaterade begränsningar.
+&#x200B;* [Real-Time CDP skyddsräcken](https://experienceleague.adobe.com/sv/docs/experience-platform/rtcdp/guardrails/overview) - Segment, aktivering och användning av Real-Time CDP.
 &#x200B;* [Licensanvändning](https://experienceleague.adobe.com/en/docs/experience-platform/landing/license-usage-and-guardrails/data-management-best-practices) - Datahantering och licenshantering på Experience Platform (där det är tillämpligt för din organisation).
 
 Om ditt arbetsflöde lutar mycket på [!DNL Customer Journey Analytics], [!DNL Adobe Journey Optimizer], [!DNL Adobe Mix Modeler] eller [!DNL Query Service] läser du informationen om skyddsinformation för de produkterna i deras produkthjälp.
@@ -247,12 +247,12 @@ Använd den här tabellen för att se vad du vill ha, vad plattformen erbjuder o
 &#x200B;* [!DNL Adobe Experience Platform] - Delade tjänster och funktioner: datainhämtning, datamodellering, [!DNL Identity Service], [!DNL Real-Time Customer Profile], segmentering, mål, datastyrning, sekretess och funktioner som [!DNL Data Science Workspace] och [!DNL Query Service].
 &#x200B;* Program - licensierade produkter på plattformen (till exempel [!DNL Real-Time CDP], [!DNL Adobe Journey Optimizer], [!DNL Customer Journey Analytics], [!DNL Adobe Mix Modeler]) som paketerar arbetsflöden för specifika jobb. De är inte samma som plattformstjänster som [!DNL Query Service] och [!DNL Data Science Workspace].
 
-Detta matchar hur [Experience Platform-dokumentationsöversikt](https://experienceleague.adobe.com/en/docs/experience-platform/landing/documentation/overview) grupperar innehåll.
+Detta matchar hur [Experience Platform-dokumentationsöversikt](https://experienceleague.adobe.com/sv/docs/experience-platform/landing/documentation/overview) grupperar innehåll.
 
 ## Ytterligare resurser {#additional-resources}
 
-&#x200B;* [Adobe Experience Platform - översikt](https://experienceleague.adobe.com/en/docs/experience-platform/landing/home) - Huvudstartpunkter för hjälp.
-&#x200B;* [Översikt över Experience Platform-dokumentation](https://experienceleague.adobe.com/en/docs/experience-platform/landing/documentation/overview) - Hur hjälpavsnitten är ordnade.
+&#x200B;* [Adobe Experience Platform - översikt](https://experienceleague.adobe.com/sv/docs/experience-platform/landing/home) - Huvudstartpunkter för hjälp.
+&#x200B;* [Översikt över Experience Platform-dokumentation](https://experienceleague.adobe.com/sv/docs/experience-platform/landing/documentation/overview) - Hur hjälpavsnitten är ordnade.
 &#x200B;* [Planer för digitala upplevelser](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/overview/experience-cloud) - Exempel på designer efter användningsfall och bransch.
 
 Om du behöver lära dig mer kan du läsa självstudiekurser och kurser i [!DNL Experience League] på [!DNL Experience Platform Web SDK], XDM och scheman, identitet, segmentering och mål.
