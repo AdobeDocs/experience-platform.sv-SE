@@ -2,9 +2,9 @@
 title: Översikt över beräknade attribut
 description: Beräknade attribut är funktioner för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering.
 exl-id: 13878363-589d-4a3c-811c-21d014a5f3c2
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 2eb87601d7090bf6bda8098458f9e01690a02b6c
 workflow-type: tm+mt
-source-wordcount: '1154'
+source-wordcount: '1179'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,9 @@ Beräknade attribut hjälper dig att snabbt konvertera profilbeteendedata till a
 - Standardisering av aggregerade profilbeteendedata för användning över olika plattformar och appar
 - Bättre datahantering med konsolidering av data från gamla profithändelser till meningsfulla beteendeinsikter
 
-Dessa aggregat beräknas baserat på profilaktiverade Experience Event-datamängder som importerats till Adobe Experience Platform. Varje beräknat attribut är ett profilattribut som har skapats i ditt profilunionsschema och grupperas under fältgruppen &quot;SystemComputedAttribute&quot; i ditt unionsschema.
+Dessa aggregat beräknas utifrån användarskapade profilaktiverade Experience Event-datamängder som importerats till Adobe Experience Platform. Det innebär att systemgenererade datauppsättningar som har skapats via tjänsttoken via SDK, t.ex. Adobe Journey Optimizer systemdatauppsättningar **, inte kan användas**.
+
+Varje beräknat attribut är ett profilattribut som har skapats i ditt profilunionsschema och grupperas under fältgruppen &quot;SystemComputedAttribute&quot; i ditt unionsschema.
 
 Exempel:
 
