@@ -212,10 +212,10 @@ Ditt kontrakt, din produktbeskrivning och din försäljningsorder kan ange avtal
 
 ### Var kan jag läsa mer? {#where-to-read-guardrails}
 
-* [Experience Platform och programskyddsutkast](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-diagrams/architecture-overview/guardrails) - Översikt över hur skyddsutkast fungerar på olika plattformar och i olika program.
-* [Garantier för datainhämtning](https://experienceleague.adobe.com/en/docs/experience-platform/ingestion/guardrails) - Inmatningsgenomströmning och relaterade begränsningar.
-* [Real-Time CDP skyddsräcken](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/guardrails/overview) - Segment, aktivering och användning av Real-Time CDP.
-* [Licensanvändning](https://experienceleague.adobe.com/en/docs/experience-platform/landing/license-usage-and-guardrails/data-management-best-practices) - Datahantering och licenshantering på Experience Platform (där det är tillämpligt för din organisation).
+&#x200B;* [Experience Platform och programskyddsutkast](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-diagrams/architecture-overview/guardrails) - Översikt över hur skyddsutkast fungerar på olika plattformar och i olika program.
+&#x200B;* [Garantier för datainhämtning](https://experienceleague.adobe.com/en/docs/experience-platform/ingestion/guardrails) - Inmatningsgenomströmning och relaterade begränsningar.
+&#x200B;* [Real-Time CDP skyddsräcken](https://experienceleague.adobe.com/en/docs/experience-platform/rtcdp/guardrails/overview) - Segment, aktivering och användning av Real-Time CDP.
+&#x200B;* [Licensanvändning](https://experienceleague.adobe.com/en/docs/experience-platform/landing/license-usage-and-guardrails/data-management-best-practices) - Datahantering och licenshantering på Experience Platform (där det är tillämpligt för din organisation).
 
 Om ditt arbetsflöde lutar mycket på [!DNL Customer Journey Analytics], [!DNL Adobe Journey Optimizer], [!DNL Adobe Mix Modeler] eller [!DNL Query Service] läser du informationen om skyddsinformation för de produkterna i deras produkthjälp.
 
@@ -244,16 +244,16 @@ Använd den här tabellen för att se vad du vill ha, vad plattformen erbjuder o
 
 ## Terminologi {#terminology}
 
-* [!DNL Adobe Experience Platform] - Delade tjänster och funktioner: datainhämtning, datamodellering, [!DNL Identity Service], [!DNL Real-Time Customer Profile], segmentering, mål, datastyrning, sekretess och funktioner som [!DNL Data Science Workspace] och [!DNL Query Service].
-* Program - licensierade produkter på plattformen (till exempel [!DNL Real-Time CDP], [!DNL Adobe Journey Optimizer], [!DNL Customer Journey Analytics], [!DNL Adobe Mix Modeler]) som paketerar arbetsflöden för specifika jobb. De är inte samma som plattformstjänster som [!DNL Query Service] och [!DNL Data Science Workspace].
+&#x200B;* [!DNL Adobe Experience Platform] - Delade tjänster och funktioner: datainhämtning, datamodellering, [!DNL Identity Service], [!DNL Real-Time Customer Profile], segmentering, mål, datastyrning, sekretess och funktioner som [!DNL Data Science Workspace] och [!DNL Query Service].
+&#x200B;* Program - licensierade produkter på plattformen (till exempel [!DNL Real-Time CDP], [!DNL Adobe Journey Optimizer], [!DNL Customer Journey Analytics], [!DNL Adobe Mix Modeler]) som paketerar arbetsflöden för specifika jobb. De är inte samma som plattformstjänster som [!DNL Query Service] och [!DNL Data Science Workspace].
 
 Detta matchar hur [Experience Platform-dokumentationsöversikt](https://experienceleague.adobe.com/en/docs/experience-platform/landing/documentation/overview) grupperar innehåll.
 
 ## Ytterligare resurser {#additional-resources}
 
-* [Adobe Experience Platform - översikt](https://experienceleague.adobe.com/en/docs/experience-platform/landing/home) - Huvudstartpunkter för hjälp.
-* [Översikt över Experience Platform-dokumentation](https://experienceleague.adobe.com/en/docs/experience-platform/landing/documentation/overview) - Hur hjälpavsnitten är ordnade.
-* [Planer för digitala upplevelser](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/overview/experience-cloud) - Exempel på designer efter användningsfall och bransch.
+&#x200B;* [Adobe Experience Platform - översikt](https://experienceleague.adobe.com/en/docs/experience-platform/landing/home) - Huvudstartpunkter för hjälp.
+&#x200B;* [Översikt över Experience Platform-dokumentation](https://experienceleague.adobe.com/en/docs/experience-platform/landing/documentation/overview) - Hur hjälpavsnitten är ordnade.
+&#x200B;* [Planer för digitala upplevelser](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/overview/experience-cloud) - Exempel på designer efter användningsfall och bransch.
 
 Om du behöver lära dig mer kan du läsa självstudiekurser och kurser i [!DNL Experience League] på [!DNL Experience Platform Web SDK], XDM och scheman, identitet, segmentering och mål.
 
