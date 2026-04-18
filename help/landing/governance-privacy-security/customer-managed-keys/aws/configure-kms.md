@@ -2,9 +2,9 @@
 title: Konfigurera AWS KMS för kundhanterade nycklar
 description: Lär dig hur du konfigurerar Amazon Web Services nyckelhanteringstjänst (KMS) för användning med kundhanterade nycklar i Adobe Experience Platform.
 exl-id: 0cf0deab-dc30-412f-b511-dee5504c3953
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 5d59dffa00e041c91b3e1a8943fa3df9e9d7b4ef
 workflow-type: tm+mt
-source-wordcount: '1568'
+source-wordcount: '1532'
 ht-degree: 0%
 
 ---
@@ -13,13 +13,11 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Det här dokumentet gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/sv/docs/experience-platform/landing/multi-cloud).
->
->[Kundhanterade nycklar](../overview.md) (CMK) på AWS stöds för sköld för skydd av privatlivet och säkerheten, men är inte tillgängliga för hälso- och sjukvårdsskölden. CMK på Azure stöds både för Privacy och Security Shield samt för Healthcare Shield.
+>Det här dokumentet gäller implementeringar av Experience Platform som körs på Amazon Web Services (AWS). Experience Platform som körs på AWS är för närvarande tillgängligt för ett begränsat antal kunder. Mer information om den Experience Platform-infrastruktur som stöds finns i [Experience Platform översikt över flera moln](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud).
 
 Använd den här guiden för att skydda dina data med Amazon Web Services (AWS) Key Management Service (KMS) genom att skapa, hantera och styra krypteringsnycklar för Adobe Experience Platform. Integrationen förenklar regelefterlevnaden, effektiviserar verksamheten genom automatisering och eliminerar behovet av att underhålla en egen nyckelhanteringsinfrastruktur.
 
-Specifika Customer Journey Analytics-anvisningar finns i [Customer Journey Analytics CMK-dokumentationen](https://experienceleague.adobe.com/sv/docs/analytics-platform/using/cja-privacy/cmk)
+Specifika Customer Journey Analytics-anvisningar finns i [Customer Journey Analytics CMK-dokumentationen](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-privacy/cmk)
 
 >[!IMPORTANT]
 >
@@ -27,7 +25,7 @@ Specifika Customer Journey Analytics-anvisningar finns i [Customer Journey Analy
 
 Använd AWS KMS för att förbättra datasäkerheten med integrerad krypteringsnyckelhantering för Adobe Experience Platform. Följ den här guiden för att skapa och hantera krypteringsnycklar och säkerställa att dina data förblir skyddade.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Innan du fortsätter med det här dokumentet bör du ha god förståelse för följande viktiga begrepp och funktioner:
 
@@ -76,7 +74,7 @@ Om du vill börja konfigurera och hantera krypteringsnyckeln loggar du in på di
 >
 >Säkerställ säker lagring, åtkomst och tillgänglighet för krypteringsnycklarna. Du ansvarar för att hantera dina nycklar och förhindra störningar i Experience Platform verksamhet.
 
-Välj **[!DNL Create a key]** på arbetsytan [!DNL Key Management Service (KMS)].
+Välj [!DNL Key Management Service (KMS)] på arbetsytan **[!DNL Create a key]**.
 
 ![Arbetsytan för nyckelhanteringstjänsten med Skapa en nyckel markerad.](../../../images/governance-privacy-security/key-management-service/create-a-key.png)
 
