@@ -5,9 +5,9 @@ audience: user
 user-guide-title: Användarhandbok om Real-Time Customer Data Platform
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgrupper utifrån dessa profiler och aktivera dessa målgrupper för tredjepartsdestinationer.
 role: Admin
-source-git-commit: 74a73b568c850f8e749afea039afd2821858bd69
+source-git-commit: 70dcebedd06c342e02ee2307042d4a5267b364d9
 workflow-type: tm+mt
-source-wordcount: '311'
+source-wordcount: '320'
 ht-degree: 16%
 
 ---
@@ -45,14 +45,14 @@ ht-degree: 16%
 * Mål {#destinations}
    * [Översikt över destinationer](destinations/overview.md)
    * [Destinationer i Real-Time CDP B2B edition](destinations/b2b.md)
-* Guardrails {#guardrails}
+* Skyddsräcken {#guardrails}
    * [Översikt över Real-Time CDP skyddsutkast](guardrails/overview.md)
-   * [Garantier för datainhämtning](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html?lang=sv-SE){target="_blank"}
+   * [Garantier för datainhämtning](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html){target="_blank"}
    * [Guardrutor för  [!DNL Edge Network API]](https://developer.adobe.com/data-collection-apis/docs/getting-started/guardrails/){target="_blank"}
-   * [Garantier för [!DNL Real-Time Customer Profile] data och segmentering](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=sv-SE){target="_blank"}
-   * [Skyddsritningar för [!DNL Identity Service] data](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html?lang=sv-SE){target="_blank"}
-   * [Guardrails för [!DNL Query Service]](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html?lang=sv-SE){target="_blank"}
-   * [Garantier för dataaktivering via mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/guardrails.html?lang=sv-SE){target="_blank"}
+   * [Garantier för [!DNL Real-Time Customer Profile] data och segmentering](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html){target="_blank"}
+   * [Skyddsritningar för [!DNL Identity Service] data](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html){target="_blank"}
+   * [Guardrails för [!DNL Query Service]](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html){target="_blank"}
+   * [Garantier för dataaktivering via mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/guardrails.html){target="_blank"}
 * Identiteter {#identity}
    * [Identiteter och identitetsnamnutrymmen](profile/identities-overview.md)
 * Sammanfoga profiler {#merge-policies}
@@ -77,6 +77,7 @@ ht-degree: 16%
    * [Källor i Real-Time CDP B2B edition](sources/b2b.md)
 * Användningsfall {#use-cases}
    * [Översikt över exempel på användningsområden](/help/rtcdp/use-case-guides/overview.md)
+   * [Utnyttja användningsexempel för kundupplevelser för att öka affärsmålen](/help/rtcdp/use-case-guides/business-use-case-framework.md)
    * Kundförvärv {#customer-acquisition}
       * [Engagera och få nya kunder utan att vara beroende av cookies från tredje part](/help/rtcdp/partner-data/prospecting.md)
       * [Personalisera upplevelser på plats för okända besökare med partnerstödd besökarigenkänning](/help/rtcdp/partner-data/onsite-personalization.md)
@@ -88,5 +89,5 @@ ht-degree: 16%
       * [Utveckla kundvärdet en gång till livstidsvärdet](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/evolve-one-time-value-to-lifetime-value.md)
       * [Engagera era kunder på ett smart sätt](/help/rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md)
       * [Engagera era kunder på ett smart sätt: Luma-exempel](/help/rtcdp/use-case-guides/intelligent-re-engagement/use-cases-luma.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
 * [Experience Platform-ordlista](https://www.adobe.com/go/platform-glossary-en)

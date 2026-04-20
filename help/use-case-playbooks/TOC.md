@@ -5,9 +5,9 @@ breadcrumb-title: Adobe Experience Platform Use Case Playbooks
 user-guide-description: Använd spelböckerna i Adobe Experience Platform för att generera resurser och komma igång med olika användningsexempel inom marknadsföring.
 feature: Playbooks
 role: User
-source-git-commit: 5da119361bd744ec1ae7a0e1186c2620a3151feb
+source-git-commit: 70dcebedd06c342e02ee2307042d4a5267b364d9
 workflow-type: tm+mt
-source-wordcount: '88'
+source-wordcount: '79'
 ht-degree: 3%
 
 ---
@@ -17,7 +17,6 @@ ht-degree: 3%
 
 * Playbooks {#playbooks}
    * [Översikt](/help/use-case-playbooks/playbooks/overview.md)
-   * [Utnyttja användningsexempel för kundupplevelser för att öka affärsmålen](/help/use-case-playbooks/playbooks/business-use-case-framework.md)
    * [Navigera till Använd fallspelningsböcker](/help/use-case-playbooks/playbooks/navigate.md)
    * [Kom igång](/help/use-case-playbooks/playbooks/get-started.md)
    * [Available Use Case Playbooks](/help/use-case-playbooks/playbooks/playbooks-list.md)
