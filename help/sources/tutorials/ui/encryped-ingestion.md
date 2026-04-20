@@ -2,7 +2,7 @@
 title: Infoga krypterade data i källanvändargränssnittet i Workspace
 description: Lär dig hur du importerar krypterade data i källans arbetsyta.
 exl-id: 34aaf9b6-5c39-404b-a70a-5553a4db9cdb
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: c52a0e3910697b420f88425388431a4ad3d53072
 workflow-type: tm+mt
 source-wordcount: '1414'
 ht-degree: 0%
@@ -37,7 +37,7 @@ Innan du fortsätter med den här självstudiekursen bör du läsa följande dok
 ## Skapa ett krypteringsnyckelpar {#create-an-encryption-key-pair}
 
 >[!CONTEXTUALHELP]
->id="platform_sources_encrypted_encryptionKeyId"
+>id="platform_sources_encrypted_encryptionkeyid"
 >title="ID för krypteringsnyckel"
 >abstract="Ange det krypteringsnyckel-ID som motsvarar den krypteringsnyckel som användes för att kryptera källdata."
 
