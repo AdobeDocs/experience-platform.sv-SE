@@ -1,9 +1,10 @@
 ---
 title: Guidad inställning för vidarebefordran av händelser
 description: Lär dig hur du konfigurerar vidarebefordran av händelser med hjälp av de guidade inställningarna.
-source-git-commit: cc4abd44dc7fc5facd3011fbc533a08a55ebe33f
+exl-id: c155dec0-9130-4452-834a-08d98a15b006
+source-git-commit: a2dd6b2a5ec8ccf4ca93e845c5b7b2b39d8d1599
 workflow-type: tm+mt
-source-wordcount: '980'
+source-wordcount: '994'
 ht-degree: 0%
 
 ---
@@ -30,6 +31,10 @@ Den här installationen kan installera tillägg automatiskt. Den här hybridimpl
 Om du vill komma igång med funktionen väljer du **[!UICONTROL Get Started]** i användargränssnittet för **[!UICONTROL Event Forwarding]** datainsamlingar.
 
 ![Hemsidan för vidarebefordran av händelser som visar Kom igång-kortet i användargränssnittet för datainsamlingar](../../images/ui/guided-setup/get-started.png)
+
+>[!INFO]
+>
+>Du kan även komma åt de guidade inställningarna direkt från startsidan för Datainsamlingar.
 
 ### Skapa en ny taggegenskap {#new-property}
 
