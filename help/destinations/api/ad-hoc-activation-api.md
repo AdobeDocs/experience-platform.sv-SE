@@ -5,9 +5,9 @@ title: Aktivera målgrupper för batchdestinationer via ad hoc-aktiverings-API
 description: I den här artikeln illustreras det kompletta arbetsflödet för att aktivera målgrupper via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som utförs före aktiveringen.
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 944cb03ae8a432b09b54b148e94b2ee1e1bcbc5d
 workflow-type: tm+mt
-source-wordcount: '1670'
+source-wordcount: '1695'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->När Beta-fasen är klar är [!DNL ad-hoc activation API] nu allmänt tillgänglig (GA) för alla Experience Platform-kunder. I GA-versionen har API uppgraderats till version 2. Steg 4 ([Hämta det senaste målgruppsexportjobb-ID:t &#x200B;](#segment-export-id)) krävs inte längre eftersom API:t inte längre kräver export-ID:t.
+>När Beta-fasen är klar är [!DNL ad-hoc activation API] nu allmänt tillgänglig (GA) för alla Experience Platform-kunder. I GA-versionen har API uppgraderats till version 2. Steg 4 ([Hämta det senaste målgruppsexportjobb-ID:t ](#segment-export-id)) krävs inte längre eftersom API:t inte längre kräver export-ID:t.
 >
 >Mer information finns i [Kör ad hoc-aktiveringsjobbet](#activation-job) nedan i den här självstudien.
 
@@ -83,6 +83,10 @@ Resurser i Experience Platform kan isoleras till specifika virtuella sandlådor.
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver en extra medietypsrubrik:
 
 * Innehållstyp: `application/json`
+
+### API-referensdokumentation {#api-reference-documentation}
+
+Du hittar referensdokumentation för alla API-åtgärder i den här självstudiekursen. Se [API-referens för ad hoc-aktivering](https://developer.adobe.com/experience-platform-apis/references/ad-hoc-activation).
 
 ## Steg 3: Skapa aktiveringsflöde i Experience Platform användargränssnitt {#activation-flow}
 
