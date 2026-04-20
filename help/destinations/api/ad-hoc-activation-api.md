@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->När Beta-fasen är klar är [!DNL ad-hoc activation API] nu allmänt tillgänglig (GA) för alla Experience Platform-kunder. I GA-versionen har API uppgraderats till version 2. Steg 4 ([Hämta det senaste målgruppsexportjobb-ID:t ](#segment-export-id)) krävs inte längre eftersom API:t inte längre kräver export-ID:t.
+>När Beta-fasen är klar är [!DNL ad-hoc activation API] nu allmänt tillgänglig (GA) för alla Experience Platform-kunder. I GA-versionen har API uppgraderats till version 2. Steg 4 ([Hämta det senaste målgruppsexportjobb-ID:t &#x200B;](#segment-export-id)) krävs inte längre eftersom API:t inte längre kräver export-ID:t.
 >
 >Mer information finns i [Kör ad hoc-aktiveringsjobbet](#activation-job) nedan i den här självstudien.
 
