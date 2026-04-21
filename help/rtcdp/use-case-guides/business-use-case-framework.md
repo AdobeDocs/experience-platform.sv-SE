@@ -1,11 +1,9 @@
 ---
 title: Utnyttja användningsexempel från kundupplevelser för att öka affärsmålen
 description: Använd ett praktiskt, workshop-klart ramverk för att definiera, prioritera och aktivera användningsfall för kundupplevelser som är kopplade till mätbara affärsresultat. Använd en enkel Why → Who/What/Where → How model to align teams, guide execution, and deliver impact.
-hide: true
-hidefromtoc: true
 recommendations: noDisplay, noCatalog
 exl-id: cf96b3d5-e995-48a7-8180-38adfd65a276
-source-git-commit: 2f8c13240e3a99c394d43a0252c78b34133761f7
+source-git-commit: 1c856af1e192ac26a530fb69b1a8629c8ee72e1f
 workflow-type: tm+mt
 source-wordcount: '367'
 ht-degree: 0%
