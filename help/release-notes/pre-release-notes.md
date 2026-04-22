@@ -2,10 +2,10 @@
 title: Experience Platform Pre-Release Notes
 description: En förhandsgranskning av den senaste versionsinformationen för Adobe Experience Platform.
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: d052230ec5ddc4a28495f4928ab32957bf9038ac
+source-git-commit: 8f898e618fbc2b414a3c899511ac410465f280d8
 workflow-type: tm+mt
-source-wordcount: '1136'
-ht-degree: 20%
+source-wordcount: '1344'
+ht-degree: 17%
 
 ---
 
@@ -45,10 +45,13 @@ Nya funktioner och uppdateringar av befintliga funktioner i Adobe Experience Pla
 
 | Mål | Beskrivning |
 | --- | --- |
-| [!BADGE Beta]{type=Informative} [Microsoft Ads - kundmatchning](../destinations/catalog/advertising/microsoft-ads-customer-match.md) | Matcha kunder efter e-postadress och återengagera dem i [!DNL Microsoft Advertising Network], inklusive sök- och målgruppsannonser. Länka ditt [!DNL Microsoft Advertising]-konto till Real-Time CDP för att automatisera skapandet och hanteringen av kundmatchningslistor direkt från Experience Platform. |
+| [!BADGE Beta]{type=Informative} [Microsoft Ads - kundmatchning](../destinations/catalog/advertising/microsoft-ads-customer-match.md) | Matcha kunder efter e-postadress och återengagera dem i [!DNL Microsoft Advertising Network], inklusive sök- och målgruppsannonser. Länka ditt [!DNL Microsoft Advertising]-konto till Real-Time CDP för att automatisera skapandet och hanteringen av kundmatchningslistor direkt från Experience Platform. Kontakta din kontoansvarige på Adobe för att få åtkomst. |
 | [!BADGE Beta]{type=Informative} [Redigera anpassad publik](../destinations/catalog/advertising/reddit-custom-audience.md) | Skicka målgrupper från Experience Platform till [!DNL Reddit Ads]. Anslut ditt [!DNL Reddit]-konto, mappa identiteter och aktivera målgrupper för att nå personer som aktivt utforskar sina intressen på [!DNL Reddit]. |
 | [Amazon Ads v2](../destinations/catalog/advertising/amazon-ads-v2.md) | [!DNL Amazon Ads v2] är det aktuella målet för alla nya [!DNL Amazon Ads]-anslutningar. Om du har en befintlig [(äldre) [!DNL Amazon Ads]](../destinations/catalog/advertising/amazon-ads.md)-anslutning fortsätter den att fungera utan nödvändiga ändringar. [!DNL Amazon Ads v2] ansluter till [!DNL Ads Data Manager], som har stöd för utökade identitetstyper, adressrelaterade fält och datadelning mellan [!DNL Amazon Ads]-produkter, vilket förbättrar målgruppsanpassningen och målgruppsmatchningen jämfört med [(äldre) [!DNL Amazon Ads]](../destinations/catalog/advertising/amazon-ads.md). |
 | [!DNL Rokt] | Använd [!DNL Rokt] för att koppla Experience Platform-målgrupper till AI-driven realtidsbeslutsfattande, vilket förbättrar kampanjresultatet genom mer exakt målinriktning, undertryckning och personalisering. |
+| Externt målgruppsstöd för [villkor](../destinations/catalog/advertising/criteo.md) | Aktivera målgrupper från början till segmenteringstjänsten till [!DNL Criteo], inklusive anpassade uppladdningsmålgrupper (importerade från CSV), lookalike-målgrupper, federerade målgrupper och målgrupper som skapats i andra Experience Platform-appar som [!DNL Adobe Journey Optimizer]. Mer information finns i avsnittet [målgrupper som stöds](../destinations/catalog/advertising/criteo.md#supported-audiences). |
+| [Acxiom Audience Connection](../destinations/catalog/advertising/acxiom-audience-connection.md) | Målet [!DNL Acxiom Audience Connection] är nu allmänt tillgängligt. Använd den för att förbättra målgrupper med [!DNL Acxiom's Real ID]-teknik och aktivera dem för ytterligare plattformar, inklusive [!DNL Altice], [!DNL Ampersand], [!DNL Comcast], [!DNL Cox], [!DNL LG Ads], [!DNL Spectrum] och [!DNL Viant]. |
+| [Målgruppsanslutning för verkligt ID för Acxiom](../destinations/catalog/advertising/acxiom-real-id-audience-connection.md) | Målet [!DNL Acxiom Real ID Audience Connection] är nu allmänt tillgängligt. Använd det för att aktivera målgrupper med [!DNL Acxiom's Real ID] som matchningsnyckel för samma uppsättning plattformar som stöds, inklusive [!DNL Altice], [!DNL Ampersand], [!DNL Comcast], [!DNL Cox], [!DNL LG Ads], [!DNL Spectrum] och [!DNL Viant]. |
 
 {style="table-layout:auto"}
 
@@ -57,6 +60,10 @@ Nya funktioner och uppdateringar av befintliga funktioner i Adobe Experience Pla
 | Korrigera | Beskrivning |
 | --- | --- |
 | Stöd för anpassad Personalization-övervakning | Kontrollpanelen för mål har nu stöd för [!DNL Custom Personalization] mål. Begränsningsnoten som uteslöt [!DNL Custom Personalization] från övervakning har tagits bort. |
+| Profilantal i aktiveringsgranskning | Aktiveringssteget visar nu antalet profiler för målgrupper som redan är aktiverade. Profilantal visas även för direktuppspelningsmål, inte bara gruppmål. |
+| [!DNL Pinterest] synlighet för tokenförfallodatum | Målet [!DNL Pinterest] får nu plats med den förfallotid för token som returneras direkt från [!DNL Pinterest], så att du kan se när en ny autentisering krävs. |
+| Exportfilen har nu inaktiverats för ogiltiga scheman | Åtgärden **[!UICONTROL Export file now]** är nu inaktiverad när målgruppsschemat är ogiltigt eller inaktuellt. Ett verktygstips förklarar varför åtgärden inte är tillgänglig. |
+| Korrigera kolumnsynlighet i aktiveringsarbetsflöde | Ett problem har korrigerats där ändringar av synliga kolumner i en tabell felaktigt påverkade andra tabeller i aktiveringsarbetsflödet. |
 
 {style="table-layout:auto"}
 
