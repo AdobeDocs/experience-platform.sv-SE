@@ -5,9 +5,9 @@ title: Behandling av sekretessförfrågningar i kundprofil i realtid
 type: Documentation
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: db781526fc7b9813b9982f45b8a5aa36175a1f34
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '1746'
+source-wordcount: '1743'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ Handboken kräver en fungerande förståelse av följande [!DNL Experience Platf
 
 ## Identitetsnamnutrymmen {#namespaces}
 
-Adobe Experience Platform [!DNL Identity Service] förenar data för kundidentitet mellan system och enheter. [!DNL Identity Service] använder **identitetsnamnutrymmen** för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;e-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-ID (&quot;AdCloud&quot;) eller ett Adobe Target-ID (&quot;TNTID&quot;).
+Adobe Experience Platform [!DNL Identity Service] förenar data för kundidentitet mellan system och enheter. [!DNL Identity Service] använder **identitetsnamnutrymmen** för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett specifikt program, t.ex. ett Adobe Advertising-id eller ett Adobe Target-id.
 
 Identitetstjänsten underhåller ett arkiv med globalt definierade (standard) och användardefinierade (anpassade) identitetsnamnutrymmen. Standardnamnutrymmen är tillgängliga för alla organisationer (till exempel&quot;E-post&quot; och&quot;ECID&quot;), medan din organisation också kan skapa anpassade namnutrymmen som passar organisationens behov.
 
@@ -67,7 +67,7 @@ Dessutom måste matrisen `include` för nyttolasten för begäran innehålla pro
 
 >[!NOTE]
 >
->Mer information om effekterna av att använda [&#x200B; och &#x200B;](#profile-v-identity) i arrayen `ProfileService` finns i avsnittet `identity`profilförfrågningar och identitetsförfrågningar`include` senare i det här dokumentet.
+>Mer information om effekterna av att använda [ och ](#profile-v-identity) i arrayen `ProfileService` finns i avsnittet `identity`profilförfrågningar och identitetsförfrågningar`include` senare i det här dokumentet.
 
 Följande begäran skapar ett nytt sekretessjobb för en enskild kunds data i [!DNL Profile]-butiken. Det finns två identitetsvärden för kunden i arrayen `userIDs`. Den ena använder standardnamnutrymmet för identitet `Email` och den andra använder ett anpassat namnutrymme för `Customer_ID`. Den innehåller också produktvärdet för [!DNL Profile] (`ProfileService`) i arrayen `include`:
 

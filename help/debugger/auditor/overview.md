@@ -1,11 +1,11 @@
 ---
 title: Fliken Granskare
-description: Lär dig hur du använder fliken Granskare i Adobe Experience Platform Debugger för att testa dina Adobe Experience Cloud-implementeringar.
+description: Lär dig hur du använder fliken Auditor i Adobe Experience Platform Debugger för att testa dina Adobe Experience Cloud-implementeringar.
 keywords: felsökare;felsökningstillägg för upplevelseplattform;krom;tillägg;revisor;dtm;target
 exl-id: 409094f8-a7d9-45f7-ba12-b5e6250abc0f
-source-git-commit: df1a67e4b6f3d2eaeaba2b8d3c9b1588ee0b1461
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '361'
 ht-degree: 10%
 
 ---
@@ -46,8 +46,8 @@ Vi **rekommenderar** att du korrigerar alla resultat för nivå 1 till 3.
 
 Revisorfunktionen kan betygsätta följande Adobe-tekniker:
 
-* Adobe Advertising Cloud DSP
-* Adobe Advertising Cloud Search
+* Adobe Advertising DSP
+* Adobe Advertising Search
 * Adobe Analytics
 * Adobe Experience Cloud Identity Service
 * Adobe Target
@@ -60,4 +60,4 @@ Mer information om testrubrikerna i den här funktionen finns i följande dokume
 * [Konsekvens för taggar](./tag-consistency.md)
 * [Tagg presence](./tag-presence.md)
 * [Konfiguration](./configuration.md)
-* [Larm](./alerts.md)
+* [Aviseringar](./alerts.md)

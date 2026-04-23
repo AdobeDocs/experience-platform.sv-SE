@@ -1,11 +1,11 @@
 ---
-keywords: mål;Experience Cloud-lösningar; mål; mål; mål; mål; moln; annonseringsmoln; målgruppshanterare; adobe target; target; målgruppshanterare; mål; målgruppshanterare;
+keywords: mål;Experience Cloud-lösningar; mål;mål-mål; moln; annonser; målgruppshanterare; adobe target; target; målgruppshanterare; mål; målgruppshanterare;
 title: Översikt över Adobe destinationer
 description: Hantera kundupplevelsen genom att koppla era data i Experience Platform till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
 exl-id: 15a22a93-b4d6-4b94-bc6c-3634920c7689
-source-git-commit: 2bbd36db21363b20575db6a5fc5ecce8b9a31224
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '224'
+source-wordcount: '221'
 ht-degree: 1%
 
 ---
@@ -34,7 +34,7 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 
 ### Tillägg {#extensions}
 
-* [Adobe Advertising Cloud-tillägg](../advertising/adobe-advertising-cloud.md)
+* [Adobe Advertising-tillägg](../advertising/adobe-advertising-cloud.md)
 * [Adobe Analytics-tillägg](../analytics/adobe-analytics.md)
 * [Adobe Media Analytics för ljud- och videotillägg](../analytics/adobe-video-analytics.md)
 * [Adobe Target-tillägg](../personalization/adobe-target.md)
@@ -49,4 +49,4 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 
 Använd Experience Platform målgruppsfunktion för att dela era Experience Platform-målgrupper med andra Adobe-destinationer. Se sidan nedan för mer information (öppnas i Audience Manager dokumentationsportal):
 
-* [Experience Platform målgruppsdelning med Adobe Audience Manager, Adobe Advertising Cloud och Adobe Target via integreringen med bastjänsterna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=sv-SE)
+* [Experience Platform målgruppsdelning med Adobe Audience Manager, Adobe Advertising och Adobe Target via integreringen med bastjänsterna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)

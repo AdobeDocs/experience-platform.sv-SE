@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 18, 2019
 author: crhoades, ens28527
 exl-id: 2c417c56-cc61-4788-b248-d98ea6cf89f0
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '1889'
+source-wordcount: '1888'
 ht-degree: 7%
 
 ---
@@ -128,7 +128,7 @@ XDM är en öppet dokumenterad specifikation som utformats för att förbättra 
 | Funktion | Beskrivning |
 | ---------- | ------------ |
 | Meddelandeschema | Nytt schema som representerar meddelandedata som skickas under dataöverföringsprocessen. |
-| Adobe AdCloud DSP-scheman | Fem nya scheman har lagts till för att representera metadata för Adobe Advertising Cloud-DSP (DSP): Placement, Campaign, Package, Advertiser, Account. |
+| Adobe AdCloud DSP-scheman | Fem nya scheman har lagts till för att representera Adobe Advertising metadata för DSP (Demand-Side Platform): Placement, Campaign, Package, Advertiser, Account. |
 | Schemafältgrupper för implementeringsinformation för ExperienceEvent | Nya ExperienceEvent-fältgrupper som lägger till ett standardfält för att lagra information om programmet som används för att samla in händelsen. |
 | [!DNL Profile Privacy] fältgrupper | Nya profilfältgrupper som lägger till fält som accepterar allmänna avanmälnings- och avanmälningssignaler för försäljning/delning för [!DNL Real-Time Customer Profile]. |
 | Formatbegränsningar för `xdm:alternateDisplayInfo` | Fälten Rubrik och Beskrivning för `xdm:alternateDisplayInfo` måste båda vara strängar för att validera. |
@@ -150,7 +150,7 @@ Med Adobe Experience Platform kan du skapa samordnade, konsekventa och relevanta
 | Rensa data för en viss datauppsättning | Användare kan nu ta bort data för en viss datauppsättning eller grupp med hjälp av [!DNL Profile]-API:t för systemjobb. |
 | Edge [!DNL Profile] - frågeförbättringar | Program kan nu fråga Edge [!DNL Profile] efter någon av identiteterna för en viss profil. |
 | Konfigurera sammanslagningsprinciper per per projektion | Program kan nu konfigurera sammanslagningsprinciper per per projektion för att generera en vy över data som styrs av en specifik sammanfogningsprincip. |
-| Beräknade attribut | Beräknade attribut beräknar automatiskt fältets värde baserat på andra värden, beräkningar och uttryck. Beräknade attribut fungerar på profilnivån för att samla värden som&quot;totalt inköp&quot;,&quot;livstidsvärde&quot; eller&quot;trattstatus&quot; baserat på en inkommande händelse, inkommande händelse- och profildata eller en inkommande händelse, profildata och historiska händelser. |
+| Beräknade attribut | Beräknade attribut beräknar automatiskt fältets värde baserat på andra värden, beräkningar och uttryck. Beräknade attribut fungerar på profilnivån för att samla värden som&quot;totalt köp&quot;,&quot;livstidsvärde&quot; eller&quot;funnel-status&quot; baserat på en inkommande händelse, inkommande händelse- och profildata eller inkommande händelse, profildata och historiska händelser. |
 
 **Felkorrigeringar**
 

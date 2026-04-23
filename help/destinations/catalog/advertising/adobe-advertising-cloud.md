@@ -1,26 +1,26 @@
 ---
-keywords: Advertising Cloud;advertising cloud extension; advertising cloud cloud destination
-title: Adobe Advertising Cloud-tillägg
-description: Adobe Advertising Cloud-tillägget är ett annonsmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
+keywords: annonsutökning; reklamdestination
+title: Adobe Advertising-tillägg
+description: Adobe Advertising-tillägget är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan i Adobe Exchange.
 exl-id: 3415a85f-5678-4f5b-b7cf-e185a66d084f
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '409'
 ht-degree: 0%
 
 ---
 
-# [!DNL Adobe Advertising Cloud]-tillägg {#adobe-advertising-cloud-extension}
+# [!DNL Adobe Advertising]-tillägg {#adobe-advertising-cloud-extension}
 
 ## Översikt {#overview}
 
-Det här är tillägget [!DNL Advertising Cloud] för implementering av konverterings- och målgruppstaggar för både DSP och Search (DCO stöds inte för närvarande).[!DNL Advertising Cloud]
+Det här är tillägget [!DNL Adobe Advertising] för implementering av annonskonverterings- och målgruppstaggar för både DSP och Search (DCO stöds inte för närvarande).
 
-[!DNL Adobe Advertising Cloud] är ett annonstillägg i [!DNL Adobe Experience Platform].
+[!DNL Adobe Advertising] är ett annonstillägg i [!DNL Adobe Experience Platform].
 
 Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Experience Platform finns i [Översikt över taggtillägg](../launch-extensions/overview.md).
 
-![Adobe Advertising Cloud-tillägg](../../assets/catalog/advertising/adobe-advertising-cloud/catalog.png)
+![Adobe Advertising-tillägg](../../assets/catalog/advertising/adobe-advertising-cloud/catalog.png)
 
 ## Förutsättningar {#prerequisites}
 
@@ -30,9 +30,9 @@ Om du vill använda det här tillägget måste du ha tillgång till taggar i Exp
 
 ## Installera tillägg {#install-extension}
 
-Så här installerar du tillägget [!DNL Adobe Advertising Cloud]:
+Så här installerar du tillägget [!DNL Adobe Advertising]:
 
-Gå till [&#x200B; > &#x200B;](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
+Gå till [ > ](https://platform.adobe.com/) i **[!UICONTROL Destinations]** Experience Platform-gränssnittet **[!UICONTROL Catalog]**.
 
 Välj tillägget i katalogen eller använd sökfältet.
 

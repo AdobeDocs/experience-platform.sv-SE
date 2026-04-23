@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om XDM (Experience Data Model)
 user-guide-description: Utforska en översikt över XDM-systemet (Experience Data Model) i Experience Platform och läs mer om hur du använder klasser och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
 role: Developer
-source-git-commit: 511c93342d112056ead54c0d82184cc262a43383
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '711'
+source-wordcount: '710'
 ht-degree: 10%
 
 ---
@@ -116,7 +116,7 @@ ht-degree: 10%
       * [Information om partnerpotentiell kund (exempel)](./field-groups/prospect-profile/partner-prospect-details.md)
    * XDM ExperienceEvent {#event}
       * [Adobe Analytics Full Extension](./field-groups/event/analytics-full-extension.md)
-      * [Adobe Advertising Cloud, fullständigt tillägg](./field-groups/event/advertising-full-extension.md)
+      * [Adobe Advertising Full Extension](./field-groups/event/advertising-full-extension.md)
       * [Information om Advertising](./field-groups/event/advertising-details.md)
       * [Programinformation](./field-groups/event/application-details.md)
       * [Saldoöverföringar](./field-groups/event/balance-transfers.md)
@@ -289,4 +289,4 @@ ht-degree: 10%
    * [Skapa ett ad hoc-schema](tutorials/ad-hoc.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

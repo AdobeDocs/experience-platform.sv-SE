@@ -1,22 +1,19 @@
 ---
 title: pushNotifications
 description: Konfigurera push-meddelanden för Web SDK för att aktivera webbläsarbaserade push-meddelanden.
-source-git-commit: 60447ef6f881bf2a34f5502f2259328bf73d08c0
+exl-id: a5cf4817-a4c2-4cf1-8f3a-7e92b807de8f
+source-git-commit: d38cfb7d2ace7c1bb45dcb584a2cdf10063da06a
 workflow-type: tm+mt
-source-wordcount: '432'
+source-wordcount: '414'
 ht-degree: 1%
 
 ---
 
 # `pushNotifications` {#push-notifications}
 
->[!AVAILABILITY]
->
->Push-meddelanden för Web SDK finns för närvarande i **beta**. Funktionen och dokumentationen kan komma att ändras.
-
 Med egenskapen `pushNotifications` kan du konfigurera push-meddelanden för webbprogram. Med den här funktionen kan webbprogrammet ta emot meddelanden som har skickats från en server, även när webbplatsen inte har lästs in i webbläsaren.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Innan du konfigurerar push-meddelanden måste du se till att du har:
 

@@ -3,9 +3,9 @@ keywords: reklamdestinationer;destinationer;plattformsdestinationer
 title: Översikt över Advertising destinationer
 description: Koppla Adobe Experience Platform till en annonsplattform från tredje part (till exempel DSP, annonsnätverk, SSP) och dela pseudonyma målgrupper med dessa plattformar.
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: 2084f45ca89e78f980a8d2a53a08966e0588fcdd
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '291'
+source-wordcount: '289'
 ht-degree: 1%
 
 ---
@@ -29,7 +29,7 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 * [(Beta) Acxiom Audience Distribution](acxiom-audience-connection.md)
 * [(Beta) Acxiom Real ID Audience Connection](acxiom-real-id-audience-connection.md)
 * [Adobe Advertising DSP](adobe-advertising-dsp-connection.md)
-* [Äldre Adobe Advertising Cloud DSP-anslutning](adobe-advertising-cloud-dsp-connection-legacy.md)
+* [Äldre Adobe Advertising DSP-anslutning](adobe-advertising-cloud-dsp-connection-legacy.md)
 * [Amazon Ads-anslutning](amazon-ads.md)
 * [Amazon Ads v2-anslutning](amazon-ads-v2.md)
 * [Bomboras anslutning](bombora.md)
@@ -53,7 +53,7 @@ Mer information om skillnaden mellan anslutningar och tillägg finns i [Anslutni
 
 ### Tillägg {#extensions}
 
-* [Adobe Advertising Cloud-tillägg](adobe-advertising-cloud.md)
+* [Adobe Advertising-tillägg](adobe-advertising-cloud.md)
 * [Awin Advertising Conversion Tag extension](awin-conversiontag.md)
 * [Awin Advertising Mastertag-tillägg](awin-mastertag.md)
 * [Bing Ads Universal Event Tracking-tillägg](bing-ads.md)

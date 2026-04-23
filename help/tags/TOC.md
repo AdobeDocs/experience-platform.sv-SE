@@ -6,9 +6,9 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: cc4abd44dc7fc5facd3011fbc533a08a55ebe33f
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '828'
+source-wordcount: '827'
 ht-degree: 19%
 
 ---
@@ -72,7 +72,7 @@ ht-degree: 19%
       * [Activity Map Customizer](https://exchange.adobe.com/apps/ec/101531)
       * [Uppdatera åtgärdssida](https://exchange.adobe.com/apps/ec/102848)
       * [Anpassa webbplatsspårning](https://exchange.adobe.com/apps/ec/103195)
-      * [Adobe Advertising Cloud](https://exchange.adobe.com/apps/ec/100155)
+      * [Adobe Advertising](https://exchange.adobe.com/apps/ec/100155)
       * Adobe Analytics {#analytics}
          * [Översikt](./extensions/client/analytics/overview.md)
          * [Delade moduler](./extensions/client/analytics/shared-modules.md)
@@ -157,7 +157,7 @@ ht-degree: 19%
          * [Översikt](./extensions/client/target-v2/overview.md)
          * [Versionsinformation](./extensions/client/target-v2/release-notes.md)
       * [Adobe Target Toolkit](https://exchange.adobe.com/apps/ec/100640)
-      * [Advertising Cloud](https://exchange.adobe.com/apps/ec/100640)
+      * [Adobe Advertising](https://exchange.adobe.com/apps/ec/100640)
       * [AEM-resursinsikter](https://exchange.adobe.com/apps/ec/103406)
       * [Airbroms-JS-aviserare](https://exchange.adobe.com/apps/ec/103342)
       * [!DNL Algolia] insikter {#algolia-insights}
@@ -370,5 +370,5 @@ ht-degree: 19%
       * [Sökresurser](./api/guides/search.md)
       * [Hemligheter](./api/guides/secrets.md)
 * [Vanliga frågor och svar](./faq.md)
-* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/sv/docs/experience-platform/release-notes/latest)
+* [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
 

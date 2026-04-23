@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen
 title: Behandling av sekretessförfrågningar i identitetstjänsten
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för identitetstjänsten.
 exl-id: ab84450b-1a4b-4fdd-b77d-508c86bbb073
-source-git-commit: db781526fc7b9813b9982f45b8a5aa36175a1f34
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '1006'
+source-wordcount: '1003'
 ht-degree: 1%
 
 ---
@@ -32,7 +32,7 @@ Vi rekommenderar att du har en fungerande förståelse för följande [!DNL Expe
 
 ## Identitetsnamnutrymmen {#namespaces}
 
-Adobe Experience Platform [!DNL Identity Service] förenar data för kundidentitet mellan system och enheter. [!DNL Identity Service] använder **identitetsnamnutrymmen** för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;e-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-ID (&quot;AdCloud&quot;) eller ett Adobe Target-ID (&quot;TNTID&quot;).
+Adobe Experience Platform [!DNL Identity Service] förenar data för kundidentitet mellan system och enheter. [!DNL Identity Service] använder **identitetsnamnutrymmen** för att ge kontext till identitetsvärden genom att koppla dem till deras ursprungssystem. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett specifikt program, t.ex. ett Adobe Advertising-id eller ett Adobe Target-id.
 
 Identitetstjänsten underhåller ett arkiv med globalt definierade (standard) och användardefinierade (anpassade) identitetsnamnutrymmen. Standardnamnutrymmen är tillgängliga för alla organisationer (till exempel&quot;E-post&quot; och&quot;ECID&quot;), medan din organisation också kan skapa anpassade namnutrymmen som passar organisationens behov.
 

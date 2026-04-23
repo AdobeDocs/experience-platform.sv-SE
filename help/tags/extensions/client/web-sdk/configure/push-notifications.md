@@ -2,9 +2,9 @@
 title: Inställningar för push-meddelanden
 description: Konfigurera inställningar för push-meddelanden för Web SDK-taggtillägget.
 exl-id: 96ab7ea8-7180-46bb-9c15-eecba2009c52
-source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
+source-git-commit: d38cfb7d2ace7c1bb45dcb584a2cdf10063da06a
 workflow-type: tm+mt
-source-wordcount: '196'
+source-wordcount: '178'
 ht-degree: 2%
 
 ---
@@ -15,10 +15,6 @@ ht-degree: 2%
 >id="platform_tags_websdk_pushnotifications"
 >title="Push-meddelanden"
 >abstract="Anger en offentlig VAPID-nyckel för autentisering av push-meddelanden."
-
->[!AVAILABILITY]
->
->Push-meddelanden för Web SDK finns för närvarande i **beta**. Funktionen och dokumentationen kan komma att ändras.
 
 I det här konfigurationsavsnittet kan du ange en offentlig VAPID-nyckel för autentisering av push-meddelanden.
 

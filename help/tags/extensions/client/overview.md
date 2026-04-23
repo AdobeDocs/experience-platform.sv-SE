@@ -2,9 +2,9 @@
 title: Referens för taggtillägg
 description: Hitta dokumentation för taggtillägg i Adobe Experience Platform.
 exl-id: 226948f4-7738-4cfd-ad22-5934820b1399
-source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '427'
+source-wordcount: '423'
 ht-degree: 3%
 
 ---
@@ -21,7 +21,7 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Activity Map Customizer](https://exchange.adobe.com/apps/ec/101531)*
 * [Åtgärdssiduppdatering](https://exchange.adobe.com/apps/ec/102848)*
 * [Anpassa webbplatsspårning](https://exchange.adobe.com/apps/ec/103195)*
-* [Adobe Advertising Cloud](https://exchange.adobe.com/apps/ec/100155)*
+* [Adobe Advertising](https://exchange.adobe.com/apps/ec/100155)*
 * [Adobe Analytics](./analytics/overview.md)
 * [Adobe Analytics &amp; Adobe Target](https://exchange.adobe.com/apps/ec/105363/*6sense-for-analytics-and-target)*
 * [Adobe Analytics &amp; Microsoft Dynamics](https://exchange.adobe.com/apps/ec/102966)*
@@ -45,7 +45,6 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Adobe Target](./target/overview.md)
 * [Adobe Target v2](./target-v2/overview.md)
 * [Adobe Target Toolkit](https://exchange.adobe.com/apps/ec/100640)*
-* [Advertising Cloud](https://exchange.adobe.com/apps/ec/100640)*
 * [AEM Asset Insights](https://exchange.adobe.com/apps/ec/103406)*
 * [Airbroms-JS-aviserare](https://exchange.adobe.com/apps/ec/103342)*
 * [Amplitud](https://exchange.adobe.com/apps/ec/108010)*
@@ -96,7 +95,7 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Persado Connect](https://exchange.adobe.com/apps/ec/103745)*
 * [Pinterest Conversion Tracking](https://exchange.adobe.com/apps/ec/100523)*
 * [Pixelinläsare](https://exchange.adobe.com/apps/ec/100152)*
-* [Frågor och svar om webbplatsen &#x200B;](https://exchange.adobe.com/apps/ec/101569)*
+* [Frågor och svar om webbplatsen ](https://exchange.adobe.com/apps/ec/101569)*
 * [Quantum Metric](https://exchange.adobe.com/apps/ec/101535)*
 * [Lös kortskrift](https://exchange.adobe.com/apps/ec/108352)*
 * [Rokt](https://exchange.adobe.com/apps/ec/107591)*

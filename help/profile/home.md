@@ -2,7 +2,7 @@
 title: Kundprofilöversikt i realtid
 description: Kundprofilen i realtid sammanfogar data från olika källor och ger åtkomst till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
 source-wordcount: '1826'
 ht-degree: 1%
@@ -113,7 +113,7 @@ Realtidsinmatning är möjlig genom en process som kallas direktuppspelning. Nä
 
 >[!NOTE]
 >
->Data som samlas in via Adobe-lösningar, inklusive [!DNL Analytics Cloud], [!DNL Marketing Cloud] och [!DNL Advertising Cloud], flödar till [!DNL Experience Platform] och hämtas till [!DNL Profile].
+>Data som samlas in via Adobe-lösningar, inklusive [!DNL Analytics Cloud], [!DNL Marketing Cloud] och [!DNL Adobe Advertising], flödar till [!DNL Experience Platform] och hämtas till [!DNL Profile].
 
 ### Profilätvärden
 
@@ -137,7 +137,7 @@ Datastyrning hanteras vid flera tillfällen. Det kan vara att bestämma vilka da
 
 ### Hantera avanmälan och förfrågningar om datasekretess
 
-[!DNL Experience Platform] gör det möjligt för dina kunder att skicka avanmälningsbegäranden som rör användning och lagring av deras data i [!DNL Real-Time Customer Profile]. Mer information om hur avanmälningsbegäranden hanteras finns i dokumentationen om [hur avanmälningsbegäranden &#x200B;](../segmentation/tutorials/consents.md) respekteras.
+[!DNL Experience Platform] gör det möjligt för dina kunder att skicka avanmälningsbegäranden som rör användning och lagring av deras data i [!DNL Real-Time Customer Profile]. Mer information om hur avanmälningsbegäranden hanteras finns i dokumentationen om [hur avanmälningsbegäranden ](../segmentation/tutorials/consents.md) respekteras.
 
 ## Nästa steg och ytterligare resurser
 
