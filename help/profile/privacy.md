@@ -67,7 +67,7 @@ Dessutom måste matrisen `include` för nyttolasten för begäran innehålla pro
 
 >[!NOTE]
 >
->Mer information om effekterna av att använda [ och ](#profile-v-identity) i arrayen `ProfileService` finns i avsnittet `identity`profilförfrågningar och identitetsförfrågningar`include` senare i det här dokumentet.
+>Mer information om effekterna av att använda [&#x200B; och &#x200B;](#profile-v-identity) i arrayen `ProfileService` finns i avsnittet `identity`profilförfrågningar och identitetsförfrågningar`include` senare i det här dokumentet.
 
 Följande begäran skapar ett nytt sekretessjobb för en enskild kunds data i [!DNL Profile]-butiken. Det finns två identitetsvärden för kunden i arrayen `userIDs`. Den ena använder standardnamnutrymmet för identitet `Email` och den andra använder ett anpassat namnutrymme för `Customer_ID`. Den innehåller också produktvärdet för [!DNL Profile] (`ProfileService`) i arrayen `include`:
 
