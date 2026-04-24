@@ -10,9 +10,10 @@ role: User, Developer
 level: Beginner, Intermediate
 hide: true
 hidefromtoc: true
-source-git-commit: 4805570178a923206565c4ee1b55ab6532579d66
+exl-id: 48dba0d2-7df9-4d76-bc87-5af49a8a40cc
+source-git-commit: b340d118051e2c38e1098b601e9944a7029129dc
 workflow-type: tm+mt
-source-wordcount: '2376'
+source-wordcount: '2379'
 ht-degree: 0%
 
 ---
@@ -23,7 +24,7 @@ Du kan använda integreringen med Adobe Real-Time CDP MCP för att fråga efter 
 
 >[!AVAILABILITY]
 >
->Real-Time CDP MCP-servern distribueras som en **fjärrserver för HTTP-transport** som användare installerar och konfigurerar i MCP-klienter och appplattformar som stöds (till exempel Claude, ChatGPT, Claude Code, Codex, Cursor eller VS Code). Autentisering hanteras via ett **webbläsarbaserat inloggningsflöde** - när klienten först ansluter till servern öppnas standardwebbläsaren så att du kan logga in med dina Adobe-inloggningsuppgifter och auktorisera åtkomst.
+>Real-Time CDP MCP-servern distribueras som en **fjärrserver för HTTP-transport** som användare installerar och konfigurerar i MCP-klienter och appplattformar som stöds (till exempel Claude, ChatGPT, Claude Code, Codex, Cursor eller VS Code). Autentisering hanteras via ett **webbläsarbaserat inloggningsflöde** - när klienten först ansluter till servern öppnas standardwebbläsaren så att du kan logga in med dina Adobe-inloggningsuppgifter och auktorisera åtkomst. Kontakta Adobe för att få tillgång till detta Beta-program.
 
 ## Beta, säkerhet och juridiska meddelanden {#mcp-notices}
 
@@ -57,18 +58,7 @@ Med Real-Time CDP MCP-server kan du inspektera, sammanfatta och felsöka målgru
 
 ## Tillgängliga verktyg {#mcp-tools}
 
-Följande verktyg visas av Real-Time CDP MCP-servern:
-
-| Verktyg | Beskrivning |
-| --- | --- |
-| **Sök bland befintliga målgrupper** | Visa en lista över målgrupper med valfria filter (namn, enhetstyp, livscykeltillstånd, namnutrymme, ursprung) eller hämta en specifik målgrupp med ID. |
-| **Förhandsgranska målgruppsmedlemskap** | Beräkna storleken på en segmentfråga (PQL för profilmålgrupper, SDD för relations-/kontomålgrupper) inklusive metadata för konfidensintervall. |
-| **Lista måltyper** | Visa katalogen med målanslutningstyper som är tillgängliga i sandlådan. |
-| **Visa konfigurerade konton** | Bläddra bland konfigurerade målkonton (basanslutningar) och deras autentiseringsinformation. |
-| **Lista konfigurerade mål** | Bläddra bland måldataflöden, filtreringsbara efter namn, tillstånd, flödesspecifikation eller käll-/målanslutning. |
-| **Lista Source-anslutningar** | Inspektera källanslutningar som innehåller datamängdsmappningsinformation för ett måldataflöde. |
-| **Visa målanslutningar** | Inspektera målanslutningar som innehåller dataformatet och sökvägskonfigurationen för ett mål. |
-| **Inspektera aktiveringskörningar** | Granska körningshistorik för måldataflöde, filtrerbar med flödes-ID, status (lyckades, misslyckades, pågår) och tidsintervall för slutförande. |
+Verktygets tillgänglighet förändras snabbt när vi aktiverar nya verktyg. Kontakta din Adobe-representant för att få en lista över de senaste tillgängliga verktygen.
 
 >[!NOTE]
 >
@@ -111,7 +101,7 @@ Innan du ansluter Real-Time CDP MCP-servern till MCP-klienten bör du kontroller
 
 Kontrollera att du har följande innan du börjar:
 
-* MCP-serverslutpunktens URL: `https://rtcdp-mcp.adobe.io/mcp`.
+* MCP-serverslutpunktens URL: `Available to Beta customers through your Adobe representative`.
 * Bekräftelse på att din Adobe-användare har åtkomst till Experience Platform målorganisation och sandlåda.
 
 Real-Time CDP MCP-servern är en **HTTP MCP-fjärrserver**. I varje klient följer konfigurationen samma mönster:
@@ -125,15 +115,19 @@ Real-Time CDP MCP-servern är en **HTTP MCP-fjärrserver**. I varje klient följ
 
 #### Claude
 
-För `claude.ai` och Claude Desktop lägger du till Real-Time CDP MCP-servern som en **anpassad koppling** med `https://rtcdp-mcp.adobe.io/mcp`. Lägg till det under **Anpassa > Kopplingar** i individuella Claude-planer. I Team- och Enterprise-planer kan en ägare behöva lägga till det först under **Organisationsinställningar > Kopplingar**, varefter varje användare kopplar det i sina egna Claude-inställningar. Aktivera anslutningen i en konversation när du har konfigurerat den och fyll i Adobe webbläsarinloggning första gången du använder den.
+För `claude.ai` och Claude Desktop lägger du till Real-Time CDP MCP-servern som en **anpassad koppling** med slutpunkten från din Adobe-representant. Lägg till det under **Anpassa > Kopplingar** i individuella Claude-planer. I Team- och Enterprise-planer kan en ägare behöva lägga till det först under **Organisationsinställningar > Kopplingar**, varefter varje användare kopplar det i sina egna Claude-inställningar. Aktivera anslutningen i en konversation när du har konfigurerat den och fyll i Adobe webbläsarinloggning första gången du använder den.
 
 #### ChatGPT
 
-I ChatGPT lägger du till Real-Time CDP MCP-servern som en **anpassad app/anslutning** med `https://rtcdp-mcp.adobe.io/mcp`. Beroende på din chattGPT-plan kan det här kräva **utvecklarläge** och godkännande av arbetsytans administratör. När appen/kopplingen har skapats eller aktiverats ansluter du den från **Inställningar > Appar** eller **Inställningar > Appar och anslutningar** och autentiserar den sedan via webbläsarinloggningen i Adobe när du uppmanas till det.
+I ChatGPT lägger du till Real-Time CDP MCP-servern som en **anpassad app/anslutning** med slutpunkten som du fått från din Adobe-representant. Beroende på din chattGPT-plan kan det här kräva **utvecklarläge** och godkännande av arbetsytans administratör. När appen/kopplingen har skapats eller aktiverats ansluter du den från **Inställningar > Appar** eller **Inställningar > Appar och anslutningar** och autentiserar den sedan via webbläsarinloggningen i Adobe när du uppmanas till det.
+
+#### Markör
+
+I Cursor lägger du till Real-Time CDP MCP-servern som en fjärr-MCP-server med slutpunkten från din Adobe-representant. Öppna **Inställningar > MCP**, lägg till en ny server och klistra in slutpunkts-URL:en. Aktivera servern för arbetsytan genom att välja **connect** för autentisering via webbläsaren när du har lagt till den.
 
 #### Andra gränssnittsbaserade klienter
 
-För klienter som Cursor, VS Code eller andra dator- och webbprogram med fjärrstöd för MCP lägger du till Real-Time CDP MCP-servern som en **fjärr-HTTP**-server och använder `https://rtcdp-mcp.adobe.io/mcp`. Om klienten har stöd för valfria rubriker eller innehavartoken lämnar du dem tomma om inte Adobe särskilt anger något annat. Autentiseringen hanteras via det webbläsarbaserade inloggningsflödet från Adobe första gången.
+För klienter som VS-kod eller andra datorprogram och webbprogram med fjärrstöd för MCP lägger du till Real-Time CDP MCP-servern som en **fjärr-HTTP**-server med slutpunkten som du fått från din Adobe-representant. Om klienten har stöd för valfria rubriker eller innehavartoken lämnar du dem tomma om inte Adobe särskilt anger något annat. Autentiseringen hanteras via det webbläsarbaserade inloggningsflödet från Adobe första gången.
 
 ### Installera i tekniska klienter {#mcp-connect-technical}
 
@@ -142,7 +136,7 @@ För klienter som Cursor, VS Code eller andra dator- och webbprogram med fjärrs
 Lägg till servern från terminalen:
 
 ```bash
-claude mcp add --transport http rtcdp https://rtcdp-mcp.adobe.io/mcp
+claude mcp add --transport http rtcdp <endpoint provided by your Adobe representative>
 ```
 
 Starta sedan Claude Code och kör:
@@ -158,7 +152,7 @@ Markera servern `rtcdp` och fyll i inloggningsflödet för Adobe i webbläsaren.
 Lägg till servern från terminalen:
 
 ```bash
-codex mcp add rtcdp --url https://rtcdp-mcp.adobe.io/mcp
+codex mcp add rtcdp --url <endpoint provided by your Adobe representative>
 ```
 
 Autentisera servern:
@@ -177,7 +171,7 @@ Du kan också lägga till servern direkt i `~/.codex/config.toml`:
 
 ```toml
 [mcp_servers.rtcdp]
-url = "https://rtcdp-mcp.adobe.io/mcp"
+url = "<endpoint provided by your Adobe representative>"
 ```
 
 ### Obligatoriska parametrar för begäran {#mcp-connect-params}
@@ -200,7 +194,7 @@ Följande begränsningar gäller för den aktuella Beta-versionen av MCP-servern
 | **Filtrering av aktiveringskörning är endast tidsbaserad** | `Inspect Activation Runs` stöder filtrering efter status och slutförandetidsstämpel (epoch ms UTC), men inte efter feltyp eller målplattform direkt. | Filtrera efter `flowId` först (hämtas från `List Configured Destinations`) så att omfånget körs till ett specifikt mål. |
 | **Regionkonfiguration krävs** | Verktygsanrop misslyckas med HTTP 403 &quot;Användarregion saknas&quot; om MCP-gatewayen inte har konfigurerats för din användarregion. | Kontakta din Adobe-representant för att bekräfta att gatewayen har konfigurerats för din region innan du använder den för första gången. |
 
-## Vanliga frågor och svar {#mcp-faq}
+## Frågor och svar {#mcp-faq}
 
 +++Vilka MCP-klienter stöds?
 
