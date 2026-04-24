@@ -45,8 +45,8 @@ Om du vill konfigurera tillägget [!DNL Algolia] för vidarebefordran av händel
 
 | Egenskap | Beskrivning |
 |----------|-------------|
-| **[!UICONTROL Application ID]** | Ange [!UICONTROL Application ID] som finns i Algoliet Dashboard under avsnittet [ API-nycklar ](https://www.algolia.com/account/api-keys/all). |
-| **[!UICONTROL Search API Key]** | Ange [!UICONTROL Search API Key] som finns i Algoliet Dashboard under avsnittet [ API-nycklar ](https://www.algolia.com/account/api-keys/all). |
+| **[!UICONTROL Application ID]** | Ange [!UICONTROL Application ID] som finns i Algoliet Dashboard under avsnittet [&#x200B; API-nycklar &#x200B;](https://www.algolia.com/account/api-keys/all). |
+| **[!UICONTROL Search API Key]** | Ange [!UICONTROL Search API Key] som finns i Algoliet Dashboard under avsnittet [&#x200B; API-nycklar &#x200B;](https://www.algolia.com/account/api-keys/all). |
 | **[!UICONTROL Index Name]** | Ange [!UICONTROL Index Name] som innehåller dina produkter eller ditt innehåll. Detta index används som standardvärde. |
 
 {style="table-layout:auto"}

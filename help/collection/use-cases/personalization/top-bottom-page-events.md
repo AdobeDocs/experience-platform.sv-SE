@@ -83,7 +83,7 @@ alloy("sendEvent", {
 
 Konfigurera en [[!UICONTROL Send event]](/help/tags/extensions/client/web-sdk/actions/send-event.md)-åtgärd i regeln som utlöses längst ned på sidan. Aktivera **[!UICONTROL Use guided events]** och välj sedan **[!UICONTROL Collect analytics]**. Det här alternativet låser [!UICONTROL Include rendered propositions] till aktiverat.
 
-Om du vill ange det här fältet manuellt i stället låter du **[!UICONTROL Use guided events]** vara inaktiverat och aktiverar **[!UICONTROL Include rendered propositions]** direkt. Du kan också fylla i fältet **[!UICONTROL XDM]** med ett [ XDM-objektdataelement ](/help/tags/extensions/client/web-sdk/data-element-types.md#xdm-object) som innehåller siddata.
+Om du vill ange det här fältet manuellt i stället låter du **[!UICONTROL Use guided events]** vara inaktiverat och aktiverar **[!UICONTROL Include rendered propositions]** direkt. Du kan också fylla i fältet **[!UICONTROL XDM]** med ett [&#x200B; XDM-objektdataelement &#x200B;](/help/tags/extensions/client/web-sdk/data-element-types.md#xdm-object) som innehåller siddata.
 
 >[!ENDTABS]
 
@@ -267,4 +267,4 @@ alloy("sendEvent", {
 
 ## GitHub-exempel {#github-sample}
 
-[Det översta och nedersta exemplet i databasen ](https://github.com/adobe/alloy-samples/tree/main/target/top-and-bottom) med legeringsexempel visar hur du kan begära personalisering högst upp på sidan och skicka analysstatistik längst ned. Ladda ned exemplet och kör det lokalt för att se hur sidans övre och nedre del fungerar. Exemplet använder JavaScript-biblioteket direkt. Samma mönster används när du konfigurerar motsvarande regler i taggtillägget Web SDK.
+[Det översta och nedersta exemplet i databasen &#x200B;](https://github.com/adobe/alloy-samples/tree/main/target/top-and-bottom) med legeringsexempel visar hur du kan begära personalisering högst upp på sidan och skicka analysstatistik längst ned. Ladda ned exemplet och kör det lokalt för att se hur sidans övre och nedre del fungerar. Exemplet använder JavaScript-biblioteket direkt. Samma mönster används när du konfigurerar motsvarande regler i taggtillägget Web SDK.
