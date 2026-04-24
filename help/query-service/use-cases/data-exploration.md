@@ -2,9 +2,9 @@
 title: Utforska, felsöka och verifiera batchmatning med SQL
 description: Lär dig förstå och hantera dataöverföringsprocessen i Adobe Experience Platform. I det här dokumentet finns information om hur du verifierar batchar och frågar efter inlästa data.
 exl-id: 8f49680c-42ec-488e-8586-50182d50e900
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7fac5ebd3f81e6f4b9f601ab1d9252402cad52b6
 workflow-type: tm+mt
-source-wordcount: '1156'
+source-wordcount: '1163'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ I det här dokumentet förklaras hur du verifierar och validerar poster i kapsla
 >
 >Vissa skärmbilder i den här guiden tas från [!DNL DBVisualizer]. Mer information om hur du [ansluter frågetjänsten med DBVisualizer](../clients/dbvisulaizer.md) eller andra [BI-verktyg från tredje part](../clients/overview.md) finns i den länkade dokumentationen.
 
-## Förhandskrav
+## Förutsättningar
 
 För att du ska få en bättre förståelse för de begrepp som beskrivs i det här dokumentet bör du ha kunskap om följande ämnen:
 
@@ -37,13 +37,13 @@ Om du sedan vill visa systemfälten för datauppsättningen kör du en SELECT al
 
 ![Gränssnittet för DBVisualizer med tabellen movie_data och dess metadatakolumner visade och markerade.](../images/use-cases/movie_data-table-with-metadata-columns.png)
 
-När data importeras till Experience Platform tilldelas den en logisk partition baserat på inkommande data. Denna logiska partition representeras av `_acp_system_metadata.sourceBatchId`. Detta ID hjälper till att gruppera och identifiera datagrupperna logiskt innan de bearbetas och lagras.
+När data importeras till Experience Platform tilldelas den en logisk partition baserat på inkommande data. Denna logiska partition representeras av `_acp_system_metadata.acp_sourceBatchId`. Detta ID hjälper till att gruppera och identifiera datagrupperna logiskt innan de bearbetas och lagras.
 
 När data har bearbetats och importerats till datasjön tilldelas den en fysisk partition som representeras av `_ACP_BATCHID`. Detta ID återspeglar den faktiska lagringspartitionen i datavjön där inmatade data finns.
 
 ### Använd SQL för att förstå logiska och fysiska partitioner {#understand-partitions}
 
-För att förstå hur data grupperas och distribueras efter intag kan du använda följande fråga för att räkna antalet distinkta fysiska partitioner (`_ACP_BATCHID`) för varje logisk partition (`_acp_system_metadata.sourceBatchId`).
+För att förstå hur data grupperas och distribueras efter intag kan du använda följande fråga för att räkna antalet distinkta fysiska partitioner (`_ACP_BATCHID`) för varje logisk partition (`_acp_system_metadata.acp_sourceBatchId`).
 
 ```SQL
 SELECT  _acp_system_metadata, COUNT(DISTINCT _ACP_BATCHID) FROM movie_data

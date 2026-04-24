@@ -2,9 +2,9 @@
 title: Datastyrning i frågetjänst
 description: Den här översikten täcker de viktigaste elementen i datahanteringen i Experience Platform Query Service.
 exl-id: 37543d43-bd8c-4bf9-88e5-39de5efe3164
-source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+source-git-commit: c98ae492b12fb5b9596f19a3d64785090439f7e1
 workflow-type: tm+mt
-source-wordcount: '3131'
+source-wordcount: '3182'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Följande kategorier är avgörande när det gäller att följa regler för data
 1. Säkerhet
 1. Granskning
 1. Dataanvändning
-1. Sekretess
+1. Integritet
 1. Datahygien
 
 I det här dokumentet behandlas de olika styrområdena och det visas hur du kan underlätta datakompatibiliteten när du använder frågetjänsten. Mer information om hur Experience Platform gör det möjligt att hantera kunddata och säkerställa regelefterlevnad finns i översikten [Styrning, sekretess och säkerhet](../../landing/governance-privacy-security/overview.md).
@@ -39,7 +39,7 @@ Säkerheten med avseende på frågetjänsten är indelad i följande kategorier:
 
 ### Åtkomstkontroll {#access-control}
 
-Med åtkomstkontrollen i Adobe Experience Platform kan du använda [Adobe Admin Console](https://adminconsole.adobe.com/) för att hantera åtkomst till Query Service-funktioner med rollbaserade behörigheter. På samma sätt kan du styra åtkomsten till specifika dataattribut genom etiketthantering för scheman och datafält.
+Åtkomstkontroll i Adobe Experience Platform hanteras av rollbaserade behörigheter som avgör vilka användare som kan använda funktionerna i frågetjänsten. På samma sätt kan du styra åtkomsten till specifika dataattribut genom etiketthantering för scheman och datafält.
 
 I det här avsnittet beskrivs de nödvändiga behörigheterna för åtkomstkontroll som en användare måste ha för att kunna utnyttja funktionerna i frågetjänsten fullt ut. I dokumenten om att [hantera behörigheter](../../access-control/ui/permissions.md) och [hantera användare](../../access-control/ui/users.md) finns detaljerade instruktioner om hur du tilldelar åtkomst till en produktprofil.
 
@@ -137,7 +137,7 @@ Kryptering är användning av en algoritmisk process för att omvandla data till
 
 Med datakompatibiliteten för frågetjänsten säkerställs att data alltid krypteras. Data-in-Transition är alltid HTTPS-kompatibel och data-i-rest krypteras i en Azure Data Lake-butik med hjälp av nycklar på systemnivå. Mer information finns i dokumentationen om [hur data krypteras i Adobe Experience Platform](../../landing/governance-privacy-security/encryption.md). Mer information om hur vilande data krypteras i Azure Data Lake Storage finns i [Azure officiella dokumentation](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption).
 
-Data-in-Transition är alltid HTTPS-kompatibel och på liknande sätt när data ligger i viloläge sker krypteringen med kundhanteringsnyckeln (CMK), som redan stöds av Data Lake Management. Den version som stöds för närvarande är TLS1.2. Läs [kundhanterade nycklar (CMK) &#x200B;](../../landing/governance-privacy-security/customer-managed-keys/overview.md) om du vill veta hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
+Data-in-Transition är alltid HTTPS-kompatibel och på liknande sätt när data ligger i viloläge sker krypteringen med kundhanteringsnyckeln (CMK), som redan stöds av Data Lake Management. Den version som stöds för närvarande är TLS1.2. Läs [kundhanterade nycklar (CMK) ](../../landing/governance-privacy-security/customer-managed-keys/overview.md) om du vill veta hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
 
 
 ## Granskning {#audit}
@@ -190,7 +190,7 @@ När ad hoc-scheman skapas av en enskild användare för ett specifikt ändamål
 
 När du har öppnat schemat kan du [använda etiketter i enskilda fält](../../xdm/tutorials/labels.md). När ett schema har etiketterats ärver alla datauppsättningar som härleds från det schemat dessa etiketter. Härifrån kan du ange dataanvändningsprinciper som kan begränsa dataanvändning med vissa etiketter från att aktiveras till vissa mål. Mer information finns i översikten över [dataanvändningsprinciper](../../data-governance/policies/overview.md).
 
-## Sekretess {#privacy}
+## Integritet {#privacy}
 
 [Privacy Service](../../privacy-service/home.md) hjälper dig att hantera kundförfrågningar för att få åtkomst till och ta bort deras data i enlighet med juridiska sekretessbestämmelser. Det gör man genom att söka efter befintliga identifierare i data och antingen få åtkomst till eller ta bort dessa data beroende på vilket sekretessjobb som begärts. Data måste vara korrekt märkta för att tjänsten ska kunna avgöra vilka fält som ska användas eller tas bort under sekretessjobb. Uppgifter som omfattas av sekretessförfrågningar måste innehålla kundidentitetsinformation för att kunna koppla de olika uppgifterna till den person som sekretessförfrågningen gäller för. Frågetjänsten kan berika de data som används med en unik identifierare för att uppfylla sekretessjobb.
 
@@ -200,7 +200,7 @@ Mer information om [identitetsdata för sekretessförfrågningar](../../privacy-
 
 Frågetjänstfunktioner för datastyrning förenklar och effektiviserar processen för kategorisering av data och efterlevnad av regler för dataanvändning. När data har identifierats kan du med Query Service tilldela den primära identiteten till alla utdatamängder. Du **måste** lägga till identiteter i datauppsättningen för att underlätta förfrågningar om datasekretess och arbeta mot datakompatibilitet.
 
-Schemadatafält kan anges som ett identitetsfält via Experience Platform UI och Query Service. Du kan också [markera de primära identiteterna med SQL-kommandot ALTER TABLE &#x200B;](../sql/syntax.md#alter-table). Det är särskilt användbart att ange en identitet med kommandot `ALTER TABLE` när datauppsättningar skapas med SQL i stället för direkt från ett schema via Experience Platform-gränssnittet. I dokumentationen finns instruktioner om hur du [definierar identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md) när du använder standardscheman.
+Schemadatafält kan anges som ett identitetsfält via Experience Platform UI och Query Service. Du kan också [markera de primära identiteterna med SQL-kommandot ALTER TABLE ](../sql/syntax.md#alter-table). Det är särskilt användbart att ange en identitet med kommandot `ALTER TABLE` när datauppsättningar skapas med SQL i stället för direkt från ett schema via Experience Platform-gränssnittet. I dokumentationen finns instruktioner om hur du [definierar identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md) när du använder standardscheman.
 
 ## Datahygien {#data-hygiene}
 
