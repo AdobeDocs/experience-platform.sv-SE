@@ -3,9 +3,9 @@ title: Översikt över tillägget Algoliets händelsevidarebefordring
 description: Lär dig hur du konfigurerar och använder tillägget för händelsevidarebefordran i Algolia i Adobe Experience Platform. Vidarebefordra användarbeteendedata via API:t för insikter, konfigurera regler, mappa XDM-fält och verifiera händelseleverans.
 last-substantial-update: 2025-05-09T00:00:00Z
 exl-id: 397c8761-9bff-4b85-9f3f-4cbbd782c139
-source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
+source-git-commit: 61aeec69f782968a8c157b604ba1cd9e990b7f02
 workflow-type: tm+mt
-source-wordcount: '970'
+source-wordcount: '966'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Använd [!DNL Algolia] för att leverera snabba, relevanta och personaliserade s
 
 Använd tillägget [!DNL Algolia] för vidarebefordran av händelser för att skicka användarbeteendehändelser till [!DNL Algolia] via [!DNL Insights API]. Dessa beteendedata möjliggör AI-baserade rekommendationer, personaliserade upplevelser och intelligenta sökfunktioner.
 
-## Förhandskrav {#prerequisites}
+## Förutsättningar {#prerequisites}
 
 Innan du installerar tillägget bör du kontrollera att du har ett [!DNL Algolia]-konto med åtkomst till [!DNL Insights API]. Om du inte har något konto [registrerar du dig](https://dashboard.algolia.com/users/sign_up) och aktiverar åtkomst till API:t.
 
@@ -45,8 +45,8 @@ Om du vill konfigurera tillägget [!DNL Algolia] för vidarebefordran av händel
 
 | Egenskap | Beskrivning |
 |----------|-------------|
-| **[!UICONTROL Application ID]** | Ange [!UICONTROL Application ID] som finns i Algoliet Dashboard under avsnittet [&#x200B; API-nycklar &#x200B;](https://www.algolia.com/account/api-keys/all). |
-| **[!UICONTROL Search API Key]** | Ange [!UICONTROL Search API Key] som finns i Algoliet Dashboard under avsnittet [&#x200B; API-nycklar &#x200B;](https://www.algolia.com/account/api-keys/all). |
+| **[!UICONTROL Application ID]** | Ange [!UICONTROL Application ID] som finns i Algoliet Dashboard under avsnittet [ API-nycklar ](https://www.algolia.com/account/api-keys/all). |
+| **[!UICONTROL Search API Key]** | Ange [!UICONTROL Search API Key] som finns i Algoliet Dashboard under avsnittet [ API-nycklar ](https://www.algolia.com/account/api-keys/all). |
 | **[!UICONTROL Index Name]** | Ange [!UICONTROL Index Name] som innehåller dina produkter eller ditt innehåll. Detta index används som standardvärde. |
 
 {style="table-layout:auto"}
@@ -69,15 +69,15 @@ Se till att du lägger till händelsefältgruppen [!DNL Algolia] i schemat innan
 
 ![Konfiguration av händelsefältgrupp i Algolia](../../../images/extensions/server/algolia/algolia-field-groups.png)
 
-### Lägg till fältgruppen [!DNL Algolia] i ditt schema {#add-algolia-field-group}
+### Lägg till fältgruppen [!UICONTROL Algolia Event Details] i ditt schema {#add-algolia-field-group}
 
-Så här lägger du till händelsefältgruppen [!DNL Algolia]:
+Lägga till fältgruppen [!UICONTROL Algolia Event Details]:
 
 Navigera till **[!UICONTROL Schemas]** och välj **[!UICONTROL Browse]**.
 
 Lägg till ett nytt schema eller uppdatera ett befintligt schema som du använder för att skicka webbhändelser och hovra över ikonen **[!UICONTROL Add]**. Ange *[!DNL Algolia]* i sökrutan om du vill begränsa resultaten.
 
-Välj fältgruppen **[!DNL Algolia]Händelseinformation** > **[!UICONTROL Add field group]** > **[!UICONTROL Save]**.
+Välj fältgruppen **[!UICONTROL Algolia Event Details]** > **[!UICONTROL Add field group]** > **[!UICONTROL Save]**.
 
 ![Konfiguration av fältgrupp för Algoliprofil i Experience Platform](../../../images/extensions/server/algolia/algolia-profile-field-group.png)
 
@@ -167,5 +167,5 @@ Mer information om hur du felsöker implementeringen med verktyget för felsökn
 
 - [[!DNL Algolia] API-dokumentation för insikter](https://www.algolia.com/doc/rest-api/insights/)
 - [[!DNL Algolia] Händelsedokumentation](https://www.algolia.com/doc/guides/sending-events/getting-started/)
-- [[!DNL Adobe Experience Platform] Dokumentation för vidarebefordran av händelser](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html?lang=sv-SE)
+- [[!DNL Adobe Experience Platform] Dokumentation för vidarebefordran av händelser](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html)
 - [[!DNL Algolia] Översikt över AI-funktioner](https://www.algolia.com/products/ai-search/)
