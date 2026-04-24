@@ -15,9 +15,9 @@ Med egenskapen `edgeDomain` kan du ändra den domän som Web SDK skickar data ti
 
 >[!NOTE]
 >
->Den här egenskapen ändrar inte var cookies anges. SDK anger alltid [cookies från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html), oavsett var data skickas.
+>Den här egenskapen ändrar inte var cookies anges. SDK anger alltid [cookies från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=sv-SE), oavsett var data skickas.
 
-Vilket värde du använder för `edgeDomain` beror på ditt deltagande i det [Adobe-hanterade certifikatprogrammet](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/adobe-managed-cert):
+Vilket värde du använder för `edgeDomain` beror på ditt deltagande i det [Adobe-hanterade certifikatprogrammet](https://experienceleague.adobe.com/sv/docs/core-services/interface/data-collection/adobe-managed-cert):
 
 **Om din organisation deltar i det Adobe-hanterade certifikatprogrammet** anger du värdet till den förstapartsdomän som valdes när certifikatet konfigurerades. Vanligtvis är det här värdet en underdomän som ägs av din organisation. Exempel: `data.example.com`. CNAME-poster i din organisation vidarebefordrar dessa data till Adobe.
 

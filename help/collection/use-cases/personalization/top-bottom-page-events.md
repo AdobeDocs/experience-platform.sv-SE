@@ -43,7 +43,7 @@ alloy("sendEvent", {
 
 | Parameter | Obligatoriskt/valfritt | Beskrivning |
 | --- | --- | --- |
-| `type` | Obligatoriskt | Ställ in den här parametern på `decisioning.propositionFetch`. Den här speciella händelsetypen talar om för Adobe Analytics att den här händelsen ska släppas. När du använder Customer Journey Analytics kan du också konfigurera ett filter för att släppa dessa händelser. Mer information finns i [Edge Network händelsetyper i Adobe Analytics](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/hit-types). |
+| `type` | Obligatoriskt | Ställ in den här parametern på `decisioning.propositionFetch`. Den här speciella händelsetypen talar om för Adobe Analytics att den här händelsen ska släppas. När du använder Customer Journey Analytics kan du också konfigurera ett filter för att släppa dessa händelser. Mer information finns i [Edge Network händelsetyper i Adobe Analytics](https://experienceleague.adobe.com/sv/docs/analytics/implementation/aep-edge/hit-types). |
 | `renderDecisions` | Obligatoriskt | Ställ in den här parametern på `true`. Den här parametern anger för Web SDK att återge beslut som returneras av Edge Network. |
 | `personalization.sendDisplayEvent` | Obligatoriskt | Ställ in den här parametern på `false`. Den här parametern stoppar visning av händelser från att skickas. |
 
