@@ -4,9 +4,9 @@ solution: Experience Platform
 title: SQL-syntax i frågetjänst
 description: Det här dokumentet innehåller information om och förklarar den SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+source-git-commit: f2d81f05c8c19c6f28849fc4dbe9bfa26be64645
 workflow-type: tm+mt
-source-wordcount: '4686'
+source-wordcount: '4737'
 ht-degree: 1%
 
 ---
@@ -157,7 +157,7 @@ Som standard är matchningar som skapats av en `WHERE`-sats i en `SELECT` -fråg
 
 Logiken i LIKE- och ILIKE-klausulerna förklaras i följande tabell:
 
-| Klausul | Operatör |
+| Klausul | Operator |
 | ------ | -------- |
 | `WHERE condition LIKE pattern` | `~~` |
 | `WHERE condition NOT LIKE pattern` | `!~~` |
@@ -223,8 +223,8 @@ AS (select_query)
 | `schema` | XDM-schemats titel. Använd bara den här satsen om du vill koppla den nya tabellen till ett befintligt XDM-schema. |
 | `rowvalidation` | (Valfritt) Aktiverar validering på radnivå för varje batch som hämtas till datauppsättningen. Standardvärdet är true. |
 | `label` | (Valfritt) Använd värdet `PROFILE` för att etikettera datauppsättningen som aktiverad för profilinmatning. |
-| `transform` | (Valfritt) Tillämpar funktionstekniska omformningar (till exempel strängindexering, kodning med ett enda varv eller TF-IDF) innan datauppsättningen materialiseras. Den här satsen används för förhandsgranskning av omformade funktioner. Mer information finns i [`TRANSFORM`-satsdokumentationen &#x200B;](#transform). |
-| `select_query` | En `SELECT`-standardsats som definierar datauppsättningen. Mer information finns i avsnittet [`SELECT`-frågor &#x200B;](#select-queries). |
+| `transform` | (Valfritt) Tillämpar funktionstekniska omformningar (till exempel strängindexering, kodning med ett enda varv eller TF-IDF) innan datauppsättningen materialiseras. Den här satsen används för förhandsgranskning av omformade funktioner. Mer information finns i [`TRANSFORM`-satsdokumentationen ](#transform). |
+| `select_query` | En `SELECT`-standardsats som definierar datauppsättningen. Mer information finns i avsnittet [`SELECT`-frågor ](#select-queries). |
 
 >[!NOTE]
 >
@@ -525,7 +525,7 @@ $$BEGIN
 $$END
 
 exceptionHandler:
-      WHEN OTHER
+      WHEN OTHERS
       THEN statementList
 
 statementList:
@@ -543,7 +543,7 @@ $$BEGIN
      AS SELECT _id AS id FROM email_tracking_experience_event_dataset SNAPSHOT BETWEEN @v_snapshot_from AND @v_snapshot_to;
 
 EXCEPTION
-  WHEN OTHER THEN
+  WHEN OTHERS THEN
     DROP TABLE IF EXISTS tracking_email_id_incrementally;
     SELECT 'ERROR';
 $$END;
@@ -647,7 +647,7 @@ $$BEGIN
     ELSE    
        SELECT 'DEFAULT';
     END IF;  
-EXCEPTION WHEN OTHER THEN 
+EXCEPTION WHEN OTHERS THEN 
   SELECT 'THERE WAS AN ERROR';    
  END$$;
 ```
@@ -724,7 +724,7 @@ Insert Into
       cast( @to_snapshot_id AS string) last_snapshot_id,
       cast( @last_updated_timestamp AS TIMESTAMP) process_timestamp;
 EXCEPTION
-  WHEN OTHER THEN
+  WHEN OTHERS THEN
     SELECT 'ERROR';
 END
 $$;
@@ -775,7 +775,7 @@ CREATE TABLE IF NOT EXISTS target_table_name AS
                      WHERE  @mytableexist = 'true' limit 20
               ) ;
 EXCEPTION
-WHEN other THEN SELECT 'ERROR';
+WHEN OTHERS THEN SELECT 'ERROR';
 
 END $$; 
 ```
@@ -819,7 +819,7 @@ Värdena från `source_dataset` används för att fylla i måltabellen.
 
 | SKU | upplevelse | kvantitet | priceTotal |
 |---------------------|-----------------------------------|----------|--------------|
-| product-id-1 | (&quot;(&quot;(&quot;(A,pass,B,NULL)&quot;)&quot;)&quot;)&quot; | 5 | 10,5 |
+| product-id-1 | (&quot;(&quot;(&quot;(A,pass,B,NULL)&quot;)&quot;)&quot;)&quot; | 5 | 10.5 |
 | product-id-5 | (&quot;(&quot;(&quot;(A, pass, B,NULL)&quot;)&quot;)&quot;)&quot;) |          |              |
 | product-id-2 | (&quot;(&quot;(&quot;(AF, C, D,NULL)&quot;)&quot;)&quot;)&quot;) | 6 | 40 |
 | product-id-4 | (&quot;(&quot;(&quot;(BM, pass, NA,NULL)&quot;)&quot;)&quot;)&quot;) | 3 | 12 |
@@ -1128,7 +1128,7 @@ SHOW ALL
 
 | Parametrar | Beskrivning |
 | ------ | ------ |
-| `name` | Namnet på körningsparametern som du vill ha information om. Möjliga värden för körningsparametern inkluderar följande värden:<br>`SERVER_VERSION`: Den här parametern visar serverns versionsnummer.<br>`SERVER_ENCODING`: Den här parametern visar kodningen för teckenuppsättningen på serversidan.<br>`LC_COLLATE`: Den här parametern visar databasens språkinställning för sortering (textordning).<br>`LC_CTYPE`: Den här parametern visar databasens språkområdesinställning för teckenklassificering.<br>`IS_SUPERUSER`: Den här parametern visar om den aktuella rollen har superanvändarbehörighet. |
+| `name` | Namnet på körningsparametern som du vill ha information om. Möjliga värden för körningsparametern inkluderar följande värden:<br>`SERVER_VERSION`: Den här parametern visar serverns versionsnummer.<br>`SERVER_ENCODING`: Den här parametern visar kodningen av teckenuppsättningen på serversidan.<br>`LC_COLLATE`: Den här parametern visar databasens språkinställning för sortering (textordning).<br>`LC_CTYPE`: Den här parametern visar databasens språkinställning för teckenklassificering.<br>`IS_SUPERUSER`: Den här parametern visar om den aktuella rollen har en överordnad roll användarbehörigheter. |
 | `ALL` | Visa värdena för alla konfigurationsparametrar med beskrivningar. |
 
 **Exempel**
@@ -1258,7 +1258,7 @@ ALTER TABLE table_name ADD COLUMN column_name_1 data_type1, column_name_2 data_t
 
 I följande tabell visas godkända datatyper för att lägga till kolumner i en tabell med [!DNL Postgres SQL], XDM och [!DNL Accelerated Database Recovery] (ADR) i Azure SQL.
 
-| — | PSQL-klient | XML | ADR. | Beskrivning |
+| --- | PSQL-klient | XML | ADR. | Beskrivning |
 |---|---|---|---|---|
 | 1 | `bigint` | `int8` | `bigint` | En numerisk datatyp som används för att lagra stora heltal mellan -9 223 372 036 854 775 807 och 9 223 372 036 854 775 807 i 8 byte. |
 | 2 | `integer` | `int4` | `integer` | En numerisk datatyp som används för att lagra heltal mellan -2 147 483 648 och 2 147 483 647 i 4 byte. |

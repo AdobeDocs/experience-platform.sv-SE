@@ -2,10 +2,10 @@
 title: Ingenjörsfunktioner för maskininlärning
 description: Lär dig hur du omvandlar data i Adobe Experience Platform till funktioner eller variabler som kan användas av en maskininlärningsmodell. Använd Data Distiller för att beräkna HTML-funktioner i stor skala och dela dem med maskininlärningsmiljön.
 exl-id: 7fe017c9-ec46-42af-ac8f-734c4c6e24b5
-source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+source-git-commit: f2d81f05c8c19c6f28849fc4dbe9bfa26be64645
 workflow-type: tm+mt
-source-wordcount: '1140'
-ht-degree: 11%
+source-wordcount: '1146'
+ht-degree: 17%
 
 ---
 
@@ -58,11 +58,11 @@ Antal klasser: 50000
 
 |   | eventType | userId | subscriptionOcced | random_row_number_for_user |
 | ---  |   ---  |   ---  |   ---  |   --- |
-| 0 | directMarketing.emailClicked | 01027994177972439148069092698714414382 | 0 | 1 |
+| 0 | directMarketing.emailClick | 01027994177972439148069092698714414382 | 0 | 1 |
 | 1 | directMarketing.emailOpened | 01054714817856066632264746967668888198 | 0 | 1 |
 | 2 | web.formFilledOut | 01117296890525140996735553609305695042 | 1 | 15 |
-| 3 | directMarketing.emailClicked | 01149554820363915324573708359099551093 | 0 | 1 |
-| 4 | directMarketing.emailClicked | 01172121447143590196349410086995740317 | 0 | 1 |
+| 3 | directMarketing.emailClick | 01149554820363915324573708359099551093 | 0 | 1 |
+| 4 | directMarketing.emailClick | 01172121447143590196349410086995740317 | 0 | 1 |
 
 {style="table-layout:auto"}
 
@@ -148,11 +148,11 @@ df_features.head()
 
 |   | userId | emailsReceived | e-postÖppnad | emailsClickade | productsViewed | propositionInteracts | propositionDisjected | webLinkClicks | minutes_since_emailSent | minutes_since_emailOpened | minutes_since_emailClick | minutes_since_productView | minutes_since_propositionInteract | minutes_since_propositionDismiss | minutes_since_linkClick |
 | --- |    --- |    ---   |  ---  |   ---  |   ---  |  ---  |  ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   --- |
-| 0 | 01102546977582484968046916668339306826 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0,0 | NaN | NaN | NaN | NaN | Ingen | NaN |
-| 1 | 01102546977582484968046916668339306826 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0,0 | NaN | NaN | NaN | NaN | Ingen | NaN |
-| 2 | 01102546977582484968046916668339306826 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0,0 | NaN | NaN | NaN | NaN | Ingen | NaN |
-| 3 | 01102546977582484968046916668339306826 | 3 | 1 | 0 | 0 | 0 | 0 | 0 | 540,0 | 0,0 | NaN | NaN | NaN | Ingen | NaN |
-| 4 | 01102546977582484968046916668339306826 | 3 | 2 | 0 | 0 | 0 | 0 | 0 | 588,0 | 0,0 | NaN | NaN | NaN | Ingen | NaN |
+| 0 | 01102546977582484968046916668339306826 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | NaN | NaN | NaN | NaN | Ingen | NaN |
+| 1 | 01102546977582484968046916668339306826 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | NaN | NaN | NaN | NaN | Ingen | NaN |
+| 2 | 01102546977582484968046916668339306826 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | NaN | NaN | NaN | NaN | Ingen | NaN |
+| 3 | 01102546977582484968046916668339306826 | 3 | 1 | 0 | 0 | 0 | 0 | 0 | 540.0 | 0.0 | NaN | NaN | NaN | Ingen | NaN |
+| 4 | 01102546977582484968046916668339306826 | 3 | 2 | 0 | 0 | 0 | 0 | 0 | 588.0 | 0.0 | NaN | NaN | NaN | Ingen | NaN |
 
 {style="table-layout:auto"}
 
@@ -231,11 +231,11 @@ df_training_set.head()
 
 |  | userId | eventType | tidsstämpel | subscriptionOcced | emailsReceived | e-postÖppnad | emailsClickade | productsViewed | propositionInteracts | propositionDisjected | webLinkClicks | minutes_since_emailSent | minutes_since_emailOpened | minutes_since_emailClick | minutes_since_productView | minutes_since_propositionInteract | minutes_since_propositionDismiss | minutes_since_linkClick | random_row_number_for_user |
 | ---  |  --- |   ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---   | ---  |  ---  |  ---  |  --- |
-| 0 | 02554909162592418347780983091131567290 | directMarketing.emailSent | 2023-06-17 13:44:59.086 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0,0 | NaN | NaN | NaN | NaN | Ingen | NaN | 1 |
-| 1 | 01130334080340815140184601481559659945 | directMarketing.emailOpened | 2023-06-19 06:01:55.366 | 0 | 1 | 3 | 0 | 1 | 0 | 0 | 0 | 1921,0 | 0,0 | NaN | 1703,0 | NaN | Ingen | NaN | 1 |
-| 2 | 01708961660028351393477273586554010192 | web.formFilledOut | 2023-06-19 18:36:49.083 | 1 | 1 | 2 | 2 | 0 | 0 | 0 | 0 | 2365,0 | 26,0 | 1,0 | NaN | NaN | Ingen | NaN | 7 |
-| 3 | 01809182902320674899156240602124740853 | directMarketing.emailSent | 2023-06-21 19:17:12.535 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0,0 | NaN | NaN | NaN | NaN | Ingen | NaN | 1 |
-| 4 | 03441761949943678951106193028739001197 | directMarketing.emailSent | 2023-06-21 21:58:29.482 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0,0 | NaN | NaN | NaN | NaN | Ingen | NaN | 1 |
+| 0 | 02554909162592418347780983091131567290 | directMarketing.emailSent | 2023-06-17 13:44:59.086 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | NaN | NaN | NaN | NaN | Ingen | NaN | 1 |
+| 1 | 01130334080340815140184601481559659945 | directMarketing.emailOpened | 2023-06-19 06:01:55.366 | 0 | 1 | 3 | 0 | 1 | 0 | 0 | 0 | 1921.0 | 0.0 | NaN | 1703.0 | NaN | Ingen | NaN | 1 |
+| 2 | 01708961660028351393477273586554010192 | web.formFilledOut | 2023-06-19 18:36:49.083 | 1 | 1 | 2 | 2 | 0 | 0 | 0 | 0 | 2365.0 | 26.0 | 1.0 | NaN | NaN | Ingen | NaN | 7 |
+| 3 | 01809182902320674899156240602124740853 | directMarketing.emailSent | 2023-06-21 19:17:12.535 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | NaN | NaN | NaN | NaN | Ingen | NaN | 1 |
+| 4 | 03441761949943678951106193028739001197 | directMarketing.emailSent | 2023-06-21 21:58:29.482 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | NaN | NaN | NaN | NaN | Ingen | NaN | 1 |
 
 {style="table-layout:auto"}
 
@@ -381,7 +381,7 @@ WHERE
 ORDER BY timestamp;
 
 EXCEPTION
-  WHEN OTHER THEN
+  WHEN OTHERS THEN
     SELECT 'ERROR';
 
 END $$;

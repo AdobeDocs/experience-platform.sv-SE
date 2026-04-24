@@ -2,9 +2,9 @@
 title: Inkrementell inläsning i frågetjänsten
 description: Funktionen för inkrementell belastning använder både anonyma funktioner för block och ögonblicksbilder för att ge en nästan realtidslösning för att flytta data från dataljön till datalagret samtidigt som matchande data ignoreras.
 exl-id: 1418d041-29ce-4153-90bf-06bd8da8fb78
-source-git-commit: 65eeeb1df1d512c4cd6c67892905a63cc1cc4fc5
+source-git-commit: f2d81f05c8c19c6f28849fc4dbe9bfa26be64645
 workflow-type: tm+mt
-source-wordcount: '671'
+source-wordcount: '672'
 ht-degree: 0%
 
 ---
@@ -84,7 +84,7 @@ Stegen nedan visar hur du skapar och läser in data stegvis med hjälp av ögonb
          cast( @last_updated_timestamp AS TIMESTAMP) process_timestamp;
    
    EXCEPTION
-     WHEN OTHER THEN
+     WHEN OTHERS THEN
        SELECT 'ERROR';
    END 
    $$;
@@ -116,7 +116,7 @@ Stegen nedan visar hur du skapar och läser in data stegvis med hjälp av ögonb
          cast( @last_updated_timestamp AS TIMESTAMP) process_timestamp;
    
    EXCEPTION
-     WHEN OTHER THEN
+     WHEN OTHERS THEN
        SELECT 'ERROR';
    END
    $$;
@@ -154,7 +154,7 @@ Insert Into
       cast( @to_snapshot_id AS string) last_snapshot_id,
       cast( @last_updated_timestamp AS TIMESTAMP) process_timestamp;
 EXCEPTION
-  WHEN OTHER THEN
+  WHEN OTHERS THEN
     SELECT 'ERROR';
 END
 $$;

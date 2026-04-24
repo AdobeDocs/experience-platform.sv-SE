@@ -2,9 +2,9 @@
 title: Anonymt block i frågetjänsten
 description: Det anonyma blocket är en SQL-syntax som stöds av Adobe Experience Platform Query Service, som gör att du effektivt kan köra en sekvens med frågor
 exl-id: ec497475-9d2b-43aa-bcf4-75a430590496
-source-git-commit: 65eeeb1df1d512c4cd6c67892905a63cc1cc4fc5
+source-git-commit: f2d81f05c8c19c6f28849fc4dbe9bfa26be64645
 workflow-type: tm+mt
-source-wordcount: '603'
+source-wordcount: '619'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ $$ BEGIN
     CREATE TABLE ADLS_TABLE_A AS SELECT * FROM ADLS_TABLE_1....;
     ....
     CREATE TABLE ADLS_TABLE_D AS SELECT * FROM ADLS_TABLE_C....; 
-    EXCEPTION WHEN OTHER THEN SET @ret = SELECT 'ERROR';
+    EXCEPTION WHEN OTHERS THEN SET @ret = SELECT 'ERROR';
 END
 $$;
 ```
@@ -66,7 +66,7 @@ $$ BEGIN
     CREATE TABLE ADLS_TABLE_A AS SELECT * FROM ADLS_TABLE_1....;
     ....
     CREATE TABLE ADLS_TABLE_D AS SELECT * FROM ADLS_TABLE_C....;
-    EXCEPTION WHEN OTHER THEN SET @ret = SELECT 'ERROR';
+    EXCEPTION WHEN OTHERS THEN SET @ret = SELECT 'ERROR';
 END
 $$;
 /
